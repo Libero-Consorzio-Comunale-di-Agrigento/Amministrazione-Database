@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:if="ant:if" xmlns:unless="ant:unless" xmlns:liquibase="antlib:liquibase.integration.ant">
+    <taskdef resource="liquibase/integration/ant/antlib.xml" uri="antlib:liquibase.integration.ant"/>
+    <!-- Questo è il Primo Target che viene invocato. Serve per configurare e verificare le connessioni al db -->
+    <target name="config">
+        <resolve-conn nome="ad4" istanza="${progetto.codice.istanza}"/>
+        <resolve-conn nome="si4"/>
+    </target>
+
+    <target name="install:db" depends="-update-ad4, -crea-utente-ad4"/>
+
+    <target name="-crea-utente-ad4">
+        <!-- vado a creare i vari utenti/ruoli/diritti-accesso -->
+
+        <!-- puoi anche creare delle nuove variabili e scriverle nel file config.properties -->
+        <ad4-crea-utente codice="AD4" nominativo="AD4" passwd="AD4"/>
+    </target>
+
+    <!-- Alla fine di tutto, rivalido i package e creo le viste/etc -->
+    <target name="-update-ad4" >
+        <!-- Classpath dove sono salvati gli script liquibase -->
+        <path id="classpath-liquibase">
+            <pathelement path="../db"/>
+        </path>
+        <liquibase:database id="ad4-database" driver="${global.db.target.driver}" url="${global.db.target.url}" user="${global.db.target.username}" password="${global.db.target.password}"/>
+        <liquibase:updateDatabase databaseref="ad4-database" classpathref="classpath-liquibase" changelogfile="caricamento_iniziale.xml" >
+            <liquibase:changeLogParameters>
+                <liquibase:changeLogParameter name="istanza" value="${progetto.istanza.codice}"/>
+                <liquibase:changeLogParameter name="versione" value="${versione}"/>
+                <liquibase:changeLogParameter name="targetUsername" value="${global.db.target.username}"/>
+            </liquibase:changeLogParameters>
+        </liquibase:updateDatabase>
+        <liquibase:updateDatabase databaseref="ad4-database" classpathref="classpath-liquibase" changelogfile="init.xml" >
+            <liquibase:changeLogParameters>
+                <liquibase:changeLogParameter name="istanza" value="${progetto.istanza.codice}"/>
+                <liquibase:changeLogParameter name="versione" value="${versione}"/>
+                <liquibase:changeLogParameter name="targetUsername" value="${global.db.target.username}"/>
+            </liquibase:changeLogParameters>
+        </liquibase:updateDatabase>
+        <liquibase:updateDatabase databaseref="ad4-database" classpathref="classpath-liquibase" changelogfile="master.xml">
+            <liquibase:changeLogParameters>
+                <liquibase:changeLogParameter name="istanza" value="${progetto.istanza.codice}"/>
+                <liquibase:changeLogParameter name="descIstanza" value="${progetto.istanza.descrizione}"/>
+                <liquibase:changeLogParameter name="versione" value="${versione}"/>
+                <liquibase:changeLogParameter name="si4Username" value="${global.db.si4.username}"/>
+                <liquibase:changeLogParameter name="targetUsername" value="${global.db.target.username}"/>
+                <liquibase:changeLogParameter name="targetPassword" value="${global.db.target.password}"/>
+            </liquibase:changeLogParameters>
+        </liquibase:updateDatabase>
+    </target>
+
+
+    <!-- Questo target aggiorna il contesto. -->
+    <target name="install:fs">
+        <tomcat-installa-contesto context-name="${ad4.contextName}" war-file="../commons/webapp/ad4web.war" context-file="../commons/webapp/context.xml"/>
+    </target>
+</project>

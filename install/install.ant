@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:if="ant:if" xmlns:unless="ant:unless" xmlns:liquibase="antlib:liquibase.integration.ant">
+    <taskdef resource="liquibase/integration/ant/antlib.xml" uri="antlib:liquibase.integration.ant"/>
+    <!-- Questo è il Primo Target che viene invocato. Serve per configurare e verificare le connessioni al db -->
+    <target name="config">
+        <resolve-conn nome="ad4" istanza="${progetto.codice.istanza}"/>
+        <resolve-conn nome="si4"/>
+    </target>
+
+    <target name="install:db" depends="-install-si4, -grantsys-ad4"/>
+    <!-- Collegamento a sys per grant speciali di AD4 -->
+    <target name="-grantsys-ad4">
+        <sql driver="${global.db.target.driver}"
+             url="${global.db.target.url}"
+             userid="${global.db.system.username}"
+             password="${global.db.system.password}"
+             expandProperties="true">
+            begin
+            execute immediate 'grant select on SYS.GV_$SESSION to ${global.db.target.username}';
+            execute immediate 'grant select on SYS.V_$SESSION to ${global.db.target.username}';
+            execute immediate 'grant select on sys.v_$database to ${global.db.target.username}';
+            execute immediate 'grant select on sys.dba_segments to ${global.db.target.username}';
+            execute immediate 'grant select on sys.dba_data_files to ${global.db.target.username}';
+            execute immediate 'grant select on SYS.V_$SQLTEXT_WITH_NEWLINES to ${global.db.target.username}';
+            execute immediate 'grant execute on SYS.DBMS_BACKUP_RESTORE to ${global.db.target.username}';
+            execute immediate 'grant execute on SYS.DBMS_CRYPTO to ${global.db.target.username}';
+            execute immediate 'grant execute on sys.utl_recomp to ${global.db.target.username}';
+            execute immediate 'grant execute on sys.utl_recomp to ${global.db.target.username}';
+            end;
+        </sql>
+    </target>
+
+
+    <target name="-crea-user-tablespace-si4">
+        <!-- creo SI4 la tablespace e lo user (solo se non già presenti) -->
+        <system-crea-tablespace-user user="${global.db.si4.username}" passwd="${global.db.si4.password}"
+                                 name="${global.db.target.tablespace.name}" size="${global.db.target.tablespace.size}"/>
+    </target>
+    <target name="-install-si4" depends="-crea-user-tablespace-si4">
+        <!-- Classpath dove sono salvati gli script liquibase -->
+        <path id="classpath-liquibase">
+            <pathelement path="../db"/>
+        </path>
+        <liquibase:database id="si4-database" driver="${global.db.target.driver}" url="${global.db.target.url}" user="${global.db.si4.username}" password="${global.db.si4.password}"/>
+        <liquibase:updateDatabase databaseref="si4-database" classpathref="classpath-liquibase" changelogfile="si4/master.xml" >
+            <liquibase:changeLogParameters>
+                <liquibase:changeLogParameter name="targetUsername" value="${global.db.target.username}"/>
+            </liquibase:changeLogParameters>
+        </liquibase:updateDatabase>
+    </target>
+    <target name="install:fs"/>
+</project>
