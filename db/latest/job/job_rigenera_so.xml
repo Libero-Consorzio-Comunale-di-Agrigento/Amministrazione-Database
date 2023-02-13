@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="201909251347" author="snegroni">
+        <comment>Creazione job per pulizia eventi</comment>
+            <sql dbms="oracle"
+                 endDelimiter="\"
+                 splitStatements="true"
+                 stripComments="true">
+                    declare
+                    v_jobs number;
+                    begin
+                    select count(*)
+                    into v_jobs
+                    from user_jobs
+                    where upper(what) like ('%UTENTE.RIGENERA_SO%');
+                    if v_jobs = 0 then
+                    DECLARE
+                    X NUMBER;
+                    BEGIN
+                    SYS.DBMS_JOB.SUBMIT
+                    ( job       => X
+                    ,what      => 'begin utente.rigenera_so(''%''); end;'
+                    ,next_date => sysdate
+                    ,interval  => 'TRUNC(SYSDATE+1)+5/24'
+                    ,no_parse  => FALSE
+                    );
+                    COMMIT;
+                    END;
+                    end if;
+                    end;
+                    /
+            </sql>
+    </changeSet>
+</databaseChangeLog>
