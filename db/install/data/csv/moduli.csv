@@ -1,0 +1,4 @@
+"MODULO","DESCRIZIONE","DESCRIZIONE_AL1","DESCRIZIONE_AL2","PROGETTO","NOTE"
+"MODULDAP","Modulo generico per accesso LDAP","NULL","NULL","PROGLDAP","NULL"
+"AD4WEB","Modulo AD4WEB","NULL","NULL","AD4","NULL"
+"AD4","Amministratore DataBase","NULL","NULL","AD4","NULL"

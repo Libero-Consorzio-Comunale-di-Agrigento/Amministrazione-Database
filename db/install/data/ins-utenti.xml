@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="adminUsername" value="AD4"/>
+    <property name="adminPassword" value="AD4"/>
+    <property name="adminNominativo" value="AD4"/>
+    <!-- TODO: Gestire la password con il crypt -->
+    <changeSet id="20190604_1505" author="snegroni" runOnChange="true">
+        <preConditions onFailMessage="Utente preesistente '${adminUsername}" onFail="CONTINUE">
+            <sqlCheck expectedResult="0">
+                select count(1) from utenti where utente = '${adminUsername}';
+            </sqlCheck>
+        </preConditions>
+        <comment>Inserimento degli utenti devo farlo con VALUES altrimenti errore mutating</comment>
+        <sql dbms="oracle"
+             endDelimiter="/"
+             splitStatements="true"
+             stripComments="true">
+            declare
+            d_psw varchar2(30) := '${adminPassword}';
+            begin
+            crypt.crypt_password(d_psw, 'STANDARD');
+            INSERT INTO utenti (UTENTE,NOMINATIVO,PASSWORD,DATA_PASSWORD,RINNOVO_PASSWORD,PWD_DA_MODIFICARE,
+            ULTIMO_TENTATIVO,NUMERO_TENTATIVI,TIPO_UTENTE,STATO,LINGUA,GRUPPO_LAVORO,
+            IMPORTANZA,NOTE,DATA_INSERIMENTO,UTENTE_AGGIORNAMENTO,DATA_AGGIORNAMENTO)
+            VALUES ('${adminUsername}','${adminUsername}',d_psw,NULL,NULL,'NO',
+            NULL,NULL,'U','U','*','def',
+            NULL,NULL,NULL,NULL,NULL);
+            end;
+            /
+        </sql>
+        <sql dbms="oracle"
+                   endDelimiter="\"
+                   splitStatements="true"
+                   stripComments="true">
+        INSERT INTO utenti (UTENTE,NOMINATIVO,PASSWORD,DATA_PASSWORD,RINNOVO_PASSWORD,PWD_DA_MODIFICARE,
+        ULTIMO_TENTATIVO,NUMERO_TENTATIVI,TIPO_UTENTE,STATO,LINGUA,GRUPPO_LAVORO,
+        IMPORTANZA,NOTE,DATA_INSERIMENTO,UTENTE_AGGIORNAMENTO,DATA_AGGIORNAMENTO)
+        VALUES ('ric_abil','Richieste di Abilitazione',NULL,NULL,NULL,'NO',
+        NULL,NULL,'G','U','*','def',
+        NULL,NULL,NULL,NULL,NULL)
+    </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            INSERT INTO utenti (UTENTE,NOMINATIVO,PASSWORD,DATA_PASSWORD,RINNOVO_PASSWORD,PWD_DA_MODIFICARE,
+            ULTIMO_TENTATIVO,NUMERO_TENTATIVI,TIPO_UTENTE,STATO,LINGUA,GRUPPO_LAVORO,
+            IMPORTANZA,NOTE,DATA_INSERIMENTO,UTENTE_AGGIORNAMENTO,DATA_AGGIORNAMENTO)
+            VALUES ('GRPLDAP','Gruppo Utenti LDAP',NULL,NULL,NULL,'NO',
+            NULL,NULL,'G','U','*','def',
+            NULL,NULL,NULL,NULL,NULL)
+        </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            INSERT INTO utenti (UTENTE,NOMINATIVO,PASSWORD,DATA_PASSWORD,RINNOVO_PASSWORD,PWD_DA_MODIFICARE,
+            ULTIMO_TENTATIVO,NUMERO_TENTATIVI,TIPO_UTENTE,STATO,LINGUA,GRUPPO_LAVORO,
+            IMPORTANZA,NOTE,DATA_INSERIMENTO,UTENTE_AGGIORNAMENTO,DATA_AGGIORNAMENTO)
+            VALUES ('GUESTS','Gruppo Guest',NULL,NULL,NULL,'NO',
+            NULL,NULL,'G','U','*','def',
+            NULL,NULL,NULL,NULL,NULL)
+        </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            INSERT INTO utenti (UTENTE,NOMINATIVO,PASSWORD,DATA_PASSWORD,RINNOVO_PASSWORD,PWD_DA_MODIFICARE,
+            ULTIMO_TENTATIVO,NUMERO_TENTATIVI,TIPO_UTENTE,STATO,LINGUA,GRUPPO_LAVORO,
+            IMPORTANZA,NOTE,DATA_INSERIMENTO,UTENTE_AGGIORNAMENTO,DATA_AGGIORNAMENTO)
+            VALUES ('ADMINS','Gruppo Amministratori',NULL,NULL,NULL,'NO',
+            NULL,NULL,'G','U','*','def',
+            NULL,NULL,NULL,NULL,NULL)
+        </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            INSERT INTO utenti (UTENTE,NOMINATIVO,PASSWORD,DATA_PASSWORD,RINNOVO_PASSWORD,PWD_DA_MODIFICARE,
+            ULTIMO_TENTATIVO,NUMERO_TENTATIVI,TIPO_UTENTE,STATO,LINGUA,GRUPPO_LAVORO,
+            IMPORTANZA,NOTE,DATA_INSERIMENTO,UTENTE_AGGIORNAMENTO,DATA_AGGIORNAMENTO)
+            VALUES ('GUEST','GUEST',NULL,NULL,NULL,'NO',
+            NULL,NULL,'U','U','*','def',
+            NULL,NULL,NULL,NULL,NULL)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

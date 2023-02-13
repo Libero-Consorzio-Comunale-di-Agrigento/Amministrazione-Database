@@ -1,0 +1,132 @@
+"OGGETTO","TIPO","SEQUENZA","NOME","NOTE","PROCEDURA","LABEL_SUCCESS","FLAG_ABORT","LABEL_FAILURE","RIF_OGGETTO","RIF_DESCRIPTOR","CASCADE_UPDATE","CASCADE_DELETE"
+"ENTI","PK","1","ENTI_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"PROGETTI","PK","1","PROG_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"ISTANZE","PK","1","ISTA_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"ISTANZE","FK","1","ISTA_PROG_FK","NULL","NULL","NULL","S","NULL","PROGETTI","DESCRIZIONE","X","X"
+"ISTANZE","FK","2","ISTA_ENTI_FK","NULL","NULL","NULL","S","NULL","ENTI","DESCRIZIONE","X","X"
+"RUOLI","PK","1","RUOL_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","PK","1","DIRI_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","FK","2","DIRI_RUOL_FK","NULL","and &Progetto like nvl(progetto,'%')
+and &modulo like nvl(modulo,'%')","NULL","S","NULL","RUOLI","DESCRIZIONE","X","X"
+"DIRITTI_ACCESSO","FK","3","DIRI_ISTA_FK","NULL","NULL","NULL","S","NULL","ISTANZE","DESCRIZIONE","X","X"
+"MODULI","FK","1","MODU_PROG_FK","NULL","NULL","NULL","S","NULL","PROGETTI","DESCRIZIONE","X","X"
+"MODULI","PK","1","MODU_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","FK","4","DIRI_MODU_FK","NULL","NULL","NULL","S","NULL","MODULI","DESCRIZIONE","X","X"
+"DISABILITAZIONI","PK","1","DISA_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"UTENTI","PK","1","UTEN_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"PROGETTI","ED","2","PROG_ED","NULL","delete caratteristiche_accesso
+ where progetto = &Progetto","NULL","S","NULL","NULL","NULL","X","X"
+"PROGETTI","ED","1","PROG_CAAC_ED","NULL","select 1
+  from user_objects
+ where object_name = 'CARATTERISTICHE_ACCESSO'","PROG_ED","N","FINE","NULL","NULL","X","X"
+"ISTANZE","ED","1","ISTA_CAAC_ED","NULL","select 1
+  from user_objects
+ where object_name = 'CARATTERISTICHE_ACCESSO'","ISTA_ED","N","FINE","NULL","NULL","X","X"
+"ISTANZE","ED","2","ISTA_ED","NULL","delete caratteristiche_accesso
+ where progetto = &Progetto
+   and istanza  = &istanza","NULL","S","NULL","NULL","NULL","X","X"
+"MODULI","ED","2","MODU_ED","NULL","delete caratteristiche_accesso
+ where progetto = &Progetto
+   and modulo   = &modulo","NULL","S","NULL","NULL","NULL","X","X"
+"MODULI","ED","1","MODU_CAAC_ED","NULL","select 1
+  from user_objects
+ where object_name = 'CARATTERISTICHE_ACCESSO'","MODU_ED","N","FINE","NULL","NULL","X","X"
+"DIAC","ED","1","DIRI_CAAC_ED","NULL","select 1
+  from user_objects
+ where object_name = 'CARATTERISTICHE_ACCESSO'","DIRI_ED","N","FINE","NULL","NULL","X","X"
+"DIAC","ED","2","DIRI_ED","NULL","delete caratteristiche_accesso
+ where progetto = &Progetto
+   and istanza  = &istanza
+   and modulo   = &modulo
+   and utente   = &utente","NULL","S","NULL","NULL","NULL","X","X"
+"UTENTI_GRUPPO","PK","1","UTGR_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"UTENTI_GRUPPO","FK","2","UTGR_GRUP_FK","NULL","NULL","NULL","S","NULL","UTENTI","NULL","X","X"
+"UTENTI_GRUPPO","FK","1","UTGR_UTEN_FK","NULL","NULL","NULL","S","NULL","UTENTI","NULL","X","X"
+"STATI_TERRITORI","EI","1","STTE_EI","NULL","insert into comuni (provincia_stato, comune, denominazione, denominazione_breve, sigla_cfis)
+values (&stato_territorio, 0, &denominazione, substr(&denominazione,1,16), &sigla_cfis)","NULL","S","NULL","NULL","NULL","X","X"
+"STATI_TERRITORI","PK","1","STTE_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"COMUNI","PK","1","COMU_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","UP","4","DIRI_MODU_CHK_ISTA_UP","NULL","select ''
+  into &istanza
+  from dual
+ where 0 = (select count(1)
+              from istanze
+             where progetto = &Progetto
+               and istanza  = &istanza)","NULL","N","NULL","NULL","NULL","X","X"
+"COMUNI","FK","1","COMU_STTE_FK","NULL","or decode(sign(STATO_TERRITORIO - 200),-1,'I','E') = 'I'","NULL","S","NULL","STATI_TERRITORI","DENOMINAZIONE","X","X"
+"DIRITTI_ACCESSO","UP","1","DIRI_ISTA_PROG_UP","NULL","select progetto
+  into &Progetto
+  from istanze
+ where istanza = &istanza","NULL","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","UP","3","DIRI_MODU_PROG_UP","NULL","select progetto
+  into &Progetto
+  from moduli
+ where modulo = &modulo","DIRI_MODU_CHK_ISTA_UP","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","UP","2","DIRI_ISTA_CHK_MODU_UP","NULL","select ''  into &modulo  from dual where 0 = (select count(1)              from moduli             where progetto = &Progetto               and modulo   = &modulo)","NULL","N","NULL","NULL","NULL","X","X"
+"RUOLI","UP","4","RUOL_CHK2_MODU_UP","NULL","select ''
+  into &moduli_descrizione
+  from dual
+ where 0 = (select count(1)
+              from moduli
+             where progetto = &Progetto
+               and modulo   = &modulo)","NULL","N","NULL","NULL","NULL","X","X"
+"RUOLI","FK","1","RUOL_MODU_FK","NULL","NULL","NULL","S","NULL","MODULI","DESCRIZIONE","X","X"
+"RUOLI","FK","2","RUOL_PROG_FK","NULL","NULL","NULL","S","NULL","PROGETTI","DESCRIZIONE","X","X"
+"RUOLI","UP","2","RUOL_CHK2_PROG_UP","NULL","select descrizione
+  into &Progetti_descrizione
+  from progetti
+ where progetto = &Progetto","NULL","N","NULL","NULL","NULL","X","X"
+"RUOLI","UP","1","RUOL_CHK_PROG_UP","NULL","select PROGETTO
+  into &Progetto
+  from moduli
+ where modulo = &modulo","NULL","N","NULL","NULL","NULL","X","X"
+"RUOLI","UP","3","RUOL_CHK_MODU_UP","NULL","select ''
+  into &modulo
+  from dual
+ where 0 = (select count(1)
+              from moduli
+             where progetto = &Progetto
+               and modulo   = &modulo)","NULL","N","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","FR","1","DIRI_RUOL_FR","NULL","NULL","NULL","S","NULL","RUOLI","NULL","X","X"
+"LINGUE","PK","1","LING_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"GRUPPI_LINGUISTICI","PK","1","GRLI_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"GRUPPI_LINGUISTICI","FK","1","GRLI_LING_FK","NULL","NULL","NULL","S","NULL","LINGUE","DESCRIZIONE","X","X"
+"GRUPPI_LINGUISTICI","FK","2","GRLI_LING_AL_FK","NULL","NULL","NULL","S","NULL","LINGUE","DESCRIZIONE","X","X"
+"LINGUE","BD","1","LING_BD","NULL","DELETE GRUPPI_LINGUISTICI
+ WHERE LINGUA = &LINGUA
+   AND LINGUA_AL = &LINGUA","NULL","S","NULL","NULL","NULL","X","X"
+"GRUPPI_LINGUISTICI","FR","2","GRLI_LING_AL_FR","NULL","AND LINGUA <> LINGUA_AL","NULL","S","NULL","LINGUE","NULL","X","X"
+"GRUPPI_LINGUISTICI","FR","1","GRLI_LING_FR","NULL","AND LINGUA <> LINGUA_AL","NULL","S","NULL","LINGUE","NULL","X","X"
+"TIPI_CREDENZIALE","PK","1","TICR_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"LIVELLI_SICUREZZA","PK","1","LISI_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"CREDENZIALI_LIVELLO","PK","1","CRLI_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"SERVIZI","FK","1","ISTA_SERV_FK","NULL","NULL","NULL","S","NULL","ISTANZE","DESCRIZIONE","X","X"
+"TIPI_CREDENZIALE","EU","2","TICR_UPD_EU","NULL","update CREDENZIALI_LIVELLO
+   set livello = :livello,
+       tipo_credenziale = :tipo_credenziale
+ where (nvl(:tipo_credenziale,' ') <> nvl(:old.tipo_credenziale,' ') or 
+        nvl(:livello,' ') <> nvl(:old.livello,' '))","NULL","S","NULL","NULL","NULL","X","X"
+"CREDENZIALI_LIVELLO","FK","1","CRLI_LISI_FK","NULL","NULL","NULL","S","NULL","LIVELLI_SICUREZZA","DESCRIZIONE","X","X"
+"TIPI_CREDENZIALE","ED","1","TICR_UPD_ED","NULL","delete CREDENZIALI_LIVELLO
+ where livello = :livello
+   and tipo_credenziale = :tipo_credenziale","NULL","S","NULL","NULL","NULL","X","X"
+"TIPI_CREDENZIALE","EI","1","TICR_EI","NULL","insert into CREDENZIALI_LIVELLO (livello, tipo_credenziale)
+values (:livello, :tipo_credenziale)","NULL","S","NULL","NULL","NULL","X","X"
+"TIPI_CREDENZIALE","EU","1","TICR_DEL_EU","NULL","delete CREDENZIALI_LIVELLO 
+ where livello = :livello
+   and tipo_credenziale = :tipo_credenziale
+   and (nvl(:tipo_credenziale,' ') <> nvl(:old.tipo_credenziale,' ') or 
+        nvl(:livello,' ') <> nvl(:old.livello,' '))","NULL","S","NULL","NULL","NULL","X","X"
+"CREDENZIALI","PK","1","CRED_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"SERVIZI","PK","1","SERV_PK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"CREDENZIALI","UK","1","CRED_CHIAVE_AK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"SERVIZI","UK","1","SERV_AK","NULL","NULL","NULL","S","NULL","NULL","NULL","X","X"
+"SERVIZI","FK","2","MODU_SERV_FK","NULL","NULL","NULL","S","NULL","MODULI","DESCRIZIONE","X","X"
+"SERVIZI","FK","3","LISI_SERV_FK","NULL","NULL","NULL","S","NULL","LIVELLI_SICUREZZA","DESCRIZIONE","X","X"
+"STATI_TERRITORI","EU","1","STTE_EU","NULL","update comuni
+   set denominazione = &denominazione,
+       denominazione_breve = substr(&denominazione,1,16), 
+       sigla_cfis = &sigla_cfis
+ where provincia_stato = &stato_territorio
+   and comune = 0","NULL","S","NULL","NULL","NULL","X","X"
+"DIRITTI_ACCESSO","FK","1","DIRI_UTEN_FK","NULL","NULL","NULL","S","NULL","UTENTI","NOMINATIVO","X","X"

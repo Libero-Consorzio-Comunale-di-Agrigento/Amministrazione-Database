@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-17">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/amv_sezioni.csv" quotchar="&quot;"
+                  separator="," tableName="AMV_SEZIONI">
+            <column header="ID_SEZIONE" name="ID_SEZIONE" type="NUMERIC"/>
+            <column header="NOME" name="NOME" type="STRING"/>
+            <column header="DESCRIZIONE" name="DESCRIZIONE" type="STRING"/>
+            <column header="ZONA" name="ZONA"/>
+            <column header="SEQUENZA" name="SEQUENZA"/>
+            <column header="IMMAGINE" name="IMMAGINE"/>
+            <column header="MAX_VIS" name="MAX_VIS"/>
+            <column header="ID_PADRE" name="ID_PADRE"/>
+            <column header="VISIBILITA" name="VISIBILITA" type="STRING"/>
+            <column header="ZONA_FORMATO" name="ZONA_FORMATO" type="STRING"/>
+            <column header="ZONA_TIPO" name="ZONA_TIPO" type="STRING"/>
+            <column header="ZONA_ESPANSIONE" name="ZONA_ESPANSIONE" type="STRING"/>
+            <column header="ZONA_VISIBILITA" name="ZONA_VISIBILITA" type="STRING"/>
+            <column header="STYLE" name="STYLE"/>
+            <column header="LOGO_SX" name="LOGO_SX"/>
+            <column header="LOGO_SX_LINK" name="LOGO_SX_LINK"/>
+            <column header="LOGO_DX" name="LOGO_DX"/>
+            <column header="LOGO_DX_LINK" name="LOGO_DX_LINK"/>
+            <column header="IMG_HEADER" name="IMG_HEADER"/>
+            <column header="INTESTAZIONE" name="INTESTAZIONE"/>
+            <column header="COPYRIGHT" name="COPYRIGHT"/>
+            <column header="ID_AREA" name="ID_AREA"/>
+            <column header="ICONA" name="ICONA"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

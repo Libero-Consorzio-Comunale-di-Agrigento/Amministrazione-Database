@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-19">
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            alter table amv_abilitazioni disable all triggers
+        </sql>
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/amv_abilitazioni.csv"
+                  quotchar="&quot;" separator="," tableName="AMV_ABILITAZIONI">
+            <column header="ABILITAZIONE" name="ABILITAZIONE" type="NUMERIC"/>
+            <column header="RUOLO" name="RUOLO" type="STRING"/>
+            <column header="MODULO" name="MODULO" type="STRING"/>
+            <column header="VOCE_MENU" name="VOCE_MENU" type="STRING"/>
+            <column header="PADRE" name="PADRE" type="NUMERIC"/>
+            <column header="SEQUENZA" name="SEQUENZA" type="NUMERIC"/>
+            <column header="DISPOSITIVO" name="DISPOSITIVO"/>
+        </loadData>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            alter table amv_abilitazioni enable all triggers
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-23">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/credenziali.csv" quotchar="&quot;"
+                  separator="," tableName="CREDENZIALI">
+            <column header="ID_CREDENZIALE" name="ID_CREDENZIALE" type="NUMERIC"/>
+            <column header="TIPO_CREDENZIALE" name="TIPO_CREDENZIALE" type="STRING"/>
+            <column header="CHIAVE_CREDENZIALE" name="CHIAVE_CREDENZIALE" type="STRING"/>
+            <column header="EMITTENTE" name="EMITTENTE" type="STRING"/>
+            <column header="STATO" name="STATO" type="STRING"/>
+            <column header="UTENTE_AGGIORNAMENTO" name="UTENTE_AGGIORNAMENTO"/>
+            <column header="DATA_AGGIORNAMENTO" name="DATA_AGGIORNAMENTO" type="DATE"/>
+            <column header="CREDENZIALE" name="CREDENZIALE"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

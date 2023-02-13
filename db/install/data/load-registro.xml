@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="20200918155-disable" author="mturra">
+        <sql>alter table REGISTRO disable all triggers</sql>
+    </changeSet>
+    <changeSet author="mturra (generated)" id="1554305364588-61">
+        <validCheckSum>8:b8eb0d16947418762fb184678b2437a0</validCheckSum>
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/registro.csv" quotchar="&quot;"
+                  separator="," tableName="REGISTRO">
+            <column header="CHIAVE" name="CHIAVE" type="STRING"/>
+            <column header="STRINGA" name="STRINGA" type="STRING"/>
+            <column header="COMMENTO" name="COMMENTO" type="STRING"/>
+            <column header="VALORE" name="VALORE" type="STRING"/>
+        </loadData>
+    </changeSet>
+    <changeSet id="20200918155-enable" author="mturra">
+        <sql>alter table REGISTRO enable all triggers</sql>
+    </changeSet>
+</databaseChangeLog>

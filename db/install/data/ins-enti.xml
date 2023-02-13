@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="ente" value="ENTE"/>
+    <property name="descEnte" value="Ente generico"/>
+    <changeSet id="201903121554" author="mturra" runOnChange="true">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(1) from ENTI where ENTE='${ente}'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento del Ente</comment>
+        <sql endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+                Insert into ENTI
+                (ENTE, DESCRIZIONE)
+                Values
+                ('${ente}', '${descEnte}')
+        </sql>
+        <rollback>
+            <delete tableName="ENTI">
+                <where>ENTE='${ente}'</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

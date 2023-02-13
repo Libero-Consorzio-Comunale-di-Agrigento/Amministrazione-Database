@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-64">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/amv_diritti.csv" quotchar="&quot;"
+                  separator="," tableName="AMV_DIRITTI">
+            <column header="ID_DIRITTO" name="ID_DIRITTO" type="NUMERIC"/>
+            <column header="ID_AREA" name="ID_AREA" type="NUMERIC"/>
+            <column header="GRUPPO" name="GRUPPO" type="STRING"/>
+            <column header="ACCESSO" name="ACCESSO" type="STRING"/>
+            <column header="ID_TIPOLOGIA" name="ID_TIPOLOGIA"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

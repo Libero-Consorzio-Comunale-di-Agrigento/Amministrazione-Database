@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-74">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/amv_documenti_revisioni.csv"
+                  quotchar="&quot;" separator="," tableName="AMV_DOCUMENTI_REVISIONI">
+            <column header="ID_DOCUMENTO" name="ID_DOCUMENTO" type="NUMERIC"/>
+            <column header="REVISIONE" name="REVISIONE" type="NUMERIC"/>
+            <column header="DATA_REDAZIONE" name="DATA_REDAZIONE"/>
+            <column header="UTENTE_REDAZIONE" name="UTENTE_REDAZIONE"/>
+            <column header="DATA_VERIFICA" name="DATA_VERIFICA"/>
+            <column header="UTENTE_VERIFICA" name="UTENTE_VERIFICA"/>
+            <column header="DATA_APPROVAZIONE" name="DATA_APPROVAZIONE"/>
+            <column header="UTENTE_APPROVAZIONE" name="UTENTE_APPROVAZIONE"/>
+            <column header="CRONOLOGIA" name="CRONOLOGIA"/>
+            <column header="NOTE" name="NOTE"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

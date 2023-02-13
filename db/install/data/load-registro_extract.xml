@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-81">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/registro_extract.csv"
+                  quotchar="&quot;" separator="," tableName="REGISTRO_EXTRACT">
+            <column header="CHIAVE" name="CHIAVE" type="STRING"/>
+            <column header="STRINGA" name="STRINGA" type="STRING"/>
+            <column header="COMMENTO" name="COMMENTO" type="STRING"/>
+            <column header="VALORE" name="VALORE" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

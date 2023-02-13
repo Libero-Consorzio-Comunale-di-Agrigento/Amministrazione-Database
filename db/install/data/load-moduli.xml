@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-44">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/moduli.csv" quotchar="&quot;"
+                  separator="," tableName="MODULI">
+            <column header="MODULO" name="MODULO" type="STRING"/>
+            <column header="DESCRIZIONE" name="DESCRIZIONE" type="STRING"/>
+            <column header="DESCRIZIONE_AL1" name="DESCRIZIONE_AL1"/>
+            <column header="DESCRIZIONE_AL2" name="DESCRIZIONE_AL2"/>
+            <column header="PROGETTO" name="PROGETTO" type="STRING"/>
+            <column header="NOTE" name="NOTE"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

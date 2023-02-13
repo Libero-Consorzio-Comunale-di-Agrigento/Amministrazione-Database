@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="adminUsername" value="AD4"/>
+    <property name="modulo" value="AD4"/>
+    <property name="istanza" value="AD4"/>
+    <changeSet id="201903121358" author="mturra" runOnChange="true">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">select count(1) from DIRITTI_ACCESSO where UTENTE='${adminUsername}' and MODULO='${modulo}' and ISTANZA='${istanza}'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento del progetto AD4</comment>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            Insert into DIRITTI_ACCESSO
+            (UTENTE, MODULO, ISTANZA, RUOLO, SEQUENZA, ULTIMO_ACCESSO, NUMERO_ACCESSI, GRUPPO)
+            Values
+            ('${adminUsername}', '${modulo}', '${istanza}', 'AMM', 1,  null, 0, null)
+        </sql>
+        <rollback>
+            <delete tableName="DIRITTI_ACCESSO">
+                <where>UTENTE=${username} and MODULO=${modulo} and ISTANZA=${istanza}</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

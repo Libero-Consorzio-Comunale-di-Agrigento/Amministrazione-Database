@@ -1,0 +1,7 @@
+"RUOLO","DESCRIZIONE","PROGETTO","MODULO","PROFILO","DESCRIZIONE_AL1","DESCRIZIONE_AL2","STATO","GRUPPO_LAVORO","GRUPPO_SO","INCARICO","RESPONSABILITA"
+"def","Predefinito","NULL","NULL","NULL","NULL","NULL","U","S","N","N","N"
+"*","*","NULL","NULL","NULL","NULL","NULL","U","N","N","N","N"
+"GUEST","Guest","NULL","NULL","NULL","NULL","NULL","U","N","N","N","N"
+"AMM","Amministratore del Sistema","NULL","NULL","NULL","NULL","NULL","U","N","N","N","N"
+"AD4AMM","Amministratore AD4 - Amm. Database","AD4","NULL","NULL","NULL","NULL","U","S","S","N","N"
+"OPE","Operatore","NULL","NULL","NULL","NULL","NULL","U","S","S","N","N"
