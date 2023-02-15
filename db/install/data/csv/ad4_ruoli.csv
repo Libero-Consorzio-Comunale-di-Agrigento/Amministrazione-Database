@@ -1,7 +1,0 @@
-RUOLO,DESCRIZIONE,GRUPPO_LAVORO,GRUPPO_SO,PROGETTO
-AMM,Amministratore del Sistema,N,N,
-def,Predefinito,S,N,
-*,*,N,N,
-GUEST,Guest,N,N,
-AD4AMM,Amministratore AD4 - Amm. Database,S,S,AD4
-OPE,Operatore,S,S,

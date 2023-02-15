@@ -1,6 +1,0 @@
-UTENTE,NOMINATIVO,TIPO_UTENTE
-ric_abil,Richieste di Abilitazione,G
-GRPLDAP,Gruppo Utenti LDAP,G
-GUESTS,Gruppo Guest,G
-ADMINS,Gruppo Amministratori,G
-GUEST,GUEST,U

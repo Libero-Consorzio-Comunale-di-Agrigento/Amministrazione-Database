@@ -1,5 +1,0 @@
-"ID_DIRITTO","ID_AREA","GRUPPO","ACCESSO","ID_TIPOLOGIA"
-"1","1","NULL","C","NULL"
-"2","2","GUESTS","R","NULL"
-"3","1","ADMINS","U","NULL"
-"4","2","ADMINS","U","NULL"
