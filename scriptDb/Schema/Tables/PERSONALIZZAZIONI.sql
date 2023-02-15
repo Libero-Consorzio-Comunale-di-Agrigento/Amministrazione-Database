@@ -1,0 +1,19 @@
+CREATE TABLE PERSONALIZZAZIONI
+(
+  MODULO             VARCHAR2(10 BYTE)          NOT NULL,
+  ENTE               VARCHAR2(4 BYTE)           NOT NULL,
+  WINDOW             VARCHAR2(60 BYTE)          NOT NULL,
+  PERSONALIZZAZIONE  VARCHAR2(60 BYTE)          NOT NULL
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            MAXSIZE          UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+

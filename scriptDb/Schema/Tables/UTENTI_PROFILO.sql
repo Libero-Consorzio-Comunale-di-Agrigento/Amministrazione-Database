@@ -1,0 +1,21 @@
+CREATE TABLE UTENTI_PROFILO
+(
+  AD4_UTENTE               VARCHAR2(8 BYTE),
+  AMMINISTRAZIONE          VARCHAR2(16 BYTE),
+  AOO                      VARCHAR2(16 BYTE),
+  RUOLO                    VARCHAR2(8 BYTE),
+  GRUPPO                   VARCHAR2(8 BYTE),
+  ASSEGNAZIONE_PREVALENTE  NUMBER(2)
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            MAXSIZE          UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+

@@ -1,0 +1,22 @@
+CREATE TABLE ALLEGATI
+(
+  ID_ALLEGATO  NUMBER                           NOT NULL,
+  NOME         VARCHAR2(2000 BYTE),
+  NOTE         VARCHAR2(2000 BYTE),
+  ALLEGATO     BLOB
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            MAXSIZE          UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON TABLE ALLEGATI IS 'ALLE - Tabella degli allegati';
+
+
+

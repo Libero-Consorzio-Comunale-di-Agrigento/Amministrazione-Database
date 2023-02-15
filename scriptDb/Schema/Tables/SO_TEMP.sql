@@ -1,0 +1,12 @@
+CREATE GLOBAL TEMPORARY TABLE SO_TEMP
+(
+  FIGLIO     VARCHAR2(8 BYTE)                   NOT NULL,
+  PADRE      VARCHAR2(8 BYTE),
+  STRUTTURA  VARCHAR2(4000 BYTE)                NOT NULL
+)
+ON COMMIT DELETE ROWS;
+
+COMMENT ON TABLE SO_TEMP IS 'SOTE - Tabella temporanea per memorizzazione struttura AD4';
+
+
+

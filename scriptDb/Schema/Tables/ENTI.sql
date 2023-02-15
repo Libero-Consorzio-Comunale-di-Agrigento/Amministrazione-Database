@@ -1,0 +1,30 @@
+CREATE TABLE ENTI
+(
+  ENTE             VARCHAR2(4 BYTE)             NOT NULL,
+  DESCRIZIONE      VARCHAR2(80 BYTE)            NOT NULL,
+  DESCRIZIONE_AL1  VARCHAR2(80 BYTE),
+  DESCRIZIONE_AL2  VARCHAR2(80 BYTE),
+  BITMAP           VARCHAR2(80 BYTE),
+  NOTE             VARCHAR2(2000 BYTE),
+  DISEGNO          VARCHAR2(80 BYTE),
+  SOGGETTO         NUMBER(8)
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MAXSIZE          UNLIMITED
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON COLUMN ENTI.DESCRIZIONE IS 'Denominazione Ente <NLS>';
+
+
+

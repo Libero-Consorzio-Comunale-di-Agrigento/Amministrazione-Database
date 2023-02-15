@@ -1,0 +1,30 @@
+CREATE TABLE CREDENZIALI
+(
+  ID_CREDENZIALE        NUMBER                  NOT NULL,
+  TIPO_CREDENZIALE      VARCHAR2(8 BYTE)        NOT NULL,
+  CHIAVE_CREDENZIALE    VARCHAR2(1000 BYTE)     NOT NULL,
+  EMITTENTE             VARCHAR2(1000 BYTE),
+  STATO                 VARCHAR2(1 BYTE)        DEFAULT 'U'                   NOT NULL,
+  UTENTE_AGGIORNAMENTO  VARCHAR2(8 BYTE),
+  DATA_AGGIORNAMENTO    DATE,
+  CREDENZIALE           BLOB
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MAXSIZE          UNLIMITED
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON TABLE CREDENZIALI IS 'CRED - Tabella delle credenziali';
+
+
+

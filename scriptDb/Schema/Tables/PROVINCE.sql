@@ -1,0 +1,42 @@
+CREATE TABLE PROVINCE
+(
+  PROVINCIA             NUMBER(3)               NOT NULL,
+  DENOMINAZIONE         VARCHAR2(40 BYTE),
+  DENOMINAZIONE_AL1     VARCHAR2(40 BYTE),
+  DENOMINAZIONE_AL2     VARCHAR2(40 BYTE),
+  REGIONE               NUMBER(3)               NOT NULL,
+  SIGLA                 VARCHAR2(2 BYTE)        NOT NULL,
+  UTENTE_AGGIORNAMENTO  VARCHAR2(8 BYTE),
+  DATA_AGGIORNAMENTO    DATE
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MAXSIZE          UNLIMITED
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON TABLE PROVINCE IS 'PROV - Tabella delle province italiane';
+
+COMMENT ON COLUMN PROVINCE.PROVINCIA IS 'Codice della provincia';
+
+COMMENT ON COLUMN PROVINCE.DENOMINAZIONE IS 'Dominazione della provincia';
+
+COMMENT ON COLUMN PROVINCE.DENOMINAZIONE_AL1 IS 'Dominazione della provincia';
+
+COMMENT ON COLUMN PROVINCE.DENOMINAZIONE_AL2 IS 'Dominazione della provincia';
+
+COMMENT ON COLUMN PROVINCE.REGIONE IS 'Codice regione';
+
+COMMENT ON COLUMN PROVINCE.SIGLA IS 'Sigla automobilistica';
+
+
+

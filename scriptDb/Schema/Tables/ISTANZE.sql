@@ -1,0 +1,40 @@
+CREATE TABLE ISTANZE
+(
+  ISTANZA                       VARCHAR2(10 BYTE) NOT NULL,
+  PROGETTO                      VARCHAR2(8 BYTE) NOT NULL,
+  ENTE                          VARCHAR2(4 BYTE) NOT NULL,
+  DESCRIZIONE                   VARCHAR2(40 BYTE) NOT NULL,
+  USER_ORACLE                   VARCHAR2(50 BYTE) NOT NULL,
+  PASSWORD_ORACLE               VARCHAR2(50 BYTE) NOT NULL,
+  DISLOCAZIONE                  VARCHAR2(80 BYTE) NOT NULL,
+  DISLOCAZIONE_TEMPORANEA       VARCHAR2(80 BYTE),
+  INSTALLAZIONE                 VARCHAR2(2000 BYTE),
+  VERSIONE                      VARCHAR2(30 BYTE),
+  DISLOCAZIONE_DIMENSIONAMENTI  VARCHAR2(20 BYTE),
+  NOTE                          VARCHAR2(2000 BYTE),
+  LINGUA                        VARCHAR2(1 BYTE) DEFAULT 'I' NOT NULL,
+  LINK_ORACLE                   VARCHAR2(2000 BYTE),
+  DATABASE_LINK                 VARCHAR2(2000 BYTE),
+  SERVIZIO                      VARCHAR2(100 BYTE),
+  DATABASE_DRIVER               VARCHAR2(2000 BYTE),
+  ISTANZA_AMMINISTRATORE        VARCHAR2(10 BYTE)
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MAXSIZE          UNLIMITED
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON COLUMN ISTANZE.DESCRIZIONE IS 'Descrizione ISTANZA <NLS>';
+
+
+

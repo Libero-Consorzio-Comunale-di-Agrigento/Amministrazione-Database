@@ -1,0 +1,30 @@
+CREATE TABLE SI4_USER_SOURCE
+(
+  NAME      VARCHAR2(100 BYTE)                  NOT NULL,
+  TYPE      VARCHAR2(30 BYTE)                   NOT NULL,
+  TEXT      CLOB,
+  FILENAME  VARCHAR2(200 BYTE)
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            MAXSIZE          UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON TABLE SI4_USER_SOURCE IS 'SUSO - Codice sorgente degli oggetti di db dello user.';
+
+COMMENT ON COLUMN SI4_USER_SOURCE.NAME IS 'Name of the object.';
+
+COMMENT ON COLUMN SI4_USER_SOURCE.TYPE IS 'Type of the object.';
+
+COMMENT ON COLUMN SI4_USER_SOURCE.TEXT IS 'Source text.';
+
+COMMENT ON COLUMN SI4_USER_SOURCE.FILENAME IS 'Source filename.';
+
+
+

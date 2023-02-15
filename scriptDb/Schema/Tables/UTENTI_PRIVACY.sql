@@ -1,0 +1,28 @@
+CREATE TABLE UTENTI_PRIVACY
+(
+  ID                          NUMBER            NOT NULL,
+  UTENTE                      VARCHAR2(8 BYTE),
+  SOGGETTO                    NUMBER,
+  ENTE                        VARCHAR2(4 BYTE),
+  MODULO                      VARCHAR2(10 BYTE),
+  DATA_PRIMA_ACCETTAZIONE     DATE,
+  CLIENT_PRIMA_ACCETTAZIONE   VARCHAR2(2000 BYTE),
+  DATA_ULTIMA_ACCETTAZIONE    DATE,
+  CLIENT_ULTIMA_ACCETTAZIONE  VARCHAR2(2000 BYTE),
+  NOTE                        VARCHAR2(2000 BYTE)
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            MAXSIZE          UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON TABLE UTENTI_PRIVACY IS 'UTPY - Utenti Privacy';
+
+
+

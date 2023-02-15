@@ -1,0 +1,12 @@
+CREATE GLOBAL TEMPORARY TABLE SO4_SO_TEMP
+(
+  FIGLIO     VARCHAR2(8 BYTE)                   NOT NULL,
+  PADRE      VARCHAR2(8 BYTE),
+  STRUTTURA  VARCHAR2(4000 BYTE)                NOT NULL
+)
+ON COMMIT DELETE ROWS;
+
+COMMENT ON TABLE SO4_SO_TEMP IS 'SSTE - Tabella temporanea per memorizzazione struttura SO4';
+
+
+

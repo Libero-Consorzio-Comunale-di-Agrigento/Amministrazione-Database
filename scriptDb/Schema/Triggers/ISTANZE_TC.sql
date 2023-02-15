@@ -1,0 +1,10 @@
+CREATE OR REPLACE TRIGGER ISTANZE_TC
+AFTER DELETE OR INSERT OR UPDATE
+ON ISTANZE
+BEGIN
+   -- Exec PostEvent Check REFERENTIAL Integrity
+   Integritypackage.Exec_PostEvent;
+END;
+/
+
+

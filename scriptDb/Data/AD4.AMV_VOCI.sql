@@ -1,0 +1,1321 @@
+﻿Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ABIFA', 'AD4', NULL, NULL, NULL, 
+    'F. A. Abilitazione', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ABIL', 'AD4', NULL, NULL, NULL, 
+    'Abilitazione', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ACELI', 'AD4', NULL, NULL, NULL, 
+    'Elimina accessi archiviati', NULL, NULL, 'F', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4AMBI', 'AD4', NULL, NULL, NULL, 
+    'Ambiente', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4Ambiente.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ARC', 'AD4', NULL, NULL, NULL, 
+    'Archivio', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ARCFA', 'AD4', NULL, NULL, NULL, 
+    'F. A. Archivio', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4CAAC', 'AD4', NULL, NULL, NULL, 
+    'Caratteristiche Accesso', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4CaratteristicheAccesso.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4CPPR', 'AD4', NULL, NULL, NULL, 
+    'Copia Profilo da altro utente', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4CopiaProfilo.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4DIAC', 'AD4', NULL, NULL, NULL, 
+    'Diritti di Accesso', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4UtenDiacElenco.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4DIACA', 'AD4', NULL, NULL, NULL, 
+    'Diritto Accesso', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4DirittoAccesso.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ENTIA', 'AD4', NULL, NULL, NULL, 
+    'Ente', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Ente.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ENTIE', 'AD4', NULL, NULL, NULL, 
+    'Enti', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4EntiRicerca.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4EVENA', 'AD4', NULL, NULL, NULL, 
+    'Evento', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Evento.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4EVENE', 'AD4', NULL, NULL, NULL, 
+    'Eventi', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4EventiRicerca.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4FUN', 'AD4', NULL, NULL, NULL, 
+    'Funzionalita'' aggiuntive AD4', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GENPW', 'AD4', NULL, NULL, NULL, 
+    'Generazione Password casuale', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4GeneraPwd.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUGU', 'AD4', NULL, NULL, NULL, 
+    'Guida Gruppi', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUPG', 'AD4', NULL, NULL, NULL, 
+    'Guida Gruppo', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUPM', 'AD4', NULL, NULL, NULL, 
+    'Modifica Gruppo', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4GruppoMod.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GUIDE', 'AD4', NULL, NULL, NULL, 
+    'Guide AD4', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ISTAA', 'AD4', NULL, NULL, NULL, 
+    'Istanza', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Istanza.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4LDAFA', 'AD4', NULL, NULL, NULL, 
+    'F. A. LDAP', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4LDAP', 'AD4', NULL, NULL, NULL, 
+    'Configurazione LDAP', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4LDAPC', 'AD4', NULL, NULL, NULL, 
+    'Parametri', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4LdapConfig.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4LDAPG', 'AD4', NULL, NULL, NULL, 
+    'Collegamento Gruppi', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4LdapGruppi.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4LDAPM', 'AD4', NULL, NULL, NULL, 
+    'Collegamento Gruppo Ad4 - LDAP', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4LdapGruppo.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4MODUA', 'AD4', NULL, NULL, NULL, 
+    'Modulo', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Modulo.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4OMOA', 'AD4', NULL, NULL, NULL, 
+    'Gestione Omonima Utenti', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Omonimia.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4PARIA', 'AD4', NULL, NULL, NULL, 
+    'Modifica Parametri Aggiuntivi', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4ModParametri.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4PROG', 'AD4', NULL, NULL, NULL, 
+    'Progetti', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4ProgettiRicerca.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4PROGG', 'AD4', NULL, NULL, NULL, 
+    'Guida Progetto', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4RIABA', 'AD4', NULL, NULL, NULL, 
+    'Richiesta Abilitazione', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Richiesta.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4RICHN', 'AD4', NULL, NULL, NULL, 
+    'Modifica Notifica Richiesta', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4RichiestaNotifica.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4RICHP', 'AD4', NULL, NULL, NULL, 
+    'Parametri Richiesta', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4RichiestaParametri.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4RUOLA', 'AD4', NULL, NULL, NULL, 
+    'Ruolo', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Ruolo.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4RUOLE', 'AD4', NULL, NULL, NULL, 
+    'Ruoli', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4RuoliRicerca.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4SERAF', 'AD4', NULL, NULL, NULL, 
+    'F. A. Servizi', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4SERME', 'AD4', NULL, NULL, NULL, 
+    'Servizi', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4SERVA', 'AD4', NULL, NULL, NULL, 
+    'Servizio', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Servizio.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4SOGG', 'AD4', NULL, NULL, NULL, 
+    'Soggetti', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4SoggRicerca.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4SOGGA', 'AD4', NULL, NULL, NULL, 
+    'Soggetto', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Soggetto.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4STRIN', 'AD4', NULL, NULL, NULL, 
+    'Stringa', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Stringa.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4UNPR', 'AD4', NULL, NULL, NULL, 
+    'Unifica Profilo con altro utente', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4UnificaProfilo.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4USJOA', 'AD4', NULL, NULL, NULL, 
+    'Elaborazione differita', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4UserJob.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4USJOE', 'AD4', NULL, NULL, NULL, 
+    'Elaborazioni differite', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4UsjoElenco.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4UTENE', 'AD4', NULL, NULL, NULL, 
+    'Utenti', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4UtentiRicerca.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4UTENG', 'AD4', NULL, NULL, NULL, 
+    'Guida Utente', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('ad4diziB', 'AD4', NULL, NULL, NULL, 
+    'Dizionari Banche e Sportelli', NULL, NULL, 'F', 'C', 
+    NULL, 'restrict/Ad4DizionariBanche.do?MVPG=Ad4DizionariBancheElenco', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('ad4diziC', 'AD4', NULL, NULL, NULL, 
+    'Dizionari Comuni', NULL, NULL, 'F', 'C', 
+    NULL, 'restrict/Ad4DizionariComuni.do?MVPG=Ad4DizionariRegioniElenco', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('adm', 'AD4', NULL, NULL, NULL, 
+    'Amministrazione', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    'title=Funzioni di Amministrazione del Portale');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admgrupu', 'AD4', NULL, NULL, NULL, 
+    'Utenti di un gruppo', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmGruppoUtenti.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admguida', 'AD4', NULL, NULL, NULL, 
+    'Modifica guide', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmGuide.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admguide', 'AD4', NULL, NULL, NULL, 
+    'Guide Amministratore', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admmenu', 'AD4', NULL, NULL, NULL, 
+    'Funzioni', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmMenu.do', NULL, NULL, NULL, 
+    'title=Manutenzione Menu Funzioni del Portale');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admmenug', 'AD4', NULL, NULL, NULL, 
+    'Funzionalita aggiuntive menu', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admpref', 'AD4', NULL, NULL, NULL, 
+    'Preferenze', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmPreferenzeImpostazione.do', NULL, NULL, NULL, 
+    'title=Impostazioni del Portale');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admricha', 'AD4', NULL, NULL, NULL, 
+    'Aggiornamento richiesta', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRichiesta.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admriche', 'AD4', NULL, NULL, NULL, 
+    'Richieste', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmRichieste.do', NULL, NULL, NULL, 
+    'title=Amministrazione richieste di abilitazione ai servizi');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrichn', 'AD4', NULL, NULL, NULL, 
+    'Aggiornamento notifica richiesta', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRichiestaNotifica.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrichp', 'AD4', NULL, NULL, NULL, 
+    'Revisione parametri richiesta', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRichiestaParametri.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admservg', 'AD4', NULL, NULL, NULL, 
+    'Funzionalita aggiuntive servizi', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admuteni', 'AD4', NULL, NULL, NULL, 
+    'Dati di un utente', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmUtenteDatiInfo.do', NULL, NULL, NULL, 
+    'title=Informazioni sull''account dell''utente');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvdenie', 'AD4', NULL, NULL, NULL, 
+    'Denied', NULL, NULL, 'F', 'A', 
+    NULL, 'common/Denied.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvdocur', 'AD4', NULL, NULL, NULL, 
+    'Documenti', NULL, NULL, 'F', 'C', 
+    NULL, 'common/AmvDocumentiRicerca.do', NULL, NULL, NULL, 
+    'title=Area contenuti del portale');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvguide', 'AD4', NULL, NULL, NULL, 
+    'Funzionalita aggiuntive', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvlogin', 'AD4', NULL, NULL, NULL, 
+    'Login al Portale', NULL, NULL, 'F', 'A', 
+    NULL, 'common/Login.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvloslo', 'AD4', NULL, NULL, NULL, 
+    'Dimenticata username e/o password', NULL, NULL, 'F', 'A', 
+    NULL, 'common/AmvLostLogin.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvmodpw', 'AD4', NULL, NULL, NULL, 
+    'Modifica Password', NULL, NULL, 'F', 'A', 
+    NULL, 'common/AmvModificaPassword.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvprefn', 'AD4', NULL, NULL, NULL, 
+    'Notifiche', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvPreferenzeNotifiche.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvprofg', 'AD4', NULL, NULL, NULL, 
+    'Guida del Profilo', NULL, NULL, 'F', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvregi', 'AD4', NULL, NULL, NULL, 
+    'Registrazione', NULL, NULL, 'F', 'A', 
+    NULL, 'common/AmvRegistrazioneInizio.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvricel', 'AD4', NULL, NULL, NULL, 
+    'Tutte le richieste', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvRichiesteElenco.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvricfr', 'AD4', NULL, NULL, NULL, 
+    'Le mie richieste', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvRichiesteAutore.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvsez', 'AD4', NULL, NULL, NULL, 
+    'Sezione', NULL, NULL, 'F', 'A', 
+    NULL, 'common/AmvSezione.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvsvlmo', 'AD4', NULL, NULL, NULL, 
+    'Servlet Modulistica', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/ServletModulistica.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvutepw', 'AD4', NULL, NULL, NULL, 
+    'Password utente', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvUtentePassword.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admc', 'AD4', NULL, NULL, NULL, 
+    'Contenuti', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admcont', 'AD4', NULL, NULL, NULL, 
+    'Documenti', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmContenuti.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admclass', 'AD4', NULL, NULL, NULL, 
+    'Classificazioni', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admargo', 'AD4', NULL, NULL, NULL, 
+    'Argomenti', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmArgomenti.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admcate', 'AD4', NULL, NULL, NULL, 
+    'Categorie', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmCategorie.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admdiri', 'AD4', NULL, NULL, NULL, 
+    'Diritti Accesso', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmDiritti.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev', 'AD4', NULL, NULL, NULL, 
+    'Documento', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmDocumento.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrile', 'AD4', NULL, NULL, NULL, 
+    'Rilevanze', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmRilevanze.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admtipo', 'AD4', NULL, NULL, NULL, 
+    'Tipologie', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmTipologie.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admsezio', 'AD4', NULL, NULL, NULL, 
+    'Sezioni', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmSezioni.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev1', 'AD4', NULL, NULL, NULL, 
+    'Completa Redazione', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisioneRedazione.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev2', 'AD4', NULL, NULL, NULL, 
+    'Completa Verifica', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisioneVerifica.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev3', 'AD4', NULL, NULL, NULL, 
+    'Approva Revisione', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisioneApprova.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev4', 'AD4', NULL, NULL, NULL, 
+    'Pubblica Revisione', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisionePubblica.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev5', 'AD4', NULL, NULL, NULL, 
+    'Sottoponi a nuova redazione', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisioneRespingi.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev6', 'AD4', NULL, NULL, NULL, 
+    'Storico Revisioni', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisioniStorico.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrevel', 'AD4', NULL, NULL, NULL, 
+    'Revisioni in corso', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmRevisioniElenco.do', NULL, NULL, NULL, 
+    'title=Revisione dei contenuti del portale');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrevm', 'AD4', NULL, NULL, NULL, 
+    'Revisioni (menu non visibile)', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admrev0', 'AD4', NULL, NULL, NULL, 
+    'Nuova Revisione', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmRevisioneNuova.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvacced', 'AD4', NULL, NULL, NULL, 
+    'Accesso aree documentali', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvAccessiAreeDoc.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvuted', 'AD4', NULL, NULL, NULL, 
+    'Dati dell''utente', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvUtenteDatiInfo.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvserv', 'AD4', NULL, NULL, NULL, 
+    'Servizi', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvServizi.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvuter', 'AD4', NULL, NULL, NULL, 
+    'Recapito dell''utente', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvUtenteRecapitoInfo.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvacce', 'AD4', NULL, NULL, NULL, 
+    'Accessi', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvAccessi.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvprefs', 'AD4', NULL, NULL, NULL, 
+    'Preferenze Stile', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvPreferenzeStile.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvnoti', 'AD4', NULL, NULL, NULL, 
+    'Preferenze Notifiche', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvNotifiche.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvacceu', 'AD4', NULL, NULL, NULL, 
+    'Ultimi Accessi', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvUltimiAccessi.do', NULL, 'amvprofg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('amvprof', 'AD4', NULL, NULL, NULL, 
+    'Profilo Utente', NULL, NULL, 'F', 'A', 
+    NULL, 'restrict/AmvProfilo.do', NULL, 'amvprofg', NULL, 
+    'title=Informazioni di Account dell''utente');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4DIACE', 'AD4', NULL, NULL, NULL, 
+    'Accessi Utente', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4DiacElenco.do', NULL, 'AD4UTENG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUTE', 'AD4', NULL, NULL, NULL, 
+    'Appartenenza Utente', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4GrupElenco.do', NULL, 'AD4UTENG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4UTENA', 'AD4', NULL, NULL, NULL, 
+    'Utente', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Utente.do', NULL, 'AD4UTENG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4RIABE', 'AD4', NULL, NULL, NULL, 
+    'Richieste di Abilitazione Utente', NULL, NULL, 'F', 'A', 
+    NULL, '../../ad4web/amvadm/AdmRichieste.do', NULL, 'AD4UTENG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4SERV', 'AD4', NULL, NULL, NULL, 
+    'Servizi', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4ServElenco.do', NULL, 'AD4PROGG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4PROGA', 'AD4', NULL, NULL, NULL, 
+    'Progetto', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Progetto.do', NULL, 'AD4PROGG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4MODU', 'AD4', NULL, NULL, NULL, 
+    'Moduli', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4ModuElenco.do', NULL, 'AD4PROGG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ISTA', 'AD4', NULL, NULL, NULL, 
+    'Istanze', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4IstaElenco.do', NULL, 'AD4PROGG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ACCEG', 'AD4', NULL, NULL, NULL, 
+    'Guida Accessi', NULL, NULL, 'N', 'A', 
+    NULL, NULL, NULL, 'AD4GUIDE', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4DIACG', 'AD4', NULL, NULL, NULL, 
+    'Accessi del Gruppo', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4DiacElenco.do', NULL, 'AD4GRUPG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUPA', 'AD4', NULL, NULL, NULL, 
+    'Gruppo', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4Gruppo.do', NULL, 'AD4GRUPG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUTG', 'AD4', NULL, NULL, NULL, 
+    'Appartenenza Gruppo', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4GrupElenco.do', NULL, 'AD4GRUPG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUPE', 'AD4', NULL, NULL, NULL, 
+    'Gruppi', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4GruppiRicerca.do', NULL, 'AD4GRUGU', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4GRUPT', 'AD4', NULL, NULL, NULL, 
+    'Struttura Gruppi', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4GruppiTree.do', NULL, 'AD4GRUGU', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ACCEE', 'AD4', NULL, NULL, NULL, 
+    'Ricerca Accessi', NULL, NULL, 'F', 'A', 
+    NULL, 'ad4web/AD4AccessiRicerca.do', NULL, 'AD4ACCEG', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4ACCET', 'AD4', NULL, NULL, NULL, 
+    'Accessi', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4AccessiTree.do', NULL, 'AD4ACCEG', NULL, 
+    'ad4web/AD4AccessiRicerca.do');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admuteng', 'AD4', NULL, NULL, NULL, 
+    'Gruppi di un utente', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmUtenteGruppi.do', NULL, 'admuteni', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admutena', 'AD4', NULL, NULL, NULL, 
+    'Accessi utente', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmUtenteUltimiAccessi.do', NULL, 'admuteni', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admuteca', 'AD4', NULL, NULL, NULL, 
+    'Profilo accesso utente', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmUtenteAccessi.do', NULL, 'admuteni', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admutenr', 'AD4', NULL, NULL, NULL, 
+    'Richieste di un utente', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmUtenteRichiesteElenco.do', NULL, 'admuteni', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admuten', 'AD4', NULL, NULL, NULL, 
+    'Utenti', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmUtentiElenco.do', NULL, 'admservg', NULL, 
+    'title=Gestione degli utenti che hanno accesso ai servizi');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admgrup', 'AD4', NULL, NULL, NULL, 
+    'Gruppi', NULL, NULL, 'F', 'C', 
+    NULL, 'amvadm/AdmGruppiElenco.do', NULL, 'admservg', NULL, 
+    'title=Gestione Gruppi di Utenti che hanno accesso ai servizi');
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admacce', 'AD4', NULL, NULL, NULL, 
+    'Accessi', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmAccessi.do', NULL, 'admservg', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('admaree', 'AD4', NULL, NULL, NULL, 
+    'Aree di accesso', NULL, NULL, 'F', 'A', 
+    NULL, 'amvadm/AdmAree.do', NULL, 'admdiri', NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4STUTE', 'AD4', NULL, NULL, NULL, 
+    'Storico Variazioni Utenti', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4StampaVariazioniUtenti.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4STAM', 'AD4', NULL, NULL, NULL, 
+    'Stampe', NULL, NULL, 'N', 'M', 
+    NULL, NULL, NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4STDIA', 'AD4', NULL, NULL, NULL, 
+    'Storico Variazioni Diritti Accesso', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4StampaVariazioniDiac.do', NULL, NULL, NULL, 
+    NULL);
+Insert into AMV_VOCI
+   (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2, 
+    TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, 
+    MODULO, STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, 
+    NOTE)
+ Values
+   ('AD4STUT', 'AD4', NULL, NULL, NULL, 
+    'Utenti del Sistema', NULL, NULL, 'F', 'C', 
+    NULL, 'ad4web/AD4StampaUtenti.do', NULL, NULL, NULL, 
+    NULL);
+COMMIT;

@@ -1,0 +1,73 @@
+﻿Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('AD4', 'Amministratore DataBase', NULL, NULL, 'AD4', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('MODULDAP', 'Modulo generico per accesso LDAP', NULL, NULL, 'PROGLDAP', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('AD4WEB', 'Modulo AD4WEB', NULL, NULL, 'AD4', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('SI4_AMM', 'Sistema Informativo V4 - Amministratore', NULL, NULL, 'SI4', 
+    NULL, 'S');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('SI4_UTE', 'Sistema Informativo V4 - Applicativo', NULL, NULL, 'SI4', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('MAMMLDAP', 'Modulo Amministratore per accesso LDAP', NULL, NULL, 'PROGLDAP', 
+    NULL, 'S');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('SI4CM', 'Archivio Comuni e Stati Esteri', NULL, NULL, 'AD4CM', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('WEBUTILS', 'Applicazioni di utilitÃ  generali', NULL, NULL, 'WEBUTILS', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('SI4AS', 'Archivio Aziende Sanitarie Locali', NULL, NULL, 'AD4ASL', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('AS4', 'Anagrafe Generale Soggetti', NULL, NULL, 'AS4', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('SI4SO', 'Portale Struttura Organizzativa', NULL, NULL, 'SI4SO', 
+    NULL, 'N');
+Insert into MODULI
+   (MODULO, DESCRIZIONE, DESCRIZIONE_AL1, DESCRIZIONE_AL2, PROGETTO, 
+    NOTE, AMMINISTRATORE)
+ Values
+   ('SI4BS', 'Archivio Banche e Sportelli', NULL, NULL, 'AD4BS', 
+    NULL, 'N');
+COMMIT;

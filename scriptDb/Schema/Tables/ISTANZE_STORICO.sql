@@ -1,0 +1,52 @@
+CREATE TABLE ISTANZE_STORICO
+(
+  ID_EVENTO                     NUMBER          NOT NULL,
+  ISTANZA                       VARCHAR2(10 BYTE) NOT NULL,
+  PROGETTO                      VARCHAR2(8 BYTE) NOT NULL,
+  ENTE                          VARCHAR2(4 BYTE) NOT NULL,
+  DESCRIZIONE                   VARCHAR2(40 BYTE) NOT NULL,
+  USER_ORACLE                   VARCHAR2(50 BYTE) NOT NULL,
+  PASSWORD_ORACLE               VARCHAR2(50 BYTE) NOT NULL,
+  DISLOCAZIONE                  VARCHAR2(80 BYTE) NOT NULL,
+  DISLOCAZIONE_TEMPORANEA       VARCHAR2(80 BYTE),
+  INSTALLAZIONE                 VARCHAR2(2000 BYTE),
+  VERSIONE                      VARCHAR2(30 BYTE),
+  DISLOCAZIONE_DIMENSIONAMENTI  VARCHAR2(20 BYTE),
+  NOTE                          VARCHAR2(2000 BYTE),
+  LINGUA                        VARCHAR2(1 BYTE) NOT NULL,
+  LINK_ORACLE                   VARCHAR2(2000 BYTE),
+  DATABASE_LINK                 VARCHAR2(2000 BYTE),
+  SERVIZIO                      VARCHAR2(100 BYTE),
+  DATABASE_DRIVER               VARCHAR2(2000 BYTE),
+  ISTANZA_AMMINISTRATORE        VARCHAR2(10 BYTE),
+  DATA                          DATE            NOT NULL,
+  OPERAZIONE                    VARCHAR2(2 BYTE),
+  BI_RIFERIMENTO                NUMBER,
+  UTENTE_AGGIORNAMENTO          VARCHAR2(8 BYTE),
+  USER_ORACLE_MODIFICA          VARCHAR2(30 BYTE),
+  INFO                          VARCHAR2(2000 BYTE),
+  PROGRAMMA                     VARCHAR2(50 BYTE)
+)
+TABLESPACE AD4
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MAXSIZE          UNLIMITED
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+COMMENT ON TABLE ISTANZE_STORICO IS 'ISST - ISTANZE STORICO';
+
+COMMENT ON COLUMN ISTANZE_STORICO.OPERAZIONE IS 'I=Insert, D=Delete, BI=Before Image, AI=After Image';
+
+COMMENT ON COLUMN ISTANZE_STORICO.BI_RIFERIMENTO IS 'id_evento di Before Image di riferimento';
+
+
+

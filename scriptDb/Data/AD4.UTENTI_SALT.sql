@@ -1,0 +1,5 @@
+﻿Insert into UTENTI_SALT
+   (UTENTE, SALT, ALGORITMO)
+ Values
+   ('SO4', NULL, 'STANDARD');
+COMMIT;

@@ -1,0 +1,55 @@
+﻿Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('AD4', 'Progetto AD4', 99, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('PROGLDAP', 'Progetto generico per accesso LDAP', NULL, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('AD4CM', 'Aggiornamento comuni', NULL, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('AD4BS', 'Aggiornamento BancheSportelli', NULL, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('SI4', 'Sistema Informativo V4', NULL, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('AD4ASL', 'Aggiornamento ASL', NULL, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('WEBUTILS', 'Applicazioni di utilitÃ  generale', NULL, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('AS4', 'Progetto AS4', 98, NULL, NULL, 
+    NULL);
+Insert into PROGETTI
+   (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1, 
+    DESCRIZIONE_AL2)
+ Values
+   ('SI4SO', 'SI4SO - Struttura organizzativa', NULL, NULL, NULL, 
+    NULL);
+COMMIT;
