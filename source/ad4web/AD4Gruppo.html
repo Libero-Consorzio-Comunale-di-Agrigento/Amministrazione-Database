@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Gruppo</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript">
+ function hide() {
+        document.getElementById('tableTOOLBOX').style.display='none';
+        document.getElementById('tableUTENTI_GRUPPO').style.display='none';
+}
+</script>
+<script language="JavaScript">
+function initRows() {
+ 	if (document.forms["AD4_UTENTI"].SE_NUOVO.value == 'Y'){	
+		hide();
+	}
+}
+</script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_UTENTI_Button_Delete_OnClick @26-47E62FEC
+function page_AD4_UTENTI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_UTENTI_Button_Delete_OnClick
+
+//Confirmation Message @27-228E5893
+    return confirm('Eliminazione Gruppo '+document.forms["AD4_UTENTI"].NOMINATIVO.value +' ('+document.forms["AD4_UTENTI"].UTENTE.value +'). Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_UTENTI_Button_Delete_OnClick @26-BC33A33A
+    return result;
+}
+//End Close page_AD4_UTENTI_Button_Delete_OnClick
+
+//page_AD4_UTENTI_Button_Cancel_OnClick @28-20CC8156
+function page_AD4_UTENTI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_UTENTI_Button_Cancel_OnClick
+
+//bind_events @1-4EAB1E02
+function bind_events() {
+    if (document.forms["AD4_UTENTI"]) check_and_bind('document.forms["AD4_UTENTI"].Button_Delete','onclick',page_AD4_UTENTI_Button_Delete_OnClick);
+    if (document.forms["AD4_UTENTI"]) check_and_bind('document.forms["AD4_UTENTI"].Button_Cancel','onclick',page_AD4_UTENTI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body onload="initRows()" class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td valign="top">
+            <!-- BEGIN Record AD4_UTENTI -->
+            <form name="{HTMLFormName}" action="{Action}" method="post" id="formGRUPPI">
+              <font class="AFCFormHeaderFont"></font> 
+              <table cellspacing="0" cellpadding="3" width="100%" class="AFCToolBoxTable">
+                <tr>
+                  <td class="AFCFormHeaderFont"></td> 
+                  <td align="right" class="AFCToolboxTD" width="10%" nowrap>&nbsp;<a class="AFCToolbox" title="Nuovo Gruppo" href="{NUOVO}"><img class="" title="Nuovo Gruppo" alt="Nuovo" src="../common/images/AMV/nuovo.gif" border="0">Nuovo</a></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="2" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Gruppo *</td> 
+                  <td class="AFCDataTD">{UTENTE}&nbsp;&nbsp;<input type="hidden" name="{UTENTE_ORIG_Name}" value="{UTENTE_ORIG}"><input type="hidden" value="{SE_NUOVO}" name="{SE_NUOVO_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Descrizione
+                    *</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" maxlength="40" size="40" value="{NOMINATIVO}" name="{NOMINATIVO_Name}"><input type="hidden" value="{TIPO_UTENTE}" name="{TIPO_UTENTE_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Note&nbsp;</td> 
+                  <td class="AFCDataTD"><textarea class="AFCTextarea" name="{NOTE_Name}" cols="50">{NOTE}</textarea></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Gruppo di
+                    Lavoro</td> 
+                  <td class="AFCDataTD">{GRUPPO_LAVORO}&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="2"><a name="Progetto"></a> 
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_UTENTI -->
+            <!-- BEGIN Grid TOOLBOX -->
+            <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%" id="tableTOOLBOX">
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCDataTD">&nbsp;</td> 
+                <td class="AFCToolBoxTD" width="10%" nowrap><a class="AFCToolbox" href="{UTGR_INS_MOD_Src}">{UTGR_INS_MOD}</a>&nbsp;</td> 
+              </tr>
+              <!-- END Row -->
+              <!-- BEGIN NoRecords --><!-- END NoRecords -->
+            </table>
+ <!-- END Grid TOOLBOX -->
+            <!-- BEGIN Grid UTENTI_GRUPPO -->
+            <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%" id="tableUTENTI_GRUPPO">
+              <tr>
+                <td class="AFCColumnTD" nowrap>Assegnati</td> 
+                <td class="AFCColumnTD">Accessi ereditati </td> 
+              </tr>
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCDataTD" valign="middle">{NOMINATIVO}&nbsp;</td> 
+                <td class="AFCDataTD" valign="bottom">{CHECK_DIAC_CAAC}&nbsp;</td> 
+              </tr>
+              <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td class="AFCDataTD" colspan="2">Nessuna registrazione&nbsp;</td> 
+              </tr>
+              <!-- END NoRecords -->
+              <tr>
+                <td class="AFCFooterTD" colspan="2" align="center">{AFCNavigator}</td> 
+              </tr>
+ 
+            </table>
+ <!-- END Grid UTENTI_GRUPPO --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

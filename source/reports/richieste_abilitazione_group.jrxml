@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="richieste_abilitazione_group"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="REPORT_PATH" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CTRL" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["N"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ID_RICHIESTA" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MODULO" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["WAITEST"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ISTANZA" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["WAITEST"]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[select to_char(id_richiesta) id_richiesta
+      ,utente
+      ,modulo
+      ,istanza
+      ,to_char(data,'dd/mm/yyyy hh24:MI') data
+      ,data data_oracle
+      ,stato
+      ,tipo_notifica
+      ,notificata
+      ,to_char(sysdate,'dd/mm/yyyy hh24:MI') data_oggi
+  from ad4_richieste_abilitazione
+ where stato = 'A'
+   and (tipo_notifica = 'POSTA' or 'N'=nvl($P{CTRL},'S'))
+   and (note_notifica = 'STAMPA' or 'N'=nvl($P{CTRL},'S'))
+   and (notificata = 'N' or 'N'=NVL($P{CTRL},'S'))
+   and id_richiesta = nvl($P{ID_RICHIESTA},id_richiesta)
+   and modulo = $P{MODULO}
+   and istanza = $P{ISTANZA}
+order by data_oracle asc]]></queryString>
+
+	<field name="ID_RICHIESTA" class="java.lang.String"/>
+	<field name="UTENTE" class="java.lang.String"/>
+	<field name="MODULO" class="java.lang.String"/>
+	<field name="ISTANZA" class="java.lang.String"/>
+	<field name="DATA" class="java.lang.String"/>
+	<field name="DATA_ORACLE" class="java.sql.Timestamp"/>
+	<field name="STATO" class="java.lang.String"/>
+	<field name="TIPO_NOTIFICA" class="java.lang.String"/>
+	<field name="NOTIFICATA" class="java.lang.String"/>
+	<field name="DATA_OGGI" class="java.lang.String"/>
+
+
+		<group  name="richiesta" isStartNewPage="true" >
+			<groupExpression><![CDATA[$V{REPORT_COUNT}]]></groupExpression>
+			<groupHeader>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="133"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="4"
+						y="3"
+						width="258"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="info"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Richiesta n."+$F{ID_RICHIESTA}+" del "+$F{DATA}]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="21"
+						width="535"
+						height="99"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="dettaglio"
+						stretchType="RelativeToBandHeight"/>
+					<subreportParameter  name="UTENTE">
+						<subreportParameterExpression><![CDATA[$F{UTENTE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{REPORT_PATH}+"richiesta_utente_posta.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="27"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

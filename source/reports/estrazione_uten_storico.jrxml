@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estrazione_diac_storico" language="groovy" pageWidth="1800" pageHeight="595" orientation="Landscape" columnWidth="1800" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="1081"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.keep.first.band.1" value="pageHeader"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.band.2" value="pageFooter"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.band.3" value="lastPageFooter"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.band.4" value="title"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.cell.background" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.graphics" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type=true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows=true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns=true"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.page.margins=true"/>
+	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet=true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.column.width.ratio" value="1.10f"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+	<parameter name="COD_UTENTE_ACCESSO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DAL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select das.utente
+      , nominativo
+      , password
+      , data_password
+,RINNOVO_PASSWORD
+,PWD_DA_MODIFICARE
+,decode(TIPO_UTENTE,'U','Utente','G', 'Gruppo','O','Struttura Organizzativa','Utente') tipo_utente
+,decode(STATO,'R','Revocato','S','Sospeso','U','In uso','A','?????','In uso') stato
+,LINGUA
+,GRUPPO_LAVORO
+,IMPORTANZA
+,DATA_INSERIMENTO
+, decode(AMMINISTRATORE,'S','Utenza di amministrazione','Utenza applicativa') amministratore
+, INFO_IDENTIFICAZIONE
+,  das.note
+, to_char(das.data,'DD/MM/YYYY HH24:MI:SS') data, DECODE(das.operazione,'D','Cancellazione','I','Inserimento','BI','Aggiornamento (Before Image)','AI','Aggiornamento (After Image)') operazione
+, decode(utente.exists_utente(DAS.UTENTE_AGG),0,null, utente.get_nominativo(das.utente_agg)) utente_aggiornamento
+, das.info, das.programma
+from utenti_STORICO das
+where utente = nvl($P{COD_UTENTE_ACCESSO},utente)
+and data between nvl(to_date($P{DAL},'dd/mm/yyyy'),to_date(2222222,'j')) and nvl(to_date($P{AL},'dd/mm/yyyy'),to_date(3333333,'j'))
+order by ID_EVENTO]]>
+	</queryString>
+	<field name="UTENTE" class="java.lang.String"/>
+	<field name="NOMINATIVO" class="java.lang.String"/>
+	<field name="PASSWORD" class="java.lang.String"/>
+	<field name="DATA_PASSWORD" class="java.sql.Timestamp"/>
+	<field name="RINNOVO_PASSWORD" class="java.lang.String"/>
+	<field name="PWD_DA_MODIFICARE" class="java.lang.String"/>
+	<field name="TIPO_UTENTE" class="java.lang.String"/>
+	<field name="STATO" class="java.lang.String"/>
+	<field name="LINGUA" class="java.lang.String"/>
+	<field name="GRUPPO_LAVORO" class="java.lang.String"/>
+	<field name="IMPORTANZA" class="java.math.BigDecimal"/>
+	<field name="DATA_INSERIMENTO" class="java.sql.Timestamp"/>
+	<field name="AMMINISTRATORE" class="java.lang.String"/>
+	<field name="INFO_IDENTIFICAZIONE" class="java.lang.String"/>
+	<field name="NOTE" class="java.lang.String"/>
+	<field name="DATA" class="java.lang.String"/>
+	<field name="OPERAZIONE" class="java.lang.String"/>
+	<field name="UTENTE_AGGIORNAMENTO" class="java.lang.String"/>
+	<field name="INFO" class="java.lang.String"/>
+	<field name="PROGRAMMA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="84" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Operazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="135" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Operazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="0" width="154" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nominativo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="106" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utente Operazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1561" y="0" width="239" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Machine::Terminal::OSUser]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1410" y="0" width="151" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Programma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="102" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data pwd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="582" y="0" width="51" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rinnovo PWD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="633" y="0" width="67" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PWD da mod.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="700" y="0" width="67" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="767" y="0" width="65" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stato Utente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="869" y="0" width="52" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gr. lav.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="921" y="0" width="50" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importanza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1159" y="0" width="99" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Utenza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1258" y="0" width="152" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informazioni ident.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="832" y="0" width="37" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lingua]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="971" y="0" width="188" height="15"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Note]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="0" width="84" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="326" y="0" width="154" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMINATIVO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="220" y="0" width="106" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UTENTE_AGGIORNAMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="1561" y="0" width="239" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INFO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1410" y="0" width="151" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROGRAMMA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="0" width="135" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OPERAZIONE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="true">
+				<reportElement x="480" y="0" width="102" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATA_PASSWORD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="582" y="0" width="51" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RINNOVO_PASSWORD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="633" y="0" width="67" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PWD_DA_MODIFICARE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="700" y="0" width="67" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO_UTENTE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="767" y="0" width="65" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STATO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="869" y="0" width="52" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GRUPPO_LAVORO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="832" y="0" width="37" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LINGUA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="921" y="0" width="50" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IMPORTANZA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1159" y="0" width="99" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AMMINISTRATORE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1258" y="0" width="152" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INFO_IDENTIFICAZIONE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="971" y="0" width="188" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOTE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

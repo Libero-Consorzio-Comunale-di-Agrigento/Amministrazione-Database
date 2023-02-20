@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Collegamento Gruppo Ad4 - LDAP</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_ldap_gruppo_Button_Delete_OnClick @141-028FDC1D
+function page_ldap_gruppo_Button_Delete_OnClick()
+{
+    var result;
+//End page_ldap_gruppo_Button_Delete_OnClick
+
+//Confirmation Message @160-07FEC4BC
+    return confirm('Eliminazione collegamento gruppo Ad4 "'+document.forms["ldap_gruppo"].STRINGA.value+'" e gruppo LDAP "'+document.forms["ldap_gruppo"].VALORE.value+'".\nContinuare?');
+//End Confirmation Message
+
+//Close page_ldap_gruppo_Button_Delete_OnClick @141-BC33A33A
+    return result;
+}
+//End Close page_ldap_gruppo_Button_Delete_OnClick
+
+//page_ldap_gruppo_Button_Cancel_OnClick @146-616FEAEE
+function page_ldap_gruppo_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_ldap_gruppo_Button_Cancel_OnClick
+
+//bind_events @1-1160B142
+function bind_events() {
+    if (document.forms["ldap_gruppo"]) check_and_bind('document.forms["ldap_gruppo"].Button_Delete','onclick',page_ldap_gruppo_Button_Delete_OnClick);
+    if (document.forms["ldap_gruppo"]) check_and_bind('document.forms["ldap_gruppo"].Button_Cancel','onclick',page_ldap_gruppo_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" class="AFCFormHeaderFont">
+            <!-- BEGIN Record ldap_gruppo -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont">Collegamento Gruppo Ad4 -
+              LDAP&nbsp; </font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Gruppo Ad4 *</td> 
+                  <td class="AFCDataTD">
+                    <select name="{STRINGA_Name}">
+                      <option value="" selected>- -</option>
+ {STRINGA_Options} 
+                    </select>
+ <input type="hidden" value="{CHIAVE}" name="{CHIAVE_Name}"><input type="hidden" value="{OLD_STRINGA}" name="{OLD_STRINGA_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Gruppo LDAP *</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" value="{VALORE}" name="{VALORE_Name}" maxlength="2000" size="80">&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="2">
+                    <!-- BEGIN Button Button_Insert --><input class="AFCButton" type="submit" value="Inserisci" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Aggiorna" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->&nbsp; 
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record ldap_gruppo --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+ 
+</table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+svi-san02
+svi-san04
+
+
+Alessandro Divita, 15:12
+C:\jakarta-ant-1.5\bin\ant.bat"  -buildfile "C:\DOCUME~1\adivita\LOCALS~1\Temp\11\~sa4hl70\CCSBuild\build.xml" -logfile "C:\DOCUME~1\adivita\LOCALS~1\Temp\11\~sa4hl70\CCSBuild\build.log
+
+
+
+1) Installo la versione desiderata di AD4 su un ambiente pulito
+2) Da TOAD Database → Export → Generate Schema Script
+3) Seleziono User, Constraints e sottostanti, Functions, Indexes, Jobs, Materialized Vievs e sottostanti, Packages, Package Bodies, Procedures, Sequences, Synonyms Private,
+Tables e sottostanti, Triggers, Tybes, Type Bodies, Views e sottostanti

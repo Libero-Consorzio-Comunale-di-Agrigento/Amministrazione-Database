@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Elaborazione Differita</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_USER_JOBS_OnLoad @56-DB817FDE
+function page_USER_JOBS_OnLoad(form)
+{
+    var result;
+//End page_USER_JOBS_OnLoad
+
+//Custom Code @194-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+if (document.forms["USER_JOBS"].BROKEN_JOB.value == 'Y') {
+	document.forms["USER_JOBS"].Button_Delete.value = 'Sblocca Elaborazione'
+}
+else {
+	document.forms["USER_JOBS"].Button_Delete.value = 'Blocca Elaborazione'
+}
+//End Custom Code
+
+//Close page_USER_JOBS_OnLoad @56-BC33A33A
+    return result;
+}
+//End Close page_USER_JOBS_OnLoad
+
+//page_USER_JOBS_Button_Cancel_OnClick @60-EC3BAA3F
+function page_USER_JOBS_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_USER_JOBS_Button_Cancel_OnClick
+
+//bind_events @1-8A0BF3B4
+function bind_events() {
+    if (document.forms["USER_JOBS"]) check_and_bind('document.forms["USER_JOBS"]','onLoad',page_USER_JOBS_OnLoad);
+    if (document.forms["USER_JOBS"]) check_and_bind('document.forms["USER_JOBS"].Button_Cancel','onclick',page_USER_JOBS_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record USER_JOBS -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont">Elaborazione n°{JOB}</font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="3" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD">Elaborazione</td> 
+                  <td class="AFCDataTD" width="50%" colspan="2">{WHAT}&nbsp;<input type="hidden" value="{WHAT_HIDDEN}" name="{WHAT_HIDDEN_Name}"><input type="hidden" value="{JOB_NUM}" name="{JOB_NUM_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD">Prossima</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" maxlength="19" value="{NEXT_DATE}" name="{NEXT_DATE_Name}"></td> 
+                  <td class="AFCDataTD" align="right"><input type="hidden" value="{BROKEN_JOB}" name="{BROKEN_JOB_Name}">{BROKEN}</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" nowrap>Intervallo</td> 
+                  <td class="AFCDataTD" colspan="2"><input class="AFCInput" maxlength="200" size="80" value="{INTERVAL}" name="{INTERVAL_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="3"><a name="Istanza"></a> &nbsp; 
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elaborazione" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Aggiorna" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record USER_JOBS --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

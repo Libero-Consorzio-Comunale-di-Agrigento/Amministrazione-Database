@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Modulo del Progetto</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_MODULI_Button_Delete_OnClick @26-2B6F4A87
+function page_AD4_MODULI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_MODULI_Button_Delete_OnClick
+
+//Confirmation Message @27-704BB56A
+    return confirm('Eliminazione Modulo '+document.forms["AD4_MODULI"].DESCRIZIONE.value +'. Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_MODULI_Button_Delete_OnClick @26-BC33A33A
+    return result;
+}
+//End Close page_AD4_MODULI_Button_Delete_OnClick
+
+//page_AD4_MODULI_Button_Cancel_OnClick @28-57550D51
+function page_AD4_MODULI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_MODULI_Button_Cancel_OnClick
+
+//bind_events @1-B093AB3F
+function bind_events() {
+    if (document.forms["AD4_MODULI"]) check_and_bind('document.forms["AD4_MODULI"].Button_Delete','onclick',page_AD4_MODULI_Button_Delete_OnClick);
+    if (document.forms["AD4_MODULI"]) check_and_bind('document.forms["AD4_MODULI"].Button_Cancel','onclick',page_AD4_MODULI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td> 
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td> 
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <!-- BEGIN Record AD4_MODULI -->
+                <form method="post" name="{HTMLFormName}" action="{Action}">
+                  <font class="AFCFormHeaderFont"></font> 
+                  <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+                    <tbody>
+                      <tr>
+                        <td class="AFCFormHeaderFont" nowrap>{PROGETTO_DESC} </td> 
+                        <td class="AFCToolboxTD" width="10%" nowrap align="right"><a class="AFCToolBox" href="{CARATTERISTICHE_Src}">{CARATTERISTICHE}</a>&nbsp;<a class="AFCToolBox" href="{ABILITAZIONI_Src}">{ABILITAZIONI}</a></td> 
+                      </tr>
+ 
+                    </tbody>
+ 
+                  </table>
+ 
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                    <!-- BEGIN Error -->
+                    <tbody>
+                      <tr>
+                        <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+                      </tr>
+ <!-- END Error -->
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Modulo *</td> 
+                        <td class="AFCDataTD">{MODULO}&nbsp;<input value="{MODULO_ORIG}" type="hidden" name="{MODULO_ORIG_Name}"><input value="{PROGETTO_ORIG}" type="hidden" name="{PROGETTO_ORIG_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>Descrizione
+                          *</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" value="{DESCRIZIONE}" maxlength="40" size="40" name="{DESCRIZIONE_Name}">&nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>Amministrazione</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" value="1" type="checkbox" name="{AMMINISTRATORE_Name}" {AMMINISTRATORE}></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Note</td> 
+                        <td class="AFCDataTD"><textarea style="WIDTH: 100%" class="AFCTextarea" rows="3" cols="50" name="{NOTE_Name}">{NOTE}</textarea></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" colspan="2" nowrap align="right">
+                          <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Registra" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+                          <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+                          <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                      </tr>
+ 
+                    </tbody>
+ 
+                  </table>
+ 
+                </form>
+ <!-- END Record AD4_MODULI --></td> 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td height="100%" valign="bottom" width="100%" colspan="2">&nbsp;{Footer}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+</body>
+</html>

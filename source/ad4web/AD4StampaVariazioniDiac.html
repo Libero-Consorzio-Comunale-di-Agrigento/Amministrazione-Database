@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>Stampa Variazioni Diritti di Accesso</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" type="text/javascript">
+ function Stampa() {
+var url = "";
+var parametri = "";
+var stampa="";
+var ftype ="";
+var coll = document.forms[0].elements;
+	if (coll!=null) {
+		for (i=0; i<coll.length-1; i++) //evito di prendere il bottone metto -1
+		{
+		  if (coll.item(i).name == "FORMATO") {
+		      			   ftype = coll.item(i).value.toUpperCase();
+						   if (ftype=="XLS") { stampa = "estrazione_diac_storico"; }
+						   else { stampa = "stampa_diac_storico"; }
+			   }
+		  if ((coll.item(i).value !="") && 
+		      (coll.item(i).name != "DATA_SOURCE") && (coll.item(i).name != "CONTEXT")
+			  )
+		    {
+		     parametri = parametri + "&" + coll.item(i).name + "="+ coll.item(i).value;
+			 }
+	    }
+	}
+url = document.location.protocol+"//"+document.location.host+"/jasperserver4/export.jsp?report="+stampa+"&project=" + document.getElementById('CONTEXT').value + "&conn=" + document.getElementById('DATA_SOURCE').value + parametri+"&type="+ftype;
+window.open(url);
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//Include Common JSFunctions @1-A1D84A39
+</script>
+<script language="JavaScript" type="text/javascript" src="../DatePicker.js"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-FE30DD63
+
+var PARAMETRI_DatePicker_DAL = new Object(); 
+PARAMETRI_DatePicker_DAL.format           = "dd/mm/yyyy";
+PARAMETRI_DatePicker_DAL.style            = "Themes/AFC/Style.css";
+PARAMETRI_DatePicker_DAL.relativePathPart = "../";
+
+var PARAMETRI_DatePicker_AL = new Object(); 
+PARAMETRI_DatePicker_AL.format           = "dd/mm/yyyy";
+PARAMETRI_DatePicker_AL.style            = "Themes/AFC/Style.css";
+PARAMETRI_DatePicker_AL.relativePathPart = "../";
+
+//End Date Picker Object Definitions
+
+//page_PARAMETRI_Button1_OnClick @43-F53C9B73
+function page_PARAMETRI_Button1_OnClick()
+{
+    var result;
+//End page_PARAMETRI_Button1_OnClick
+
+//Custom Code @44-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+Stampa();
+//End Custom Code
+
+//Close page_PARAMETRI_Button1_OnClick @43-BC33A33A
+    return result;
+}
+//End Close page_PARAMETRI_Button1_OnClick
+
+//bind_events @1-3E7D0FD5
+function bind_events() {
+    if (document.forms["PARAMETRI"]) check_and_bind('document.forms["PARAMETRI"].Button1','onclick',page_PARAMETRI_Button1_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#000000" vlink="#000000" text="#000000" class="AFCPageBODY">
+<table style="BORDER-COLLAPSE: collapse" bordercolor="#111111" cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td>{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td>
+            <p>
+            <!-- BEGIN Record PARAMETRI --></p>
+ 
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont">Parametri di stampa </font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="2" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Utente:</td> 
+                  <td class="AFCDataTD">
+                    <select name="{COD_UTENTE_ACCESSO_Name}" class="AFCSelect">
+                      <option value="" selected>- -</option>
+ {COD_UTENTE_ACCESSO_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Modulo:</td> 
+                  <td class="AFCDataTD">
+                    <select name="{MODULO_Name}" class="AFCSelect">
+                      <option value="" selected>- -</option>
+ {MODULO_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Dal:</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" value="{DAL}" name="{DAL_Name}" style="WIDTH: 243px; HEIGHT: 22px" size="31">
+                    <!-- BEGIN DatePicker DatePicker_DAL --><a class="AFCDataLink" href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');"><img border="0" src="../Themes/DatePicker/DatePicker3.gif"></a><!-- END DatePicker DatePicker_DAL --></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Al:</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" value="{AL}" name="{AL_Name}" style="WIDTH: 243px; HEIGHT: 22px" size="31">
+                    <!-- BEGIN DatePicker DatePicker_AL --><a class="AFCDataLink" href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');"><img border="0" src="../Themes/DatePicker/DatePicker3.gif"></a><!-- END DatePicker DatePicker_AL --></td> 
+                </tr>
+ <tr>
+	<td class="AFCFieldCaptionTD" valign="top">Formato:</td> 
+	<td class="AFCDataTD">
+<select class="AFCSelect" name="{FORMATO_Name}">
+  <option selected value="">- -</option>
+ {FORMATO_Options} 
+</select>
+
+	</td>
+ </tr>
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="3"><input name="{CONTEXT_Name}" value="{CONTEXT}" type="hidden" id="CONTEXT"><input type="hidden" value="{DATA_SOURCE}" name="{DATA_SOURCE_Name}" id="DATA_SOURCE">&nbsp; 
+                    <!-- BEGIN Button Button1 --><input class="AFCButton" type="submit" value="Stampa" name="{Button_Name}"><!-- END Button Button1 --></td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record PARAMETRI -->
+            <p align="right"></p>
+ </td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

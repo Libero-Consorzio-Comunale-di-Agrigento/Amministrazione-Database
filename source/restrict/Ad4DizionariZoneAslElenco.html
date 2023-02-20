@@ -1,0 +1,77 @@
+
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+{Ad4DizionariGuida}<br>
+<!-- BEGIN Record ZoneAslFiltro --><br>
+<div align="center">
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <form method="post" name="{HTMLFormName}" action="{Action}">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="middle" rowspan="2"><a class="AFCDataLink" title="" href="{FILTER_SEARCH_Src}">{FILTER_SEARCH}</a></td> 
+          <td class="AFCFieldCaptionTD" valign="top">Regione</td> 
+          <td class="AFCDataTD">
+            <select class="AFCInput" name="{s_REGIONE_Name}">
+              <option selected value="">&lt;selezionare&nbsp;valore&gt;</option>
+ {s_REGIONE_Options} 
+            </select>
+ </td> 
+          <td class="AFCDataTD" valign="middle" rowspan="2">
+            <!-- BEGIN Button DoSearch --><input class="AFCButton" value="Cerca" type="submit" name="{Button_Name}"><!-- END Button DoSearch --></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Zona </td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{s_ZONA_ASL}" maxlength="51" size="40" name="{s_ZONA_ASL_Name}"></td> 
+        </tr>
+ 
+      </form>
+ 
+    </tbody>
+ 
+  </table>
+</div>
+<!-- END Record ZoneAslFiltro -->
+<!-- BEGIN Grid ZoneAslElenco -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCFormHeaderFont">Elenco&nbsp;Zone Asl&nbsp;</td> 
+      <td align="right">&nbsp;<a class="AFCDataLink" title="Crea nuova zona asl" href="{Aggiungi_Src}">{Aggiungi}</a></td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCColumnTD" nowrap>Codice Regione</td> 
+      <td class="AFCColumnTD" nowrap>Codice Zona</td> 
+      <td class="AFCColumnTD" nowrap>Titolo</td> 
+      <td class="AFCColumnTD" nowrap>Regione</td> 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="AFCDataTD" width="1%">{CODICE_REGIONE}&nbsp;</td> 
+      <td class="AFCDataTD" width="1%">{CODICE_ZONA}&nbsp;</td> 
+      <td class="AFCDataTD"><a class="AFCDataLink" href="{TITOLO_Src}">{TITOLO}</a>&nbsp;</td> 
+      <td class="AFCDataTD">{REGIONE_DENOMINAZIONE}&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="4">Nessuna&nbsp;Zona Asl trovata!</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td class="AFCFooterTD" colspan="4" nowrap align="center">{AFCNavigator}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<!-- END Grid ZoneAslElenco -->

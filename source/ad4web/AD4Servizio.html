@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>Servizio del Progetto</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//DEL  // -------------------------
+//DEL  // Write your own code here.
+//DEL  // -------------------------
+//DEL      var v_modulo_scelto;
+//DEL  	var v_istanza_scelta;
+//DEL  	v_modulo_scelto  = document.forms["AD4_SERVIZI1"].MODULO.value;
+//DEL  	v_istanza_scelta = document.forms["AD4_SERVIZI1"].ISTANZA_SCELTA.value;    
+//DEL  	document.forms["AD4_SERVIZI1"].action="AD4ServElenco.do?MVID=3&ID_SERVIZIO=" + document.forms["AD4_SERVIZI1"].ID_SERVIZIO.value + "&ISTANZA_LISTBOX=" + v_istanza_scelta + "&MODULO_LISTBOX=" + v_modulo_scelto+"#Servizio"
+
+//DEL  // -------------------------
+//DEL  // Write your own code here.
+//DEL  // -------------------------
+//DEL      var v_modulo_scelto;
+//DEL  	var v_istanza_scelta;
+//DEL  	v_modulo_scelto  = document.forms["AD4_SERVIZI1"].MODULO_SCELTO.value;
+//DEL  	v_istanza_scelta = document.forms["AD4_SERVIZI1"].ISTANZA.value;    
+//DEL  	document.forms["AD4_SERVIZI1"].action="AD4ServElenco.do?MVID=3&ID_SERVIZIO=" + document.forms["AD4_SERVIZI1"].ID_SERVIZIO.value + "&ISTANZA_LISTBOX=" + v_istanza_scelta + "&MODULO_LISTBOX=" + v_modulo_scelto+"#Servizio";
+
+//page_AD4_SERVIZI_Button_Delete_OnClick @41-7DB938D4
+function page_AD4_SERVIZI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_SERVIZI_Button_Delete_OnClick
+
+//Confirmation Message @171-B0B979E9
+    return confirm('Eliminazione Servizio N.'+document.forms["AD4_SERVIZI"].ID_SERVIZIO.value+ '(Modulo: '+document.forms["AD4_SERVIZI"].MODULO.value +' - Istanza '+document.forms["AD4_SERVIZI"].ISTANZA.value +'). Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_SERVIZI_Button_Delete_OnClick @41-BC33A33A
+    return result;
+}
+//End Close page_AD4_SERVIZI_Button_Delete_OnClick
+
+//page_AD4_SERVIZI_Button_Cancel_OnClick @43-F51DADB3
+function page_AD4_SERVIZI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_SERVIZI_Button_Cancel_OnClick
+
+//DEL  // -------------------------
+//DEL  // Write your own code here.
+//DEL  // -------------------------
+//DEL  	if document.forms["AD4_DIRITTI_ACCESSO1"].MODULO.value == null & document.forms["AD4_DIRITTI_ACCESSO1"].ISTANZA.value == NULL
+//DEL  	{
+//DEL  		document.forms["AD4_DIRITTI_ACCESSO1"].Button_Delete.value = 'Inserisci';
+//DEL  	}
+//DEL  	else
+//DEL  	{
+//DEL  		document.forms["AD4_DIRITTI_ACCESSO1"].Button_Delete.value = 'Aggiorna';
+//DEL  	}
+
+
+//DEL  // -------------------------
+//DEL  // Write your own code here.
+//DEL  // -------------------------
+//DEL  alert('onload record');
+
+
+//bind_events @1-E182E57C
+function bind_events() {
+    if (document.forms["AD4_SERVIZI"]) check_and_bind('document.forms["AD4_SERVIZI"].Button_Delete','onclick',page_AD4_SERVIZI_Button_Delete_OnClick);
+    if (document.forms["AD4_SERVIZI"]) check_and_bind('document.forms["AD4_SERVIZI"].Button_Cancel','onclick',page_AD4_SERVIZI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record AD4_SERVIZI -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table cellspacing="0" cellpadding="3" width="100%" class="AFCToolBoxTable">
+                <tr>
+                  <td class="AFCFormHeaderFont" nowrap>Servizio del
+                    Progetto&nbsp;{DESC_PROGETTO} </td> 
+                  <td align="right" valign="top" class="AFCToolBoxTD" width="10%" nowrap><a class="AFCDataLink" title="Utenti Abilitati al servizio" href="{ABILITAZIONI_Src}">{ABILITAZIONI}</a></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="3" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Sequenza&nbsp;</td> 
+                  <td class="AFCDataTD" colspan="2" width="100%"><input name="{ID_SERVIZIO_Name}" value="{ID_SERVIZIO}" size="10" class="AFCInputDisplay" readonly>&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Modulo *</td> 
+                  <td class="AFCDataTD" width="100%" colspan="2">
+                    <select class="AFCSelect" name="{MODULO_Name}">
+                      <option value="" selected>-&nbsp;-</option>
+ {MODULO_Options} 
+                    </select>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Istanza *</td> 
+                  <td class="AFCDataTD" colspan="2">
+                    <select class="AFCSelect" name="{ISTANZA_Name}">
+                      <option value="" selected>- -</option>
+ {ISTANZA_Options} 
+                    </select>
+ &nbsp;&nbsp; &nbsp;&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Livello di
+                    Sicurezza&nbsp;</td> 
+                  <td class="AFCDataTD" colspan="2">
+                    <select class="AFCSelect" name="{LIVELLO_Name}">
+                      <option value="" selected>- -</option>
+ {LIVELLO_Options} 
+                    </select>
+ &nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Abilitazione&nbsp;*</td> 
+                  <td class="AFCDataTD" width="50%">
+                    <select name="{ABILITAZIONE_Name}" class="AFCSelect">
+                      {ABILITAZIONE_Options} 
+                    </select>
+ </td> 
+                  <td class="AFCDataTD" width="50%">
+                    <select name="{MULTIPLO_Name}" class="AFCSelect">
+                      {MULTIPLO_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Gruppo di
+                    Abilitazione *</td> 
+                  <td class="AFCDataTD" colspan="2">
+                    <select name="{GRUPPO_ABILITAZIONE_Name}" class="AFCSelect">
+                      <option value="" selected>-&nbsp;-</option>
+ {GRUPPO_ABILITAZIONE_Options} 
+                    </select>
+ &nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Tipo Notifica&nbsp;</td> 
+                  <td class="AFCDataTD"  colspan="2">
+                    <select name="{TIPO_NOTIFICA_Name}" class="AFCSelect">
+                      <option value="" selected>- -</option>
+ {TIPO_NOTIFICA_Options} 
+                    </select>
+ &nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Tag invio</td> 
+                  <td class="AFCDataTD" colspan="2"><input class="AFCInput" value="{TAG_CIM}" name="{TAG_CIM_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>eMail per
+                    Notifiche all'Ente *</td> 
+                  <td class="AFCDataTD" colspan="2"><input name="{MAIL_NOTIFICHE_Name}" value="{MAIL_NOTIFICHE}" maxlength="100" size="50" class="AFCInput">&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>eMail CCR
+                    Messaggi Automatici</td> 
+                  <td class="AFCDataTD" colspan="2"><input class="AFCInput" value="{CCR_NOTIFICHE}" name="{CCR_NOTIFICHE_Name}" maxlength="100" size="50">&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Recupero
+                    password</td> 
+                  <td class="AFCDataTD" colspan="2"><input class="" type="checkbox" value="1" name="{RECUPERO_PASSWORD_Name}" {RECUPERO_PASSWORD}></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="3"><a name="Servizio"></a> 
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_SERVIZI --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

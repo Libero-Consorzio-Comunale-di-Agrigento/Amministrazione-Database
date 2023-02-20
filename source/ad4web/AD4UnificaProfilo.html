@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Unifica Profilo</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_UTENTE_ALIMENTARE_SOGGETTO_ORIGINE_CHK_OnLoad @120-57672857
+function page_AD4_UTENTE_ALIMENTARE_SOGGETTO_ORIGINE_CHK_OnLoad()
+{
+    var result;
+//End page_AD4_UTENTE_ALIMENTARE_SOGGETTO_ORIGINE_CHK_OnLoad
+
+//Custom Code @121-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+//End Custom Code
+
+//Close page_AD4_UTENTE_ALIMENTARE_SOGGETTO_ORIGINE_CHK_OnLoad @120-BC33A33A
+    return result;
+}
+//End Close page_AD4_UTENTE_ALIMENTARE_SOGGETTO_ORIGINE_CHK_OnLoad
+
+//page_AD4_UTENTE_ALIMENTARE_Button_Cancel_OnClick @99-249440EE
+function page_AD4_UTENTE_ALIMENTARE_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_UTENTE_ALIMENTARE_Button_Cancel_OnClick
+
+//bind_events @1-68823FB3
+function bind_events() {
+    if (document.forms["AD4_UTENTE_ALIMENTARE"]) check_and_bind('document.forms["AD4_UTENTE_ALIMENTARE"].SOGGETTO_ORIGINE_CHK','onLoad',page_AD4_UTENTE_ALIMENTARE_SOGGETTO_ORIGINE_CHK_OnLoad);
+    if (document.forms["AD4_UTENTE_ALIMENTARE"]) check_and_bind('document.forms["AD4_UTENTE_ALIMENTARE"].Button_Cancel','onclick',page_AD4_UTENTE_ALIMENTARE_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td> 
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td> 
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <table cellspacing="0" cellpadding="3" width="100%" height="100%">
+                  <tbody>
+                    <tr>
+                      <td valign="top" width="45%" align="left">
+                        <p>
+                        <!-- BEGIN Record AD4_UTENTE_ALIMENTARE -->
+                        <form method="post" name="{HTMLFormName}" action="{Action}">
+                          <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                            <!-- BEGIN Error -->
+                            <tbody>
+                              <tr>
+                                <td class="AFCErrorDataTD" colspan="5">{Error}</td> 
+                              </tr>
+                              <!-- END Error -->
+							  <tr>
+                                <td class="AFCFieldCaptionTD"colspan="5">ATTENZIONE:&nbsp;competenze&nbsp;gestite&nbsp;da&nbsp;altri&nbsp;applicativi&nbsp;devono&nbsp;essere&nbsp;gestite&nbsp;manualmente</td> 							
+                             </tr>
+							  <tr>
+                                <td class="AFCFieldCaptionTD"colspan="3">Utente&nbsp;che&nbsp;acquisice&nbsp;il&nbsp;profilo&nbsp;</td> 
+								<td class="AFCFieldCaptionTD"colspan="2">Utente&nbsp;da&nbsp;cui&nbsp;copiare&nbsp;il&nbsp;profilo&nbsp;</td>
+                             </tr>
+                              <tr>
+                                <td class="AFCFieldCaptionTD" rowspan="3" valign="top" width="1%" nowrap>Mantenere&nbsp;</td> 
+                                <td class="AFCFieldCaptionTD" rowspan="3" valign="top" width="1%" nowrap>Dati&nbsp;Utente&nbsp;</td> 
+                                <td class="AFCDataTD">{UTENTE_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCFieldCaptionTD" rowspan="3" valign="top" width="1%" nowrap>Copiare&nbsp;</td> 
+                                <td class="AFCDataTD">Questo utente verrà
+                                  REVOCATO:&nbsp; {UTENTE_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCDataTD">{NOMINATIVO_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD">{NOMINATIVO_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCDataTD">{DATI_UTENTE_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD">{DATI_UTENTE_ORIGINE}&nbsp;</td> 
+                              </tr>
+                              <tr>
+                                <td class="AFCFieldCaptionTD"colspan="3">Dati&nbsp;da&nbsp;mantenere&nbsp;</td> 
+								<td class="AFCFieldCaptionTD"colspan="2">Dati&nbsp;da&nbsp;copiare&nbsp;</td>
+                             </tr>
+                              <tr>
+                                <td class="AFCDataTD" align="center">&nbsp;</td> 
+                                <td class="AFCFieldCaptionTD">Soggetto&nbsp;</td> 
+                                <td class="AFCDataTD">{DATI_SOGGETTO_ALIMENTARE}&nbsp;<input type="hidden" value="{SOGGETTO_ASSEGNARE}" name="{SOGGETTO_ASSEGNARE_Name}"><input type="hidden" value="{SOGGETTO_ALIMENTARE}" name="{SOGGETTO_ALIMENTARE_Name}"></td> 
+                                <td class="AFCDataTD" align="center"><input type="checkbox" value="1" name="{SOGGETTO_ORIGINE_CHK_Name}" {SOGGETTO_ORIGINE_CHK}>&nbsp;</td> 
+                                <td class="AFCDataTD">{DATI_SOGGETTO_ORIGINE}&nbsp;<input type="hidden" value="{SOGGETTO_ORIGINE}" name="{SOGGETTO_ORIGINE_Name}"></td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCDataTD" align="center">&nbsp;<input type="checkbox" value="1" name="{MANTIENI_GRUPPI_Name}" {MANTIENI_GRUPPI}></td> 
+                                <td class="AFCFieldCaptionTD">Gruppi&nbsp;</td> 
+                                <td class="AFCDataTD">{GRUPPI_DIAC_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD" align="center"><input value="1" type="checkbox" name="{COPIA_GRUPPI_Name}" {COPIA_GRUPPI}>&nbsp;</td> 
+                                <td class="AFCDataTD">{GRUPPI_DIAC_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCDataTD" align="center">&nbsp;<input type="checkbox" value="1" name="{MANTIENI_DIAC_Name}" {MANTIENI_DIAC}></td> 
+                                <td class="AFCFieldCaptionTD" valign="top">Diritti&nbsp;di&nbsp;Accesso&nbsp;</td> 
+                                <td class="AFCDataTD">{DIAC_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD" align="center"><input value="1" type="checkbox" name="{COPIA_DIAC_Name}" {COPIA_DIAC}>&nbsp;</td> 
+                                <td class="AFCDataTD">{DIAC_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCDataTD" align="center">&nbsp;<input type="checkbox" value="1" name="{MANTIENI_CAAC_Name}" {MANTIENI_CAAC}></td> 
+                                <td class="AFCFieldCaptionTD" valign="top">Caratteristiche&nbsp;di&nbsp;accesso&nbsp;</td> 
+                                <td class="AFCDataTD">{CAAC_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD" align="center"><input value="1" type="checkbox" name="{COPIA_CAAC_Name}" {COPIA_CAAC}>&nbsp;</td> 
+                                <td class="AFCDataTD">{CAAC_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCFooterTD" colspan="5" nowrap align="right">
+                                  <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Copia" name="{Button_Name}"><!-- END Button Button_Update -->
+                                  <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                              </tr>
+ 
+                            </tbody>
+ 
+                          </table>
+ 
+                        </form>
+ <!-- END Record AD4_UTENTE_ALIMENTARE --></p>
+ </td> 
+                    </tr>
+ 
+                  </tbody>
+ 
+                </table>
+ </td> 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td height="100%" valign="bottom" width="100%" colspan="3">{Footer}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+</body>
+</html>

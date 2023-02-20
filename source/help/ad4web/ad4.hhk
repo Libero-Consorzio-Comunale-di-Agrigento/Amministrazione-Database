@@ -1,0 +1,405 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="FrameName" value="bsscright">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="A.S.L.">
+    <param name="Name" value="A.S.L.">
+    <param name="Local" value="A_S_L.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Abilitazione Gruppi di Utenti">
+    <param name="Name" value="Abilitazione Gruppi di Utenti">
+    <param name="Local" value="Abilitazione_Gruppi_di_Utenti.htm">
+    <param name="Name" value="Accessi">
+    <param name="Local" value="Abilitazione_Gruppi_di_Utenti_Accessi.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Accessi">
+      <param name="Name" value="Accessi">
+      <param name="Local" value="Abilitazione_Gruppi_di_Utenti_Accessi.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Abilitazione Utente">
+    <param name="Name" value="Abilitazione Utente">
+    <param name="Local" value="Abilitazione_Utente.htm">
+    <param name="Name" value="Accessi">
+    <param name="Local" value="Abilitazione_Utente_Accessi.htm">
+    <param name="Name" value="Credenziali">
+    <param name="Local" value="Abilitazione_Utente_Credenziali.htm">
+    <param name="Name" value="Richieste Abilitazione">
+    <param name="Local" value="Abilitazione_Utente_Richieste_Abilitazione.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Accessi">
+      <param name="Name" value="Accessi">
+      <param name="Local" value="Abilitazione_Utente_Accessi.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Credenziali">
+      <param name="Name" value="Credenziali">
+      <param name="Local" value="Abilitazione_Utente_Credenziali.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Richieste Abilitazione">
+      <param name="Name" value="Richieste Abilitazione">
+      <param name="Local" value="Abilitazione_Utente_Richieste_Abilitazione.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accessi">
+    <param name="Name" value="Accessi">
+    <param name="Local" value="Accessi.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accesso del Gruppo">
+    <param name="Name" value="Accesso del Gruppo">
+    <param name="Local" value="Accesso_del_Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accesso dell' Utente">
+    <param name="Name" value="Accesso dell' Utente">
+    <param name="Local" value="Accesso_dell_Utente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aggiornamento Banche e Sportelli">
+    <param name="Name" value="Aggiornamento Banche e Sportelli">
+    <param name="Local" value="Aggiornamento_Banche_e_Sportelli.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Amministratore DataBase">
+    <param name="Name" value="Amministratore DataBase">
+    <param name="Local" value="Amministratore_DataBase.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Archivio A.S.L.">
+    <param name="Name" value="Archivio A.S.L.">
+    <param name="Local" value="Archivio_Banche_A_S_L.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Archivio Banche">
+    <param name="Name" value="Archivio Banche">
+    <param name="Local" value="Archivio_Banche.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Archivio Comuni">
+    <param name="Name" value="Archivio Comuni">
+    <param name="Local" value="Archivio_Comuni.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Archivio Progetti">
+    <param name="Name" value="Archivio Progetti">
+    <param name="Local" value="Archivio_Progetti.htm">
+    <param name="Name" value="Istanze">
+    <param name="Local" value="Archivio_Progetti_Istanze.htm">
+    <param name="Name" value="Moduli">
+    <param name="Local" value="Archivio_Progetti_Moduli.htm">
+    <param name="Name" value="Servizi">
+    <param name="Local" value="Archivio_Progetti_Servizi.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Istanze">
+      <param name="Name" value="Istanze">
+      <param name="Local" value="Archivio_Progetti_Istanze.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Moduli">
+      <param name="Name" value="Moduli">
+      <param name="Local" value="Archivio_Progetti_Moduli.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Servizi">
+      <param name="Name" value="Servizi">
+      <param name="Local" value="Archivio_Progetti_Servizi.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ASL">
+    <param name="Name" value="A.S.L.">
+    <param name="Local" value="A_S_L.htm">
+    <param name="Name" value="Archivio A.S.L.">
+    <param name="Local" value="Archivio_Banche_A_S_L.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Banche">
+    <param name="Name" value="Archivio Banche">
+    <param name="Local" value="Archivio_Banche.htm">
+    <param name="Name" value="Banche e Sportelli">
+    <param name="Local" value="Banche_e_Sportelli.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Banche e Sportelli">
+    <param name="Name" value="Banche e Sportelli">
+    <param name="Local" value="Banche_e_Sportelli.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Caratteristiche Accesso">
+    <param name="Name" value="Caratteristiche Accesso">
+    <param name="Local" value="Caratteristiche_Accesso.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Caratteristiche Accesso Gruppo">
+    <param name="Name" value="Caratteristiche Accesso Gruppo">
+    <param name="Local" value="Caratteristiche_Accesso_Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Certificati C.A.">
+    <param name="Name" value="Certificati C.A.">
+    <param name="Local" value="Certificati_C_A_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Certificato">
+    <param name="Name" value="Certificato">
+    <param name="Local" value="Certificato.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Check Constraint">
+    <param name="Name" value="Check Constraint procedurali">
+    <param name="Local" value="Check_Constraint_procedurali.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Check Constraint procedurali">
+    <param name="Name" value="Check Constraint procedurali">
+    <param name="Local" value="Check_Constraint_procedurali.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Come Fare per">
+    <param name="Name" value="Come Fare per">
+    <param name="Local" value="Come_Fare_per.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Comune">
+    <param name="Name" value="Comune">
+    <param name="Local" value="Comune.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Constraint">
+    <param name="Name" value="Check Constraint procedurali">
+    <param name="Local" value="Check_Constraint_procedurali.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Disabilitazione Utenti">
+    <param name="Name" value="Disabilitazione Utenti">
+    <param name="Local" value="Disabilitazione_Utenti.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Disabilitazione Window">
+    <param name="Name" value="Disabilitazione Window">
+    <param name="Local" value="Disabilitazione_Window.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Elenco Utenti">
+    <param name="Name" value="Elenco Utenti">
+    <param name="Local" value="Elenco_Utenti.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Eliminazione accesso da un Gruppo">
+    <param name="Name" value="Eliminazione accesso da un Gruppo">
+    <param name="Local" value="Eliminazione_accesso_da_un_Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Eliminazione utente da un gruppo">
+    <param name="Name" value="Eliminazione utente da un gruppo">
+    <param name="Local" value="Eliminazione_utente_da_un_Gruppo_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ente">
+    <param name="Name" value="Ente">
+    <param name="Local" value="Ente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Enti">
+    <param name="Name" value="Enti">
+    <param name="Local" value="Enti.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestione comuni soppressi">
+    <param name="Name" value="Gestione comuni soppressi">
+    <param name="Local" value="Gestione_comuni_soppressi.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gruppi">
+    <param name="Name" value="Abilitazione Gruppi di Utenti">
+    <param name="Local" value="Abilitazione_Gruppi_di_Utenti.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gruppi di Lavoro">
+    <param name="Name" value="Gruppi di Lavoro">
+    <param name="Local" value="Gruppi_di_Lavoro.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Inserimento accesso di un Gruppo">
+    <param name="Name" value="Inserimento accessori un Gruppo">
+    <param name="Local" value="Inserimento_accesso_di_un_Gruppo_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Inserimento di un comune in una registrazione">
+    <param name="Name" value="Inserimento di un comune in una registrazione">
+    <param name="Local" value="Inserimento_di_un_comune_in_una_registrazione.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Inserimento utente in un Gruppo">
+    <param name="Name" value="Inserimento utente in un Gruppo">
+    <param name="Local" value="Inserimento_utente_in_un_Gruppo_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Interrogazioni">
+    <param name="Name" value="Interrogazioni">
+    <param name="Local" value="Interrogazioni.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Istanza">
+    <param name="Name" value="Istanza">
+    <param name="Local" value="Istanza.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Istanze di Ente">
+    <param name="Name" value="Istanze di Ente:">
+    <param name="Local" value="Istanze_di_Ente_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Lingue">
+    <param name="Name" value="Lingue e Gruppi Linguistici">
+    <param name="Local" value="Lingue_e_Gruppi_Linguistici.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Lingue e Gruppi Linguistici">
+    <param name="Name" value="Lingue e Gruppi Linguistici">
+    <param name="Local" value="Lingue_e_Gruppi_Linguistici.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Livelli di Sicurezza">
+    <param name="Name" value="Livelli di Sicurezza">
+    <param name="Local" value="Livelli_di_Sicurezza.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu Abilitazioni">
+    <param name="Name" value="Menu Abilitazioni">
+    <param name="Local" value="Menu_Abilitazioni.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu Archivio">
+    <param name="Name" value="Menu Archivio">
+    <param name="Local" value="Menu_Archivio.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu Servizi">
+    <param name="Name" value="Menu Servizi">
+    <param name="Local" value="Menu_Servizi.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modifica accesso di un Gruppo">
+    <param name="Name" value="Modifica accesso di un Gruppo">
+    <param name="Local" value="Modifica_accesso_di_un_Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modifica caratteristiche di accesso del gruppo">
+    <param name="Name" value="Modifica caratteristiche di accesso del gruppo">
+    <param name="Local" value="Modifica_caratteristiche_di_accesso_del_gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notifiche automatiche nella gestione delle Richieste di Abilitazione">
+    <param name="Name" value="Notifiche automatiche nella gestione delle Richieste di Abilitazione">
+    <param name="Local" value="Notifiche_automatiche_nella_gestione_delle_Richieste_di_Abilitazione.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Novità">
+    <param name="Name" value="Novità">
+    <param name="Local" value="Novit_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Personalizzazione">
+    <param name="Name" value="Personalizzazione">
+    <param name="Local" value="Personalizzazione.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Progetti">
+    <param name="Name" value="Archivio Progetti">
+    <param name="Local" value="Archivio_Progetti.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Registrazione Accesso">
+    <param name="Name" value="Registrazioni Accesso">
+    <param name="Local" value="Registrazioni_Accesso.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Registrazioni Accesso">
+    <param name="Name" value="Registrazioni Accesso">
+    <param name="Local" value="Registrazioni_Accesso.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Registro">
+    <param name="Name" value="Registro">
+    <param name="Local" value="Registro.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Richiesta di Abilitazione">
+    <param name="Name" value="Richiesta di Abilitazione">
+    <param name="Local" value="Richiesta_di_Abilitazione.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Richieste di Abilitazione">
+    <param name="Name" value="Richieste di Abilitazione">
+    <param name="Local" value="Richieste_di_Abilitazione.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Riepilogo Situazione">
+    <param name="Name" value="Riepilogo Situazione">
+    <param name="Local" value="Riepilogo_Situazione.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ruoli">
+    <param name="Name" value="Ruoli">
+    <param name="Local" value="Ruoli.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Segnalazioni di Errore">
+    <param name="Name" value="Segnalazioni di Errore">
+    <param name="Local" value="Segnalazioni_di_Errore.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Selezione Utenti da inserire in un Gruppo">
+    <param name="Name" value="Selezione Utenti da inserire in un Gruppo">
+    <param name="Local" value="Selezione_Utenti_da_inserire_in_un_Gruppo_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Servizio">
+    <param name="Name" value="Servizio">
+    <param name="Local" value="Servizio.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Situazione Ambiente">
+    <param name="Name" value="Situazione Ambiente">
+    <param name="Local" value="Situazione_Ambiente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sportelli">
+    <param name="Name" value="Archivio Banche">
+    <param name="Local" value="Archivio_Banche.htm">
+    <param name="Name" value="Banche e Sportelli">
+    <param name="Local" value="Banche_e_Sportelli.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tipi Credenziale">
+    <param name="Name" value="Tipi Credenziale">
+    <param name="Local" value="Tipi_Credenziale.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utente">
+    <param name="Name" value="Abilitazione Utente">
+    <param name="Local" value="Abilitazione_Utente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utenti">
+    <param name="Name" value="Elenco Utenti">
+    <param name="Local" value="Elenco_Utenti.htm">
+  </object>
+</ul>
+</html>

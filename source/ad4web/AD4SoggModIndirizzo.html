@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Modifica Indirizzo</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-5F368366
+  </script>
+<script language="JavaScript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+	function aggiornaIndirizzo(){
+		var via;
+	 	var indirizzo;
+	 	var num;
+	 	via = document.forms[0].VIA.value;
+	 	indirizzo = document.forms[0].INDIRIZZO.value;
+	 	num = document.forms[0].NUM.value;
+	 	if (indirizzo != "" && indirizzo != null) {
+	 		indirizzo = via + " " + indirizzo + ", " + num;
+			top.opener.returnLOV(indirizzo);
+		}
+		else {
+			if (via != "" && via != null) {
+				alert('Specificare la via.');
+			}
+			else {
+				top.opener.returnLOV("");
+			}
+		}
+	}
+</script>
+</head>
+<body onunload="onUnLoadLOV()" onload="onLoadLOV()">
+<!-- BEGIN Record AD4_UTENTI -->
+<form name="{HTMLFormName}" action="{Action}" method="post">
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <font class="AFCFormHeaderFont"></font>
+    <!-- BEGIN Error --><!-- END Error -->
+    <tr>
+      <td class="AFCFieldCaptionTD" valign="top">Indirizzo</td> 
+      <td class="AFCDataTD">
+        <select class="AFCSelect" name="{VIA_Name}" onblur="onBlurLOV()" onfocus="onFocusLOV()">
+          <option value="" selected>- -</option>
+ {VIA_Options} 
+        </select>
+ <input class="AFCInput" maxlength="40" size="40" value="{INDIRIZZO}" name="{INDIRIZZO_Name}" onblur="onBlurLOV()" onfocus="onFocusLOV()">&nbsp;n. <input class="AFCInput" maxlength="6" size="6" value="{NUM}" name="{NUM_Name}" onblur="onBlurLOV()" onfocus="onFocusLOV()"></td> 
+    </tr>
+ 
+    <tr>
+      <td class="AFCFooterTD" nowrap align="right" colspan="2">
+        <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Aggiorna" name="{Button_Name}" onclick="aggiornaIndirizzo();"><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}" onclick="top.opener.closeLOV()"><!-- END Button Button_Cancel -->&nbsp; </td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record AD4_UTENTI -->
+</body>
+</html>

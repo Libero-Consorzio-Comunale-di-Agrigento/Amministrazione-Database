@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+</head>
+<body class="AFCPageBODY" onload="document.forms[0].u.focus();" alink="#000000" link="#000000" bgcolor="#ffffff" text="#000000" vlink="#000000">
+<table width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%">{Header}</td>
+    </tr>
+ 
+    <tr>
+      <td height="100%" valign="top" width="100%" align="center">
+        <p>&nbsp;</p>
+        <!-- BEGIN Record LOGIN -->
+        <form method="post" name="{HTMLFormName}" action="{ACTION}" autocomplete="off">
+          <font class="AFCFormHeaderFont">Login al Portale </font> 
+          <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+            <tbody>
+              <tr>
+                <td class="AFCErrorDataTD" colspan="2">{ERRORE}</td>
+              </tr>
+              <!-- BEGIN Error -->
+              <tr>
+                <td class="AFCErrorDataTD" colspan="2">{Error}</td>
+              </tr>
+              <!-- END Error -->
+              <tr>
+                <td class="AFCFieldCaptionTD" valign="top">Username&nbsp;</td> 
+                <td class="AFCDataTD"><input class="AFCInput" value="{u}" maxlength="40" size="40" name="{u_Name}">&nbsp;</td>
+              </tr>
+ 
+              <tr>
+                <td class="AFCFieldCaptionTD" valign="top">Password&nbsp;</td> 
+                <td class="AFCDataTD"><input class="AFCInput" value="{p}" maxlength="40" size="40" type="password" name="{p_Name}">&nbsp;<input id="sa4ck" value="{sa4ck}" type="hidden" name="{sa4ck_Name}"></td>
+              </tr>
+ 
+              <tr>
+                <td class="AFCFooterTD" colspan="2" nowrap align="center">{JSLOGIN}&nbsp; 
+                  <!-- BEGIN Button Login --><input class="AFCButton" onclick="document.cookie ='sa4ck='+document.getElementById('sa4ck').value;" value="  Login  " type="submit" name="{Button_Name}"><!-- END Button Login --></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <!-- END Record LOGIN -->
+        <p align="center">
+        <!-- BEGIN Grid RECUPERO_LOGIN_CUSTOM -->
+        <!-- BEGIN Row -->{LOSTMSGCUSTOM} <!-- END Row -->
+        <!-- BEGIN NoRecords --><!-- END NoRecords --><!-- END Grid RECUPERO_LOGIN_CUSTOM -->
+        <!-- BEGIN Grid RECUPERO_LOGIN -->
+        <!-- BEGIN Row -->{LOSTMSG} <!-- END Row -->
+        <!-- BEGIN NoRecords --><!-- END NoRecords --><!-- END Grid RECUPERO_LOGIN -->
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,236 @@
+
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_SOGGETTO_STATO_OnChange @116-8BCD7DD9
+function page_AD4_SOGGETTO_STATO_OnChange()
+{
+    var result;
+//End page_AD4_SOGGETTO_STATO_OnChange
+
+//Custom Code @117-2A29BDB7
+  	var v_stato_scelto;
+  	var v_provincia_nas_scelta;
+  	v_stato_scelto			= document.forms["AD4_SOGGETTO"].STATO.value;
+	if (v_stato_scelto != "100") {
+		v_provincia_nas_scelta 	= v_stato_scelto;
+	}
+	else {
+		v_provincia_nas_scelta 	= "";
+	}
+	document.forms["AD4_SOGGETTO"].ISLISTBOX.value = "Y"
+	document.forms["AD4_SOGGETTO"].COMUNE_NASCITA.value = ""
+  	document.forms["AD4_SOGGETTO"].PROVINCIA_NAS.value = v_provincia_nas_scelta;
+//End Custom Code
+
+//Submit Form @118-F3707FDC
+    document.forms["AD4_SOGGETTO"].submit();
+//End Submit Form
+
+//Close page_AD4_SOGGETTO_STATO_OnChange @116-BC33A33A
+    return result;
+}
+//End Close page_AD4_SOGGETTO_STATO_OnChange
+
+//page_AD4_SOGGETTO_PROVINCIA_NAS_OnChange @123-976C86A8
+function page_AD4_SOGGETTO_PROVINCIA_NAS_OnChange()
+{
+    var result;
+//End page_AD4_SOGGETTO_PROVINCIA_NAS_OnChange
+
+//Custom Code @124-2A29BDB7
+  	document.forms["AD4_SOGGETTO"].ISLISTBOX.value = "Y"
+	document.forms["AD4_SOGGETTO"].COMUNE_NASCITA.value = ""
+//End Custom Code
+
+//Submit Form @125-F3707FDC
+    document.forms["AD4_SOGGETTO"].submit();
+//End Submit Form
+
+//Close page_AD4_SOGGETTO_PROVINCIA_NAS_OnChange @123-BC33A33A
+    return result;
+}
+//End Close page_AD4_SOGGETTO_PROVINCIA_NAS_OnChange
+
+//page_AD4_SOGGETTO_PROVINCIA_OnChange @134-70C375B0
+function page_AD4_SOGGETTO_PROVINCIA_OnChange()
+{
+    var result;
+//End page_AD4_SOGGETTO_PROVINCIA_OnChange
+
+//Custom Code @135-2A29BDB7
+  	document.forms["AD4_SOGGETTO"].ISLISTBOX.value = "Y"
+	document.forms["AD4_SOGGETTO"].COMUNE.value = ""
+//End Custom Code
+
+//Submit Form @136-F3707FDC
+    document.forms["AD4_SOGGETTO"].submit();
+//End Submit Form
+
+//Close page_AD4_SOGGETTO_PROVINCIA_OnChange @134-BC33A33A
+    return result;
+}
+//End Close page_AD4_SOGGETTO_PROVINCIA_OnChange
+
+//page_AD4_SOGGETTO_Button_Cancel_OnClick @23-9AE77B7B
+function page_AD4_SOGGETTO_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_SOGGETTO_Button_Cancel_OnClick
+
+//bind_events @1-A95177C9
+function AD4SoggettoInclusa_bind_events() {
+    if (document.forms["AD4_SOGGETTO"]) check_and_bind('document.forms["AD4_SOGGETTO"].PROVINCIA','onchange',page_AD4_SOGGETTO_PROVINCIA_OnChange);
+    if (document.forms["AD4_SOGGETTO"]) check_and_bind('document.forms["AD4_SOGGETTO"].PROVINCIA_NAS','onchange',page_AD4_SOGGETTO_PROVINCIA_NAS_OnChange);
+    if (document.forms["AD4_SOGGETTO"]) check_and_bind('document.forms["AD4_SOGGETTO"].STATO','onchange',page_AD4_SOGGETTO_STATO_OnChange);
+    if (document.forms["AD4_SOGGETTO"]) check_and_bind('document.forms["AD4_SOGGETTO"].Button_Cancel','onclick',page_AD4_SOGGETTO_Button_Cancel_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+      <!-- BEGIN Record AD4_SOGGETTO -->
+      <form name="{HTMLFormName}" action="{Action}" method="post">
+        <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+          <font class="AFCFormHeaderFont">Soggetto {ID_SOGGETTO} </font> 
+          <!-- BEGIN Error -->
+          <tr>
+            <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+          </tr>
+ <!-- END Error -->
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top" nowrap>Cognome *</td> 
+            <td class="AFCDataTD" width="100%"><input class="AFCInput" maxlength="50" size="40" value="{COGNOME}" name="{COGNOME_Name}" style="TEXT-TRANSFORM: uppercase"></td> 
+            <td class="AFCFieldCaptionTD" width="100%">Nome</td> 
+            <td class="AFCDataTD" width="100%" colspan="2"><input class="AFCInput" maxlength="50" size="40" value="{NOME}" name="{NOME_Name}" style="TEXT-TRANSFORM: uppercase"><input type="hidden" value="{SOGGETTO}" name="{SOGGETTO_Name}"></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top" nowrap>Sesso </td> 
+            <td class="AFCDataTD" width="100%">
+              <select class="AFCSelect" name="{SESSO_Name}">
+                <option value="" selected>- -</option>
+ {SESSO_Options} 
+              </select>
+ </td> 
+            <td class="AFCFieldCaptionTD" width="100%"></td> 
+            <td class="AFCDataTD" width="100%" colspan="2"></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFooterTD" nowrap colspan="5" align="center"><strong>Nascita </strong> </td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD">Stato</td> 
+            <td class="AFCDataTD" colspan="4">
+              <select class="AFCSelect" name="{STATO_Name}">
+                <option value="" selected>- -</option>
+ {STATO_Options} 
+              </select>
+ <input type="hidden" value="{ISLISTBOX}" name="{ISLISTBOX_Name}"></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top">Provincia</td> 
+            <td class="AFCDataTD" colspan="4">
+              <select class="AFCSelect" name="{PROVINCIA_NAS_Name}">
+                {PROVINCIA_NAS_Options} 
+              </select>
+ </td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD">Comune</td> 
+            <td class="AFCDataTD" colspan="4">
+              <select class="AFCSelect" name="{COMUNE_NASCITA_Name}">
+                <option value="" selected>-&nbsp;-</option>
+ {COMUNE_NASCITA_Options} 
+              </select>
+ </td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top">Data</td> 
+            <td class="AFCDataTD"><input class="AFCInput" maxlength="10" size="10" value="{DATA_NASCITA}" name="{DATA_NASCITA_Name}"></td> 
+            <td class="AFCFieldCaptionTD" valign="top" nowrap>Cod. Fis.</td> 
+            <td class="AFCDataTD" colspan="2"><input class="AFCInput" style="TEXT-TRANSFORM: uppercase" maxlength="16" size="18" value="{CODICE_FISCALE}" name="{CODICE_FISCALE_Name}"></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFooterTD" colspan="5" align="center"><strong>Residenza </strong> </td> 
+          </tr>
+ 
+          <tr id="trIndirizzoVis">
+            <td class="AFCFieldCaptionTD" valign="top">Indirizzo</td> 
+            <td class="AFCDataTD" colspan="3" nowrap><input class="AFCInputDisplay" style="WIDTH: 97%" readonly value="{INDIRIZZO_COMPLETO}" name="{INDIRIZZO_COMPLETO_Name}"></td> 
+            <td class="AFCDataTD" align="right" width="5%"><a class="AFCDataLink" href="javascript:showLOV('AD4SoggModIndirizzo.do','scrollbars=no,width=500,height=20','AD4_SOGGETTO','INDIRIZZO_COMPLETO')"><img class="" height="18" alt="Modifica Indirizzo" src="../common/images/AMV/edit.gif" width="18" border="0"></a></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top">Provincia</td> 
+            <td class="AFCDataTD" colspan="4">
+              <select class="AFCSelect" name="{PROVINCIA_Name}">
+                <option value="" selected>- -</option>
+ {PROVINCIA_Options} 
+              </select>
+ </td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top">Comune</td> 
+            <td class="AFCDataTD">
+              <select class="AFCSelect" name="{COMUNE_Name}">
+                <option value="" selected>- -</option>
+ {COMUNE_Options} 
+              </select>
+ </td> 
+            <td class="AFCFieldCaptionTD">CAP</td> 
+            <td class="AFCDataTD" colspan="2"><input class="AFCInput" maxlength="5" size="5" value="{CAP}" name="{CAP_Name}"><strong></strong></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFooterTD" colspan="5" nowrap align="center"><strong>Recapiti</strong> </td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top">e-Mail&nbsp;</td> 
+            <td class="AFCDataTD" colspan="4"><input class="AFCInput" maxlength="2000" size="40" value="{INDIRIZZO_WEB}" name="{INDIRIZZO_WEB_Name}"></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFieldCaptionTD" valign="top">Telefono</td> 
+            <td class="AFCDataTD"><input class="AFCInput" maxlength="14" size="16" value="{TELEFONO}" name="{TELEFONO_Name}"></td> 
+            <td class="AFCFieldCaptionTD">Fax</td> 
+            <td class="AFCDataTD" colspan="2"><input class="AFCInput" maxlength="14" size="16" value="{FAX}" name="{FAX_Name}"></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFooterTD" nowrap colspan="5" align="center"><strong>Note</strong></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCDataTD" colspan="5"><textarea class="AFCTextarea" style="WIDTH: 100%" name="{NOTE_Name}">{NOTE}</textarea></td> 
+          </tr>
+ 
+          <tr>
+            <td class="AFCFooterTD" nowrap align="right" colspan="5">
+              <!-- BEGIN Button Refresh --><input class="AFCButton" style="DISPLAY: none" type="submit" value="Refresh" name="{Button_Name}"><!-- END Button Refresh -->&nbsp; 
+              <!-- BEGIN Button Button_Insert --><input class="AFCButton" type="submit" value="Inserisci" name="{Button_Name}"><!-- END Button Button_Insert -->
+              <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Aggiorna" name="{Button_Name}"><!-- END Button Button_Update -->
+              <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record AD4_SOGGETTO -->

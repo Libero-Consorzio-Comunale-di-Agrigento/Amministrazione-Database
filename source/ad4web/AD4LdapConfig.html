@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Configurazione Server LDAP</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+<script language="JavaScript">
+ function confermaElimina(chiave) {
+ 	var result;
+    result = confirm('Si procederà all\'eliminazione dell\'intera configurazione del server alternativo.\nContinuare?');
+	if (result == true) {
+		location.href = 'AD4LDAPGestioneAlternativi.do?ccsForm=ldap:Edit&Button_Delete=Elimina&MVPD=AD4LDAP&MVL1=AD4LDAP&MVL2=AD4LDAPC&MVVC=AD4LDAPC&chiave='+ chiave;
+	}
+}
+ function confermaCrea() {
+ 	var result;
+    result = confirm('Si procederà alla creazione della configurazione di un nuovo server alternativo.\nContinuare?');
+	if (result == true) {
+		location.href = 'AD4LDAPGestioneAlternativi.do?ccsForm=ldap:Edit&Button_Update=Aggiorna&MVPD=AD4LDAP&MVL1=AD4LDAP&MVL2=AD4LDAPC&MVVC=AD4LDAPC';
+	}
+}
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td valign="top" align="left">
+            <!-- BEGIN Grid guida_ldap -->
+            <!-- BEGIN Row -->{guidaLDAP}<!-- END Row -->
+            <!-- BEGIN NoRecords --><!-- END NoRecords --><!-- END Grid guida_ldap --></td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top">
+            <!-- BEGIN Grid toolbox_grid -->
+            <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCFormHeaderFont" nowrap>Configurazione server
+                  {TIPO_SERVER} <input type="hidden" name="{CHIAVE_Name}" value="{CHIAVE}"></td> 
+                <td class="AFCToolBoxTD" nowrap width="25%"><a class="AFCToolbox" title="Nuova stringa" href="{Nuovo}"><img class="" title="Nuova stringa" height="18" alt="Nuova stringa" src="../common/images/AMV/nuovo.gif" width="18" border="0">Nuova
+                  stringa</a>&nbsp;{CREA_ALTERNATIVO}{ELIMINA_ALTERNATIVO}</td> 
+              </tr>
+              <!-- END Row -->
+              <!-- BEGIN NoRecords --><!-- END NoRecords -->
+            </table>
+ <!-- END Grid toolbox_grid -->
+            <!-- BEGIN Grid ldap_config -->
+            <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+              <tr>
+                <td class="AFCColumnTD" nowrap>Stringa</td> 
+                <td class="AFCColumnTD" nowrap>Valore</td> 
+                <td class="AFCColumnTD" nowrap>Commento</td> 
+              </tr>
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCDataTD"><a href="{STRINGA_Src}">{STRINGA}</a>&nbsp;</td> 
+                <td class="AFCDataTD" nowrap>{VALORE}&nbsp;</td> 
+                <td class="AFCDataTD">{COMMENTO}&nbsp;</td> 
+              </tr>
+              <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td class="AFCDataTD" colspan="3">Nessuna registrazione&nbsp;</td> 
+              </tr>
+              <!-- END NoRecords -->
+            </table>
+ <!-- END Grid ldap_config --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+ 
+</table>
+</body>
+</html>

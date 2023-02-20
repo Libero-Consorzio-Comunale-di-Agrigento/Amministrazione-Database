@@ -1,0 +1,51 @@
+Si4afcCCSNew - Ambiente MiniVortal per Code Charge Studio AFC ADS Foundation Class
+__________________________________________________________________________________________
+(c) 2004 Gruppo Finmatica - www.ads.it 
+
+
+Versione: 2005.05.4
+
+
+L'aggiornamento dell'Ambiente MiniVortal relativo alle pagine Standard per Code Charge Studio fornite nella prima installazione (es.: index, Main, Footer..) è un evento occasionale che avviene, come per le pagine aventi prefisso amv e adm, attraverso una copia dei nuovi file sulle proprie cartelle di progetto common e restrict.
+Va osservato che queste pagine in origine non hanno funzionalità alcuna, sono solo contenitori di altre pagine (es.: Footer contiene AmvFooter) ed in quanto tali si prestano a essere personalizzate dallo sviluppatore senza incidere sui futuri aggiornamenti delle pagine standard che nella consuetudine riguardano le pagine con prefisso Amv e Adm (vedere il documento Si4afcCCS.txt nella cartella S:\SI4\Sviluppo\ADS Foundation Class\Ccs).
+E' evidente che l'aggiornamento di queste pagine sarà legato al layout e mai alle funzionalità.
+Per tale motivo, qualora si volesse procedere con l'aggiornamento, è opportuno salvare una copia delle proprie pagine per poter in seguito riapportare le eventuali personalizzazioni alle pagine aggiornate.
+La sostituzione delle pagine vecchie con le nuove avviene automaticamente lanciando il file Si4afcCCSNew.exe e fornendo come percorso di scompattazione la propria cartella di progetto Codecharge (es.: S:\SI4\Gp4\Gp4Web\Gp4Web). 
+
+ 
+
+Prerequisiti
+============
+
+* Client
+- CodeCharge Studio versione 2.3.2 ( o successive )
+
+
+Novità
+======
+Elenco delle novità più rilevanti rispetto le versioni precedenti.
+
+Versione 2005.05.3
+------------------------------
+* Aggiunta pagina RegistrazioneFine per contenuti statici nella pagina di conclusione della registrazione (inclusa in AmvRegistrazioneFine)
+
+Versione 2005.05
+------------------------------
+* Aggiunta pagina MainContent per contenuti statici di homepage (inclusa da AmvMain)
+
+Versione 2004.09
+------------------------------
+* Distribuzione di tutte le pagine per utilizzo corretto delle nuove classi Codecharge 2.3.2
+
+
+Versione 2003.11 del 19/11/2003
+------------------------------
+* Modifica alla pagina Help per gestione dell'help relativo ai singoli campi della generica pagina.
+
+_________________________________________________________________________________________
+
+Gruppo Finmatica S.p.A.
+via del Lavoro,17 40127 BOLOGNA 
+tel.051-6307411 fax 051-6307498
+
+E-mail Internet: SegreteriaClienti@ads.it

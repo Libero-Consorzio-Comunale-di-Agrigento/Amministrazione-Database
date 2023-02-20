@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Anagrafe Soggetti</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//bind_events @1-05A99B56
+function bind_events() {
+    if (functionExists("AD4SoggRicercaInclusa_bind_events")) AD4SoggRicercaInclusa_bind_events();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">{AD4SoggRicercaInclusa}</td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>
