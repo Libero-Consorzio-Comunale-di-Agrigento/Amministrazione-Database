@@ -1,0 +1,224 @@
+<html>
+<head>
+<title>Diritto di Accesso</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_DIRITTI_ACCESSO1_MODULO_OnChange @46-386149A9
+function page_AD4_DIRITTI_ACCESSO1_MODULO_OnChange()
+{
+    var result;
+//End page_AD4_DIRITTI_ACCESSO1_MODULO_OnChange
+
+//Custom Code @78-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+	document.forms["AD4_DIRITTI_ACCESSO1"].ISLISTBOX.value = "Y";
+//End Custom Code
+
+//Submit Form @101-A0EADEF6
+    document.forms["AD4_DIRITTI_ACCESSO1"].submit();
+//End Submit Form
+
+//Close page_AD4_DIRITTI_ACCESSO1_MODULO_OnChange @46-BC33A33A
+    return result;
+}
+//End Close page_AD4_DIRITTI_ACCESSO1_MODULO_OnChange
+
+//page_AD4_DIRITTI_ACCESSO1_ISTANZA_OnChange @47-A4E55FCB
+function page_AD4_DIRITTI_ACCESSO1_ISTANZA_OnChange()
+{
+    var result;
+//End page_AD4_DIRITTI_ACCESSO1_ISTANZA_OnChange
+
+//Custom Code @79-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+    document.forms["AD4_DIRITTI_ACCESSO1"].ISLISTBOX.value = "Y";
+//End Custom Code
+
+//Submit Form @102-A0EADEF6
+    document.forms["AD4_DIRITTI_ACCESSO1"].submit();
+//End Submit Form
+
+//Close page_AD4_DIRITTI_ACCESSO1_ISTANZA_OnChange @47-BC33A33A
+    return result;
+}
+//End Close page_AD4_DIRITTI_ACCESSO1_ISTANZA_OnChange
+
+//page_AD4_DIRITTI_ACCESSO1_Button_Delete_OnClick @41-475ED7FF
+function page_AD4_DIRITTI_ACCESSO1_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_DIRITTI_ACCESSO1_Button_Delete_OnClick
+
+//Confirmation Message @134-E732EC91
+    return confirm('Eliminazione Diritto di Accesso al Modulo '+document.forms["AD4_DIRITTI_ACCESSO1"].MODULO.value +' - Istanza '+document.forms["AD4_DIRITTI_ACCESSO1"].ISTANZA.value +'. Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_DIRITTI_ACCESSO1_Button_Delete_OnClick @41-BC33A33A
+    return result;
+}
+//End Close page_AD4_DIRITTI_ACCESSO1_Button_Delete_OnClick
+
+//DEL  	var refreshSlaves;
+//DEL  	refreshSlaves = document.forms["AD4_DIRITTI_ACCESSO1"].REFRESH_SLAVES.value;
+//DEL  
+//DEL  	if ( refreshSlaves != "NULLO") {
+//DEL  		result = alert(refreshSlaves);
+//DEL  	}
+
+//page_AD4_DIRITTI_ACCESSO1_Refresh_OnClick @152-E7ED3DF5
+function page_AD4_DIRITTI_ACCESSO1_Refresh_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_DIRITTI_ACCESSO1_Refresh_OnClick
+
+//page_AD4_DIRITTI_ACCESSO1_Button_Cancel_OnClick @43-08603D05
+function page_AD4_DIRITTI_ACCESSO1_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_DIRITTI_ACCESSO1_Button_Cancel_OnClick
+//bind_events @1-CD9C5DC0
+function bind_events() {
+    if (document.forms["AD4_DIRITTI_ACCESSO1"]) check_and_bind('document.forms["AD4_DIRITTI_ACCESSO1"].Button_Delete','onclick',page_AD4_DIRITTI_ACCESSO1_Button_Delete_OnClick);
+    if (document.forms["AD4_DIRITTI_ACCESSO1"]) check_and_bind('document.forms["AD4_DIRITTI_ACCESSO1"].ISTANZA','onchange',page_AD4_DIRITTI_ACCESSO1_ISTANZA_OnChange);
+    if (document.forms["AD4_DIRITTI_ACCESSO1"]) check_and_bind('document.forms["AD4_DIRITTI_ACCESSO1"].MODULO','onchange',page_AD4_DIRITTI_ACCESSO1_MODULO_OnChange);
+    if (document.forms["AD4_DIRITTI_ACCESSO1"]) check_and_bind('document.forms["AD4_DIRITTI_ACCESSO1"].Refresh','onclick',page_AD4_DIRITTI_ACCESSO1_Refresh_OnClick);
+    if (document.forms["AD4_DIRITTI_ACCESSO1"]) check_and_bind('document.forms["AD4_DIRITTI_ACCESSO1"].Button_Cancel','onclick',page_AD4_DIRITTI_ACCESSO1_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record AD4_DIRITTI_ACCESSO1 -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table cellspacing="0" cellpadding="3" width="100%" class="AFCToolBoxTable">
+                <tr>
+                  <td class="AFCFormHeaderFont" valign="top">Accesso
+                    {NOMINATIVO} </td> 
+                  <td align="right" class="AFCToolBoxTD" width="10%" nowrap><a class="AFCToolBox" title="Caratteristiche di Accesso" href="{CaratteristicheAccesso}"><img class="" title="Caratteristiche di Accesso" alt="Caratteristiche" src="../common/images/AD4/caac.GIF" border="0">Caratteristiche</a></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="2" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Sequenza&nbsp;</td> 
+                  <td class="AFCDataTD"><input name="{SEQUENZA_Name}" value="{SEQUENZA}" maxlength="4" size="4" class="AFCInputDisplay" readonly><input type="hidden" value="{UTENTE}" name="{UTENTE_Name}"><input type="hidden" value="{ISLISTBOX}" name="{ISLISTBOX_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Modulo *</td> 
+                  <td class="AFCDataTD" width="100%">
+                    <select class="AFCSelect" name="{MODULO_Name}">
+                      <option value="" selected>-&nbsp;-</option>
+ {MODULO_Options} 
+                    </select>
+ <input type="hidden" value="{MODULO_ORIG}" name="{MODULO_ORIG_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Istanza *</td> 
+                  <td class="AFCDataTD">
+                    <select class="AFCSelect" name="{ISTANZA_Name}">
+                      <option value="" selected>- -</option>
+ {ISTANZA_Options} 
+                    </select>
+ <input type="hidden" value="{ISTANZA_ORIG}" name="{ISTANZA_ORIG_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Ruolo *</td> 
+                  <td class="AFCDataTD">
+                    <select class="AFCSelect" name="{RUOLO_Name}">
+                      <option value="" selected>- -</option>
+ {RUOLO_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Note&nbsp;</td> 
+                  <td class="AFCDataTD"><textarea class="AFCTextarea" style="WIDTH: 100%" name="{NOTE_Name}" rows="3" cols="50">{NOTE}</textarea></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Data di
+                    Ultimo Accesso&nbsp;</td> 
+                  <td class="AFCDataTD">{ULTIMO_ACCESSO}&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Numero
+                    di&nbsp;Accessi&nbsp;</td> 
+                  <td class="AFCDataTD">{NUMERO_ACCESSI}&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Gruppo da
+                    cui deriva il Diritto di Accesso&nbsp;</td> 
+                  <td class="AFCDataTD">{GRUPPO}&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="2">
+                    <!-- BEGIN Button Refresh --><input class="AFCButton" style="DISPLAY: none" type="submit" value="Refresh" name="{Button_Name}"><!-- END Button Refresh -->&nbsp; 
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_DIRITTI_ACCESSO1 --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" colspan="2" valign="bottom" height="100">&nbsp;{Footer}{JS_REFRESH_SLAVES}</td> 
+  </tr>
+</table>
+</body>
+</html>

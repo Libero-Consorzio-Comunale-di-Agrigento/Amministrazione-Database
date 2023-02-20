@@ -1,0 +1,287 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="FrameName" value="bsscright">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Abilitazione Gruppi di Utenti">
+    <param name="Name" value="Abilitazione Gruppi di Utenti">
+    <param name="Local" value="AD4Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Abilitazione Utente">
+    <param name="Name" value="Utente">
+    <param name="Local" value="AD4Utente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accessi">
+    <param name="Name" value="Diritti di Accesso">
+    <param name="Local" value="AD4UtenDiacElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accesso del Gruppo">
+    <param name="Name" value="Accesso del Gruppo">
+    <param name="Local" value="AD4DiacElencoGruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accesso dell' Utente">
+    <param name="Name" value="Diritto di Accesso">
+    <param name="Local" value="AD4DirittoAccesso.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4DiacElenco">
+    <param name="Name" value="Elenco degli accessi">
+    <param name="Local" value="AD4DiacElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4GrupElenco">
+    <param name="Name" value="Appartenenza Gruppi">
+    <param name="Local" value="AD4GrupElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4GruppiRicerca">
+    <param name="Name" value="Dizionario Gruppi">
+    <param name="Local" value="AD4GruppiRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4GruppiTree">
+    <param name="Name" value="Struttura Gruppi">
+    <param name="Local" value="AD4GruppiTree.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4IstaElenco">
+    <param name="Name" value="Istanze">
+    <param name="Local" value="AD4IstaElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4Istanza">
+    <param name="Name" value="Istanza">
+    <param name="Local" value="AD4Istanza.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4ModParametri">
+    <param name="Name" value="Modifica Parametro della Richiesta di Abilitazione">
+    <param name="Local" value="AD4ModParametri.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4ModuElenco">
+    <param name="Name" value="Moduli">
+    <param name="Local" value="AD4ModuElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4Modulo">
+    <param name="Name" value="Modulo">
+    <param name="Local" value="AD4Modulo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4RiabElenco">
+    <param name="Name" value="Richieste di abilitazione">
+    <param name="Local" value="AD4RiabElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4Richiesta">
+    <param name="Name" value="Richiesta di abilitazione">
+    <param name="Local" value="AD4Richiesta.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4RichiestaNotifica">
+    <param name="Name" value="Modifica attributi di Notifica della Richiesta">
+    <param name="Local" value="AD4RichiestaNotifica.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4RichiestaParametri">
+    <param name="Name" value="Parametri della Richiesta di Abilitazione">
+    <param name="Local" value="AD4RichiestaParametri.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4Ruolo">
+    <param name="Name" value="Ruolo">
+    <param name="Local" value="AD4Ruolo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4ServElenco">
+    <param name="Name" value="Servizi">
+    <param name="Local" value="AD4ServElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4Soggetto">
+    <param name="Name" value="Soggetto">
+    <param name="Local" value="AD4Soggetto.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4SoggRicerca">
+    <param name="Name" value="Anagrafe Soggetti">
+    <param name="Local" value="AD4SoggRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AD4Stringa">
+    <param name="Name" value="Modifica Registro">
+    <param name="Local" value="AD4Stringa.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Amministratore DataBase">
+    <param name="Name" value="Amministratore DataBase">
+    <param name="Local" value="Amministratore_DataBase.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Archivio Progetti">
+    <param name="Name" value="Archivio Progetti">
+    <param name="Local" value="AD4ProgettiRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Caratteristiche Accesso">
+    <param name="Name" value="Caratteristiche Accesso">
+    <param name="Local" value="AD4CaratteristicheAccesso.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Caratteristiche Accesso Gruppo">
+    <param name="Name" value="Caratteristiche Accesso del Gruppo">
+    <param name="Local" value="Caratteristiche_Accesso_Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Elaborazione Differita">
+    <param name="Name" value="Elaborazione Differita">
+    <param name="Local" value="AD4UserJob.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Elaborazioni Differite">
+    <param name="Name" value="Elaborazioni Differite">
+    <param name="Local" value="AD4UsjoElenco.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Elenco Utenti">
+    <param name="Name" value="Utenti">
+    <param name="Local" value="AD4UtentiRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ente">
+    <param name="Name" value="Ente">
+    <param name="Local" value="AD4Ente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Enti">
+    <param name="Name" value="Enti">
+    <param name="Local" value="AD4EntiRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Eventi">
+    <param name="Name" value="Eventi">
+    <param name="Local" value="AD4EventiRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Evento">
+    <param name="Name" value="Evento">
+    <param name="Local" value="AD4Evento.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gruppi">
+    <param name="Name" value="Abilitazione Gruppi di Utenti">
+    <param name="Local" value="AD4Gruppo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="InfoApplicativo">
+    <param name="Name" value="Informazioni generali dell'applicativo">
+    <param name="Local" value="InfoApplicativo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Istanze di Ente">
+    <param name="Name" value="Istanze di Ente">
+    <param name="Local" value="Istanze_di_Ente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ldap">
+    <param name="Name" value="Collegamento Gruppi LDAP - AD4">
+    <param name="Local" value="AD4LdapGruppi.htm">
+    <param name="Name" value="Parametri Configurazione LDAP">
+    <param name="Local" value="AD4LdapConfig.htm">
+    <param name="Name" value="Struttura albero Ldap">
+    <param name="Local" value="Struttura_albero_Ldap.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Collegamento Gruppi LDAP - AD4">
+      <param name="Name" value="Collegamento Gruppi LDAP - AD4">
+      <param name="Local" value="AD4LdapGruppi.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Parametri Configurazione LDAP">
+      <param name="Name" value="Parametri Configurazione LDAP">
+      <param name="Local" value="AD4LdapConfig.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Struttura Albero">
+      <param name="Name" value="Struttura albero Ldap">
+      <param name="Local" value="Struttura_albero_Ldap.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notifiche automatiche nella gestione delle Richieste di Abilitazione">
+    <param name="Name" value="Notifiche automatiche nella gestione delle Richieste di Abilitazione">
+    <param name="Local" value="Notifiche_automatiche.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Parametri Configurazione LDAP">
+    <param name="Name" value="Parametri Configurazione LDAP">
+    <param name="Local" value="AD4LdapConfig.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Progetti">
+    <param name="Name" value="Archivio Progetti">
+    <param name="Local" value="AD4ProgettiRicerca.htm">
+    <param name="Name" value="Progetto">
+    <param name="Local" value="AD4Progetto.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Registro">
+    <param name="Name" value="Registro">
+    <param name="Local" value="AD4RegistroTree.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Registro Accessi">
+    <param name="Name" value="Registro Accessi">
+    <param name="Local" value="AD4AccessiTree.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ricerca Accessi">
+    <param name="Name" value="Ricerca Accessi">
+    <param name="Local" value="AD4AccessiRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ruoli">
+    <param name="Name" value="Ruoli">
+    <param name="Local" value="AD4RuoliRicerca.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Selezione Utenti da inserire in un Gruppo">
+    <param name="Name" value="Selezione Utenti da inserire in un Gruppo">
+    <param name="Local" value="AD4GruppoMod.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Servizio">
+    <param name="Name" value="Servizio">
+    <param name="Local" value="AD4Servizio.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Situazione Ambiente">
+    <param name="Name" value="Situazione Ambiente">
+    <param name="Local" value="AD4Ambiente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Struttura albero Ldap">
+    <param name="Name" value="Struttura albero Ldap">
+    <param name="Local" value="Struttura_albero_Ldap.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utente">
+    <param name="Name" value="Utente">
+    <param name="Local" value="AD4Utente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utenti">
+    <param name="Name" value="Utenti">
+    <param name="Local" value="AD4UtentiRicerca.htm">
+  </object>
+</ul>
+</html>

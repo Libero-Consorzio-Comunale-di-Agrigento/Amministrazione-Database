@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Collegamento Gruppi Ad4 - LDAP </title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td>
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td>
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" class="AFCFormHeaderFont">
+            <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+              <tr>
+                <td class="AFCFormHeaderFont" nowrap>Collegamento Gruppi Ad4 -
+                  LDAP</td> 
+                <td class="AFCToolBoxTD" nowrap width="10%"><a class="AFCToolbox" title="Nuovo collegamento" href="{Nuovo}"><img title="Nuovo collegamento" border="0" alt="Nuovo collegamento" src="../common/images/AMV/nuovo.gif" width="18" height="18">Nuovo
+                  collegamento</a></td>
+              </tr>
+            </table>
+ 
+            <!-- BEGIN Grid ldap_config -->
+            <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+              <tr>
+                <td class="AFCColumnTD" nowrap>Gruppo AD4</td> 
+                <td class="AFCColumnTD" nowrap>Gruppo LDAP</td>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCDataTD"><a href="{GRUPPO_AD4_Src}">{GRUPPO_AD4}</a>&nbsp;</td> 
+                <td class="AFCDataTD" nowrap>{VALORE}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td class="AFCDataTD" colspan="2">Nessuna registrazione&nbsp;</td>
+              </tr>
+ <!-- END NoRecords -->
+              <tr>
+                <td class="AFCFooterTD" nowrap align="center" colspan="2">{AFCNavigator} </td>
+              </tr>
+            </table>
+ <!-- END Grid ldap_config -->
+            <!-- BEGIN Grid checkAuthorizationMapping -->
+            <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+              <!-- BEGIN Row --><!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td class="AFCErrorDataTD">I gruppi collegati verranno
+                  considerati solo&nbsp;quando il parametro
+                  "AuthorizationMapping" del server LDAP
+                  principale&nbsp;assumerà valore yes.</td>
+              </tr>
+ <!-- END NoRecords -->
+            </table>
+ <!-- END Grid checkAuthorizationMapping --></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td>
+  </tr>
+</table>
+</body>
+</html>

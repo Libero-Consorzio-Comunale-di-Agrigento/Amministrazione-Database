@@ -1,0 +1,120 @@
+
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AslComuneImposta_Button_Delete_OnClick @16-D46B6D2A
+function page_AslComuneImposta_Button_Delete_OnClick()
+{
+    var result;
+//End page_AslComuneImposta_Button_Delete_OnClick
+
+//Confirmation Message @17-161BC56F
+    return confirm('Eliminazione Comune Asl. Procedere ?');
+//End Confirmation Message
+
+//Close page_AslComuneImposta_Button_Delete_OnClick @16-BC33A33A
+    return result;
+}
+//End Close page_AslComuneImposta_Button_Delete_OnClick
+
+//page_AslComuneImposta_Button_Update_OnClick @14-268D5CA9
+function page_AslComuneImposta_Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AslComuneImposta_Button_Update_OnClick
+
+//page_AslComuneImposta_Button_Cancel_OnClick @19-79880F48
+function page_AslComuneImposta_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AslComuneImposta_Button_Cancel_OnClick
+
+//bind_events @1-297887DB
+function Ad4DizionariAslComuneImposta_bind_events() {
+    if (document.forms["AslComuneImposta"]) check_and_bind('document.forms["AslComuneImposta"].Button_Delete','onclick',page_AslComuneImposta_Button_Delete_OnClick);
+    if (document.forms["AslComuneImposta"]) check_and_bind('document.forms["AslComuneImposta"].Button_Update','onclick',page_AslComuneImposta_Button_Update_OnClick);
+    if (document.forms["AslComuneImposta"]) check_and_bind('document.forms["AslComuneImposta"].Button_Cancel','onclick',page_AslComuneImposta_Button_Cancel_OnClick);
+}
+//End bind_events
+// -------------------------------------------------  
+// Aggiunta per attivare JavaScript su pagina inclusa  
+window.onload = Ad4DizionariAslComuneImposta_bind_events;
+// ------------------------------------------------- 
+//End CCS script
+</script>
+<!-- BEGIN Grid AttributoHeader -->
+<table cellspacing="0" cellpadding="3" width="100%">
+  <!-- BEGIN Row -->
+  <tbody>
+    <tr>
+      <td align="center"></td> 
+      <td width="1%" align="center"><a class="AFCDataLink" href="{Indietro}"><img border="0" src="../images/back.gif" width="18" height="18"></a></td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid AttributoHeader -->
+<!-- BEGIN Record AslComuneImposta -->
+<div align="center">
+  <form method="post" name="{HTMLFormName}" action="{Action}">
+    <font class="AFCFormHeaderFont">Imposta&nbsp;Comune ASL</font> 
+    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Asl&nbsp;*</td> 
+          <td class="AFCDataTD">{ASL_DESC}&nbsp;<input style="WIDTH: 61px; HEIGHT: 22px" value="{REGIONE_ASL}" size="7" type="hidden" name="{REGIONE_ASL_Name}"><input style="WIDTH: 61px; HEIGHT: 22px" value="{CODICE_ASL}" size="7" type="hidden" name="{CODICE_ASL_Name}">{Label1} 
+            <select class="AFCSelect" name="{COD_ASL_Name}">
+              {COD_ASL_Options} 
+            </select>
+ {Label2}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top" nowrap>Comune *&nbsp;</td> 
+          <td class="AFCDataTD">{COMUNE_DESC}&nbsp;<input style="WIDTH: 61px; HEIGHT: 22px" value="{PROVINCIA}" size="7" type="hidden" name="{PROVINCIA_Name}"><input style="WIDTH: 61px; HEIGHT: 22px" value="{COMUNE}" size="7" type="hidden" name="{COMUNE_Name}">{Label3} 
+            <select class="AFCSelect" name="{COD_COMUNE_ASL_Name}">
+              {COD_COMUNE_ASL_Options} 
+            </select>
+ {Label4}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Proposta </td> 
+          <td class="AFCDataTD"><input value="1" type="checkbox" name="{PROPOSTA_Name}" {PROPOSTA}></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Attiva </td> 
+          <td class="AFCDataTD"><input value="1" type="checkbox" name="{ATTIVA_Name}" {ATTIVA}>&nbsp;
+            {LABEL_UPD}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFooterTD" colspan="2" nowrap align="right">
+            <!-- BEGIN Button Button_Insert --><input class="AFCButton" value="Inserisci" type="submit" name="{Button_Name}"><!-- END Button Button_Insert -->
+            <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Aggiorna" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+            <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+            <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+ 
+  </form>
+</div>
+<!-- END Record AslComuneImposta -->

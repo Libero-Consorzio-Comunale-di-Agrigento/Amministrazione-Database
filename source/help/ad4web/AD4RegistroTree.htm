@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" href="Ad4web_rtf(1)_ns.css" type="text/css">
+<script type="text/javascript" language="JavaScript">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='Ad4web_rtf(1).css'>");}
+//-->
+</script>
+<title>Registro</title>
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<script language="JavaScript" src="./ehlpdhtm.js" type="text/javascript">
+</script>
+<script type="text/javascript" language="JavaScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+        origWidth = innerWidth;
+        origHeight = innerHeight;
+        onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style>
+
+<script type="text/javascript" language="javascript1.2" src="whmsg.js">
+</script>
+<script type="text/javascript" language="javascript" src="whver.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js">
+</script>
+</head>
+<body>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+        if (window.addTocInfo)
+        {
+        addTocInfo("Archivio\nRegistro");
+addTocInfo("Servizi\nRegistro");
+addAvenueInfo("MAIN","Notifiche_automatiche.htm","");
+addButton("show",BTN_TEXT,"Indice","","","","",0,0,"","","");
+
+        }
+        if (window.writeBtnStyle)
+                writeBtnStyle();
+
+        if (window.writeIntopicBar)
+                writeIntopicBar(1);
+
+        if (window.setRelStartPage)
+        {
+        setRelStartPage("index.htm");
+
+                autoSync(1);
+                sendSyncInfo();
+                sendAveInfoOut();
+        }
+}
+else
+        if (window.gbIE4)
+                document.location.reload();
+//-->
+</script>
+<h1>Registro</h1>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p>La finestra consente all'Amministratore del Database di gestire i valori delle chiavi del Registro su una qualsiasi <font style="font-style:italic;">Istanza</font> di Database.</p>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p><img src="images/ebx_597659484.gif" border="0" height="465" width="806" alt="images\ebx_597659484.gif"></p>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p>Alcune chiavi del registro del prodotto Amministratore di Database contengono informazioni trasversali agli applicativi del Sistema Informativo Versione 4:</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span><font style="font-weight:bold;">PRODUCTS/AUTHENTICATION</font>: parametri di autenticazione.<br>
+<font style="font-weight:bold;">PwdCase</font>: indica se la password deve essere case sensitive.<br>
+Valori possibili:<br>
+- Any: la password viene presa come viene digitata;<br>
+- Upper: indipendentemente da come viene digitata, la password viene considerata in maiuscolo.<br>
+Default: Upper.</p>
+<table width="769" cellspacing="0" cellpadding="1" style="margin-left:14.50pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p class="footnote-text" style="text-align:justify;"><font style="text-decoration:underline;">ATTENZIONE</font>:</p>
+<p class="footnote-text" style="margin-left:18.00pt; text-indent:-18.00pt; text-align:justify;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Nel momento in cui si passa <font style="font-weight:bold;">da Upper ad Any</font>, tutti gli utenti si autenticheranno soltanto scrivendo la vecchia password in maiuscolo (come è memorizzata sul database server) mentre le nuove password verranno memorizzate esattamente come vengono digitate e quindi gli utenti dovranno autenticarsi scrivendo la nuova password esattamente come è stata registrata.</p>
+<p class="footnote-text" style="margin-left:18.00pt; text-indent:-18.00pt; text-align:justify;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Il ritorno <font style="font-weight:bold;">da Any</font> <font style="font-weight:bold;">ad Upper NON è possibile</font> se non facendolo precedere da una fase che trasformi tutte le password degli utenti memorizzate sul database server in maiuscolo.</p>
+</td>
+</tr>
+</table>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span><font style="font-weight:bold;">PRODUCTS/LDAPCONFIG</font>: parametri di configurazione server LDAP da utilizzare per l'autenticazione degli utenti agli applicativi.</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span><font style="font-weight:bold;">PRODUCTS/AD4/UTENTE</font>: regole per la corretta determinazione di cognome e nome dal nominativo utente per gli applicativi del Sistema Informativo Versione 2 che effettuano l'autenticazione tramite cognome e nome e non tramite nominativo.<br>
+<font style="font-weight:bold;">UnioneNomiComposti</font>: carattere da utilizzare per concatenare cognomi o nomi composti nel campo nominativo dell'utente (default: spazio).<br>
+<font style="font-weight:bold;">Occorrenza</font>: se il carattere di concatenazione è lo spazio, indica quale occorrenza del carattere deve essere considerata. Valori possibili: prima, ultima (default: prima).</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span><font style="font-weight:bold;">PRODUCTS/AD4/RICHIESTA_ABILITAZIONE/MAIL</font>: valori predefiniti per l'invio di notifiche automatiche in fase di registrazione da un portale del Gruppo Finmatica.</p>
+<p class="Tip-Note-Heading">Funzionalità particolari</p>
+<table width="576" cellspacing='0' cellpadding="1">
+<tr valign="top">
+<td width="26.23%">
+<p class="Body-Text"><font style="font-style:italic;">Modifica</font></p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Permette di modificare la chiave selezionata.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.23%">
+<p class="Body-Text"><font style="font-style:italic;">Nuova Chiave</font></p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Permette di inserire una nuova chiave.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.23%">
+<p class="Body-Text"><font style="font-style:italic;">Nuova Stringa</font></p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Permette di inserire una nuova stringa.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.23%">
+<p class="Body-Text"><font style="font-style:italic;">Ricerca</font></p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Permette di impostare dei parametri di ricerca.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.23%">
+<p class="Body-Text"><font style="font-style:italic;">Indietro</font></p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Permette di tornare alla pagina chiamante (presente solo se si sta visualizzando il registro di una <a href="AD4Istanza.htm">istanza</a> specifica).</p>
+</td>
+</tr>
+</table>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="Tip-Note-Heading">Argomenti</p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <font style="color:green; background-color:yellow; text-decoration:underline;">Parametri di configurazione LDAP</font></p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <font style="color:green; background-color:yellow; text-decoration:underline;">Notifiche automatiche nella gestione delle Richieste di Abilitazione</font></p>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+        writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

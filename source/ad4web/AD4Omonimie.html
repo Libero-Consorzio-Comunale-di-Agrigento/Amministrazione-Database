@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>Collegamento Gruppi Ad4 - LDAP </title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4Ruoli_VSearch_DoSearch_OnClick @135-CF17B9A6
+function page_AD4Ruoli_VSearch_DoSearch_OnClick()
+{
+    var result;
+//End page_AD4Ruoli_VSearch_DoSearch_OnClick
+
+//Custom Code @136-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+//End Custom Code
+
+//Close page_AD4Ruoli_VSearch_DoSearch_OnClick @135-BC33A33A
+    return result;
+}
+//End Close page_AD4Ruoli_VSearch_DoSearch_OnClick
+
+//bind_events @1-93EE262E
+function bind_events() {
+    if (document.forms["AD4Ruoli_VSearch"]) check_and_bind('document.forms["AD4Ruoli_VSearch"].DoSearch','onclick',page_AD4Ruoli_VSearch_DoSearch_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<p align="left">&nbsp; 
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" class="AFCFormHeaderFont">
+            <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+              <tr>
+                <td class="AFCFormHeaderFont" nowrap>Visualizzazione probabili
+                  omonimie</td> 
+              </tr>
+ 
+            </table>
+ &nbsp; 
+            <!-- BEGIN Record AD4Ruoli_VSearch -->
+            <form name="AD4Ruoli_VSearch" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td class="AFCDataTD" colspan="8"><font color="#ff0000">{Error}</font></td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="middle">Visualizza&nbsp;da&nbsp;esaminare</td> 
+                    <td class="AFCDataTD" valign="top">
+                      <select name="{s_daignorare_Name}">
+                        <option value="" selected>Tutti</option>
+ {s_daignorare_Options} 
+                      </select>
+ </td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="middle">Visualizza&nbsp;unificati</td> 
+                    <td class="AFCDataTD" valign="top">
+                      <select name="{s_unificati_Name}">
+                        <option value="" selected>Tutti</option>
+ {s_unificati_Options} 
+                      </select>
+ </td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="middle">Visualizza&nbsp;copiati</td> 
+                    <td class="AFCDataTD" valign="top">
+                      <select name="{s_copiati_Name}">
+                        <option value="" selected>Tutti</option>
+ {s_copiati_Options} 
+                      </select>
+ </td> 
+                    <td class="AFCDataTD" valign="top" nowrap>
+                      <!-- BEGIN Button DoSearch --><input class="AFCButton" type="submit" value="Cerca" name="DoSearch"><!-- END Button DoSearch -->&nbsp;</td> 
+                  </tr>
+ 
+                </table>
+ 
+              </form>
+ 
+              <p align="left"><!-- END Record AD4Ruoli_VSearch -->&nbsp; 
+              <!-- BEGIN Grid ldap_config -->
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <tr>
+                  <td class="AFCColumnTD" nowrap>Utente&nbsp;Principale</td> 
+                  <td class="AFCColumnTD" nowrap>Utente&nbsp;secondario</td> 
+                  <td class="AFCColumnTD" nowrap>Unifica</td> 
+                  <td class="AFCColumnTD" nowrap>Copia</td> 
+                  <td class="AFCColumnTD" nowrap>Esamina&nbsp;</td> 
+                  <td class="AFCColumnTD" nowrap>Modifica</td> 
+                </tr>
+                <!-- BEGIN Row -->
+                <tr>
+                  <td class="AFCDataTD">{NOMINATIVO}&nbsp;</td> 
+                  <td class="AFCDataTD" nowrap>&nbsp;{SOSIA_NOMINATIVO}&nbsp;</td> 
+                  <td class="AFCDataTD"><a href="{UNIFICA_PROFILO_Src}">{UNIFICA_PROFILO}</a>&nbsp;</td> 
+                  <td class="AFCDataTD" nowrap><a href="{COPIA_PROFILO_Src}">{COPIA_PROFILO}</a>&nbsp;</td> 
+                  <td class="AFCDataTD">{IGNORA}&nbsp;</td> 
+                  <td class="AFCDataTD" nowrap><a href="{MODIFICA_Src}">{MODIFICA}</a>&nbsp;</td> 
+                </tr>
+                <!-- END Row -->
+                <!-- BEGIN NoRecords -->
+                <tr>
+                  <td class="AFCDataTD" colspan="6">Nessuna registrazione&nbsp;</td> 
+                </tr>
+                <!-- END NoRecords -->
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="center" colspan="6">{AFCNavigator} </td> 
+                </tr>
+ 
+              </table>
+ <!-- END Grid ldap_config --></p>
+ </td> 
+          </tr>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+    </tr>
+ 
+  </table>
+ </p>
+ 
+  </body>
+ 
+  </html>

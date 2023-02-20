@@ -1,0 +1,166 @@
+<html>
+<head>
+<title>Gruppo</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_ASSEGNATI_Uno_OnClick @66-07511836
+function page_ASSEGNATI_Uno_OnClick()
+{
+    var result;
+//End page_ASSEGNATI_Uno_OnClick
+
+//Confirmation Message @67-09F8AA3D
+    return confirm('ATTENZIONE:\nSe l\'utente possiede diritti di accesso derivanti unicamente dall\'appartenenza a questo gruppo, la rimozione comporta la perdita di tutti i diritti.\n\nContinuare?');
+//End Confirmation Message
+
+//Close page_ASSEGNATI_Uno_OnClick @66-BC33A33A
+    return result;
+}
+//End Close page_ASSEGNATI_Uno_OnClick
+
+//page_ASSEGNATI_Tutti_OnClick @68-688F0116
+function page_ASSEGNATI_Tutti_OnClick()
+{
+    var result;
+//End page_ASSEGNATI_Tutti_OnClick
+
+//Confirmation Message @69-6CDD4870
+    return confirm('L\'operazione rimuove tutti gli utenti assegnati al gruppo ed i relativi diritti di accesso.\n\n ATTENZIONE:\nSe l\'utente possiede diritti di accesso derivanti unicamente dall\'appartenenza a questo gruppo, la rimozione comportera la perdita di tutti i diritti.\n\nContinuare?');
+//End Confirmation Message
+
+//Close page_ASSEGNATI_Tutti_OnClick @68-BC33A33A
+    return result;
+}
+//End Close page_ASSEGNATI_Tutti_OnClick
+
+//bind_events @1-3F17D506
+function bind_events() {
+    if (document.forms["ASSEGNATI"]) check_and_bind('document.forms["ASSEGNATI"].Tutti','onclick',page_ASSEGNATI_Tutti_OnClick);
+    if (document.forms["ASSEGNATI"]) check_and_bind('document.forms["ASSEGNATI"].Uno','onclick',page_ASSEGNATI_Uno_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="middle" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" align="middle">
+            <table width="90%">
+              <tr>
+                <td width="100%" colspan="2">
+                  <p>
+                  <!-- BEGIN Record AD4_UTENTI --></p>
+ 
+                  <p>
+                  <form name="{HTMLFormName}" action="{Action}" method="post">
+                    <font class="AFCFormHeaderFont">Aggiorna Gruppi di
+                    appartenenza dell' utente&nbsp;{NOMINATIVO} </font> 
+                  </form>
+ <!-- END Record AD4_UTENTI --></p>
+ </td> 
+              </tr>
+ 
+              <tr>
+                <td width="50%" valign="top" align="left" nowrap>
+                  <!-- BEGIN Record DISPONIBILI -->
+                  <form name="{HTMLFormName}" action="{Action}" method="post">
+                    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                      <!-- BEGIN Error -->
+                      <tr>
+                        <td class="AFCErrorDataTD">{Error}</td> 
+                      </tr>
+                      <!-- END Error -->
+                      <tr>
+                        <td class="AFCColumnTD">Disponibili</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" style="WIDTH: 100%" size="10" name="{UTENTE_D_Name}">
+                            {UTENTE_D_Options} 
+                          </select>
+ &nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" nowrap align="right">
+                          <!-- BEGIN Button Tutti --><input class="AFCButton" title="Inserisce l' utente in tutti i gruppi" type="submit" value=">>  " name="{Button_Name}"><!-- END Button Tutti -->
+                          <!-- BEGIN Button Uno --><input class="AFCButton" type="submit" value="  >  " name="{Button_Name}"><!-- END Button Uno -->&nbsp; </td> 
+                      </tr>
+ 
+                    </table>
+ 
+                  </form>
+ <!-- END Record DISPONIBILI --></td> 
+                <td width="50%" valign="top" align="left">
+                  <!-- BEGIN Record ASSEGNATI -->
+                  <form name="{HTMLFormName}" action="{Action}" method="post">
+                    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                      <!-- BEGIN Error -->
+                      <tr>
+                        <td class="AFCErrorDataTD">{Error}</td> 
+                      </tr>
+                      <!-- END Error -->
+                      <tr>
+                        <td class="AFCColumnTD">Assegnati</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" style="WIDTH: 100%" size="10" name="{UTENTE_A_Name}">
+                            {UTENTE_A_Options} 
+                          </select>
+ &nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" nowrap align="left">
+                          <!-- BEGIN Button Uno --><input class="AFCButton" type="submit" value="  <  " name="{Button_Name}"><!-- END Button Uno -->
+                          <!-- BEGIN Button Tutti --><input class="AFCButton" title="Toglie l'utente da tutti i gruppi" type="submit" value="  <<  " name="{Button_Name}"><!-- END Button Tutti --></td> 
+                      </tr>
+ 
+                    </table>
+ 
+                  </form>
+ <!-- END Record ASSEGNATI --></td> 
+              </tr>
+ 
+            </table>
+ </td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

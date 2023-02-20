@@ -1,0 +1,121 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="FrameName" value="bsscright">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Introduzione">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Amministratore DataBase">
+      <param name="Local" value="Amministratore_DataBase.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Informazioni generali dell'applicativo">
+      <param name="Local" value="InfoApplicativo.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Archivio">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Situazione Ambiente">
+      <param name="Local" value="AD4Ambiente.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Enti">
+      <param name="Local" value="AD4EntiRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Archivio Progetti">
+      <param name="Local" value="AD4ProgettiRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Progetto">
+      <param name="Local" value="AD4Progetto.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Soggetti">
+      <param name="Local" value="AD4SoggRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Registro">
+      <param name="Local" value="AD4RegistroTree.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Abilitazioni">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ruoli">
+      <param name="Local" value="AD4RuoliRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Utenti">
+      <param name="Local" value="AD4UtentiRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Dizionario Gruppi">
+      <param name="Local" value="AD4GruppiRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Struttura Gruppi">
+      <param name="Local" value="AD4GruppiTree.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Richieste">
+      <param name="Local" value="AD4RiabElenco.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Diritti di Accesso">
+      <param name="Local" value="AD4DiacElenco.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Servizi">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Accessi">
+      <param name="Local" value="AD4AccessiRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Elaborazioni Differite">
+      <param name="Local" value="AD4UsjoElenco.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Eventi">
+      <param name="Local" value="AD4EventiRicerca.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Registro">
+      <param name="Local" value="AD4RegistroTree.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Registro Accessi">
+      <param name="Local" value="AD4AccessiTree.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Configurazione LDAP">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Parametri Configurazione LDAP">
+      <param name="Local" value="AD4LdapConfig.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Collegamento Gruppi LDAP - AD4">
+      <param name="Local" value="AD4LdapGruppi.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Struttura albero Ldap">
+      <param name="Local" value="Struttura_albero_Ldap.htm">
+    </object>
+    </ul>
+</ul>
+</html>

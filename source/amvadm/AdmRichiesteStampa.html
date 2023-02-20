@@ -1,0 +1,70 @@
+<script language="javascript">
+function checkUncheckAllNOTIFICA(theElement) {
+     var theForm = theElement.form, z = 0;
+	 for(z=0; z<theForm.length;z++){
+      if(theForm[z].type == 'checkbox' && theForm[z].name != 'checkall' && theForm[z].name.lastIndexOf('NOTIFICATO') != -1){
+	  theForm[z].checked = theElement.checked;
+	  }
+     }
+    }
+	function checkUncheckAllSTAMPA(theElement) {
+     var theForm = theElement.form, z = 0;
+	 for(z=0; z<theForm.length;z++){
+      if(theForm[z].type == 'checkbox' && theForm[z].name != 'checkall' && theForm[z].name.lastIndexOf('STAMPA') != -1){
+	  theForm[z].checked = theElement.checked;
+	  }
+     }
+    }
+</script>
+<!-- BEGIN EditableGrid RICHIESTE_STAMPA -->
+<form name="{HTMLFormName}" action="{Action}" method="post">
+  <input type="hidden" value="{FormState}" name="FormState">{FormScript} 
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="AFCErrorDataTD" colspan="8">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>      
+      <td class="AFCColumnTD" nowrap colspan="2">Richiesta</td> 
+      <td class="AFCColumnTD" nowrap>Richiedente</td> 
+      <td class="AFCColumnTD" nowrap>Stato notifica</td> 
+      <td class="AFCColumnTD" nowrap >&nbsp;<input type="checkbox" name="checkall" onclick="checkUncheckAllNOTIFICA(this);"/>Notifica tutti</td>
+	  <td class="AFCColumnTD" nowrap >
+			  &nbsp;<input type="checkbox" name="checkall" onclick="checkUncheckAllSTAMPA(this);"/>Stampa tutti</td> 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <!-- BEGIN RowError -->
+    <tr>
+      <td class="AFCErrorDataTD" colspan="6">{Error}</td> 
+    </tr>
+ <!-- END RowError -->
+    <tr>
+      <td class="AFCDataTD">{DATA}&nbsp;</td>
+	  <td class="AFCDataTD">&nbsp;{REPORT}</td>
+      <td class="AFCDataTD">&nbsp;{AUTORE}<input type="hidden" value="{ID_RICHIESTA}" name="{ID_RICHIESTA_Name}"></td> 
+      <td class="AFCDataTD">&nbsp;{NOTIFICATA}</td> 
+      <td class="AFCDataTD">{BEGIN_HIDE}&nbsp;<input  type="checkbox" value="1" name="{NOTIFICATO_Name}" {NOTIFICATO}>&nbsp;Notifica&nbsp;spedita&nbsp;&nbsp;</td><td class="AFCDataTD">&nbsp;<input  type="checkbox" value="1" name="{STAMPA_Name}" {STAMPA}>&nbsp;Includi
+        nella stampa&nbsp;{END_HIDE}&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="6">Nessuna registrazione&nbsp;</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+	<td class="AFCColumnTD" colspan="4"> </td>
+	 <td class="AFCColumnTD" nowrap >&nbsp;<input type="checkbox" name="checkall" onclick="checkUncheckAllNOTIFICA(this);"/>Notifica tutti</td>
+	  <td class="AFCColumnTD" nowrap >
+			  &nbsp;<input type="checkbox" name="checkall" onclick="checkUncheckAllSTAMPA(this);"/>Stampa tutti</td> 
+	</tr>
+	<tr>
+      <td class="AFCFooterTD" nowrap align="right" colspan="6">{LINK}&nbsp; 
+        <!-- BEGIN Button Button_Submit --><input class="AFCButton" type="submit" value="Registra modifiche" name="{Button_Name}"><!-- END Button Button_Submit -->&nbsp; </td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END EditableGrid RICHIESTE_STAMPA -->

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Dati Utente</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<style type="text/css">.hidden{display:none;}</style>
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript">
+ function confermaEliminazioneCaac() {
+ 	var result;
+	result = confirm('ATTENZIONE: tutte le caratteristiche di accesso assegnate esplicitamente all\'utente verranno eliminate.\nContinuare?');    
+	if (result == true) {
+		location.href = 'AD4EliminazioneCaacUtente.do?ccsForm=ad4CaacElimina:Edit&Button_Update=Aggiorna&P_UTENTE='+document.AD4_UTENTI.UTENTE.value;
+	}
+}
+ function confermaAutenticazioneAd4() {
+ 	var result;
+    result = confirm('In seguito all\'operazione l\'autenticazione dell\'utente non avverrà più tramite Ldap ma tramite AD4.\nContinuare?');
+	if (result == true) {
+		location.href = 'AD4AutenticazioneAd4Utente.do?ccsForm=ad4Authenticate:Edit&Button_Update=Aggiorna&P_UTENTE='+document.AD4_UTENTI.UTENTE.value;
+	}
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_UTENTI_Button_Delete_OnClick @9-47E62FEC
+function page_AD4_UTENTI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_UTENTI_Button_Delete_OnClick
+
+//Confirmation Message @10-893C2269
+    return confirm('Eliminazione Utente '+ document.AD4_UTENTI.NOMINATIVO.value+'. Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_UTENTI_Button_Delete_OnClick @9-BC33A33A
+    return result;
+}
+//End Close page_AD4_UTENTI_Button_Delete_OnClick
+
+//page_AD4_UTENTI_Button_Cancel_OnClick @11-20CC8156
+function page_AD4_UTENTI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_UTENTI_Button_Cancel_OnClick
+
+//bind_events @1-4EAB1E02
+function bind_events() {
+    if (document.forms["AD4_UTENTI"]) check_and_bind('document.forms["AD4_UTENTI"].Button_Delete','onclick',page_AD4_UTENTI_Button_Delete_OnClick);
+    if (document.forms["AD4_UTENTI"]) check_and_bind('document.forms["AD4_UTENTI"].Button_Cancel','onclick',page_AD4_UTENTI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td>
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td>
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <div style="DISPLAY: none">
+                </div>
+                <!-- BEGIN Record AD4_UTENTI -->
+                <form method="post" name="{HTMLFormName}" action="{Action}">
+                  <font class="AFCFormHeaderFont"></font> 
+                  <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+                    <tbody>
+                      <tr>
+                        <td class="AFCFormHeaderFont" nowrap></td> 
+                        <td class="AFCToolboxTD" width="10%" nowrap align="right"><a class="AFCToolBox" title="Genera password casuale" href="{GENERA_PASSWORD_Src}">{GENERA_PASSWORD}</a>&nbsp;<a class="AFCToolBox" title="Svuota Anagrafica" href="{SVUOTA_REG_ANAGRAFICA_Src}">{SVUOTA_REG_ANAGRAFICA}</a>&nbsp;<a class="AFCToolBox" title="Modifica Anagrafica" href="{MOD_REGISTRAZIONE_ANAGRAFICA_Src}">{MOD_REGISTRAZIONE_ANAGRAFICA}</a>&nbsp;{AUTENTICAZIONE_AD4}&nbsp;{ELIMINA_CAAC}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+ 
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                    <!-- BEGIN Error -->
+                    <tbody>
+                      <tr>
+                        <td class="AFCErrorDataTD" colspan="4">{Error}</td>
+                      </tr>
+                      <!-- END Error -->
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Utente *</td> 
+                        <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{NOMINATIVO}" size="40" name="{NOMINATIVO_Name}"><input value="{IS_SO4_USER}" type="hidden" name="{IS_SO4_USER_Name}"><input value="{SOGGETTO}" type="hidden" name="{SOGGETTO_Name}"><input value="{ID_UTENTE}" type="hidden" name="{ID_UTENTE_Name}">&nbsp;{IS_LDAPUSER}</td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Codice</td> 
+                        <td class="AFCDataTD">{UTENTE_VIS}<input value="{UTENTE}" type="hidden" name="{UTENTE_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Password</td> 
+                        <td class="AFCDataTD" colspan="2"><input class="AFCInputReadOnly" value="{PASSWORD}" readonly maxlength="40" size="8" type="password" name="{PASSWORD_Name}" autocomplete="off">{MODIFICA_PASSWORD}&nbsp; <input value="{PWD_MODIFIED}" type="hidden" name="{PWD_MODIFIED_Name}">del
+                          {DATA_PASSWORD}&nbsp; </td> 
+                        <td class="AFCDataTD" colspan="2">
+                          <select class="AFCSelect" name="{RINNOVO_PASSWORD_Name}">
+                            {RINNOVO_PASSWORD_Options}
+                          </select>
+ </td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Stato *</td> 
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" name="{STATO_Name}">
+                            {STATO_Options}
+                          </select>
+ </td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Lingua *</td> 
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" name="{LINGUA_Name}">
+                            {LINGUA_Options}
+                          </select>
+ </td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Gruppo di
+                          &nbsp;Lavoro&nbsp;</td> 
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" name="{GRUPPO_LAVORO_Name}">
+                            {GRUPPO_LAVORO_Options}
+                          </select>
+ </td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Importanza</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" value="{IMPORTANZA}" maxlength="2" size="2" name="{IMPORTANZA_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Amministratore</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" value="1" type="checkbox" name="{AMMINISTRATORE_Name}" {AMMINISTRATORE}></td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Informazioni
+                          identificazione</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" value="{INFO_IDENTIFICAZIONE}" name="{INFO_IDENTIFICAZIONE_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Note&nbsp;</td> 
+                        <td class="AFCDataTD" colspan="3"><textarea style="WIDTH: 100%" class="AFCTextarea" name="{NOTE_Name}">{NOTE}</textarea></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">{TITOLO_SOGG}&nbsp;</td> 
+                        <td class="AFCDataTD" colspan="3">{DATI_SOGGETTO}&nbsp;</td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Ultimo
+                          accesso&nbsp;il</td> 
+                        <td class="AFCDataTD">{ULTIMO_TENTATIVO}&nbsp;</td> 
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>Tentativi
+                          falliti</td> 
+                        <td class="AFCDataTD">{NUMERO_TENTATIVI}&nbsp;</td>
+                      </tr>
+ 
+                      <tr>
+                        <td style="BORDER-RIGHT-WIDTH: 0px" class="AFCFieldCaptionTD">{DATA_INSERIMENTO} </td> 
+                        <td class="AFCFieldCaptionTD" valign="top" colspan="3" align="right">{UTENTE_DATA_AGGIORNAMENTO} </td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" colspan="4" nowrap align="right">
+                          <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Registra" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+                          <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+                          <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+                <!-- END Record AD4_UTENTI --></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+ 
+    <tr>
+      <td height="100%" valign="bottom" width="100%" colspan="2">&nbsp;{Footer}</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<tocdata>
+<book name="Introduzione" >
+  <item name="Amministratore DataBase" url="Amministratore_DataBase.htm" />
+  <item name="Informazioni generali dell'applicativo" url="InfoApplicativo.htm" />
+</book>
+<book name="Archivio" >
+  <item name="Situazione Ambiente" url="AD4Ambiente.htm" />
+  <item name="Enti" url="AD4EntiRicerca.htm" />
+  <item name="Archivio Progetti" url="AD4ProgettiRicerca.htm" />
+  <item name="Progetto" url="AD4Progetto.htm" />
+  <item name="Soggetti" url="AD4SoggRicerca.htm" />
+  <item name="Registro" url="AD4RegistroTree.htm" />
+</book>
+<book name="Abilitazioni" >
+  <item name="Ruoli" url="AD4RuoliRicerca.htm" />
+  <item name="Utenti" url="AD4UtentiRicerca.htm" />
+  <item name="Dizionario Gruppi" url="AD4GruppiRicerca.htm" />
+  <item name="Struttura Gruppi" url="AD4GruppiTree.htm" />
+  <item name="Richieste" url="AD4RiabElenco.htm" />
+  <item name="Diritti di Accesso" url="AD4DiacElenco.htm" />
+</book>
+<book name="Servizi" >
+  <item name="Accessi" url="AD4AccessiRicerca.htm" />
+  <item name="Elaborazioni Differite" url="AD4UsjoElenco.htm" />
+  <item name="Eventi" url="AD4EventiRicerca.htm" />
+  <item name="Registro" url="AD4RegistroTree.htm" />
+  <item name="Registro Accessi" url="AD4AccessiTree.htm" />
+</book>
+<book name="Configurazione LDAP" >
+  <item name="Parametri Configurazione LDAP" url="AD4LdapConfig.htm" />
+  <item name="Collegamento Gruppi LDAP - AD4" url="AD4LdapGruppi.htm" />
+  <item name="Struttura albero Ldap" url="Struttura_albero_Ldap.htm" />
+</book>
+
+</tocdata>

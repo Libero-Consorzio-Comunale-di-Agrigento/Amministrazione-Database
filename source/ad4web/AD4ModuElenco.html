@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Moduli del Progetto</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td>
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td>
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <!-- BEGIN Grid PROGETTI -->
+                <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+                  <!-- BEGIN Row -->
+                  <tbody>
+                    <tr>
+                      <td class="AFCFormHeaderFont" valign="bottom">{DESC_PROGETTO}<input style="WIDTH: 199px; HEIGHT: 22px" value="ATTENZIONE: CUSTOM CODE!!" size="25" type="hidden" name="{Hidden1_Name}"></td> 
+                      <td class="AFCToolBoxTD" valign="middle" width="10%" nowrap align="right"><a class="AFCToolBox" title="Nuovo Modulo" href="{Nuovo}"><img title="Nuovo Modulo" border="0" alt="Nuovo" src="../common/images/AMV/nuovo.gif">Nuovo</a></td>
+                    </tr>
+                    <!-- END Row -->
+                    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+                  </tbody>
+                </table>
+                <!-- END Grid PROGETTI -->
+                <!-- BEGIN Grid AD4_MODULI -->
+                <table class="AFCFormTABLE" cellspacing="0" cellpadding="4" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_MODULO --><a class="AFCSorterLink" href="{Sort_URL}">Modulo</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_MODULO -->&nbsp;</td> 
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_DESCRIZIONE --><a class="AFCSorterLink" href="{Sort_URL}">Descrizione</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_DESCRIZIONE -->&nbsp;</td> 
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_AMMINISTRATORE --><a class="AFCSorterLink" href="{Sort_URL}">Amministrazione</a><!-- END Sorter Sorter_AMMINISTRATORE --></td> 
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_NOTE --><a class="AFCSorterLink" href="{Sort_URL}">Note</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_NOTE -->&nbsp;</td> 
+                      <td class="AFCColumnTD" nowrap>&nbsp;</td>
+                    </tr>
+                    <!-- BEGIN Row -->
+                    <tr>
+                      <td class="AFCDataTD"><a class="AFCDataLink" href="{MODULO_Src}">{MODULO}</a><input value="{PROGETTO}" type="hidden" name="{PROGETTO_Name}">&nbsp;</td> 
+                      <td class="AFCDataTD">{DESCRIZIONE}&nbsp;</td> 
+                      <td class="AFCDataTD"><input class="AFCInput" disabled value="1" type="checkbox" name="{AMMINISTRATORE_Name}" {AMMINISTRATORE}></td> 
+                      <td class="AFCDataTD">{NOTE}&nbsp;</td> 
+                      <td class="AFCDataTD" valign="top" nowrap align="right"><a class="AFCDataLink" href="{CaratteristicheAccesso}"><img border="0" alt="Caratteristiche Accesso" src="../common/images/AD4/caac.GIF"></a>&nbsp;<a class="AFCDataLink" href="{Abilitazioni}"><img border="0" alt="Abilitazioni Modulo" src="../common/images/AD4/UtenDiac.gif"></a></td>
+                    </tr>
+                    <!-- END Row -->
+                    <!-- BEGIN NoRecords -->
+                    <tr>
+                      <td class="AFCDataTD" colspan="5">Nessuna
+                        registrazione&nbsp;</td>
+                    </tr>
+                    <!-- END NoRecords -->
+                    <tr>
+                      <td class="AFCFooterTD" colspan="5" align="center">{AFCNavigator}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- END Grid AD4_MODULI --></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+ 
+    <tr>
+      <td height="100%" valign="bottom" width="100%" colspan="2">&nbsp;{Footer}</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

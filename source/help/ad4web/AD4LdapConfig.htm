@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" href="Ad4web_rtf(1)_ns.css" type="text/css">
+<script type="text/javascript" language="JavaScript">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='Ad4web_rtf(1).css'>");}
+//-->
+</script>
+<title>Parametri Configurazione LDAP</title>
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<script language="JavaScript" src="./ehlpdhtm.js" type="text/javascript">
+</script>
+<script type="text/javascript" language="JavaScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+        origWidth = innerWidth;
+        origHeight = innerHeight;
+        onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style>
+
+<script type="text/javascript" language="javascript1.2" src="whmsg.js">
+</script>
+<script type="text/javascript" language="javascript" src="whver.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js">
+</script>
+</head>
+<body>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+        if (window.addTocInfo)
+        {
+        addTocInfo("Configurazione LDAP\nParametri Configurazione LDAP");
+addAvenueInfo("AD4WEB","AD4Evento.htm","Struttura_albero_Ldap.htm");
+addButton("show",BTN_TEXT,"Indice","","","","",0,0,"","","");
+
+        }
+        if (window.writeBtnStyle)
+                writeBtnStyle();
+
+        if (window.writeIntopicBar)
+                writeIntopicBar(1);
+
+        if (window.setRelStartPage)
+        {
+        setRelStartPage("index.htm");
+
+                autoSync(1);
+                sendSyncInfo();
+                sendAveInfoOut();
+        }
+}
+else
+        if (window.gbIE4)
+                document.location.reload();
+//-->
+</script>
+<h1>Parametri Configurazione LDAP</h1>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="paragrafo">Definizione</p>
+<p>Finestra per l'inserimento dei parametri di configurazione dell'eventuale server LDAP che si desidera utilizzare per l'autenticazione degli utenti.</p>
+<p>L'autenticazione degli utenti del Sistema Informativo Versione 4 viene, normalmente, effettuata grazie alla definizione dell'utente e relativa password in AD4 – Amministratore Database.</p>
+<p>E' possibile, però, attivare l'autenticazione LDAP per uno specifico Progetto / Istanza / Modulo tramite le relative <a href="AD4CaratteristicheAccesso.htm">Caratteristiche di Accesso</a>.</p>
+<p>E' possibile configurare i parametri di più server LDAP di cui uno principale (massimo 11); al momento dell'autenticazione di un utente per cui è prevista autenticazione tramite LDAP ad un applicativo del Sistema Informativo V4, viene tentata la connessione al server LDAP principale e, in caso di mancata risposta del server o se l'utente non esiste, viene tentata la connessione ai server alternativi in ordine di configurazione.</p>
+<p>Di seguito vengono elencati i parametri di configurazione che devono essere specificati per ogni server LDAP (principale compreso) e quelli del solo server LDAP principale.</p>
+<p class="Tip-Note-Heading">Parametri di configurazione LDAP</p>
+<table width="580" cellspacing='0' cellpadding="1">
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">Server</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Nome del server LDAP a cui connettersi per autenticare gli utenti.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">Porta</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Porta a cui connettersi.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">Contesto</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Il nodo dell'albero della directory LDAP in cui sono definiti gli utenti.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">UtenteConnessioneLDAP</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Utente che può accedere all'albero LDAP definito nella stringa Contesto.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">PwdConnessioneLDAP</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Password di <font style="font-style:italic;">UtenteConnessioneLDAP</font>.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p style="margin-top:0.00pt;"><font style="font-family:Helv; color:black; font-style:italic;">SuffissoNominativo</font></p>
+<p class="Body-Text">&#160;</p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Suffisso da aggiungere al nominativo dell'utente (per Active Directory è necessario perchè ci si autentica tramite userPrincipalName invece che tramite CommonName).</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">ContestoGruppi</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Contesto dell'albero LDAP in cui cercare i gruppi da mappare.</p>
+</td>
+</tr>
+</table>
+<p class="Tip-Note-Heading">Parametri di configurazione aggiuntivi LDAP Principale</p>
+<table width="580" cellspacing='0' cellpadding="1">
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">SyncType</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Tipo di sincronizzazione prevista per l'allineamento degli utenti:</p>
+<p class="Body-Text" style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Update: autentica solo gli utenti già presenti in AD4 e aggiorna la password;</p>
+<p class="Body-Text" style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>InsertUpdate: inserisce gli utenti non presenti in AD4 e aggiorna la password di quelli esistenti.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-family:Helv; color:black; font-style:italic;">Mandatory</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Indica se l'autenticazione via LDAP è obbligatoria.</p>
+<p class="Body-Text" style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Yes: in caso il server LDAP non risponda, l'utente non si autentica;</p>
+<p class="Body-Text" style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>No: in caso il server LDAP non risponda, viene tentata l'autenticazione dell'utente tramite AD4.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">TipoAutenticazione</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Tipo di autenticazione da effettuare sul server LDAP.</p>
+<p class="Body-Text" style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>ClearText</p>
+<p class="Body-Text" style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>SSL</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">DefaultInsertGroups</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Gruppi di AD4 separati da virgola in cui inserire gli utenti presenti in LDAP e non in AD4.</p>
+<p class="Body-Text">I gruppi devono esistere (tabella UTENTI – tipo 'G') altrimenti viene emessa una segnalazione di errore sulla tabella ACCESSI.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">AuthorizationMapping</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Indica se deve essere effettuato l'allineamento dei gruppi LDAP mappati in AD4 (Valori possibili: yes/no - default: no).</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">SO4Mapping</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text" style="margin-top:0.00pt;">Indica se deve essere effettuato l'allineamento della struttura da LDAP verso AD4 e SO4 (Valori possibili: yes/no - default: no)</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">LdapMapping</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text" style="margin-top:0.00pt;">Indica se deve essere effettuato l'allineamento della struttura da AD4 verso LDAP (Valori possibili: yes/no - default: no)</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="27.67%">
+<p class="Body-Text"><font style="font-style:italic;">TimeOut</font></p>
+</td>
+<td width="72.33%">
+<p class="Body-Text">Tempo concesso per tentare la connessione al server LDAP.</p>
+<p class="Body-Text">Alla scadenza, se la connessione non è stata effettuata, viene tentata l'autenticazione via AD4.</p>
+<p class="Body-Text">Attualmente il parametro non è gestito.</p>
+</td>
+</tr>
+</table>
+<p>I vari tipi di allineamento possibili sono fra loro esclusivi quindi solo uno può essere attivo fra <font style="font-style:italic;">AuthorizationMapping, SO4Mapping e LdapMapping.</font></p>
+<p class="Tip-Note-Heading"><font style="font-family:Verdana;">Parametri specifici per LdapMapping</font></p>
+<p>Configurabili da Servizi <font style="font-family:Wingdings;">à</font> Configurazione LDAP</p>
+<table width="642" cellspacing='0' cellpadding="1">
+<tr valign="top">
+<td width="26.28%">
+<p class="Corpo-del-testo-corsivo">RootOU</p>
+</td>
+<td width="73.72%">
+<p class="Body-Text" style="margin-top:0.00pt;">Radice nella quale inserire la struttura delle unità organizzative.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.28%">
+<p class="Corpo-del-testo-corsivo">RootUsers</p>
+</td>
+<td width="73.72%">
+<p class="Body-Text" style="margin-top:0.00pt;">Radice dalla quale ricercare un utente eventualmente già presente in struttura.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.28%">
+<p class="Corpo-del-testo-corsivo">RootUsersDisabled</p>
+</td>
+<td width="73.72%">
+<p class="Body-Text" style="margin-top:0.00pt;">Radice nella quale inserire un utente non più presente in struttura. Se non valorizzato, usa RootUsers.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.28%">
+<p class="Corpo-del-testo-corsivo">Delimitatore</p>
+</td>
+<td width="73.72%">
+<p class="Body-Text" style="margin-top:0.00pt;">Usato in scrittura dell'albero LDAP. NON AMMESSI: "," "=" "+" "&lt;" "&gt;" "#" ";" "/"</p>
+</td>
+</tr>
+</table>
+<p class="Tip-Note-Heading"><font style="font-family:Verdana;">Parametri relativi ad attributi da mappare in LDAP in LdapMapping.</font></p>
+<p>Configurabili da Servizi <font style="font-family:Wingdings;">à</font> Registro</p>
+<p>Indicare nel sottoramo PRODUCTS/LDAPCONFIG/ATTRIBUTI tutti gli attributi che si vogliono mappare nell'albero Ldap.</p>
+<p>Indicare nel sottoramo PRODUCTS/LDAPCONFIG/ATTRIBUTI\CREAZIONE solo gli attributi che devono essere valorizzati solo in fase di creazione di un utente Ldap.</p>
+<p>Il nome del campo deve essere un campo esistente in Ldap.</p>
+<p>Variabili Utilizzabili:</p>
+<p>%utente%: utente in AD4</p>
+<p>%username%: nominativo di login dell'utente</p>
+<p>%nome% : nome del soggetto associato all'utente</p>
+<p>%cognome% : cognome del soggetto associato all'utente</p>
+<p>%email% : indirizzo web del soggetto associato all'utente</p>
+<p>È possibile indicare attributi che devono essere calcolati mettendo come primo carattere "=".</p>
+<p>Ad esempio:</p>
+<p>stringa: HomePhone</p>
+<p>valore: =soggetto.get_telefono(utente.get_soggetto('%UTENTE%','N',0))</p>
+<p>Per valorizzare il campo ldap HomePhone verrà sostituito a %UTENTE% l'utente che si è connesso e verrà eseguita la funzione per determinare il valore da assegnare.</p>
+<p class="Tip-Note-Heading"><font style="font-family:Verdana;">Funzionalità particolari Parametri</font></p>
+<table width="576" cellspacing='0' cellpadding="1">
+<tr valign="top">
+<td width="26.23%">
+<p class="Corpo-del-testo-corsivo">Crea alternativo</p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Funzione attiva unicamente sul server principale.</p>
+<p class="Body-Text">Consente di inserire i parametri di configurazione di un server alternativo.</p>
+</td>
+</tr>
+<tr valign="top">
+<td width="26.23%">
+<p class="Corpo-del-testo-corsivo">Elimina alternativo</p>
+</td>
+<td width="73.77%">
+<p class="Body-Text">Funzione disponibile sui soli server alternativi.</p>
+<p class="Body-Text">Consente di eliminare tutti i parametri di configurazione del server alternativo selezionato.</p>
+</td>
+</tr>
+</table>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p>E' possibile, inoltre, definire un'associazione tra gruppi LDAP e gruppi AD4 nella pagina "Configurazione LDAP &gt; Collegamento Gruppi".</p>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p>Una volta definiti i parametri di configurazione, perché l'autenticazione avvenga tramite LDAP è necessario specificarlo nelle caratteristiche di accesso dei</p>
+<p>- Progetti &#160;<font style="font-size:9pt;">oppure</font></p>
+<p><font style="font-size:9pt;">-</font> Istanze &#160;<font style="font-size:9pt;">oppure</font></p>
+<p><font style="font-size:9pt;">-</font> Moduli&#160;&#160;<font style="font-size:9pt;">oppure</font></p>
+<p>- Accessi di Gruppi di Utenti <font style="font-size:9pt;">oppure</font></p>
+<p>- Accessi dei singoli Utenti</p>
+<p>per cui si intende attivarla.</p>
+<p class="Tip-Note-Heading">Argomenti</p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <a href="AD4CaratteristicheAccesso.htm">Caratteristiche di Accesso</a></p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <a href="AD4LdapGruppi.htm">Collegamento Gruppi</a></p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <a href="Struttura_albero_Ldap.htm">Struttura albero Ldap</a></p>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+        writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

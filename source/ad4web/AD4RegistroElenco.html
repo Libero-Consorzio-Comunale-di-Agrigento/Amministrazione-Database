@@ -1,0 +1,36 @@
+
+<!-- BEGIN Grid AD4_REGISTRO_SEL -->
+<table cellpadding="0" cellspacing="0" width="100%">
+  <!-- BEGIN Row -->
+  <tr>
+    <td nowrap><font class="AFCFormHeaderFont">{NOME_SEZIONE}&nbsp;</font></td> 
+    <td align="right" class="AFCDataTD" width="30%"></td> 
+  </tr>
+ <!-- END Row -->
+</table>
+<!-- END Grid AD4_REGISTRO_SEL -->
+<!-- BEGIN Grid ELENCO_CHIAVI -->
+<table class="AFCFormTABLE" width="100%" cellpadding="3">
+  <tr>
+    <td valign="top" class="AFCColumnTD" width="20%" align="center">Stringa</td> 
+    <td valign="top" align="center" class="AFCColumnTD" width="20%">Valore</td> 
+    <td valign="top" align="center" class="AFCColumnTD" width="60%">Commento</td> 
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr>
+    <td class="AFCDataTD" valign="top" width="20%" nowrap><a class="AFCDataLink" href="{STRINGA_Src}">{STRINGA}</a>&nbsp;</td> 
+    <td class="AFCDataTD" valign="top" width="20%">{VALORE}&nbsp;</td> 
+    <td class="AFCDataTD" valign="top" width="60%">{COMMENTO}&nbsp;<input type="hidden" value="{CHIAVE}" name="{CHIAVE_Name}"></td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td class="AFCDataTD" colspan="3">Nessun&nbsp;contenuto</td> 
+  </tr>
+ <!-- END NoRecords -->
+  <tr>
+    <td class="AFCFooterTD" nowrap align="center" colspan="3">{AFCNavigator}</td> 
+  </tr>
+</table>
+<!-- END Grid ELENCO_CHIAVI -->

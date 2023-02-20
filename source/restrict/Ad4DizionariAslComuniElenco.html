@@ -1,0 +1,68 @@
+
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<!-- BEGIN Record ComuniFiltro -->
+<div align="center">
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <form method="post" name="{HTMLFormName}" action="{Action}">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="middle"><a class="AFCDataLink" title="" href="{FILTER_SEARCH_Src}">{FILTER_SEARCH}</a></td> 
+          <td class="AFCFieldCaptionTD" valign="top">Comune </td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{s_COMUNE}" maxlength="51" size="40" name="{s_COMUNE_Name}"></td> 
+          <td class="AFCDataTD" valign="middle">
+            <!-- BEGIN Button DoSearch --><input class="AFCButton" value="Cerca" type="submit" name="{Button_Name}"><!-- END Button DoSearch --></td> 
+        </tr>
+ 
+      </form>
+ 
+    </tbody>
+ 
+  </table>
+</div>
+<!-- END Record ComuniFiltro -->
+<!-- BEGIN Grid Titolo -->
+<table cellspacing="0" cellpadding="3" width="100%">
+  <!-- BEGIN Row -->
+  <tbody>
+    <tr>
+      <td class="AFCFormHeaderFont">{TITOLO}</td> 
+      <td width="1%" align="center"><a class="AFCDataLink" title="Crea nuovo comune" href="{Aggiungi_Src}">{Aggiungi}</a></td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid Titolo -->
+<!-- BEGIN Grid ComuniElenco -->
+<table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCColumnTD" nowrap>Denominazione&nbsp;</td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Utente </td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Data</td> 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="AFCDataTD"><a class="AFCDataLink" href="{COMUNE_DESC_Src}">{COMUNE_DESC}</a>&nbsp;</td> 
+      <td class="AFCDataTD">{UTENTE_AGGIORNAMENTO}&nbsp;</td> 
+      <td class="AFCDataTD">{DATA_AGGIORNAMENTO}</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="3">Nessun&nbsp;Comune trovato!</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td class="AFCFooterTD" colspan="3" nowrap align="center">{AFCNavigator}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<!-- END Grid ComuniElenco -->

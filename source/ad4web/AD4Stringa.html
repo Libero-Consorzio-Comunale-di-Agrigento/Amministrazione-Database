@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Stringa</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_STRINGHE_Button_Delete_OnClick @26-B7925C85
+function page_AD4_STRINGHE_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_STRINGHE_Button_Delete_OnClick
+
+//Confirmation Message @93-5334B4F3
+    return confirm('Eliminazione Stringa '+document.forms["AD4_STRINGHE"].STRINGA.value+'. Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_STRINGHE_Button_Delete_OnClick @26-BC33A33A
+    return result;
+}
+//End Close page_AD4_STRINGHE_Button_Delete_OnClick
+
+//page_AD4_CHIAVI_SUB_CHIAVE_OnChange @157-26C4DC04
+function page_AD4_CHIAVI_SUB_CHIAVE_OnChange()
+{
+    var result;
+//End page_AD4_CHIAVI_SUB_CHIAVE_OnChange
+
+//Custom Code @163-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+	document.forms["AD4_CHIAVI"].CHIAVE.value = document.forms["AD4_CHIAVI"].PADRE.value + document.forms["AD4_CHIAVI"].SUB_CHIAVE.value;
+//End Custom Code
+
+//Close page_AD4_CHIAVI_SUB_CHIAVE_OnChange @157-BC33A33A
+    return result;
+}
+//End Close page_AD4_CHIAVI_SUB_CHIAVE_OnChange
+
+//page_AD4_CHIAVI_Button_Delete_OnClick @115-DDC6EF84
+function page_AD4_CHIAVI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_CHIAVI_Button_Delete_OnClick
+
+//Confirmation Message @117-420985CF
+    return confirm('Eliminazione Chiave '+document.forms["AD4_CHIAVI"].CHIAVE.value+'\nATTENZIONE:\nLa conferma comporterà anche l\'eliminazione di tutte le sue stringhe e chiavi.\nContinuare?');
+//End Confirmation Message
+
+//Close page_AD4_CHIAVI_Button_Delete_OnClick @115-BC33A33A
+    return result;
+}
+//End Close page_AD4_CHIAVI_Button_Delete_OnClick
+
+//page_AD4_STRINGHE_Button_Update_OnClick @25-F4F36F73
+function page_AD4_STRINGHE_Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_STRINGHE_Button_Update_OnClick
+
+//page_AD4_STRINGHE_Button_Cancel_OnClick @28-ABF63C92
+function page_AD4_STRINGHE_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_STRINGHE_Button_Cancel_OnClick
+
+//page_AD4_CHIAVI_Button_Update_OnClick @113-FE23853C
+function page_AD4_CHIAVI_Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_CHIAVI_Button_Update_OnClick
+
+//DEL  // -------------------------
+//DEL  // Write your own code here.
+//DEL  // -------------------------
+//DEL  	document.forms["AD4_CHIAVI"].CHIAVE.value = document.forms["AD4_CHIAVI"].PADRE.value + document.forms["AD4_CHIAVI"].SUB_CHIAVE.value;
+
+//page_AD4_CHIAVI_Button_Cancel_OnClick @118-A126D6DD
+function page_AD4_CHIAVI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_CHIAVI_Button_Cancel_OnClick
+
+//bind_events @1-46247FE0
+function bind_events() {
+    if (document.forms["AD4_CHIAVI"]) check_and_bind('document.forms["AD4_CHIAVI"].Button_Delete','onclick',page_AD4_CHIAVI_Button_Delete_OnClick);
+    if (document.forms["AD4_CHIAVI"]) check_and_bind('document.forms["AD4_CHIAVI"].SUB_CHIAVE','onchange',page_AD4_CHIAVI_SUB_CHIAVE_OnChange);
+    if (document.forms["AD4_STRINGHE"]) check_and_bind('document.forms["AD4_STRINGHE"].Button_Delete','onclick',page_AD4_STRINGHE_Button_Delete_OnClick);
+    if (document.forms["AD4_STRINGHE"]) check_and_bind('document.forms["AD4_STRINGHE"].Button_Update','onclick',page_AD4_STRINGHE_Button_Update_OnClick);
+    if (document.forms["AD4_STRINGHE"]) check_and_bind('document.forms["AD4_STRINGHE"].Button_Cancel','onclick',page_AD4_STRINGHE_Button_Cancel_OnClick);
+    if (document.forms["AD4_CHIAVI"]) check_and_bind('document.forms["AD4_CHIAVI"].Button_Update','onclick',page_AD4_CHIAVI_Button_Update_OnClick);
+    if (document.forms["AD4_CHIAVI"]) check_and_bind('document.forms["AD4_CHIAVI"].Button_Cancel','onclick',page_AD4_CHIAVI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td> 
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td> 
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <!-- BEGIN Record AD4_STRINGHE -->
+                <form method="post" name="{HTMLFormName}" action="{Action}">
+                  <font class="AFCFormHeaderFont"></font> 
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                    <!-- BEGIN Error -->
+                    <tbody>
+                      <tr>
+                        <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+                      </tr>
+ <!-- END Error -->
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" width="20%" nowrap>Chiave
+                          *</td> 
+                        <td class="AFCDataTD" width="100%"><input class="AFCInputDisplay" value="{CHIAVE}" readonly size="80" name="{CHIAVE_Name}">&nbsp;<input value="{CHIAVE_OLD}" type="hidden" name="{CHIAVE_OLD_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Stringa *</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" value="{STRINGA_NEW}" maxlength="100" size="80" name="{STRINGA_NEW_Name}"><input value="{STRINGA_OLD}" type="hidden" name="{STRINGA_OLD_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Valore</td> 
+                        <td class="AFCDataTD"><textarea style="WIDTH: 100%" class="AFCTextarea" wrap="off" rows="5" cols="80" name="{VALORE_Name}">{VALORE}</textarea><input value="{VALORE_OLD}" type="hidden" name="{VALORE_OLD_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Commento</td> 
+                        <td class="AFCDataTD"><textarea style="WIDTH: 100%" class="AFCTextarea" rows="5" cols="80" name="{COMMENTO_Name}">{COMMENTO}</textarea><input value="{TIPOR_OLD}" type="hidden" name="{TIPOR_OLD_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" colspan="2" nowrap align="right">
+                          <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Registra" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+                          <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+                          <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                      </tr>
+ 
+                    </tbody>
+ 
+                  </table>
+ 
+                </form>
+ <!-- END Record AD4_STRINGHE --></td> 
+            </tr>
+ 
+            <tr>
+              <td>
+                <!-- BEGIN Record AD4_CHIAVI -->
+                <form class="AFCFormHeaderFont" method="post" name="{HTMLFormName}" action="{Action}">
+                  <font class="AFCFormHeaderFont"></font><label></label>{TITOLO} 
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                    <!-- BEGIN Error -->
+                    <tbody>
+                      <tr>
+                        <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+                      </tr>
+ <!-- END Error -->
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" width="20%" nowrap>Chiave
+                          *</td> 
+                        <td class="AFCDataTD" width="100%"><input value="{PADRE}" type="hidden" name="{PADRE_Name}"><input class="AFCInput" value="{SUB_CHIAVE}" maxlength="512" size="40" name="{SUB_CHIAVE_Name}">&nbsp;<input value="{CHIAVE}" type="hidden" name="{CHIAVE_Name}"><input value="{CHIAVE_OLD}" type="hidden" name="{CHIAVE_OLD_Name}"><input value="{TIPOR}" type="hidden" name="{TIPOR_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" colspan="2" nowrap align="right">
+                          <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Registra" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+                          <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+                          <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                      </tr>
+ 
+                    </tbody>
+ 
+                  </table>
+ 
+                </form>
+ <!-- END Record AD4_CHIAVI --></td> 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td height="100%" valign="bottom" width="100%" colspan="2">&nbsp;{Footer}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+</body>
+</html>

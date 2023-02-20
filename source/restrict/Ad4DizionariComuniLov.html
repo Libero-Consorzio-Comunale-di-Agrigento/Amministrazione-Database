@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Lista Comuni</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../Lov.js"></script>
+</head>
+<body class="AFCPageBODY" onunload="onUnLoadLOV()" onload="onLoadLOV()">
+<!-- BEGIN Record ComuniSearch -->
+<form method="post" name="{HTMLFormName}" action="{Action}">
+  <font class="AFCFormHeaderFont">Cerca Comune </font>
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <!-- BEGIN Error -->
+    <tbody>
+      <tr>
+        <td class="AFCErrorDataTD">{Error}</td>
+      </tr>
+      <!-- END Error -->
+      <tr>
+        <td class="AFCDataTD"><a onblur="onBlurLOV()" class="AFCDataLink" onfocus="onFocusLOV()" href="{FILTER_SEARCH_Src}">{FILTER_SEARCH}</a>&nbsp;Comune
+          * <input onblur="onBlurLOV()" style="TEXT-TRANSFORM: uppercase" class="AFCInput" onfocus="onFocusLOV()" tabindex="0" value="{s_COMUNE}" maxlength="50" size="30" name="{s_COMUNE_Name}">&nbsp;&nbsp;Sigla
+          Provincia&nbsp;<input onblur="onBlurLOV()" style="TEXT-TRANSFORM: uppercase" class="AFCInput" onfocus="onFocusLOV()" tabindex="2" value="{s_PROVINCIA_SIGLA}" maxlength="2" size="4" name="{s_PROVINCIA_SIGLA_Name}">&nbsp; 
+          <!-- BEGIN Button DoSearch --><input class="AFCButton" onfocus="onFocusLOV()" tabindex="3" value="Cerca" type="submit" name="{Button_Name}"><!-- END Button DoSearch --></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<!-- END Record ComuniSearch -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCFormHeaderFont">Lista&nbsp;Comuni </td> 
+      <td align="right"><a class="AFCDataLink" onclick="javascript:top.opener.closeLOV()" href="{CHIUDI_Src}"><strong>{CHIUDI}</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+<!-- BEGIN Grid Comuni -->
+<table class="AFCFormTABLE" border="0" cellspacing="0" cellpadding="3" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCColumnTD" nowrap>Comune</td> 
+      <td class="AFCColumnTD" nowrap>Provincia</td> 
+      <td class="AFCColumnTD" nowrap>Data Soppressione </td>
+    </tr>
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="AFCDataTD">{COMUNE}&nbsp;</td> 
+      <td class="AFCDataTD">{PROVINCIA}</td> 
+      <td class="AFCDataTD">{SOPPRESSIONE}&nbsp;</td>
+    </tr>
+    <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="3">Nessun&nbsp;comune&nbsp;trovato!</td>
+    </tr>
+    <!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid Comuni -->
+<!-- BEGIN Grid Focus -->
+<table cellspacing="0" cellpadding="3">
+  <!-- BEGIN Row -->
+  <tbody>
+    <tr>
+      <td>{FIELD_FOCUS}</td>
+    </tr>
+    <!-- END Row -->
+    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid Focus -->
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Dati Ente</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_ENTI_Button_Delete_OnClick @9-EE7FCF0F
+function page_AD4_ENTI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_ENTI_Button_Delete_OnClick
+
+//Confirmation Message @106-2584D52F
+    return confirm('Eliminazione Ente '+document.forms["AD4_ENTI"].DESCRIZIONE.value+'. Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_ENTI_Button_Delete_OnClick @9-BC33A33A
+    return result;
+}
+//End Close page_AD4_ENTI_Button_Delete_OnClick
+
+//page_AD4_ENTI_Button_Cancel_OnClick @11-86DC074F
+function page_AD4_ENTI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_ENTI_Button_Cancel_OnClick
+
+//bind_events @1-CACAAB1B
+function bind_events() {
+    if (document.forms["AD4_ENTI"]) check_and_bind('document.forms["AD4_ENTI"].Button_Delete','onclick',page_AD4_ENTI_Button_Delete_OnClick);
+    if (document.forms["AD4_ENTI"]) check_and_bind('document.forms["AD4_ENTI"].Button_Cancel','onclick',page_AD4_ENTI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record AD4_ENTI -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table cellspacing="0" cellpadding="3" width="100%" class="AFCToolBoxTable">
+                <tr>
+                  <td class="AFCFormHeaderFont"></td> 
+                  <td align="right" class="AFCToolboxTD" width="10%" nowrap><a class="AFCToolBox" title="Svuota Anagrafica" href="{SVUOTA_REG_ANAGRAFICA_Src}">{SVUOTA_REG_ANAGRAFICA}</a>&nbsp;<a class="AFCToolBox" title="Modifica Anagrafica" href="{MOD_REGISTRAZIONE_ANAGRAFICA_Src}">{MOD_REGISTRAZIONE_ANAGRAFICA}</a></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="2" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Ente *</td> 
+                  <td class="AFCDataTD" style="TEXT-TRANSFORM: uppercase">{ENTE}&nbsp;<input type="hidden" value="{ENTE_ORIG}" name="{ENTE_ORIG_Name}"><input type="hidden" value="{SOGGETTO}" name="{SOGGETTO_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Descrizione
+                    *</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" maxlength="40" size="40" value="{DESCRIZIONE}" name="{DESCRIZIONE_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Bitmap</td> 
+                  <td class="AFCDataTD"><input name="{BITMAP_Name}" value="{BITMAP}" class="AFCInput" maxlength="80" size="80">&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Disegno</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" value="{DISEGNO}" name="{DISEGNO_Name}" maxlength="80" size="80">&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Note&nbsp;</td> 
+                  <td class="AFCDataTD"><textarea class="AFCTextarea" style="WIDTH: 100%" name="{NOTE_Name}" cols="90">{NOTE}</textarea></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">{TITOLO_SOGG}</td> 
+                  <td class="AFCDataTD">{DATI_SOGGETTO}</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="2">
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_ENTI -->
+ </td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<head>
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Ruoli</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4Ruoli_VSearch_DoSearch_OnClick @7-CF17B9A6
+function page_AD4Ruoli_VSearch_DoSearch_OnClick()
+{
+    var result;
+//End page_AD4Ruoli_VSearch_DoSearch_OnClick
+
+//Custom Code @357-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+ document.forms["AD4Ruoli_VSearch"].s_RICERCA.value='Y';
+//End Custom Code
+
+//Close page_AD4Ruoli_VSearch_DoSearch_OnClick @7-BC33A33A
+    return result;
+}
+//End Close page_AD4Ruoli_VSearch_DoSearch_OnClick
+
+//bind_events @1-93EE262E
+function bind_events() {
+    if (document.forms["AD4Ruoli_VSearch"]) check_and_bind('document.forms["AD4Ruoli_VSearch"].DoSearch','onclick',page_AD4Ruoli_VSearch_DoSearch_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%">
+      <table width="100%">
+        <tr>
+          <td>{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%">
+            <!-- BEGIN Record AD4Ruoli_VSearch -->
+            <form name="AD4Ruoli_VSearch" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                <!-- BEGIN Error -->
+                <tbody>
+                  <tr>
+                    <td class="AFCDataTD" colspan="4"><font color="#ff0000">{Error}</font></td> 
+                  </tr>
+                  <!-- END Error -->
+                  <tr>
+                    <tr>
+                      <td class="AFCFieldCaptionTD" valign="top"><a class="AFCDataLink" href="{IMMAGINE_FILTRO_Src}">{IMMAGINE_FILTRO}</a></td> 
+                      <td class="AFCFieldCaptionTD" valign="middle">Ruolo</td> 
+                      <td class="AFCDataTD" valign="top"><input class="AFCInput" maxlength="40" size="40" value="{s_DESCRIZIONE}" name="{s_DESCRIZIONE_Name}"></td> 
+                      <td class="AFCDataTD" valign="top" nowrap>
+                        <!-- BEGIN Button DoSearch --><input class="AFCButton" type="submit" value="Cerca" name="DoSearch"><!-- END Button DoSearch -->&nbsp;<a class="AFCNavigatorLink" href="{AD4_RUOLI_Insert_Src}">Nuovo</a></td> 
+                    </tr>
+ 
+                  </tbody>
+ 
+                </table>
+ 
+              </form>
+ 
+              <p align="left"><!-- END Record AD4Ruoli_VSearch -->
+              <!-- BEGIN Grid AD4RuoliV -->
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <tbody valign="top">
+                  <tr>
+                    <td class="AFCColumnTD" nowrap>Ruolo</td> 
+                    <td class="AFCColumnTD" nowrap>Descrizione </td> 
+                    <td class="AFCColumnTD" nowrap>&nbsp;Progetto</td> 
+                    <td class="AFCColumnTD" nowrap>Modulo</td> 
+                    <td class="AFCColumnTD" nowrap>Profilo</td> 
+                    <td class="AFCColumnTD" nowrap>&nbsp;</td>
+                  </tr>
+                  <!-- BEGIN Row -->
+                  <tr>
+                    <td class="AFCDataTD" nowrap align="left"><a class="AFCDataLink" href="{RUOLO_Src}">{RUOLO}</a>&nbsp;</td> 
+                    <td class="AFCDataTD"><font><a href="{DESCRIZIONE_Src}">{DESCRIZIONE}</a> </font></td> 
+                    <td class="AFCDataTD" nowrap>{PROGETTO}&nbsp;</td> 
+                    <td class="AFCDataTD" nowrap>{MODULO}&nbsp;</td> 
+                    <td class="AFCDataTD" nowrap>{PROFILO}&nbsp;</td> 
+                    <td class="AFCDataTD" nowrap>{STATO}&nbsp;{GRUPPO_LAVORO}&nbsp;{GRUPPO_SO}</td> 
+                  </tr>
+                  <!-- END Row -->
+                  <!-- BEGIN NoRecords -->
+                  <tr>
+                    <td class="AFCDataTD" colspan="6">Nessuna
+                      registrazione&nbsp;</td> 
+                  </tr>
+                  <!-- END NoRecords -->
+                  <tr>
+                    <td class="AFCFooterTD" nowrap align="center" colspan="8">{AFCNavigator}</td> 
+                  </tr>
+ 
+                </tbody>
+ 
+              </table>
+ <!-- END Grid AD4RuoliV --></p>
+ </td> 
+          </tr>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+    </tr>
+ 
+  </table>
+ 
+  </body>
+ 
+  </html>

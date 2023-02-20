@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>Diritti di Accesso</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+ function show() {		
+        document.getElementById('formRicerca').style.display='block';
+		document.getElementById('imgRicerca').style.display='none';
+		document.getElementById('linkRicerca').style.display='none';
+}
+</script>
+<script language="JavaScript">
+ function initRows() {
+//	if 	(	(document.forms["AD4_DIRITTI_ACCESSOSearch"].s_MODULO.value != document.forms["AD4_DIRITTI_ACCESSOSearch"].MODULO.value)||
+//			(document.forms["AD4_DIRITTI_ACCESSOSearch"].s_ISTANZA.value != document.forms["AD4_DIRITTI_ACCESSOSearch"].ISTANZA.value)||
+//			(document.forms["AD4_DIRITTI_ACCESSOSearch"].s_RUOLO.value != '')||
+//			(document.forms["AD4_DIRITTI_ACCESSOSearch"].s_GRUPPO.value != '')			
+//		){
+		show();
+//	}
+}
+</script>
+</head>
+<body onload="initRows();" class="AFCPageBODY" bgcolor="#ffffff" link="#000000" alink="#000000" vlink="#000000" text="#000000">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record AD4_DIRITTI_ACCESSOSearch -->
+            <form name="{HTMLFormName}" action="{Action}" method="post" style="DISPLAY: none" id="formRicerca">
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Modulo&nbsp;</td> 
+                  <td class="AFCDataTD">
+                    <select class="AFCSelect" name="{s_MODULO_Name}">
+                      {s_MODULO_Options} 
+                    </select>{MODULO}&nbsp;</td> 
+                  <td class="AFCFieldCaptionTD">Istanza&nbsp;</td> 
+                  <td class="AFCDataTD">&nbsp; 
+                    <select class="AFCSelect" name="{s_ISTANZA_Name}">
+                      {s_ISTANZA_Options} 
+                    </select>{ISTANZA}&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Ruolo&nbsp;</td> 
+                  <td class="AFCDataTD">
+                    <select class="AFCSelect" name="{s_RUOLO_Name}">
+                      <option value="" selected>-&nbsp;-</option>{s_RUOLO_Options} 
+                    </select>
+                  </td> 
+                  <td class="AFCFieldCaptionTD">Gruppo&nbsp;</td> 
+                  <td class="AFCDataTD">&nbsp; 
+                    <select class="AFCSelect" name="{s_GRUPPO_Name}">
+                      <option value="" selected>- -</option>
+ {s_GRUPPO_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="4">
+                    <!-- BEGIN Button Button_DoSearch --><input class="AFCButton" type="submit" value="Cerca" name="{Button_Name}"><!-- END Button Button_DoSearch -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_DIRITTI_ACCESSOSearch -->
+            <!-- BEGIN Grid TITOLO -->
+            <table width="100%" class="AFCToolBoxTable">
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCFormHeaderFont">{TITOLO}&nbsp;</td> 
+              <!--  <td class="AFCToolBoxTD" width="10%" id="tdRicerca" nowrap><a class="AFCToolBox" id="linkRicerca" href="javascript:show();"><img class="" id="imgRicerca" height="18" src="../common/images/AMV/lente.gif" width="18" border="0">Ricerca</a>&nbsp;<a class="AFCToolBox" title="Indietro" href="{INDIETRO_Src}">{INDIETRO}</a></td> -->
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords --><!-- END NoRecords -->
+            </table>
+ <!-- END Grid TITOLO -->
+            <!-- BEGIN Grid AD4_DIRITTI_ACCESSO -->
+            <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%" height="100%">
+              <tr>
+                <td class="AFCColumnTD" nowrap>
+                  <!-- BEGIN Sorter Sorter_NOMINATIVO --><a class="AFCSorterLink" href="{Sort_URL}">Utente</a> 
+                  <!-- BEGIN Asc_On --><img src="../Themes/AFC/AscOn.gif" border="0"><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img src="../Themes/AFC/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_NOMINATIVO --></td> 
+                <td class="AFCColumnTD" nowrap>
+                  <!-- BEGIN Sorter Sorter_SEQUENZA --><a class="AFCSorterLink" href="{Sort_URL}">Seq.</a> 
+                  <!-- BEGIN Asc_On --><img src="../Themes/AFC/AscOn.gif" border="0"><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img src="../Themes/AFC/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_SEQUENZA -->&nbsp;</td> 
+                <td class="AFCColumnTD" nowrap>
+                  <!-- BEGIN Sorter Sorter_MODULO --><a class="AFCSorterLink" href="{Sort_URL}">Modulo</a> 
+                  <!-- BEGIN Asc_On --><img src="../Themes/AFC/AscOn.gif" border="0"><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img src="../Themes/AFC/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_MODULO -->&nbsp;</td> 
+                <td class="AFCColumnTD" nowrap>
+                  <!-- BEGIN Sorter Sorter_ISTANZA --><a class="AFCSorterLink" href="{Sort_URL}">Istanza</a> 
+                  <!-- BEGIN Asc_On --><img src="../Themes/AFC/AscOn.gif" border="0"><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img src="../Themes/AFC/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_ISTANZA -->&nbsp;</td> 
+                <td class="AFCColumnTD" nowrap>
+                  <!-- BEGIN Sorter Sorter_DATI --><a class="AFCSorterLink" href="{Sort_URL}">Dati</a> 
+                  <!-- BEGIN Asc_On --><img src="../Themes/AFC/AscOn.gif" border="0"><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img src="../Themes/AFC/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_DATI --></td> 
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr>
+                <td class="AFCDataTD" valign="top" nowrap><a class="AFCDataLink" href="{NOMINATIVO_Src}">{NOMINATIVO}</a>&nbsp;</td> 
+                <td class="AFCDataTD" valign="top">{SEQUENZA}&nbsp;<input type="hidden" value="{UTENTE}" name="{UTENTE_Name}"></td> 
+                <td class="AFCDataTD" valign="top">{DES_MODULO}&nbsp;</td> 
+                <td class="AFCDataTD" valign="top">{DES_ISTANZA}&nbsp;</td> 
+                <td class="AFCDataTD" style="BACKGROUND-POSITION: 50% top" valign="top" align="justify">{DATI}&nbsp;</td> 
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td class="AFCDataTD" colspan="5">
+                  <tr>
+                    <td class="AFCDataTD" colspan="5"><font>Nessun diritto
+                      trovato! NB: Almeno un campo di ricerca è
+                      obbligatorio.&nbsp;</font> </td> 
+                  </tr>
+ &nbsp;</td> 
+              </tr>
+ <!-- END NoRecords -->
+              <tr>
+                <td class="AFCFooterTD" nowrap align="center" colspan="5">&nbsp;&nbsp;&nbsp;
+                  {AFCNavigator}</td> 
+              </tr>
+ 
+            </table>
+ <!-- END Grid AD4_DIRITTI_ACCESSO --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

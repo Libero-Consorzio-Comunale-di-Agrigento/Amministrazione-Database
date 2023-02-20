@@ -1,0 +1,80 @@
+
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+{Ad4DizionariGuida}<br>
+<!-- BEGIN Record ProvinceFiltro --><br>
+<div align="center">
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <form method="post" name="{HTMLFormName}" action="{Action}">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="middle" rowspan="2"><a class="AFCDataLink" title="" href="{FILTER_SEARCH_Src}">{FILTER_SEARCH}</a></td> 
+          <td class="AFCFieldCaptionTD" valign="top">Regione </td> 
+          <td class="AFCDataTD">
+            <select class="AFCInput" name="{s_REGIONE_Name}">
+              <option selected value="">&lt;selezionare&nbsp;valore&gt;</option>
+ {s_REGIONE_Options} 
+            </select>
+ </td> 
+          <td class="AFCDataTD" valign="middle" rowspan="2">
+            <!-- BEGIN Button DoSearch --><input class="AFCButton" value="Cerca" type="submit" name="{Button_Name}"><!-- END Button DoSearch --></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Provincia&nbsp;</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{s_PROVINCIA}" maxlength="51" size="40" name="{s_PROVINCIA_Name}"></td> 
+        </tr>
+      </form>
+ 
+    </tbody>
+ 
+  </table>
+</div>
+<!-- END Record ProvinceFiltro -->
+<!-- BEGIN Grid ProvinceElenco -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCFormHeaderFont">Elenco&nbsp;Province&nbsp;</td> 
+      <td align="right">&nbsp;<a class="AFCDataLink" title="Crea nuova provincia" href="{Aggiungi_Src}">{Aggiungi}</a></td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCColumnTD" width="1%" nowrap>Provincia </td> 
+      <td class="AFCColumnTD" nowrap>Denominazione&nbsp;</td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Sigla</td> 
+      <td class="AFCColumnTD" nowrap>Regione&nbsp;</td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Utente </td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Data</td> 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="AFCDataTD">{PROVINCIA}&nbsp;</td> 
+      <td class="AFCDataTD">{LINK_COMUNI}&nbsp;<a class="AFCDataLink" href="{DENOMINAZIONE_Src}">{DENOMINAZIONE}</a>&nbsp;</td> 
+      <td class="AFCDataTD">{SIGLA}&nbsp;</td> 
+      <td class="AFCDataTD">{REGIONE}&nbsp;</td> 
+      <td class="AFCDataTD">{UTENTE_AGGIORNAMENTO}&nbsp;</td> 
+      <td class="AFCDataTD">{DATA_AGGIORNAMENTO}</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="6">Nessuna&nbsp;Provincia trovata!</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td class="AFCFooterTD" colspan="6" nowrap align="center">{AFCNavigator}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<!-- END Grid ProvinceElenco -->

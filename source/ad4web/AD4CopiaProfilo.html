@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Copia Profilo</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td> 
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td> 
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <table cellspacing="0" cellpadding="3" width="100%" height="100%">
+                  <tbody>
+                    <tr>
+                      <td valign="top" width="45%" align="left">
+                        <p>
+                        <!-- BEGIN Record AD4_UTENTE_ALIMENTARE -->
+                        <form method="post" name="{HTMLFormName}" action="{Action}">
+                          <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                            <!-- BEGIN Error -->
+                            <tbody>
+                              <tr>
+                                <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+                              </tr>
+ <!-- END Error -->
+                             <tr>
+                                <td class="AFCFieldCaptionTD"colspan="4">ATTENZIONE:&nbsp;competenze&nbsp;gestite&nbsp;da&nbsp;altri&nbsp;applicativi&nbsp;devono&nbsp;essere&nbsp;gestite&nbsp;manualmente</td> 							
+                             </tr>
+                            <tr>
+                                <td class="AFCFieldCaptionTD"colspan="2">Utente&nbsp;che&nbsp;acquisice&nbsp;il&nbsp;profilo&nbsp;</td> 
+								<td class="AFCFieldCaptionTD"colspan="2">Utente&nbsp;da&nbsp;cui&nbsp;copiare&nbsp;il&nbsp;profilo&nbsp;</td>
+                             </tr>
+                             <tr>
+                                <td class="AFCFieldCaptionTD" rowspan="3" valign="top" width="1%" nowrap>Dati&nbsp;Utente&nbsp;</td> 
+                                <td class="AFCDataTD">{UTENTE_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCFieldCaptionTD" rowspan="3" valign="top" width="1%" nowrap>Copiare&nbsp;</td> 
+                                <td class="AFCDataTD">{UTENTE_ORIGINE}&nbsp;</td> 
+                              </tr>							  
+ 
+                              <tr>
+                                <td class="AFCDataTD">{NOMINATIVO_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD">{NOMINATIVO_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCDataTD">{DATI_UTENTE_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD">{DATI_UTENTE_ORIGINE}&nbsp;</td> 
+                              </tr>
+                              <tr>
+                                <td class="AFCFieldCaptionTD"colspan="2">&nbsp;</td> 
+								<td class="AFCFieldCaptionTD"colspan="2">Dati&nbsp;da&nbsp;copiare&nbsp;</td>
+                             </tr>
+                              <tr>
+                                <td class="AFCFieldCaptionTD">Gruppi&nbsp;</td> 
+                                <td class="AFCDataTD">{GRUPPI_DIAC_ALIMENTARE}</td> 
+                                <td class="AFCDataTD" align="center"><input value="1" type="checkbox" name="{COPIA_GRUPPI_Name}" {COPIA_GRUPPI}>&nbsp;</td> 
+                                <td class="AFCDataTD">{GRUPPI_DIAC_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCFieldCaptionTD" valign="top">Diritti&nbsp;di&nbsp;Accesso&nbsp;</td> 
+                                <td class="AFCDataTD">{DIAC_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD" align="center"><input value="1" type="checkbox" name="{COPIA_DIAC_Name}" {COPIA_DIAC}>&nbsp;</td> 
+                                <td class="AFCDataTD">{DIAC_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCFieldCaptionTD" valign="top">Caratteristiche&nbsp;di&nbsp;accesso&nbsp;</td> 
+                                <td class="AFCDataTD">{CAAC_ALIMENTARE}&nbsp;</td> 
+                                <td class="AFCDataTD" align="center"><input value="1" type="checkbox" name="{COPIA_CAAC_Name}" {COPIA_CAAC}>&nbsp;</td> 
+                                <td class="AFCDataTD">{CAAC_ORIGINE}&nbsp;</td> 
+                              </tr>
+ 
+                              <tr>
+                                <td class="AFCFooterTD" colspan="4" nowrap align="right">
+                                  <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Copia" name="{Button_Name}"><!-- END Button Button_Update -->
+                                  <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                              </tr>
+ 
+                            </tbody>
+ 
+                          </table>
+ 
+                        </form>
+ <!-- END Record AD4_UTENTE_ALIMENTARE --></p>
+</td> 
+                  </tr>
+ 
+                </tbody>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td height="100%" valign="bottom" width="100%" colspan="3">{Footer}</td> 
+  </tr>
+</tbody>
+</table>
+</body>
+</html>

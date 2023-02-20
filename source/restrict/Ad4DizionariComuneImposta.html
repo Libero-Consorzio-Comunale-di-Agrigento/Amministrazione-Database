@@ -1,0 +1,175 @@
+
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//Include Common JSFunctions @1-A1D84A39
+</script>
+<script language="JavaScript" type="text/javascript" src="../DatePicker.js"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-3A1FD49B
+
+var ComuneImposta_DatePicker_DATA_SOPPRESSIONE = new Object(); 
+ComuneImposta_DatePicker_DATA_SOPPRESSIONE.format           = "dd/mm/yyyy";
+ComuneImposta_DatePicker_DATA_SOPPRESSIONE.style            = "Themes/AFC/Style.css";
+ComuneImposta_DatePicker_DATA_SOPPRESSIONE.relativePathPart = "../";
+
+var ComuneImposta_DatePicker_DATA_ISTITUZIONE = new Object(); 
+ComuneImposta_DatePicker_DATA_ISTITUZIONE.format           = "dd/mm/yyyy";
+ComuneImposta_DatePicker_DATA_ISTITUZIONE.style            = "Themes/AFC/Style.css";
+ComuneImposta_DatePicker_DATA_ISTITUZIONE.relativePathPart = "../";
+
+//End Date Picker Object Definitions
+
+//page_ComuneImposta_Button_Delete_OnClick @16-079632C4
+function page_ComuneImposta_Button_Delete_OnClick()
+{
+    var result;
+//End page_ComuneImposta_Button_Delete_OnClick
+
+//Confirmation Message @17-CED1C80B
+    return confirm('Eliminazione Comune. Procedere ?');
+//End Confirmation Message
+
+//Close page_ComuneImposta_Button_Delete_OnClick @16-BC33A33A
+    return result;
+}
+//End Close page_ComuneImposta_Button_Delete_OnClick
+
+//page_ComuneImposta_Button_Update_OnClick @14-80DDEAE6
+function page_ComuneImposta_Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End page_ComuneImposta_Button_Update_OnClick
+
+//page_ComuneImposta_Button_Cancel_OnClick @19-DFD8B907
+function page_ComuneImposta_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_ComuneImposta_Button_Cancel_OnClick
+
+//bind_events @1-4EDA479C
+function Ad4DizionariComuneImposta_bind_events() {
+    if (document.forms["ComuneImposta"]) check_and_bind('document.forms["ComuneImposta"].Button_Delete','onclick',page_ComuneImposta_Button_Delete_OnClick);
+    if (document.forms["ComuneImposta"]) check_and_bind('document.forms["ComuneImposta"].Button_Update','onclick',page_ComuneImposta_Button_Update_OnClick);
+    if (document.forms["ComuneImposta"]) check_and_bind('document.forms["ComuneImposta"].Button_Cancel','onclick',page_ComuneImposta_Button_Cancel_OnClick);
+}
+//End bind_events
+// -------------------------------------------------  
+// Aggiunta per attivare JavaScript su pagina inclusa  
+window.onload = Ad4DizionariComuneImposta_bind_events;
+// ------------------------------------------------- 
+//End CCS script
+</script>
+<script language="JavaScript" type="text/javascript" src="../DatePicker.js"></script>
+<script language="JavaScript" type="text/javascript" src="../Lov.js"></script>
+<!-- BEGIN Grid AttributoHeader -->
+<table cellspacing="0" cellpadding="3" width="100%">
+  <!-- BEGIN Row -->
+  <tbody>
+    <tr>
+      <td align="center"></td> 
+      <td width="1%" align="center"><a class="AFCDataLink" href="{Indietro}"><img border="0" src="../images/back.gif" width="18" height="18"></a></td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid AttributoHeader -->
+<!-- BEGIN Record ComuneImposta -->
+<div align="center">
+  <form method="post" name="{HTMLFormName}" action="{Action}">
+    <font class="AFCFormHeaderFont">Imposta&nbsp;Comune</font> 
+    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Provincia *&nbsp;</td> 
+          <td class="AFCDataTD">{PROVINCIA_LABEL}{HIDE_BEGIN} 
+            <select class="AFCSelect" name="{PROVINCIA_STATO_Name}">
+              <option selected value="">- -</option>
+ {PROVINCIA_STATO_Options} 
+            </select>
+ {HIDE_END}&nbsp;</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Comune</td> 
+          <td class="AFCDataTD">{COMUNE_LABEL}{HIDE_BEGIN2}<input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{COMUNE}" maxlength="3" size="5" name="{COMUNE_Name}">{HIDE_END2}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Denominazione &nbsp;</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{DENOMINAZIONE}" maxlength="40" size="50" name="{DENOMINAZIONE_Name}">&nbsp;{TRADUZIONE}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Denominazione breve</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{DENOMINAZIONE_BREVE}" maxlength="16" name="{DENOMINAZIONE_BREVE_Name}">{TRADUZIONE_BREVE}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Capoluogo</td> 
+          <td class="AFCDataTD"><input value="1" type="checkbox" name="{CAPOLUOGO_PROVINCIA_Name}" {CAPOLUOGO_PROVINCIA}></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">CAP</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{CAP}" maxlength="5" size="6" name="{CAP_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Tribunale</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{TRIBUNALE_DESC}" maxlength="40" size="50" name="{TRIBUNALE_DESC_Name}">&nbsp;{TRIBUNALE_LOV}<input style="WIDTH: 61px; HEIGHT: 22px" value="{PROVINCIA_TRIBUNALE}" size="7" type="hidden" name="{PROVINCIA_TRIBUNALE_Name}"><input style="WIDTH: 61px; HEIGHT: 22px" value="{COMUNE_TRIBUNALE}" size="7" type="hidden" name="{COMUNE_TRIBUNALE_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Data Soppressione</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{DATA_SOPPRESSIONE}" maxlength="10" size="10" name="{DATA_SOPPRESSIONE_Name}">&nbsp; 
+            <!-- BEGIN DatePicker DatePicker_DATA_SOPPRESSIONE --><a class="AFCDataLink" href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');"><img border="0" src="../Themes/DatePicker/DatePicker1.gif"></a><!-- END DatePicker DatePicker_DATA_SOPPRESSIONE --></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Fusione</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{FUSIONE_DESC}" maxlength="40" size="50" name="{FUSIONE_DESC_Name}">&nbsp;{FUSIONE_LOV}<input style="WIDTH: 61px; HEIGHT: 22px" value="{PROVINCIA_FUSIONE}" size="7" type="hidden" name="{PROVINCIA_FUSIONE_Name}"><input style="WIDTH: 61px; HEIGHT: 22px" value="{COMUNE_FUSIONE}" size="7" type="hidden" name="{COMUNE_FUSIONE_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Sigla Cfis</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{SIGLA_CFIS}" maxlength="4" size="5" name="{SIGLA_CFIS_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Data Istituzione</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{DATA_ISTITUZIONE}" maxlength="10" size="10" name="{DATA_ISTITUZIONE_Name}">&nbsp; 
+            <!-- BEGIN DatePicker DatePicker_DATA_ISTITUZIONE --><a class="AFCDataLink" href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');"><img border="0" src="../Themes/DatePicker/DatePicker1.gif"></a><!-- END DatePicker DatePicker_DATA_ISTITUZIONE -->{LABEL_UPD}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFooterTD" colspan="2" nowrap align="right">
+            <!-- BEGIN Button Button_Insert --><input class="AFCButton" value="Inserisci" type="submit" name="{Button_Name}"><!-- END Button Button_Insert -->
+            <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Aggiorna" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+            <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+            <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+ 
+  </form>
+</div>
+<!-- END Record ComuneImposta -->

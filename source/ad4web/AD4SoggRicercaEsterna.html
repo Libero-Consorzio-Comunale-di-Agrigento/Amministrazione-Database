@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Anagrafe Soggetti</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">{AmvStyle}
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//bind_events @1-05A99B56
+function bind_events() {
+    if (functionExists("AD4SoggRicercaInclusa_bind_events")) AD4SoggRicercaInclusa_bind_events();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+//End CCS script
+</script>
+</head>
+<body>{AmvControl}
+{AD4SoggRicercaInclusa}
+</body>
+</html>

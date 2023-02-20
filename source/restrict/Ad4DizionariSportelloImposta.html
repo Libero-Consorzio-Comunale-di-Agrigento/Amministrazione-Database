@@ -1,0 +1,158 @@
+
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_SportelloImposta_Button_Delete_OnClick @16-3E71B00C
+function page_SportelloImposta_Button_Delete_OnClick()
+{
+    var result;
+//End page_SportelloImposta_Button_Delete_OnClick
+
+//Confirmation Message @17-4C7E3487
+    return confirm('Eliminazione Sportello. Procedere ?');
+//End Confirmation Message
+
+//Close page_SportelloImposta_Button_Delete_OnClick @16-BC33A33A
+    return result;
+}
+//End Close page_SportelloImposta_Button_Delete_OnClick
+
+//page_SportelloImposta_Button_Update_OnClick @14-DE52E361
+function page_SportelloImposta_Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End page_SportelloImposta_Button_Update_OnClick
+
+//page_SportelloImposta_Button_Cancel_OnClick @19-8157B080
+function page_SportelloImposta_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_SportelloImposta_Button_Cancel_OnClick
+
+//bind_events @1-CB4F8952
+function Ad4DizionariSportelloImposta_bind_events() {
+    if (document.forms["SportelloImposta"]) check_and_bind('document.forms["SportelloImposta"].Button_Delete','onclick',page_SportelloImposta_Button_Delete_OnClick);
+    if (document.forms["SportelloImposta"]) check_and_bind('document.forms["SportelloImposta"].Button_Update','onclick',page_SportelloImposta_Button_Update_OnClick);
+    if (document.forms["SportelloImposta"]) check_and_bind('document.forms["SportelloImposta"].Button_Cancel','onclick',page_SportelloImposta_Button_Cancel_OnClick);
+}
+//End bind_events
+// -------------------------------------------------  
+// Aggiunta per attivare JavaScript su pagina inclusa  
+window.onload = Ad4DizionariSportelloImposta_bind_events;
+// ------------------------------------------------- 
+//End CCS script
+</script>
+<script language="JavaScript" type="text/javascript" src="../DatePicker.js"></script>
+<script language="JavaScript" type="text/javascript" src="../Lov.js"></script>
+<!-- BEGIN Grid AttributoHeader -->
+<table cellspacing="0" cellpadding="3" width="100%">
+  <!-- BEGIN Row -->
+  <tbody>
+    <tr>
+      <td align="center"></td> 
+      <td width="1%" align="center"><a class="AFCDataLink" href="{Indietro}"><img border="0" src="../images/back.gif" width="18" height="18"></a></td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid AttributoHeader -->
+<!-- BEGIN Record SportelloImposta -->
+<div align="center">
+  <form method="post" name="{HTMLFormName}" action="{Action}">
+    <font class="AFCFormHeaderFont">Imposta&nbsp;Sportello</font> 
+    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Banca&nbsp;*&nbsp;</td> 
+          <td class="AFCDataTD">{ABI_LABEL}{HIDE_BEGIN} 
+            <select class="AFCSelect" name="{ABI_Name}">
+              <option selected value="">- -</option>
+ {ABI_Options} 
+            </select>
+ {HIDE_END}&nbsp;</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Sportello</td> 
+          <td class="AFCDataTD">{CAB_LABEL}{HIDE_BEGIN2}<input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{CAB}" maxlength="5" size="6" name="{CAB_Name}">{HIDE_END2}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Cin CAB</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{CIN_CAB}" maxlength="1" size="2" name="{CIN_CAB_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Descrizione &nbsp;</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{DESCRIZIONE}" maxlength="40" size="50" name="{DESCRIZIONE_Name}">&nbsp;{TRADUZIONE}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Indirizzo</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{INDIRIZZO}" maxlength="60" size="60" name="{INDIRIZZO_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Localita'</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{LOCALITA}" maxlength="20" size="30" name="{LOCALITA_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Comune</td> 
+          <td class="AFCDataTD">
+            <select class="AFCSelect" name="{COMUNE_Name}">
+              <option selected value="">- -</option>
+ {COMUNE_Options} 
+            </select>
+ &nbsp;</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Sigla Provincia</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{PROVINCIA}" maxlength="2" size="3" name="{PROVINCIA_Name}">&nbsp; </td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">CAP</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{CAP}" maxlength="5" size="6" name="{CAP_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Dipendenza</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{DIPENDENZA}" maxlength="4" size="5" name="{DIPENDENZA_Name}">&nbsp;</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Bic</td> 
+          <td class="AFCDataTD"><input class="AFCInput" value="{BIC}" maxlength="11" size="12" name="{BIC_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFooterTD" colspan="2" nowrap align="right">
+            <!-- BEGIN Button Button_Insert --><input class="AFCButton" value="Inserisci" type="submit" name="{Button_Name}"><!-- END Button Button_Insert -->
+            <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Aggiorna" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+            <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+            <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+ 
+  </form>
+</div>
+<!-- END Record SportelloImposta -->

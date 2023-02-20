@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>Evento</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../UploadDownload.js"></script>
+<style type="text/css">.hidden{display:none;} .visible{display:block;}</style>
+<script language="JavaScript">
+ function show() {	
+	if ( document.forms["EVENTI"].TIPO.value == "ARCLOG" && document.forms["EVENTI"].CHECK_FILE_LOCATOR.value == 1) {
+		document.getElementById('Button_Update').className='AFCButton';
+	}
+	else {
+		document.getElementById('Button_Update').className='hidden';
+	}
+	tipo = new String(document.forms["EVENTI"].TIPO.value);
+	if ( tipo.substring(0,3) != "LOG" ) {
+		document.getElementById('Button_Delete').className='AFCButton';
+	}
+	else {
+		document.getElementById('Button_Delete').className='hidden';
+	}
+}
+</script>
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_EVENTI_Button_Delete_OnClick @58-B509FFA6
+function page_EVENTI_Button_Delete_OnClick()
+{
+    var result;
+//End page_EVENTI_Button_Delete_OnClick
+
+//Confirmation Message @59-B51CBF48
+    return confirm('Eliminazione Evento '+document.forms["EVENTI"].ID_EVENTO_HIDDEN.value +'. Continuare?');
+//End Confirmation Message
+
+//Close page_EVENTI_Button_Delete_OnClick @58-BC33A33A
+    return result;
+}
+//End Close page_EVENTI_Button_Delete_OnClick
+
+//page_OnLoad @1-D0F4E1D3
+function page_OnLoad()
+{
+    var result;
+//End page_OnLoad
+
+//Custom Code @184-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+	show();
+	var ripr;
+	ripr = document.forms["EVENTI"].RIPRISTINATI.value;
+	if ( ripr > 0) {
+		alert('Ripristinati '+ ripr + ' accessi con successo.\n\nSi ricorda che è possibile eliminare gli accessi rispristinati con la funzione \'Elimina accessi archiviati\' del registro degli accessi.');
+	}
+//End Custom Code
+
+//Close page_OnLoad @1-BC33A33A
+    return result;
+}
+//End Close page_OnLoad
+
+//page_EVENTI_Button_Cancel_OnClick @60-F10CFC6E
+function page_EVENTI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_EVENTI_Button_Cancel_OnClick
+
+//bind_events @1-DB3C95A3
+function bind_events() {
+    if (document.forms["EVENTI"]) check_and_bind('document.forms["EVENTI"].Button_Delete','onclick',page_EVENTI_Button_Delete_OnClick);
+    if (document.forms["EVENTI"]) check_and_bind('document.forms["EVENTI"].Button_Cancel','onclick',page_EVENTI_Button_Cancel_OnClick);
+    page_OnLoad();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record EVENTI -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table cellspacing="0" cellpadding="3" width="100%" class="AFCToolBoxTable">
+                <tr>
+                  <td class="AFCFormHeaderFont" nowrap>Evento
+                    {ID_EVENTO}&nbsp;del {DATA} <input type="hidden" value="{ID_EVENTO_HIDDEN}" name="{ID_EVENTO_HIDDEN_Name}"></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tbody>
+                  <tr>
+                    <td colspan="4" class="AFCErrorDataTD">{Error}</td> 
+                  </tr>
+ <!-- END Error -->
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="top">Tipo</td> 
+                    <td class="AFCDataTD" valign="top">{DESC_TIPO}&nbsp;<input type="hidden" value="{TIPO}" name="{TIPO_Name}"></td> 
+                    <td class="AFCDataTD" valign="top" colspan="2">{TESTO_FILE}&nbsp;<input type="hidden" value="{CHECK_FILE_LOCATOR}" name="{CHECK_FILE_LOCATOR_Name}"></td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="top">Utente</td> 
+                    <td class="AFCDataTD">{NOMINATIVO}&nbsp;<input type="hidden" name="{RIPRISTINATI_Name}" value="{RIPRISTINATI}"></td> 
+                    <td class="AFCFieldCaptionTD" valign="top" nowrap>Db User</td> 
+                    <td class="AFCDataTD">{DB_USER} &nbsp; </td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="top">Istanza</td> 
+                    <td class="AFCDataTD">{ISTANZA_DESC}&nbsp;</td> 
+                    <td class="AFCFieldCaptionTD" nowrap valign="top">Modulo</td> 
+                    <td class="AFCDataTD">{MODULO_DESC}&nbsp;</td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="top" nowrap>Gravità</td> 
+                    <td class="AFCDataTD">{DESC_GRAVITA}&nbsp;</td> 
+                    <td class="AFCFieldCaptionTD" valign="top">Stato</td> 
+                    <td class="AFCDataTD">{DESC_STATO}&nbsp;<a href="javascript:showLOV('AD4Password.do','scrollbars=no,width=460,height=105','AD4_ISTANZE','PASSWORD_ORACLE')"></a></td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFieldCaptionTD" valign="top">Note</td> 
+                    <td class="AFCDataTD" colspan="3">&nbsp;{ANNOTAZIONI}</td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFooterTD" nowrap align="right" colspan="4"><a name="Istanza"></a> 
+                      <!-- BEGIN Button Button_Update --><input class="hidden" type="submit" value="Ripristina Accessi" name="{Button_Name}" id="Button_Update"><!-- END Button Button_Update -->
+                      <!-- BEGIN Button Button_Delete --><input class="hidden" type="submit" value="Elimina" name="{Button_Name}" id="Button_Delete"><!-- END Button Button_Delete -->
+                      <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                  </tr>
+ 
+                </tbody>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record EVENTI --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

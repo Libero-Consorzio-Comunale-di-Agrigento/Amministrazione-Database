@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>Situazione Gruppi</title>
+<script language="JavaScript" src="../Ajax.js"></script>
+<script language="javascript">
+function apri(id, id_padre, id_div){
+//alert('sto lanciando: getAjaxHtmlIntoElement(GET, AD4GruppiTreeInclusa.do, ID=' + v_id + '&ID_PADRE=' + v_id_padre + '&EXPAND=1, '+v_id_div+')');
+	getAjaxHtmlIntoElement('GET', 'AD4GruppiTreeInclusa.do', 'ID=' + id + '&ID_PADRE=' + id_padre, id_div);
+}
+</script>
+<script language="JavaScript">
+ function allineaLdap() {
+ 	var result;
+    result = confirm('Si procederà all\'attivazione di un job per allineare l\'albero LDAP alla Struttura Organizzativa.\nContinuare?');
+	if (result == true) {
+		location.href = 'AD4AllineaLdap.do?ccsForm=allineaLdap:Edit&Button_Update=Aggiorna';
+	}
+}
+ function confermaRigenerazione() {
+ 	var result;
+    result = confirm('Si procederà all\'attivazione di un job per rigenerare l\'intera Struttura Organizzativa.\nContinuare?');
+	if (result == true) {
+		location.href = 'AD4RigeneraSO.do?ccsForm=rigenera:Edit&Button_Update=Aggiorna';
+	}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_OnLoad @1-D0F4E1D3
+function page_OnLoad()
+{
+    var result;
+//End page_OnLoad
+
+//Custom Code @26-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+	var rig_so;
+	var ldapFromSO;
+ 	var result = false;
+	rig_so = document.forms["se_rigenerata_SO"].JOB_RIG_SO.value;
+	ldapFromSO = document.forms["se_rigenerata_SO"].JOB_LDAP_FROM_SO.value;
+	if ( rig_so > 0) {
+		result = confirm('Attivato job n°' + rig_so + ' per la rigenerazione della struttura organizzativa.\nAprire le elaborazioni differite?');
+	}
+	if ( ldapFromSO > 0) {
+		result = confirm('Attivato job n°' + ldapFromSO + ' per allineare Ldap alla struttura organizzativa.\nAprire le elaborazioni differite?');
+	}
+	if (result == true) {
+		window.open('AD4UsjoElenco.do');
+	}
+//End Custom Code
+
+//Close page_OnLoad @1-BC33A33A
+    return result;
+}
+//End Close page_OnLoad
+
+//page_se_rigenerata_SO_Button_Delete_OnClick @33-C1B2FDBB
+function page_se_rigenerata_SO_Button_Delete_OnClick()
+{
+    disableValidation = true;
+}
+//End page_se_rigenerata_SO_Button_Delete_OnClick
+
+//bind_events @1-CDCBDA81
+function bind_events() {
+    if (document.forms["se_rigenerata_SO"]) check_and_bind('document.forms["se_rigenerata_SO"].Button_Delete','onclick',page_se_rigenerata_SO_Button_Delete_OnClick);
+    page_OnLoad();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%">
+      <table width="100%">
+        <tr>
+          <td>{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td>
+            <div style="DISPLAY: none">
+              <!-- BEGIN Record se_rigenerata_SO -->
+              <form name="{HTMLFormName}" action="{Action}" method="post">
+                <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                  <!-- BEGIN Error -->
+                  <tr>
+                    <td class="AFCErrorDataTD">{Error}</td> 
+                  </tr>
+ <!-- END Error -->
+                  <tr>
+                    <td class="AFCDataTD"><input class="AFCInput" value="{JOB_RIG_SO}" name="{JOB_RIG_SO_Name}">&nbsp;<input type="text" name="{JOB_LDAP_FROM_SO_Name}" value="{JOB_LDAP_FROM_SO}" class="AFCInput"></td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFooterTD" nowrap align="right">
+                      <!-- BEGIN Button Button_Insert --><input class="AFCButton" type="submit" value="Inserisci" name="{Button_Name}"><!-- END Button Button_Insert -->
+                      <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Aggiorna" name="{Button_Name}"><!-- END Button Button_Update -->
+                      <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->&nbsp; </td> 
+                  </tr>
+ 
+                </table>
+ 
+              </form>
+ <!-- END Record se_rigenerata_SO -->
+            </div>
+ 
+            <!-- BEGIN Grid Rigenera_SO -->
+            <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+              <!-- BEGIN Row -->
+              <tr>
+                <td valign="bottom"><font class="AFCFormHeaderFont">Struttura&nbsp;Gruppi</font></td> 
+                <td class="AFCToolBoxTD" valign="middle" nowrap width="10%">{RIGENERA}&nbsp;{ALLINEA_LDAP}</td> 
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords --><!-- END NoRecords -->
+            </table>
+ <!-- END Grid Rigenera_SO -->
+            <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+              <tr>
+                <td>{AD4GruppiTreeInclusa}</td> 
+              </tr>
+ 
+            </table>
+ </td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+ 
+</table>
+ 
+</body>
+ 
+</html>

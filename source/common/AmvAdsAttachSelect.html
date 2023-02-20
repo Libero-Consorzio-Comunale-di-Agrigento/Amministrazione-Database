@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta name="GENERATOR" content="CodeCharge Studio 2.3.2.24">
+<title>Selezione File</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<link rel="stylesheet" type="text/css" href="../editor/skins/default/fck_dialog.css">
+<script src="../editor/dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+<script src="../editor/dialog/ads_attachment/ads_attachment.js" type="text/javascript"></script>
+</head>
+<body class="BackColor">
+{AmvStyle}
+<!-- BEGIN Record FILE_LIST -->
+<form method="post" action="{Action}" name="{HTMLFormName}" enctype="multipart/form-data" align="center">
+  <!--<font class="AFCFormHeaderFont">&nbsp;&nbsp;{TITOLO}</font> -->
+
+  <table cellpadding="3" cellspacing="3" align="center">
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="AFCErrorDataTD">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td class="PopupBody" valign="top" align="left"> 
+        <select id="doc" size="20" name="{DOCUMENTO_Name}" style="WIDTH: 212px; HEIGHT: 266px">
+          {DOCUMENTO_Options} 
+        </select>
+ </td> 
+    </tr>
+	
+	<tr>
+	<td class="PopupBody" valign="top" align="right">
+		<span style="font-size: x-small;">Titolo</span>&nbsp;<input type="text" id="txtTesto" size="25"></input>
+	</td>
+	</tr>
+ 
+    <tr valign="top">
+      <td align="right" nowrap><input type="hidden" value="{DATASOURCE}" id="DATASOURCE" name="{DATASOURCE_Name}">
+        
+        &nbsp; </td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record FILE_LIST -->
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<fts>
+<chunkinfo url="whfwdata0.xml" first="§" last="casuale"/>
+<chunkinfo url="whfwdata1.xml" first="categorizzazione" last="effettive"/>
+<chunkinfo url="whfwdata2.xml" first="effettuano" last="ldapmapping"/>
+<chunkinfo url="whfwdata3.xml" first="le" last="presa"/>
+<chunkinfo url="whfwdata4.xml" first="presente" last="soltanto"/>
+<chunkinfo url="whfwdata5.xml" first="soppressione" last="zero"/>
+
+<tchunkinfo first="0" last="47" url="whftdata0.xml" />
+
+</fts>

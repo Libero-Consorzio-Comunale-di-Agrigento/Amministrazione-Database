@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Istanza del Progetto</title>
+<link href="../Themes/AFC/Style.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" src="../functions.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_ISTANZE_PASSWORD_ORACLE_OnChange @70-037EA7B6
+function page_AD4_ISTANZE_PASSWORD_ORACLE_OnChange()
+{
+    var result;
+//End page_AD4_ISTANZE_PASSWORD_ORACLE_OnChange
+
+//Custom Code @100-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+   document.forms["AD4_ISTANZE"].PWD_MODIFIED.value = 'Y';
+//End Custom Code
+
+//Close page_AD4_ISTANZE_PASSWORD_ORACLE_OnChange @70-BC33A33A
+    return result;
+}
+//End Close page_AD4_ISTANZE_PASSWORD_ORACLE_OnChange
+
+//page_AD4_ISTANZE_Button_Delete_OnClick @58-B3ACD500
+function page_AD4_ISTANZE_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_ISTANZE_Button_Delete_OnClick
+
+//Confirmation Message @59-B51CBF48
+    return confirm('Eliminazione Istanza '+document.forms["AD4_ISTANZE"].DESCRIZIONE.value +' ('+document.forms["AD4_ISTANZE"].ISTANZA.value +'). Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_ISTANZE_Button_Delete_OnClick @58-BC33A33A
+    return result;
+}
+//End Close page_AD4_ISTANZE_Button_Delete_OnClick
+
+//page_AD4_ISTANZE_Button_Cancel_OnClick @60-C618047A
+function page_AD4_ISTANZE_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_ISTANZE_Button_Cancel_OnClick
+
+//bind_events @1-9488A92A
+function bind_events() {
+    if (document.forms["AD4_ISTANZE"]) check_and_bind('document.forms["AD4_ISTANZE"].Button_Delete','onclick',page_AD4_ISTANZE_Button_Delete_OnClick);
+    if (document.forms["AD4_ISTANZE"]) check_and_bind('document.forms["AD4_ISTANZE"].PASSWORD_ORACLE','onchange',page_AD4_ISTANZE_PASSWORD_ORACLE_OnChange);
+    if (document.forms["AD4_ISTANZE"]) check_and_bind('document.forms["AD4_ISTANZE"].Button_Cancel','onclick',page_AD4_ISTANZE_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table height="100%" cellspacing="2" cellpadding="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td>
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td valign="top" align="center" width="100%" height="100%">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" align="left" width="100%">{Guida}</td>
+            </tr>
+ 
+            <tr>
+              <td valign="top" align="left" width="100%">
+                <!-- BEGIN Record AD4_ISTANZE -->
+                <form name="{HTMLFormName}" action="{Action}" method="post">
+                  <font class="AFCFormHeaderFont"></font> 
+                  <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+                    <tbody>
+                      <tr>
+                        <td class="AFCFormHeaderFont" nowrap>Istanza del
+                          Progetto {DESC_PROGETTO} </td> 
+                        <td class="AFCToolBoxTD" nowrap align="right" width="10%"><a class="AFCToolBox" href="{CARATTERISTICHE_Src}">{CARATTERISTICHE}</a>&nbsp;<a class="AFCToolBox" href="{ABILITAZIONI_Src}">{ABILITAZIONI}</a>&nbsp;<a class="AFCToolBox" href="{REGISTRO_Src}">{REGISTRO}</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+ 
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                    <!-- BEGIN Error -->
+                    <tbody>
+                      <tr>
+                        <td class="AFCErrorDataTD" colspan="4">{Error}</td>
+                      </tr>
+                      <!-- END Error -->
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Istanza&nbsp;*</td> 
+                        <td class="AFCDataTD" width="50%">{ISTANZA}<input type="hidden" value="{ISTANZA_ORIG}" name="{ISTANZA_ORIG_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Descrizione&nbsp;*</td> 
+                        <td class="AFCDataTD" width="50%"><input class="AFCInput" maxlength="40" size="40" value="{DESCRIZIONE}" name="{DESCRIZIONE_Name}">&nbsp;</td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Ente&nbsp;*</td> 
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" name="{ENTE_Name}">
+                            <option value="" selected>- -</option>
+ {ENTE_Options}
+                          </select>
+ <input type="hidden" value="{PROGETTO}" name="{PROGETTO_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Lingua&nbsp;*</td> 
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" name="{LINGUA_Name}">
+                            <option value="" selected>- -</option>
+ {LINGUA_Options}
+                          </select>
+ </td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Dislocazione&nbsp;*</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="80" size="40" value="{DISLOCAZIONE}" name="{DISLOCAZIONE_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>Temporanea&nbsp;</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="80" size="40" value="{DISLOCAZIONE_TEMPORANEA}" name="{DISLOCAZIONE_TEMPORANEA_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" colspan="4">Connessione</td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>User&nbsp;*</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="20" value="{USER_ORACLE}" name="{USER_ORACLE_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Password&nbsp;*</td> 
+                        <td class="AFCDataTD"><input class="AFCInputReadOnly" readonly type="password" maxlength="50" size="8" value="{PASSWORD_ORACLE}" name="{PASSWORD_ORACLE_Name}" autocomplete="off">&nbsp;<a href="javascript:showLOV('AD4Password.do','scrollbars=no,width=460,height=105','AD4_ISTANZE','PASSWORD_ORACLE')"><img id="ImgPwd" height="20" src="../common/images/AD4/Password.gif" width="20" align="top" border="0" name="ImgPwd"></a><input type="hidden" value="{PWD_MODIFIED}" name="{PWD_MODIFIED_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Amministratore</td> 
+                        <td class="AFCDataTD">
+                          <select class="AFCSelect" name="{ISTANZA_AMMINISTRATORE_Name}">
+                            <option value="" selected>- -</option>
+ {ISTANZA_AMMINISTRATORE_Options}
+                          </select>
+ <input type="hidden" value="{ISTANZA_AMMINISTRATORE_ORIG}" name="{ISTANZA_AMMINISTRATORE_ORIG_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Link Oracle</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="2000" size="40" value="{LINK_ORACLE}" name="{LINK_ORACLE_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Database Link</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="2000" size="40" value="{DATABASE_LINK}" name="{DATABASE_LINK_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>DB
+                          Driver</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="2000" size="40" value="{DATABASE_DRIVER}" name="{DATABASE_DRIVER_Name}"></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" colspan="4">&nbsp;</td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Servizio&nbsp;</td> 
+                        <td class="AFCDataTD"><input class="AFCInput" maxlength="100" size="40" value="{SERVIZIO}" name="{SERVIZIO_Name}"></td> 
+                        <td class="AFCFieldCaptionTD" valign="top">Note</td> 
+                        <td class="AFCDataTD"><textarea class="AFCTextarea" style="WIDTH: 100%" name="{NOTE_Name}" cols="40">{NOTE}</textarea></td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Installazione </td> 
+                        <td class="AFCFieldCaptionTD" colspan="3">{INSTALLAZIONE}&nbsp;</td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" style="BORDER-RIGHT-WIDTH: 0px" valign="top">Versione </td> 
+                        <td class="AFCFieldCaptionTD" colspan="3">{VERSIONE}&nbsp;</td>
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" colspan="2">&nbsp;</td> 
+                        <td class="AFCFooterTD" nowrap align="right" colspan="2"><a name="Istanza"></a>
+                          <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                          <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                          <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+                <!-- END Record AD4_ISTANZE --></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+ 
+    <tr>
+      <td valign="bottom" width="100%" colspan="2" height="100%">&nbsp;{Footer}</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

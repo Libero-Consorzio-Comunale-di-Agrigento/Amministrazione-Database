@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Amministrazione Preferenze del Portale</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td> 
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td> 
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <!-- BEGIN Grid TITLEGrid --><font class="AFCFormHeaderFont">Elenco
+                Impostazioni&nbsp;del&nbsp; 
+                <!-- BEGIN Row -->{TITOLO}</font> 
+                <p class="AFCNote">Le impostazioni contrassegnate da '*' sono
+                modificate a livello di {LIVELLO} </p>
+ <!-- END Row -->
+                <!-- BEGIN NoRecords --><!-- END NoRecords --><!-- END Grid TITLEGrid -->
+                <!-- BEGIN Grid PREFERENZE -->
+                <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="AFCColumnTD" nowrap align="left">Impostazione</td> 
+                      <td class="AFCColumnTD" nowrap align="left">Valore</td> 
+                      <!-- BEGIN Row -->
+                      <tr>
+                        <td class="AFCDataTD" valign="top" width="20%"><a class="AFCDataLink" title="{COMMENTO}" href="{STRINGA_Src}#Aggiorna">{STRINGA}</a>&nbsp;{IMPOSTATA}</td> 
+                        <td class="AFCDataTD" width="80%">{VALORE}&nbsp;<input class="AFCInput" value="{COMMENTO}" type="hidden" name="{COMMENTO_Name}"></td> 
+                      </tr>
+ <!-- END Row -->
+                      <tr>
+                        <td class="AFCFooterTD" colspan="2" nowrap align="center">{AFCNavigator}&nbsp; </td> 
+                      </tr>
+ 
+                    </tbody>
+ 
+                  </table>
+ <!-- END Grid PREFERENZE --></td> 
+              </tr>
+ 
+              <tr>
+                <td valign="top" align="center">
+                  
+                  <!-- BEGIN Record PREFERENZA_NEW -->
+                  <form method="post" name="{HTMLFormName}" action="{Action}">
+                    <font class="AFCFormHeaderFont"><a name="Aggiorna">Aggiornamento
+                    Impostazione&nbsp;:&nbsp;</a>{STRINGA_LABEL}</font> 
+                    <table>
+                      <!-- BEGIN Error -->
+                      <tbody>
+                        <tr>
+                          <td class="AFCErrorDataTD">{Error}</td> 
+                        </tr>
+ <!-- END Error -->
+                        <tr>
+                          <td class="AFCDataTD"><font class="AFCNote">{COMMENTO}&nbsp; </font><input value="{STRINGA_ALIAS}" type="hidden" name="{STRINGA_ALIAS_Name}"><input value="{MODULO}" type="hidden" name="{MODULO_Name}"></td> 
+                        </tr>
+ 
+                        <tr>
+                          <td class="AFCDataTD" width="100%"><textarea style="WIDTH: 100%" class="AFCTextarea" rows="5" name="{VALORE_Name}">{VALORE}</textarea></td> 
+                        </tr>
+ 
+                        <tr>
+                          <td class="AFCFooterTD" valign="top" align="right">
+                            <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Aggiorna" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+                            <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Predefinito" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->&nbsp; 
+                            <!-- BEGIN Button Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Cancel --></td> 
+                        </tr>
+ 
+                      </tbody>
+ 
+                    </table>
+ 
+                  </form>
+ <!-- END Record PREFERENZA_NEW --></td> 
+              </tr>
+ 
+            </tbody>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+      <tr>
+        <td height="100%" valign="bottom" width="100%" colspan="2">&nbsp;{Footer}</td> 
+      </tr>
+ 
+    </tbody>
+ 
+  </table>
+ 
+  </body>
+ 
+  </html>

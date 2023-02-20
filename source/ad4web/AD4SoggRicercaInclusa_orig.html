@@ -1,0 +1,84 @@
+
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4Soggetti_VSearch_DoSearch_OnClick @7-27768D46
+function page_AD4Soggetti_VSearch_DoSearch_OnClick()
+{
+    var result;
+//End page_AD4Soggetti_VSearch_DoSearch_OnClick
+
+//Custom Code @357-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+ document.forms["AD4Soggetti_VSearch"].s_RICERCA.value='Y';
+//End Custom Code
+
+//Close page_AD4Soggetti_VSearch_DoSearch_OnClick @7-BC33A33A
+    return result;
+}
+//End Close page_AD4Soggetti_VSearch_DoSearch_OnClick
+
+//bind_events @1-F57E4F01
+function AD4SoggRicercaInclusa_orig_bind_events() {
+    if (document.forms["AD4Soggetti_VSearch"]) check_and_bind('document.forms["AD4Soggetti_VSearch"].DoSearch','onclick',page_AD4Soggetti_VSearch_DoSearch_OnClick);
+}
+//End bind_events
+
+//End CCS script
+</script>
+<!-- BEGIN Record AD4Soggetti_VSearch -->
+<form name="AD4Soggetti_VSearch" action="{Action}">
+  <font class="AFCFormHeaderFont"></font> 
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="AFCErrorDataTD" colspan="5">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <tr>
+        <td class="AFCFieldCaptionTD" valign="middle"><a class="AFCDataLink" href="{IMMAGINE_FILTRO_Src}">{IMMAGINE_FILTRO}</a></td> 
+        <td class="AFCFieldCaptionTD" valign="middle" nowrap>Soggetto&nbsp;*</td> 
+        <td class="AFCDataTD" valign="top"><input class="AFCInput" maxlength="90" value="{s_NOME}" name="s_NOME" size="50"><input type="hidden" name="{s_RICERCA_Name}" value="Y" size="6"><input type="hidden" name="{s_UTENTE_Name}" value="{s_UTENTE}"><input type="hidden" value="{s_ENTE}" name="{s_ENTE_Name}"></td> 
+        <td class="AFCDataTD" valign="middle">
+          <!-- BEGIN Button DoSearch --><input class="AFCButton" type="submit" value="Cerca" name="DoSearch"><!-- END Button DoSearch -->&nbsp;{Nuovo}</td> 
+      </tr>
+ 
+    </table>
+ 
+  </form>
+ <!-- END Record AD4Soggetti_VSearch -->
+  <!-- BEGIN Grid AD4SoggettiV -->
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+    <tr>
+      <td class="AFCColumnTD" nowrap align="right">Soggetto</td> 
+      <td class="AFCColumnTD" nowrap colspan="2">Dati </td> 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="AFCDataTD" nowrap align="right" valign="top"><input type="hidden" value="{SOGGETTO}" name="{SOGGETTO_Name}">{SOGGETTO_VIS}&nbsp;</td> 
+      <td class="AFCDataTD" align="justify">{DATI}</td> 
+      <td class="AFCDataTD" nowrap><a class="AFCDataLink" href="{RIPORTA_UTENTE_Src}">{RIPORTA_UTENTE}</a><a class="AFCDataLink" href="{RIPORTA_ENTE_Src}">{RIPORTA_ENTE}</a>&nbsp;</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="3">Nessun soggetto trovato!&nbsp;NB: il
+        campo di ricerca SOGGETTO è obbligatorio.</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td class="AFCFooterTD" nowrap align="center" colspan="3">{AFCNavigator}</td> 
+    </tr>
+ 
+  </table>
+ <!-- END Grid AD4SoggettiV -->

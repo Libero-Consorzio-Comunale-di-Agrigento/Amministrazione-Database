@@ -1,0 +1,169 @@
+<html>
+<head>
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Utenti</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+ function show() {
+        document.getElementById('trUtente').style.display='block';
+        document.getElementById('trAnagrafica').style.display='block';
+		document.getElementById('trCodFis').style.display='block';
+		document.getElementById('trGruppo').style.display='block';
+		document.getElementById('trGruppoLavoro').style.display='block';
+		document.getElementById('trAccesso').style.display='block';
+		document.getElementById('trDataAccesso').style.display='block';
+		document.getElementById('btAvanzata').style.display='none';
+}
+</script>
+<script language="JavaScript">
+ function initRows() {
+ 	if ((document.getElementById('selAnagrafica').value != '')
+ 	||(document.getElementById('selCodFis').value != '')
+	||(document.getElementById('selStato').value != '')
+ 	||(document.getElementById('selGruppo').value != '')
+ 	||(document.getElementById('selGruppoLavoro').value != '')
+ 	||(document.getElementById('selAccesso').value != '')
+	||(document.getElementById('selDataAccessoDa').value != '')
+	||(document.getElementById('selDataAccessoA').value != '')){	
+	show();
+	}
+}
+</script>
+</head>
+<body onload="initRows();" class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td>
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%">
+      <table width="100%">
+        <tr>
+          <td>{Guida}</td>
+        </tr>
+ 
+        <tr>
+          <td width="100%">
+            <!-- BEGIN Record AD4Utenti_VSearch -->
+            <form name="AD4Utenti_VSearch" action="{Action}" method="post">
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                <!-- BEGIN Error -->
+                <tbody>
+                  <tr>
+                    <td class="AFCErrorDataTD" colspan="4">{Error}</td>
+                  </tr>
+ <!-- END Error -->
+                  <tr>
+                    <tr id="trUtente">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right"><a class="AFCDataLink" href="{IMMAGINE_FILTRO_Src}">{IMMAGINE_FILTRO}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utente
+                        *</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3"><input class="AFCInput" maxlength="40" size="40" value="{s_NOMINATIVO}" name="{s_NOMINATIVO_Name}"><input type="hidden" value="{DESCRIZIONE_FILTRO}" name="{DESCRIZIONE_FILTRO_Name}"></td>
+                    </tr>
+ 
+                    <tr id="trAnagrafica" style="DISPLAY: none">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right" id="tdRegAnaT" nowrap>Registrazione
+                        Anagrafica</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3" id="tdRegAna"><input class="AFCInput" maxlength="90" value="{s_NOME}" name="s_NOME" id="selAnagrafica" size="40"></td>
+                    </tr>
+ 
+                    <tr id="trCodFis" style="DISPLAY: none">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right" id="tdCodFisT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Codice&nbsp;Fiscale</td> 
+                      <td class="AFCDataTD" valign="top" id="tdCodFis"><input name="{s_COD_FISCALE_Name}" value="{s_COD_FISCALE}" class="AFCInput" maxlength="16" size="18" id="selCodFis"></td></td> 
+                    <td class="AFCFieldCaptionTD" valign="top" align="right">Stato</td> 
+                    <td class="AFCDataTD" valign="top">
+                      <select class="AFCSelect" name="{s_STATO_Name}" id="selStato">
+                        <option value="" selected>- -</option>
+ {s_STATO_Options}
+                      </select>
+ </td>
+                  </tr>
+ 
+                  <tr id="trGruppo" style="DISPLAY: none">
+                    <td class="AFCFieldCaptionTD" valign="top" align="right">&nbsp;Gruppo
+                      di Appartenenza</td> 
+                    <td class="AFCDataTD" valign="top" colspan="3">
+                      <select class="AFCSelect" name="{s_GRUPPO_Name}" id="selGruppo">
+                        <option value="" selected>- -</option>
+ {s_GRUPPO_Options}
+                      </select>
+ </td> 
+                    <tr id="trAccesso" style="DISPLAY: none">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accesso</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3">
+                        <select class="AFCSelect" name="{s_ACCESSO_Name}" id="selAccesso">
+                          <option value="" selected>- -</option>
+ {s_ACCESSO_Options}
+                        </select>
+ </td>
+                    </tr>
+ 
+                    <tr id="trDataAccesso" style="DISPLAY: none">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ultimo&nbsp;Accesso&nbsp;&nbsp;&nbsp;
+                        da</td> 
+                      <td class="AFCDataTD" valign="top"><input class="AFCInput" maxlength="10" size="10" value="{s_DATA_DA}" name="s_DATA_DA" id="selDataAccessoDa"></td> 
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a</td> 
+                      <td class="AFCDataTD" valign="top"><input class="AFCInput" maxlength="10" size="10" value="{s_DATA_A}" name="s_DATA_A" id="selDataAccessoA"><input style="WIDTH:  43px;  HEIGHT:  17px" type="hidden" size="5" value="Y" name="s_RICERCA"></td>
+                    </tr>
+ 
+                    <tr id="trGruppoLavoro" style="DISPLAY: none">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gruppo di Lavoro</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3">
+                        <select id="selGruppoLavoro" class="AFCSelect" name="{s_GRUPPO_LAVORO_Name}">
+                          <option selected value="">- -</option>
+ {s_GRUPPO_LAVORO_Options}
+                        </select>
+ </td>
+                    </tr>
+ 
+                    <tr>
+                      <td class="AFCFooterTD" nowrap align="right" colspan="4">
+                        <!-- BEGIN Button RicercaAvanzata --><input class="AFCButton" id="btAvanzata" onclick="show();" type="button" value="Avanzata" name="{Button_Name}"><!-- END Button RicercaAvanzata -->&nbsp; 
+                        <!-- BEGIN Button DoSearch --><input class="AFCButton" type="submit" value="Cerca" name="DoSearch"><!-- END Button DoSearch -->&nbsp;<a class="AFCNavigatorLink" title="Nuovo Utente" href="{Nuovo_Src}" ,null)?>Nuovo</a></td>
+                    </tr>
+                  </table>
+                </form>
+ 
+                <p align="left"><!-- END Record AD4Utenti_VSearch -->
+                <!-- BEGIN Grid AD4UtentiV -->
+                <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                  <tr>
+                    <td class="AFCColumnTD" nowrap>Utente</td> 
+                    <td class="AFCColumnTD" nowrap colspan="2">Dati&nbsp;Utente&nbsp;</td>
+                  </tr>
+ 
+                  <!-- BEGIN Row -->
+                  <tr>
+                    <td class="AFCDataTD" nowrap><a class="AFCDataLink" href="{NOMINATIVO_Src}">{NOMINATIVO}</a> <input type="hidden" value="{UTENTE}" name="{UTENTE_Name}">&nbsp;</td> 
+                    <td class="AFCDataTD" align="justify">{DATI_UTENTE}&nbsp;</td> 
+                    <td class="AFCDataTD" align="rigth" width="1%"><a class="AFCDataLink" href="{COPIA_PROFILO_Src}">{COPIA_PROFILO}</a><a class="AFCDataLink" href="{UNIFICA_PROFILO_Src}">{UNIFICA_PROFILO}</a>&nbsp;</td>
+                  </tr>
+ <!-- END Row -->
+                  <!-- BEGIN NoRecords -->
+                  <tr>
+                    <td class="AFCDataTD" colspan="3"><font>Nessun utente
+                      trovato! NB: il campo di ricerca UTENTE è obbligatorio.</font> </td>
+                  </tr>
+ <!-- END NoRecords -->
+                  <tr>
+                    <td class="AFCFooterTD" nowrap align="center" colspan="3">{AFCNavigator}</td>
+                  </tr>
+                </table>
+ <!-- END Grid AD4UtentiV --></p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+ 
+      <tr>
+        <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  </body>
+ 
+  </html>

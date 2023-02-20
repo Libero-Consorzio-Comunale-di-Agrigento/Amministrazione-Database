@@ -1,0 +1,312 @@
+<html>
+<head>
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Accessi</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<style type="text/css">.hidden{display:none;} .visible{display:block;}
+.AFCDataTR{background-color: #E6E6E6; color: #000000;} .AFCDataTR
+TD{border-bottom: 1px solid #FFFFFF; font-size: 100%; }
+.AcceAttualeTR{background-color: #DDEEFF; color: #000000;} .AcceAttualeTR
+TD{border-bottom: 1px solid #E6E6E6; font-size: 100%; }
+.AcceCrashTR{background-color: #FFFFFF; color: #FF0000;} .AcceCrashTR
+TD{border-bottom: 1px solid #E6E6E6; font-size: 100%; }
+.AcceAttivoTR{background-color: #FFFFFF; color: #000000;} .AcceAttivoTR
+TD{border-bottom: 1px solid #E6E6E6; font-size: 100%; }</style>
+<script language="JavaScript">
+ function show() {
+		document.getElementById('tableAvanzate').className='visible';
+}
+</script>
+<script language="JavaScript">
+ function hide() {
+		document.getElementById('tableAvanzate').className='hidden';
+}
+</script>
+<script language="JavaScript">
+ function confermaElimina() {
+ 	var result;
+    result = confirm('Si procederà all\'eliminazione degli accessi già archiviati.\nContinuare?');
+	if (result == true) {
+		location.href = 'AD4AcceEliminaArch.do?ccsForm=accessi:Edit&Button_Update=Aggiorna&MVPD=AD4SERME&MVL2=AD4ACCEE&MVL1=AD4SERME&MVVC=AD4ACCEE&s_TIPO='+ document.forms["AD4Accessi_VSearch"].s_TIPO.value +'&s_DATA_DA='+ document.forms["AD4Accessi_VSearch"].s_DATA_DA.value +'&s_DATA_A='+ document.forms["AD4Accessi_VSearch"].s_DATA_A.value +'&s_UTENTE='+ document.forms["AD4Accessi_VSearch"].s_UTENTE.value +'&s_ISTANZA='+ document.forms["AD4Accessi_VSearch"].s_ISTANZA.value +'&s_MODULO='+ document.forms["AD4Accessi_VSearch"].s_MODULO.value +'&s_NOTE='+ document.forms["AD4Accessi_VSearch"].s_NOTE.value +'&s_DB_USER='+ document.forms["AD4Accessi_VSearch"].s_DB_USER.value +'&s_TERMINALE='+ document.forms["AD4Accessi_VSearch"].s_TERMINALE.value +'&s_AUTENTICAZIONE='+ document.forms["AD4Accessi_VSearch"].s_AUTENTICAZIONE.value +'&s_STATO='+ document.forms["AD4Accessi_VSearch"].s_STATO.value;
+	}
+}
+</script>
+<script language="JavaScript" src="../UploadDownload.js"></script>
+<script language="JavaScript">
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4Accessi_VSearch_DoSearch_OnClick @414-67C928CD
+function page_AD4Accessi_VSearch_DoSearch_OnClick()
+{
+    var result;
+//End page_AD4Accessi_VSearch_DoSearch_OnClick
+
+//Custom Code @417-2A29BDB7
+    document.forms["AD4Accessi_VSearch"].s_RICERCA.value = 'Y';
+   	hide();
+//End Custom Code
+
+//Close page_AD4Accessi_VSearch_DoSearch_OnClick @414-BC33A33A
+    return result;
+}
+//End Close page_AD4Accessi_VSearch_DoSearch_OnClick
+
+//page_AD4Accessi_VSearch_OnLoad @358-C67C1860
+function page_AD4Accessi_VSearch_OnLoad(form)
+{
+    var result;
+//End page_AD4Accessi_VSearch_OnLoad
+
+//Custom Code @441-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+    if (document.forms["AD4Accessi_VSearch"].s_RICERCA.value == 'Y'){
+		hide();
+	}
+	else{
+   		show();
+	}
+//End Custom Code
+
+//Close page_AD4Accessi_VSearch_OnLoad @358-BC33A33A
+    return result;
+}
+//End Close page_AD4Accessi_VSearch_OnLoad
+
+//page_OnLoad @1-D0F4E1D3
+function page_OnLoad()
+{
+    var result;
+//End page_OnLoad
+
+//Custom Code @434-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+	var eli;
+	eli = document.forms["AD4Accessi_VSearch"].ELIMINATI.value;
+	if ( eli > 0) {
+		alert('Eliminati '+ eli + ' accessi archiviati.');
+	}
+//End Custom Code
+
+//Close page_OnLoad @1-BC33A33A
+    return result;
+}
+//End Close page_OnLoad
+
+//bind_events @1-33693291
+function bind_events() {
+    if (document.forms["AD4Accessi_VSearch"]) check_and_bind('document.forms["AD4Accessi_VSearch"]','onLoad',page_AD4Accessi_VSearch_OnLoad);
+    if (document.forms["AD4Accessi_VSearch"]) check_and_bind('document.forms["AD4Accessi_VSearch"].DoSearch','onclick',page_AD4Accessi_VSearch_DoSearch_OnClick);
+    page_OnLoad();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%">
+      <table width="100%">
+        <tr>
+          <td>{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" class="AFCFormHeaderFont">
+            <!-- BEGIN Record AD4Accessi_VSearch -->
+            <form name="AD4Accessi_VSearch" action="{Action}" method="post" id="tableAvanzate" class="hidden">
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                <!-- BEGIN Error -->
+                <tbody>
+                  <tr>
+                    <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+                  </tr>
+ <!-- END Error -->
+                  <tr>
+                    <tr id="trTipo">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">Tipo</td> 
+                      <td class="AFCDataTD" valign="top" colspan="2">
+                        <select class="AFCSelect" name="{s_TIPO_Name}" id="selTipo">
+                          <option value="" selected>-&nbsp;-</option>
+ {s_TIPO_Options} 
+                        </select>
+ <input type="hidden" value="{DESCRIZIONE_FILTRO}" name="{DESCRIZIONE_FILTRO_Name}"></td> 
+                      <td align="right" class="AFCDataTD"><a class="AFCDataLink" href="{IMMAGINE_FILTRO_Src}">{IMMAGINE_FILTRO}</a> </td> 
+                    </tr>
+ 
+                    <tr id="trData">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">Avvenuto&nbsp;dal</td> 
+                      <td class="AFCDataTD" valign="top"><input class="AFCInput" id="selDataDa" maxlength="10" size="10" value="{s_DATA_DA}" name="s_DATA_DA"></td> 
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">al</td> 
+                      <td class="AFCDataTD" valign="top"><input class="AFCInput" id="selDataA" maxlength="10" size="10" value="{s_DATA_A}" name="s_DATA_A"></td> 
+                    </tr>
+ 
+                    <tr id="trUtente">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">Utente</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3">
+                        <select class="AFCSelect" id="selUtente" name="{s_UTENTE_Name}">
+                          <option value="" selected>- -</option>
+ {s_UTENTE_Options} 
+                        </select>
+ <input type="hidden" value="{ELIMINATI}" name="{ELIMINATI_Name}"></td> 
+                    </tr>
+ 
+                    <tr id="trModulo">
+                      <td class="AFCFieldCaptionTD" valign="top" nowrap align="right">Modulo</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3">
+                        <select class="AFCSelect" id="selModulo" name="{s_MODULO_Name}">
+                          <option value="" selected>- -</option>
+ {s_MODULO_Options} 
+                        </select>
+ <input type="hidden" name="{s_RICERCA_Name}" value="{s_RICERCA}"></td> 
+                    </tr>
+ 
+                    <tr id="trIstanza">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">Istanza</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3">
+                        <select class="AFCSelect" id="selIstanza" name="{s_ISTANZA_Name}">
+                          <option value="" selected>- -</option>
+ {s_ISTANZA_Options} 
+                        </select>
+ </td> 
+                    </tr>
+ 
+                    <tr id="trNote">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">Note</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3"><input class="AFCInput" value="{s_NOTE}" name="{s_NOTE_Name}" id="selNote" size="60"></td> 
+                    </tr>
+ 
+                    <tr id="trDbuser">
+                      <td class="AFCFieldCaptionTD" valign="top" nowrap align="right">DB
+                        User</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3"><input class="AFCInput" id="selDbuser" size="10" value="{s_DB_USER}" name="{s_DB_USER_Name}"></td> 
+                    </tr>
+ 
+                    <tr id="trTesto">
+                      <td class="AFCFieldCaptionTD" id="tdRegAnaT" valign="top" nowrap align="right">Terminale</td> 
+                      <td class="AFCDataTD" valign="top" colspan="3"><input class="AFCInput" value="{s_TERMINALE}" name="s_TERMINALE" id="selTesto" size="60"></td> 
+                    </tr>
+ 
+                    <tr id="trGravStato">
+                      <td class="AFCFieldCaptionTD" valign="top" align="right">Autenticazione</td> 
+                      <td class="AFCDataTD" id="tdCodFis" valign="top">
+                        <select name="{s_AUTENTICAZIONE_Name}" class="AFCSelect" id="selGravita">
+                          <option value="" selected>- -</option>
+ {s_AUTENTICAZIONE_Options} 
+                        </select>
+ </td> </td> 
+                    <td class="AFCFieldCaptionTD" valign="top" align="right">Stato</td> 
+                    <td class="AFCDataTD" valign="top">
+                      <select class="AFCSelect" id="selStato" name="{s_STATO_Name}">
+                        <option value="" selected>- -</option>
+ {s_STATO_Options} 
+                      </select>
+ </td> 
+                  </tr>
+ 
+                  <tr>
+                    <td class="AFCFooterTD" align="right" colspan="4">
+                      <!-- BEGIN Button DoSearch --><input class="AFCButton" type="submit" value="Cerca" name="DoSearch"><!-- END Button DoSearch --></td> 
+                  </tr>
+ 
+                </table>
+ 
+              </form>
+ <!-- END Record AD4Accessi_VSearch -->
+              <!-- BEGIN Grid Toolbox -->
+              <table class="AFCToolBoxTable" width="100%" cellspacing="0" cellpadding="3">
+                <!-- BEGIN Row -->
+                <tr>
+                  <td width="29" class="AFCDataTD" nowrap style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none">Legenda&nbsp;colori&nbsp;registrazioni:</td> 
+                  <td width="10" class="AFCDataTR" nowrap style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid">&nbsp;Storico&nbsp;</td> 
+                  <td width="1" class="AFCDataTD" nowrap style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none">&nbsp;</td> 
+                  <td width="10" class="AcceAttualeTR" nowrap style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid">&nbsp;Attuale&nbsp;</td> 
+                  <td width="1" class="AFCDataTD" nowrap style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none">&nbsp;</td> 
+                  <td width="10" class="AcceAttivoTR" nowrap style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid">&nbsp;Attivo&nbsp;</td> 
+                  <td width="1" class="AFCDataTD" nowrap style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none">&nbsp;</td> 
+                  <td width="10" class="AcceCrashTR" nowrap style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid">&nbsp;Pendente&nbsp;</td> 
+                  <td class="AFCDataTD" nowrap style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none">&nbsp;</td> 
+                  <td class="AFCToolBoxTD" id="tdRicerca" width="10%" nowrap>{RICERCA}&nbsp;{ELIMINA_ARCHIVIATI}&nbsp;</td> 
+                </tr>
+ <!-- END Row -->
+                <!-- BEGIN NoRecords --><!-- END NoRecords -->
+              </table>
+ <!-- END Grid Toolbox -->
+              <!-- BEGIN Grid AD4AccessiV -->
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <tr>
+                  <td class="AFCColumnTD" nowrap>Id</td> 
+                  <td class="AFCColumnTD" nowrap>Data </td> 
+                  <td class="AFCColumnTD" nowrap>Sess.</td> 
+                  <td class="AFCColumnTD" nowrap>Tipo</td> 
+                  <td class="AFCColumnTD" nowrap>Provenienza</td> 
+                  <td class="AFCColumnTD" nowrap>Db User</td> 
+                  <td class="AFCColumnTD" nowrap title="Terminale da cui proviene l'accesso">Accesso</td> 
+                  <td class="AFCColumnTD" nowrap>Aut.</td> 
+                  <td class="AFCColumnTD" nowrap>&nbsp;</td> 
+                </tr>
+ 
+                <!-- BEGIN Row -->
+                <tr class="{TR_STYLE}">
+                  <td class="" align="right" title="Numero identificativo dell'accesso">{ACCE_ID}</td> 
+                  <td width="10" class="" title="Data in cui si è verificato  l'accesso">{DATA}</td> 
+                  <td class="" align="right" title="Identificativo della sessione Oracle attiva per l'accesso.">{SESSION_ID}</td> 
+                  <td class="" title="Tipo di accesso">{DESC_LOG}&nbsp;</td> 
+                  <td class="" nowrap title="Nominativo Utente, Istanza e Modulo applicativi dell'accesso.">{PROVENIENZA}&nbsp;</td> 
+                  <td class="" title="Utente di database a cui è stato fatto accesso.">{DB_USER}</td> 
+                  <td class="" title="Terminale da cui l'utente era collegato (machine::terminal::osuser)."><span title="{NOTE}">{ACCESSO}&nbsp;</span></td> 
+                  <td class="" title="Tipo di autenticazione." align="left">{TIPO_AUTENTICAZIONE}&nbsp;</td> 
+                  <td class="" title="Stato dell'accesso." align="center">{DESC_STATO}&nbsp;</td> 
+                </tr>
+ <!-- END Row -->
+                <!-- BEGIN NoRecords -->
+                <tr>
+                  <td class="AFCDataTD" colspan="9">Nessuna
+                    registrazione:&nbsp;introdurre o modificare i parametri di
+                    ricerca.</td> 
+                </tr>
+ <!-- END NoRecords -->
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="center" colspan="9">{AFCNavigator}</td> 
+                </tr>
+ 
+              </table>
+ <!-- END Grid AD4AccessiV --></td> 
+          </tr>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+ 
+</body>
+ 
+</html>

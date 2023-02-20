@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Dati Ente</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" src="../Lov.js"></script>
+<script language="JavaScript">
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFormHeaderFont" nowrap>Gestione omonimia utenti</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record OMONIMIA -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <table class="AFCFormTABLE" cellspacing="0" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="2" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Utente</td> 
+                  <td class="AFCDataTD">{UTENTE}&nbsp;-{NOMINATIVO}<br>
+                    &nbsp;<input type="hidden" value="{ID_OMONIMIA}" name="{ID_OMONIMIA_Name}"><input type="hidden" value="{SCELTO_PRIMARIO}" name="{SCELTO_PRIMARIO_Name}"><br>
+                    {DATI_SOGGETTO} <input type="hidden" value="{UNIFICATO}" name="{UNIFICATO_Name}"><input type="hidden" value="{COPIATO}" name="{COPIATO_Name}"><input type="hidden" value="{P_UTENTE}" name="{P_UTENTE_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Omonimo </td> 
+                  <td class="AFCDataTD">{SOSIA}&nbsp;-{SOSIA_NOMINATIVO}<br>
+                    <br>
+                    {DATI_SOGGETTO_SOSIA}<input type="hidden" value="{P_SOSIA}" name="{P_SOSIA_Name}"><br>
+                    <br>
+                    <input type="checkbox" value="1" name="{s_primario_Name}" {s_primario}>&nbsp;<strong>Imposta
+                    come Utente Primario<br>
+                    </strong> </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Ignorare</td> 
+                  <td class="AFCDataTD"><input type="checkbox" value="1" name="{s_ignorare_Name}" {s_ignorare}>&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Note&nbsp;</td> 
+                  <td class="AFCDataTD"><textarea class="AFCTextarea" style="WIDTH: 100%" name="{NOTE_Name}" cols="90">{NOTE}</textarea></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="2">
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record OMONIMIA --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

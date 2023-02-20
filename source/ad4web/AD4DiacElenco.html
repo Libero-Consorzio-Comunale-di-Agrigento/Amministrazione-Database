@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Diritti di Accesso</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+</head>
+<body class="AFCPageBODY">
+<table border="0" cellspacing="2" cellpadding="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td>
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td height="100%" valign="top" width="100%" align="center">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" width="100%" align="left">{Guida}</td>
+            </tr>
+ 
+            <tr>
+              <td valign="top" width="100%" align="left">
+                <!-- BEGIN Grid DIRITTI_ACCESSO -->
+                <table class="AFCToolBoxTable" cellspacing="0" cellpadding="3" width="100%">
+                  <!-- BEGIN Row -->
+                  <tbody>
+                    <tr>
+                      <td class="AFCFormHeaderFont">{NOMINATIVO}&nbsp;</td> 
+                      <td class="AFCToolBoxTD" width="10%" nowrap align="right"><a class="AFCToolBox" title="Nuovo Accesso" href="{Nuovo}"><img title="Nuovo Accesso" border="0" alt="Nuovo" src="../common/images/AMV/nuovo.gif">Nuovo</a>&nbsp;<a class="AFCToolBox" title="Copia Profilo" href="{Copia}"><img title="Copia Profilo" border="0" alt="Copia Profilo" src="../common/images/AMV/dupl.gif">Copia</a>&nbsp;<a class="AFCToolBox" title="Unifica Profilo" href="{Unifica}"><img title="Unifica Profilo" border="0" alt="Unifica" src="../common/images/AMV/unif.gif">Unifica</a></td>
+                    </tr>
+                    <!-- END Row -->
+                    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+                  </tbody>
+                </table>
+ 
+                <p><!-- END Grid DIRITTI_ACCESSO -->&nbsp; 
+                <!-- BEGIN Record RegioniFiltro --><br>
+                </p>
+ 
+                <p></p>
+ 
+                <div align="center">
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+                    <form method="post" name="{HTMLFormName}" action="{Action}">
+                      <!-- BEGIN Error -->
+                      <tbody>
+                        <tr>
+                          <td class="AFCErrorDataTD" colspan="6">{Error}</td>
+                        </tr>
+                        <!-- END Error -->
+                        <tr>
+                          <td class="AFCFieldCaptionTD"><a class="AFCDataLink" title="" href="{FILTER_SEARCH_Src}">{FILTER_SEARCH}</a></td> 
+                          <td class="AFCFieldCaptionTD" valign="top">Modulo</td> 
+                          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{s_MODULO}" maxlength="51" size="40" name="{s_MODULO_Name}"></td> 
+                          <td class="AFCFieldCaptionTD" valign="top">Istanza</td> 
+                          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{s_ISTANZA}" maxlength="51" size="40" name="{s_ISTANZA_Name}"></td> 
+                          <td class="AFCDataTD">
+                            <!-- BEGIN Button DoSearch --><input class="AFCButton" value="Cerca" type="submit" name="{Button_Name}"><!-- END Button DoSearch --></td>
+                        </tr>
+                      </form>
+                    </tbody>
+                  </table>
+                </div>
+ 
+                <p><!-- END Record RegioniFiltro -->
+                <!-- BEGIN Grid AD4_DIRITTI_ACCESSO --></p>
+ 
+                <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_SEQUENZA --><a class="AFCSorterLink" href="{Sort_URL}">Seq.</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_SEQUENZA -->&nbsp;</td> 
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_MODULO --><a class="AFCSorterLink" href="{Sort_URL}">Modulo</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_MODULO -->&nbsp;</td> 
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_ISTANZA --><a class="AFCSorterLink" href="{Sort_URL}">Istanza</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_ISTANZA -->&nbsp;</td> 
+                      <td class="AFCColumnTD" nowrap>
+                        <!-- BEGIN Sorter Sorter_DATI --><a class="AFCSorterLink" href="{Sort_URL}">Dati</a> 
+                        <!-- BEGIN Asc_On --><img border="0" src="../Themes/AFC/AscOn.gif"><!-- END Asc_On -->
+                        <!-- BEGIN Desc_On --><img border="0" src="../Themes/AFC/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_DATI --></td> 
+                      <td class="AFCColumnTD" nowrap>&nbsp;</td>
+                    </tr>
+                    <!-- BEGIN Row -->
+                    <tr>
+                      <td class="AFCDataTD" valign="top"><a class="AFCDataLink" href="{SEQUENZA_Src}">{SEQUENZA}</a><input value="{UTENTE}" type="hidden" name="{UTENTE_Name}">&nbsp;</td> 
+                      <td class="AFCDataTD" valign="top"><a class="AFCDataLink" href="{DES_MODULO_Src}">{DES_MODULO}</a></td> 
+                      <td class="AFCDataTD" valign="top"><a class="AFCDataLink" href="{DES_ISTANZA_Src}">{DES_ISTANZA}</a></td> 
+                      <td class="AFCDataTD" align="justify">{DATI}</td> 
+                      <td class="AFCDataTD" nowrap align="right"><a class="AFCDataLink" href="{CaratteristicheAccesso}"><img border="0" alt="Caratteristiche Accesso" src="../common/images/AD4/caac.GIF"></a></td>
+                    </tr>
+                    <!-- END Row -->
+                    <!-- BEGIN NoRecords -->
+                    <tr>
+                      <td class="AFCDataTD" colspan="5">Nessuna
+                        registrazione&nbsp;</td>
+                    </tr>
+                    <!-- END NoRecords -->
+                    <tr>
+                      <td class="AFCFooterTD" colspan="5" nowrap align="center">{AFCNavigator}&nbsp;&nbsp;&nbsp; </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- END Grid AD4_DIRITTI_ACCESSO --></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+ 
+    <tr>
+      <td height="100" valign="bottom" width="100%" colspan="2">{Footer}</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

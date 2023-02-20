@@ -1,0 +1,95 @@
+
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<p>{Ad4DizionariGuida}<br>
+<!-- BEGIN Record SportelliFiltro --><br>
+</p>
+<div align="center">
+  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+    <form method="post" name="{HTMLFormName}" action="{Action}">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="4">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="middle" rowspan="3"><a class="AFCDataLink" title="" href="{FILTER_SEARCH_Src}">{FILTER_SEARCH}</a></td> 
+          <td class="AFCFieldCaptionTD" valign="top">Regione&nbsp;</td> 
+          <td class="AFCDataTD">
+            <select class="AFCInput" name="{s_REGIONE_Name}">
+              <option selected value="">&lt;selezionare&nbsp;valore&gt;</option>
+ {s_REGIONE_Options} 
+            </select>
+ </td> 
+          <td class="AFCDataTD" valign="middle" rowspan="3">
+            <!-- BEGIN Button DoSearch --><input class="AFCButton" name="{Button_Name}" value="Cerca" type="submit"><!-- END Button DoSearch --></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">ASL</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM:  uppercase" class="AFCInput" name="{s_ASL_Name}" maxlength="51" value="{s_ASL}" size="40"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Attiva</td> 
+          <td class="AFCDataTD">
+            <select name="{s_ATTIVA_Name}" class="GiantStepsSelect">
+              <option value="">- -</option>
+ {s_ATTIVA_Options} 
+            </select>
+ </td> 
+        </tr>
+ 
+      </form>
+ 
+    </tbody>
+ 
+  </table>
+</div>
+<p><!-- END Record SportelliFiltro --></p>
+<p>
+<!-- BEGIN Grid AslElenco -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCFormHeaderFont">Elenco&nbsp;Asl&nbsp;</td> 
+      <td align="right">&nbsp;<a class="AFCDataLink" title="Crea nuova asl" href="{Aggiungi_Src}">{Aggiungi}</a></td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+  <tbody>
+    <tr>
+      <td class="AFCColumnTD" nowrap>Codice Regione </td> 
+      <td class="AFCColumnTD" nowrap>Codice Asl</td> 
+      <td class="AFCColumnTD" nowrap>Descrizione&nbsp;</td> 
+      <td class="AFCColumnTD" nowrap>Regione</td> 
+      <td class="AFCColumnTD" nowrap>Attiva</td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Utente </td> 
+      <td class="AFCColumnTD" width="1%" nowrap>Data</td> 
+    </tr>
+ 
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="AFCDataTD" width="1%">{REGIONE_ASL}&nbsp;</td> 
+      <td class="AFCDataTD" width="1%">{CODICE_ASL}&nbsp;</td> 
+      <td class="AFCDataTD"><a class="AFCDataLink" href="{DESCRIZIONE_Src}">{DESCRIZIONE}</a>&nbsp;</td> 
+      <td class="AFCDataTD">{REGIONE_DENOMINAZIONE}&nbsp;</td> 
+      <td class="AFCDataTD"><input class="AFCInput" name="{ATTIVA_Name}" value="1" type="checkbox" {ATTIVA}></td> 
+      <td class="AFCDataTD">{UTENTE_AGGIORNAMENTO}&nbsp;</td> 
+      <td class="AFCDataTD">{DATA_AGGIORNAMENTO}</td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="AFCDataTD" colspan="7">Nessuna&nbsp;Asl trovata!</td> 
+    </tr>
+ <!-- END NoRecords -->
+    <tr>
+      <td class="AFCFooterTD" colspan="7" nowrap align="center">{AFCNavigator}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+<!-- END Grid AslElenco --></p>

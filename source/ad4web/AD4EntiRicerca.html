@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Enti</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%">
+      <table width="100%">
+        <tr>
+          <td>{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%">
+            <!-- BEGIN Record AD4Enti_VSearch -->
+            <form name="AD4Enti_VSearch" action="{Action}">
+              <table class="AFCFormTABLE">
+                <!-- BEGIN Error -->
+                <tbody>
+                  <tr>
+                    <td class="AFCDataTD" colspan="4"><font color="#ff0000">{Error}</font></td> 
+                  </tr>
+ <!-- END Error -->
+                    <tr>
+                      <td class="AFCFieldCaptionTD" valign="top"><a href="{IMMAGINE_FILTRO_Src}" 
+class="AFCDataLink">{IMMAGINE_FILTRO}</a></td> 
+                      <td class="AFCFieldCaptionTD" valign="middle">Ente</td> 
+                      <td class="AFCDataTD" valign="top"><input class="AFCInput" maxlength="40" size="40" 
+value="{s_DESCRIZIONE}" name="{s_DESCRIZIONE_Name}"></td> 
+                      <td class="AFCDataTD" valign="middle" nowrap>
+                        <!-- BEGIN Button DoSearch --><input class="AFCButton" type="submit" value="Cerca" 
+name="DoSearch"><!-- END Button DoSearch -->&nbsp;<a class="AFCNavigatorLink" href="{Nuovo_Src}" ,null)?>Nuovo</a></td> 
+                    </tr>
+ 
+                  </tbody>
+ 
+                </table>
+ 
+              </form>
+ 
+              <!-- END Record AD4Enti_VSearch -->
+              <!-- BEGIN Grid AD4EntiV -->
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <tbody valign="top">
+                  <tr>
+                    <td class="AFCColumnTD" nowrap>Ente</td> 
+                    <td class="AFCColumnTD" nowrap>Dati&nbsp;Ente </td> 
+                  </tr>
+ 
+                  <!-- BEGIN Row -->
+                  <tr>
+                    <td class="AFCDataTD" nowrap><a class="AFCDataLink" href="{DESCRIZIONE_Src}">{DESCRIZIONE}</a> 
+&nbsp;</td> 
+                    <td class="AFCDataTD"><font>{DATI_ENTE} &nbsp;</font></td> 
+                  </tr>
+ <!-- END Row -->
+                  <!-- BEGIN NoRecords -->
+                  <tr>
+                    <td class="AFCDataTD" colspan="2">Nessuna
+                      registrazione&nbsp;</td> 
+                  </tr>
+ <!-- END NoRecords -->
+                  <tr>
+                    <td class="AFCFooterTD" nowrap align="center" colspan="2">{AFCNavigator}</td> 
+                  </tr>
+ 
+                </tbody>
+ 
+              </table>
+ <!-- END Grid AD4EntiV -->
+ </td> 
+          </tr>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td width="100%" height="100%" valign="bottom" colspan="2">{Footer}</td> 
+    </tr>
+ 
+  </table>
+ 
+  </body>
+ 
+  </html>

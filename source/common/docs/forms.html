@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>TAG</title>
+</head>
+
+<body>
+
+<p class="MsoNormal" style="margin-left:18.0pt"><code><b><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;mso-ansi-language:EN-GB">TAG
+&lt;FORM&gt; </span></b></code>..<code><span style="font-size: 10.0pt; font-family: Arial Unicode MS; mso-ansi-language: EN-GB" lang="EN-GB"><a href="./AmvCorso.do?MVPG=forms_ex1">Esempio
+(Record di Codecharge</a>)..</span></code></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;mso-ansi-language:EN-GB">Questo
+tag permette di gestire l'input remoto di un utente verso il server.&nbsp;L'utente
+ha di fronte a se la scheda (FORM) e vi può inserire informazioni come testo o
+scelte obbligate. Una volta riempiti tutti i campi l'utente sottomette (SUBMIT)
+i dati al server con il metodo indicato e il server li elabora scatenando le
+reazioni connesse.</span></code></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><code><b><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;mso-ansi-language:EN-GB">SINTASSI</span></b></code><span lang="EN-GB" style="mso-ansi-language:EN-GB">&nbsp;<o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;mso-ansi-language:EN-GB">&lt;FORM</span></code><span lang="EN-GB" style="font-size:10.0pt;mso-ansi-language:EN-GB"><br>
+</span><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+mso-ansi-language:EN-GB">&nbsp;&nbsp;ACTION=&quot;<i>serverURL</i>&quot;</span></code><span lang="EN-GB" style="font-size:10.0pt;mso-ansi-language:EN-GB"><br>
+</span><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+mso-ansi-language:EN-GB">&nbsp;&nbsp;ENCTYPE=&quot;<i>encodingType</i>&quot;<span style="mso-spacerun: yes">&nbsp;
+</span>(Default : application/x-www-form-urlencoded)<br>
+&nbsp;&nbsp;METHOD=&quot;GET&quot;|&quot;POST&quot;<br>
+&nbsp;&nbsp;NAME=&quot;<i>formName</i>&quot;<br>
+&nbsp;&nbsp;ONRESET=&quot;<i>JScode</i>&quot;<br>
+&nbsp;&nbsp;ONSUBMIT=&quot;<i>JScode</i>&quot;<br>
+&nbsp;&nbsp;TARGET=&quot;<i>windowName</i>&quot;<br>
+&gt;</span></code></p>
+<p class="MsoNormal" style="margin-left:18.0pt">..<code><span style="font-size: 10.0pt; font-family: Arial Unicode MS; mso-ansi-language: EN-GB" lang="EN-GB"><a href="./AmvCorso.do?MVPG=input">Campi
+di input</a></span></code><a href="AmvCorso?MVPG=input"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+mso-ansi-language:EN-GB"><o:p>
+</o:p>
+</span></code></a><code><span style="font-size: 10.0pt; font-family: Arial Unicode MS; mso-ansi-language: EN-GB" lang="EN-GB">..</span></code></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+mso-ansi-language:EN-GB">&lt;/FORM&gt;<o:p>
+</o:p>
+</span></code></p>
+<p class="MsoNormal" style="margin-left:18.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;mso-ansi-language:EN-GB">Attributi:</span></code></p>
+<ul style="margin-top:0cm" type="disc">
+  <li class="MsoNormal" style="mso-list:l0 level1 lfo5;tab-stops:list 36.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+     mso-ansi-language:EN-GB">ACTION=&quot;url&quot; specifica l'url del
+    programma eseguito al momento della sottomissione della form al server.</span></code></li>
+  <li class="MsoNormal" style="mso-list:l0 level1 lfo5;tab-stops:list 36.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+     mso-ansi-language:EN-GB">METHOD=&quot;get|post&quot; stabilisce il metodo
+    usato per inviare al server le informazioni. Il valore di default è GET&nbsp;che
+    appende i dati di seguito all'indirizzo dell'ACTION generando così problemi
+    di troncamento (il limite di lunghezza dell’url è di 2048 bytes. Il
+    metodo POST spedisce i dati attraverso una transazione http post (quindi
+    come sequenza separata) e non ha limite teorico di grandezza dei dati
+    inviati.<o:p>
+    </o:p>
+    </span></code></li>
+  <li class="MsoNormal" style="mso-list:l0 level1 lfo5;tab-stops:list 36.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+     mso-ansi-language:EN-GB"><span style="mso-spacerun:
+     yes">&nbsp;</span>TARGET=&quot;nome&quot; stabilisce in quale finestra
+    debba essere caricato il risultato del puntamento. Può assumere valori
+    speciali :</span></code></li>
+</ul>
+<p class="MsoNormal" style="margin-left:45.0pt"><code><span style="font-size:
+10.0pt;font-family:&quot;Arial Unicode MS&quot;">TARGET=&quot;_blank&quot; crea
+il link ad una nuova finestra vuota. <o:p>
+</o:p>
+</span></code></p>
+<p class="MsoNormal" style="margin-left:45.0pt"><code><span style="font-size:
+10.0pt;font-family:&quot;Arial Unicode MS&quot;">TARGET=&quot;_self&quot; crea
+il link alla stessa finestra. <o:p>
+</o:p>
+</span></code></p>
+<p class="MsoNormal" style="margin-left:45.0pt"><code><span style="font-size:
+10.0pt;font-family:&quot;Arial Unicode MS&quot;">TARGET=&quot;_parent&quot; crea
+il link alla finestra parente. Se non esiste il link viene creato verso la
+finestra stessa come per &quot;_self&quot;. <o:p>
+</o:p>
+</span></code></p>
+<p class="MsoNormal" style="margin-left:45.0pt"><code><span style="font-size:
+10.0pt;font-family:&quot;Arial Unicode MS&quot;">TARGET=&quot;_top&quot; crea il
+link alla stessa finestra ma visualizzandola a tutto schermo.&nbsp;</span></code><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+     mso-ansi-language:EN-GB"> <o:p>
+</o:p>
+</span></code></p>
+<ul style="margin-top:0cm" type="disc">
+  <li class="MsoNormal" style="mso-list:l0 level1 lfo5;tab-stops:list 36.0pt"><code><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Arial Unicode MS&quot;;
+     mso-ansi-language:EN-GB">ENCTYPE=&quot;tipo_codifica&quot; serve a
+    specificare il tipo di codifica utilizzato. <o:p>
+    </o:p>
+    </span></code></li>
+</ul>
+<p class="MsoNormal" style="margin-left:18.0pt">&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-GB" style="font-size:
+8.0pt;font-family:Verdana;mso-ansi-language:EN-GB" class="clsdefvalue">&nbsp;<o:p>
+</o:p>
+</span></p>
+
+</body>
+
+</html>

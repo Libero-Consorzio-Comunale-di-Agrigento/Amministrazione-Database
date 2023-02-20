@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" href="Ad4web_rtf(1)_ns.css" type="text/css">
+<script type="text/javascript" language="JavaScript">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='Ad4web_rtf(1).css'>");}
+//-->
+</script>
+<title>Notifiche automatiche nella gestione delle Richieste di Abilitazione</title>
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<script language="JavaScript" src="./ehlpdhtm.js" type="text/javascript">
+</script>
+<script type="text/javascript" language="JavaScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+        origWidth = innerWidth;
+        origHeight = innerHeight;
+        onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style>
+
+<script type="text/javascript" language="javascript1.2" src="whmsg.js">
+</script>
+<script type="text/javascript" language="javascript" src="whver.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js">
+</script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js">
+</script>
+</head>
+<body>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+        if (window.addTocInfo)
+        {
+        addAvenueInfo("MAIN","AD4DirittoAccesso.htm","AD4RegistroTree.htm");
+addButton("show",BTN_TEXT,"Indice","","","","",0,0,"","","");
+
+        }
+        if (window.writeBtnStyle)
+                writeBtnStyle();
+
+        if (window.writeIntopicBar)
+                writeIntopicBar(1);
+
+        if (window.setRelStartPage)
+        {
+        setRelStartPage("index.htm");
+
+                autoSync(1);
+                sendSyncInfo();
+                sendAveInfoOut();
+        }
+}
+else
+        if (window.gbIE4)
+                document.location.reload();
+//-->
+</script>
+<h1>Notifiche automatiche nella gestione delle Richieste di Abilitazione</h1>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p>In fase di richiesta di abilitazione ad un <font style="font-style:italic;">Servizio</font> effettuata tramite un portale web del Gruppo Finmatica da un utente, possono essere generate delle notifiche automatiche (attualmente vengono gestite spedizioni soltanto tramite MAIL).</p>
+<p>Di seguito vengono specificati i prerequisiti, la definizione e le modalità di spedizione.</p>
+<p class="paragrafo">Prerequisiti di Installazione</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Corretta installazione del componente "Base Dati Communication Interface Manager" (per i dettagli dell'installazione del componente si veda il "Manuale Installazione e Aggiornamento SI4" – MIP.SI4);</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Presenza del file di configurazione del componente "Communication Interface Manager" (<font style="font-style:italic;">si4cim.cfg)</font> in una directory di sistema del server.</p>
+<p class="paragrafo">Prerequisiti di Configurazione</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Deve essere specificato il tipo di notifica nella singola nel singolo <font style="font-style:italic;">Servizio</font> (campo: <font style="font-style:italic;">Notifiche di Abilitazione tramite</font>);</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Il tag di invio definito in ogni <font style="font-style:italic;">Servizio</font> (campo: <font style="font-style:italic;">Tag Invio</font>) per cui è prevista la gestione delle notifiche (default: <font style="font-style:italic;">mail</font> ) deve essere correttamente definito nel file di configurazione del componente "Communication Interface Manager" (<font style="font-style:italic;">si4cim.cfg)</font>.</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>E' necessario specificare l'indirizzo del mittente delle notifiche; a tal fine, è necessario, nel singolo <font style="font-style:italic;">Servizio,</font> riempire il campo <font style="font-style:italic;">eMail per Notifiche all'Ente</font> con l'indirizzo appropriato;</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Se si desidera ricevere copia dei messaggi inviati per conoscenza nascosta (CCR), deve essere specificato l'indirizzo eMail a cui si vogliono ricevere nel singolo <font style="font-style:italic;">Servizio</font> (campo: <font style="font-style:italic;">eMail CCR Messaggi Automatici</font>);</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Se si desidera che, in coda al messaggio, venga inserito l'indirizzo dell'Ente mittente, è necessario associare una registrazione anagrafica all'Ente.</p>
+<p class="paragrafo">Definizione dei messaggi</p>
+<p class="footnote-text">L'oggetto ed il testo predefiniti delle notifiche sono visibili accedendo al menu "Servizi -&gt; Registro" nella chiave "PRODUCTS/AD4/RICHIESTA_ABILITAZIONE/MAIL/TESTO"; sono personalizzabili ridefinendo tutte o solo alcune delle stringhe presenti in "PRODUCTS/AD4/RICHIESTA_ABILITAZIONE/MAIL/TESTO" per i singoli moduli o utenti di database.</p>
+<p>La costruzione dei messaggi avviene cercando i valori nel registro nel seguente ordine:</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black;">1.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black;">DB_USERS/&lt;db_user&gt;/PRODUCTS/&lt;codice_modulo&gt;/ RICHIESTA_ABILITAZIONE/MAIL/TESTO (notifiche personalizzate per il modulo &lt;codice_modulo&gt; che accede all'utente di database &lt;db_user&gt;);</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black;">2.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black;">DB_USERS/&lt;user&gt;/ RICHIESTA_ABILITAZIONE/MAIL/TESTO (notifiche personalizzate per tutti i moduli che accedono all'utente di database &lt;db_user&gt;);</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black;">3.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black;">PRODUCTS/&lt;modulo&gt;/ RICHIESTA_ABILITAZIONE/MAIL/TESTO (notifiche personalizzate il modulo &lt;codice_modulo&gt; indipendentemente dall'utente di database &lt;db_user&gt; a cui accede);</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black;">4.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black;">PRODUCTS</font>/AD4/ RICHIESTA_ABILITAZIONE/MAIL/TESTO (default).</p>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p><font style="text-decoration:underline;">Variabili utilizzabili</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">5.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black; font-weight:bold;">Parametri della Richiesta</font><font style="color:black;">: $p1, ..., $ in ordine di id_parametro;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">6.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black; font-weight:bold;">Numero identificativo della richiesta</font><font style="color:black;">: $id_richiesta;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">7.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black; font-weight:bold;">Codice del modulo</font> <font style="color:black;">a cui si richiede di essere abilitati: $cod_modulo;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">8.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black; font-weight:bold;">Descrizione del modulo</font> <font style="color:black;">a cui si richiede di essere abilitati: $modulo;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">9.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="color:black; font-weight:bold;">Codice dell'istanza</font> <font style="color:black;">a cui si richiede di essere abilitati: $cod_istanza;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">10.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Descrizione dell'istanza</font> <font style="color:black;">a cui si richiede di essere abilitati: $istanza;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">11.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Codice dell'ente</font> <font style="color:black;">a cui si richiede l'abilitazione: $cod_ente;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">12.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Descrizione dell'ente</font> <font style="color:black;">a cui si richiede l'abilitazione: $ente;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">13.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Nominativo dell'utente</font> <font style="color:black;">(di login) che richiede l'abilitazione: $utente_richiedente;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">14.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Dati anagrafici</font> <font style="color:black;">dell'utente che richiede l'abilitazione: $soggetto_richiedente;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">15.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Dati anagrafici</font> <font style="color:black;">del soggetto legato all'</font><font style="color:black; font-weight:bold;">ente</font> <font style="color:black;">a cui si richiede l'abilitazione: $soggetto_ente;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">16.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Indirizzo eMail dell'ente</font> <font style="color:black;">a cui rispondere: $mail_notifiche;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt; color:black; font-weight:bold;">17.</font><span style="font-size:8pt;">&#160;&#160;</span><font style="color:black; font-weight:bold;">Seconda metà della password</font> <font style="color:black;">attribuita all'utente che richiede l'abilitazione: $password</font></p>
+<p class="footnote-text">Tutte le variabili possono essere scritte anche il maiuscolo.</p>
+<p class="footnote-text" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p style="margin-top:0.00pt;"><font style="color:black; text-decoration:underline;">Stringhe e loro valori predefiniti</font></p>
+<p style="margin-top:0.00pt;">&#160;</p>
+<p style="margin-top:0.00pt;"><font style="font-weight:bold;">1. Header</font>: intestazione della mail</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N. $id_richiesta.</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo $cod_modulo - $modulo (Istanza: $cod_istanza - $istanza).</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: $utente_richiedente</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici: $soggetto_richiedente</font></p>
+<p style="margin-top:0.00pt;"><font style="font-weight:bold;">1.1. Testo Carico</font>: testo della mail quando la richiesta di abilitazione è in carico (stato = C)</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Si richiede conferma per effettuare l'abilitazione dell'utente al servizio.</font></p>
+<p class="Body-Text-3" style="margin-left:36.00pt;"><font style="font-family:Courier New; font-size:9pt;">Si prega rispondere mandando una mail con oggetto 'Richiesta di abilitazione N.$id_richiesta' all'indirizzo: $mail_notifiche.</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">mailto:$mail_notifiche?subject=Richiesta_di_abilitazione_N.$id_richiesta.</font></p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">1.2. Testo Approvata</font><font style="color:black;">: testo della mail in approvazione (stato = A)</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata ABILITATA.</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">1.3. Testo Respinta</font><font style="color:black;">: testo della mail quando la richiesta di abilitazione viene respinta (stato = R)</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata RESPINTA.</font></p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">2. Testo Password</font><font style="color:black;">: testo della mail riguardante la consegna della seconda metà della password (e che la include)</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La seconda meta' della password e': $password</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">2.1. Testo Password CC</font><font style="color:black;">: testo della mail riguardante la consegna della seconda metà della password (e che NON la include)</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La seconda meta' della password e' in possesso del referente dell'azienda.</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">3. Precisazione Approvata</font><font style="color:black;">: precisazione da includere quando la richiesta di abilitazione viene approvata (stato = A)</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">L'utente puo' accedere al servizio.</font></p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">4. Footer</font><font style="color:black;">: conclusione della mail</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">_______________________________________________________________________</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Ente Mittente: $soggetto_ente</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">_______________________________________________________________________</font></p>
+<p style="margin-top:0.00pt;"><font style="color:black; font-weight:bold;">Oggetto</font><font style="color:black;">: oggetto della mail</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione Servizio N.$id_richiesta</font></p>
+<p style="margin-top:0.00pt;">&#160;</p>
+<p class="paragrafo">Modalità</p>
+<p>Le notifiche automatiche vengono generate quando una richiesta diventa <font style="font-style:italic;">Da Prendere in Carico</font>, <font style="font-style:italic;">Abilitata</font> o <font style="font-style:italic;">Respinta</font>. Se la richiesta è <font style="font-style:italic;">Fallita</font>, non scatta nessun automatismo.</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">Se lo stato la <font style="font-weight:bold;">richiesta</font> è <font style="font-weight:bold; font-style:italic;">Da Prendere in Carico</font>:<br>
+la notifica e' prevista solo se esiste un terzo (un'azienda o un soggetto diverso dal richiedente) che deve confermare i dati dell'individuo che richiede di essere abilitato al servizio in quanto suo referente.<br>
+La notifica viene spedita solo se esiste, tra i parametri della richiesta, il parametro RS_AZIENDA significativo.</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Se la <font style="font-weight:bold;">richiesta</font> viene <font style="font-weight:bold; font-style:italic;">Abilitata</font><font style="font-style:italic;">:</font><br>
+viene mandata la notifica (all'utente richiedente ed all'eventuale azienda di cui è referente) di avvenuta abilitazione dell'utente al servizio; se, inoltre, e' il primo servizio abilitato all'utente viene mandata anche la seconda metà della password all'azienda, se presente, o direttamente all'utente (la prima metà della password è stata consegnata all'utente in fase di registrazione al portale del Gruppo Finmatica da cui è partita la richiesta).</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Times New Roman; font-size:10pt;">-</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>Se la <font style="font-weight:bold;">richiesta</font> viene <font style="font-weight:bold; font-style:italic;">Respinta</font><font style="font-style:italic;">:<br></font>viene mandata la notifica (all'utente richiedente ed all'eventuale azienda di cui e' referente) che la richiesta di abilitazione dell'utente al servizio è stata respinta.</p>
+<p style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p>In tutti i casi in cui è prevista la spedizione di una notifica:</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>viene spedita una copia dei messaggi inviati per conoscenza nascosta (CCR) all'indirizzo eMail eventualmente specificato nel singolo <font style="font-style:italic;">Servizio</font> (campo: <font style="font-style:italic;">eMail CCR Messaggi Automatici</font>);</p>
+<p style="margin-left:18.00pt; text-indent:-18.00pt;"><font style="font-family:Symbol; font-size:10pt;">·</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;&#160;&#160;</span>il campo <font style="font-style:italic;">notificata</font> assume il valore <font style="font-style:italic;">Spedita</font> se tutto è andato bene, <font style="font-style:italic;">Fallita</font> altrimenti.</p>
+<p class="footnote-text" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="paragrafo">Esempi</p>
+<p style="margin-left:36.00pt; margin-top:0.00pt; text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt;">1.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="text-decoration:underline;">Richiesta di Abilitazione di utente ad un Servizio per conto di terzi</font><br>
+Si supponga che il sig. Alfredo Poggi richieda di essere abilitato al <font style="font-style:italic;">Servizio</font> AD4 – Amministratore Database come referente della ditta "Cantina Sociale Alfonsi".<br>
+Nel momento in cui la richiesta viene inoltrata dall'utente tramite un portale del Gruppo Finmatica, viene messa in stato <font style="font-style:italic;">Da Prendere in Carico</font> e viene mandata la notifica dell'avvenuta richiesta di abilitazione all'azienda di cui si dichiara referente.</p>
+<table width="580" cellspacing="0" cellpadding="1" style="margin-left:14.50pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p style="margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">Cantina Sociale Alfonsi &lt;nome.cognome@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Oggetto del Messaggio:</font><font style="font-size:9pt; color:black;"><br>
+Richiesta</font> <font style="font-size:9pt;">di abilitazione Servizio N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt;"><br></font><font style="font-size:9pt; font-weight:bold;">Testo del Messaggio:</font><font style="font-size:9pt;"><br></font><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo AD4 - Amministratore DataBase (Istanza: AD4 - Amministrazione DataBase).</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: ALFREDO POGGI</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; POGGI ALFREDO</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Nato a CODIGORO (FE) il 12/03/1972</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Codice Fiscale: PGGLRD72C12C814D</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Recapito: nome.cognome@alfonsi.it</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Si richiede conferma per effettuare l'abilitazione dell'utente al servizio.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Si prega rispondere mandando una mail con oggetto 'Richiesta di abilitazione N.7' all'indirizzo: nome.cognome@ente.it.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:blue; text-decoration:underline;">mailto:nome.cognome@ente.it?subject=Richiesta_di_abilitazione_N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">_______________________________________________________________________</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Ente Mittente:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">ADS - AUTOMATED DATA SYSTEM SPA</font></p>
+<p style="margin-left:17.45pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Via del lavoro, 17 - 40127 BOLOGNA (BO)<br>
+_______________________________________________________________________<br></font></p>
+</td>
+</tr>
+</table>
+<p class="Normal-Indent" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="Normal-Indent">Se l'Amministratore riceve conferma dell'abilitazione da parte dell'azienda, provvederà ad Abilitare la richiesta. In quel momento, vengono mandate le notifiche di avvenuta abilitazione al servizio, una all'azienda ed una all'utente all'indirizzo eMail fornito in fase di registrazione.</p>
+<p class="Normal-Indent">Se si tratta della prima abilitazione dell'utente la notifica all'azienda conterrà anche la seconda parte della password (la prima è stata consegnata all'utente in fase di registrazione al portale del Gruppo Finmatica da cui è partita la richiesta).</p>
+<p class="Normal-Indent" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="Normal-Indent">Mail azienda:</p>
+<table width="580" cellspacing="0" cellpadding="1" style="margin-left:14.20pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p style="margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">Cantina Sociale Alfonsi &lt;nome.cognome@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Oggetto del Messaggio:</font><font style="font-size:9pt; color:black;"><br>
+Richiesta</font> <font style="font-size:9pt;">di abilitazione Servizio N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt;"><br></font><font style="font-size:9pt; font-weight:bold;">Testo del Messaggio:</font><font style="font-size:9pt;"><br></font><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo AD4 - Amministratore DataBase(Istanza: AD4 - Amministrazione DataBase).</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: ALFREDO POGGI</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; POGGI ALFREDO</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Nato a CODIGORO (FE) il 12/03/1972</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Codice Fiscale: PGGLRD72C12C814D</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Recapito: nome.cognome@alfonsi.it</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata ABILITATA.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La seconda meta' della password e':aqw3</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">L'utente puo' accedere al servizio.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">In caso di smarrimento della prima parte della password o raggiunto termine di validita', l'utente puo' ottenere al proprio recapito e-mail le indicazioni per riuscire ad effettuare il login seguendo il link "Dimenticata Username e/o Password?" presente nella pagina di Login dopo il primo tentativo fallito.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Ente Mittente:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">ADS - AUTOMATED DATA SYSTEM SPA</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Via del lavoro, 17 - 40127 BOLOGNA (BO)</font></p>
+<p class="Normal-Indent" style="margin-left:18.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p class="Normal-Indent" style="margin-left:18.00pt;">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Normal-Indent" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="Normal-Indent">Mail utente:</p>
+<table width="580" cellspacing="0" cellpadding="1" style="margin-left:14.20pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">POGGI ALFREDO &lt;alfredo.poggi@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Oggetto del Messaggio:</font><font style="font-size:9pt; color:black;"><br>
+Richiesta</font> <font style="font-size:9pt;">di abilitazione Servizio N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt;"><br></font><font style="font-size:9pt; font-weight:bold;">Testo del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N.7</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo AD4 - Amministratore DataBase(Istanza: AD4 - Amministrazione DataBase).</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: ALFREDO POGGI</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; POGGI ALFREDO</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Nato a CODIGORO (FE) il 12/03/1972</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Codice Fiscale: PGGLRD72C12C814D</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Recapito: nome.cognome@alfonsi.it</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata ABILITATA.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La seconda meta' della password e' in possesso del referente dell'azienda.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">L'utente puo' accedere al servizio.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">In caso di smarrimento della prima parte della password o raggiunto termine di validita', l'utente puo' ottenere al proprio recapito e-mail le indicazioni per riuscire ad effettuare il login seguendo il link "Dimenticata Username e/o Password?" presente nella pagina di Login dopo il primo tentativo fallito.</font></p>
+<p style="margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Ente Mittente:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">ADS - AUTOMATED DATA SYSTEM SPA</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Via del lavoro, 17 - 40127 BOLOGNA (BO)</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p style="margin-left:36.00pt; margin-top:0.00pt;">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Normal-Indent" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="Normal-Indent">Se, invece, l'Amministratore non riceve conferma dell'abilitazione da parte dell'azienda, provvede a Respingere la richiesta. In quel momento, vengono mandate le notifiche di mancata abilitazione al servizio, una all'azienda ed una all'utente all'indirizzo eMail fornito in fase di registrazione.</p>
+<table width="580" cellspacing="0" cellpadding="1" style="margin-left:14.20pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p style="margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">Cantina Sociale Alfonsi &lt;nome.cognome@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario per conoscenza del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">POGGI ALFREDO &lt;alfredo.poggi@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Oggetto del Messaggio:</font><font style="font-size:9pt; color:black;"><br>
+Richiesta</font> <font style="font-size:9pt;">di abilitazione Servizio N.7</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-size:9pt;"><br></font><font style="font-size:9pt; font-weight:bold;">Testo del Messaggio:</font><font style="font-size:9pt;"><br></font><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N.7</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo AD4 - Amministratore DataBase(Istanza: AD4 - Amministrazione DataBase).</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: ALFREDO POGGI</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici:</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; POGGI ALFREDO</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Nato a CODIGORO (FE) il 12/03/1972</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Codice Fiscale: PGGLRD72C12C814D</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Recapito: nome.cognome@alfonsi.it</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata RESPINTA.</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Ente Mittente:</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">ADS - AUTOMATED DATA SYSTEM SPA</font></p>
+<p style="margin-left:17.75pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Via del lavoro, 17 - 40127 BOLOGNA (BO)</font></p>
+<p class="Normal-Indent" style="margin-left:18.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p class="Normal-Indent" style="margin-left:18.00pt;">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Normal-Indent" style="margin-left:18.00pt;">&#160;</p>
+<p class="Normal-Indent" style="text-indent:-18.00pt;"><font style="font-family:Arial; font-size:10pt;">2.</font><span style="font-size:8pt;">&#160;&#160;&#160;&#160;</span><font style="text-decoration:underline;">Richiesta di Abilitazione di un utente ad un Servizio a titolo personale<br></font>Si supponga che il sig. Alfredo Poggi richieda di essere abilitato al <font style="font-style:italic;">Servizio</font> AD4 – Amministratore Database a titolo personale.<br>
+Quando la richiesta viene <font style="font-style:italic;">Abilitata</font>, viene mandata la notifica di avvenuta abilitazione al servizio all'utente all'indirizzo eMail fornito in fase di registrazione.<br>
+Se si tratta della prima abilitazione dell'utente la notifica conterrà anche la seconda parte della password (la prima è stata consegnata all'utente in fase di registrazione al portale del Gruppo Finmatica da cui è partita la richiesta).</p>
+<table width="580" cellspacing="0" cellpadding="1" style="margin-left:14.50pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">POGGI ALFREDO &lt;alfredo.poggi@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Oggetto del Messaggio:</font><font style="font-size:9pt; color:black;"><br>
+Richiesta</font> <font style="font-size:9pt;">di abilitazione Servizio N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt;"><br></font><font style="font-size:9pt; font-weight:bold;">Testo del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo AD4 - Amministratore DataBase(Istanza: AD4 - Amministrazione DataBase).</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: ALFREDO POGGI</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; POGGI ALFREDO</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Nato a CODIGORO (FE) il 12/03/1972</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Codice Fiscale: PGGLRD72C12C814D</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Recapito: nome.cognome@alfonsi.it</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata ABILITATA.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La seconda meta' della password e':AS3W</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">L'utente puo' accedere al servizio.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">In caso di smarrimento della prima parte della password o raggiunto termine di validita', l'utente puo' ottenere al proprio recapito e-mail le indicazioni per riuscire ad effettuare il login seguendo il link "Dimenticata Username e/o Password?" presente nella pagina di Login dopo il primo tentativo fallito.</font></p>
+<p style="margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Ente Mittente:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">ADS - AUTOMATED DATA SYSTEM SPA</font></p>
+<p class="Normal-Indent" style="margin-left:18.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Via del lavoro, 17 - 40127 BOLOGNA (BO)<br>
+________________________________________________________________________<br></font></p>
+</td>
+</tr>
+</table>
+<p class="Normal-Indent">&#160;</p>
+<p class="Normal-Indent">Se la richiesta viene, invece, <font style="font-style:italic;">Respinta</font> viene mandata la notifica di mancata abilitazione al servizio all'utente all'indirizzo eMail fornito in fase di registrazione.</p>
+<table width="580" cellspacing="0" cellpadding="1" style="margin-left:14.50pt; border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;" border="1">
+<tr valign="top">
+<td width="100.00%" style="border-top:0.50pt solid black; border-bottom:0.50pt solid black; border-left:0.50pt solid black; border-right:0.50pt solid black;">
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Destinatario del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black;">POGGI ALFREDO &lt;alfredo.poggi@alfonsi.it&gt;</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt; color:black; font-weight:bold;">Oggetto del Messaggio:</font><font style="font-size:9pt; color:black;"><br>
+Richiesta</font> <font style="font-size:9pt;">di abilitazione Servizio N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-size:9pt;"><br></font><font style="font-size:9pt; font-weight:bold;">Testo del Messaggio:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta N.7</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Richiesta di abilitazione al modulo AD4 - Amministratore DataBase(Istanza: AD4 - Amministrazione DataBase).</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Utente richiedente l'abilitazione: ALFREDO POGGI</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Dati anagrafici:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; POGGI ALFREDO</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Nato a CODIGORO (FE) il 12/03/1972</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Codice Fiscale: PGGLRD72C12C814D</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Recapito: nome.cognome@alfonsi.it</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">La richiesta e' stata RESPINTA.</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">________________________________________________________________________</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;">&#160;</p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">Messaggio automatico</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160; Ente Mittente:</font></p>
+<p style="margin-left:18.00pt; margin-top:0.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">ADS - AUTOMATED DATA SYSTEM SPA</font></p>
+<p class="Normal-Indent" style="margin-left:18.00pt;"><font style="font-family:Courier New; font-size:9pt; color:black;">&#160;&#160;</font> <font style="font-family:Courier New; font-size:9pt; color:black;">Via del lavoro, 17 - 40127 BOLOGNA (BO)<br>
+________________________________________________________________________<br></font></p>
+</td>
+</tr>
+</table>
+<p class="Normal-Indent" style="margin-top:0; margin-bottom:0;">&#160;</p>
+<p class="Tip-Note-Heading">Argomenti</p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <a href="AD4ServElenco.htm">Servizi</a></p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <a href="AD4EntiRicerca.htm">Enti</a></p>
+<p><img src="images/MarkP.gif" border="0" height="12" width="18" alt="images\MarkP.gif"> <a href="AD4RiabElenco.htm">Richieste di Abilitazione</a></p>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+        writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

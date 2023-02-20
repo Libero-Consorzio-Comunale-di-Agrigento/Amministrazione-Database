@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Modifica Parametro</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_PARAMETRO_Button_Delete_OnClick @26-4B805D81
+function page_AD4_PARAMETRO_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_PARAMETRO_Button_Delete_OnClick
+
+//Confirmation Message @66-367CA2B5
+    return confirm('Eliminazione Parametro '+document.forms["AD4_PARAMETRO"].PARAMETRO.value +' ('+document.forms["AD4_RUOLI"].PARAMETRO.value +'). Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_PARAMETRO_Button_Delete_OnClick @26-BC33A33A
+    return result;
+}
+//End Close page_AD4_PARAMETRO_Button_Delete_OnClick
+
+//page_AD4_PARAMETRO_Button_Cancel_OnClick @28-0C36ECC4
+function page_AD4_PARAMETRO_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_PARAMETRO_Button_Cancel_OnClick
+
+//bind_events @1-7E755682
+function bind_events() {
+    if (document.forms["AD4_PARAMETRO"]) check_and_bind('document.forms["AD4_PARAMETRO"].Button_Delete','onclick',page_AD4_PARAMETRO_Button_Delete_OnClick);
+    if (document.forms["AD4_PARAMETRO"]) check_and_bind('document.forms["AD4_PARAMETRO"].Button_Cancel','onclick',page_AD4_PARAMETRO_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record AD4_PARAMETRO -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="2" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Parametro*</td> 
+                  <td class="AFCDataTD" width="100%">{PARAMETRO}&nbsp;&nbsp;<input type="hidden" name="{ID_PARAMETRO_Name}" value="{ID_PARAMETRO}">&nbsp;&nbsp;&nbsp;<input type="hidden" name="{ID_RICHIESTA_Name}" value="{ID_RICHIESTA}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Valore</td> 
+                  <td class="AFCDataTD"><input class="AFCInput" maxlength="40" size="40" value="{VALORE}" name="{VALORE_Name}">&nbsp;</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="2">
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_PARAMETRO --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>

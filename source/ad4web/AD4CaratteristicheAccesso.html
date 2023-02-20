@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Caratteristiche di Accesso</title>
+<link href="../Themes/AFC/Style.css" type="text/css" rel="stylesheet">
+<style type="text/css">.hidden{display:none;} .visible{display:block;}</style>
+<script language="JavaScript">
+ function show() {
+	document.getElementById('tableDettagli').className='visible';
+	document.getElementById('buttonDettagliShow').className='hidden';
+	if (document.forms["AD4_CARATTERISTICHE_ACCESSO"].DESC_DETTAGLI.value != null && document.forms["AD4_CARATTERISTICHE_ACCESSO"].DESC_DETTAGLI.value != '') {
+		document.getElementById('buttonDettagliHide').className='AFCButton';
+	}
+	else {
+		document.getElementById('buttonDettagliHide').className='hidden';
+	}
+}
+</script>
+<script language="JavaScript">
+ function hide() {
+	document.getElementById('tableDettagli').className='hidden';
+	if (document.forms["AD4_CARATTERISTICHE_ACCESSO"].DESC_DETTAGLI.value != null && document.forms["AD4_CARATTERISTICHE_ACCESSO"].DESC_DETTAGLI.value != '') {
+		document.getElementById('buttonDettagliShow').className='AFCButton';
+	}
+	else {
+		document.getElementById('buttonDettagliShow').className='hidden';
+	}	
+	document.getElementById('buttonDettagliHide').className='hidden';
+}
+</script>
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" src="../functions.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_CARATTERISTICHE_ACCESSO_Button_Update_OnClick @40-4F6B3A52
+function page_AD4_CARATTERISTICHE_ACCESSO_Button_Update_OnClick()
+{
+    var result;
+//End page_AD4_CARATTERISTICHE_ACCESSO_Button_Update_OnClick
+
+//Custom Code @218-2A29BDB7
+	var sposta = 0;
+	if (	document.forms["AD4_CARATTERISTICHE_ACCESSO"].NUM_FILE_ARCHIVIATI.value > 0
+		&& 	document.forms["AD4_CARATTERISTICHE_ACCESSO"].DISLOCAZIONE_TRACCIA_OLD.value != document.forms["AD4_CARATTERISTICHE_ACCESSO"].DISLOCAZIONE_TRACCIA.value) {
+	   result = confirm('File di log contenuti nella directory '+ document.forms["AD4_CARATTERISTICHE_ACCESSO"].DISLOCAZIONE_TRACCIA_OLD.value +':\n\n' +
+						'Numero file: '+document.forms["AD4_CARATTERISTICHE_ACCESSO"].NUM_FILE_ARCHIVIATI.value+'\n'+
+						'Dimensione totale dei file: '+document.forms["AD4_CARATTERISTICHE_ACCESSO"].DIM_FILE_ARCHIVIATI.value+' KB\n\n'+	
+						'Spostarli nella directory '+ document.forms["AD4_CARATTERISTICHE_ACCESSO"].DISLOCAZIONE_TRACCIA.value +'?');
+	  	if (result) sposta = 1;
+	}
+	document.forms["AD4_CARATTERISTICHE_ACCESSO"].SPOSTA_FILE_ARCH.value = sposta;
+
+	if (	document.forms["AD4_CARATTERISTICHE_ACCESSO"].MIN_LUNGHEZZA_PWD.value != document.forms["AD4_CARATTERISTICHE_ACCESSO"].MIN_LUNGHEZZA_PWD_OLD.value
+		|| 	document.forms["AD4_CARATTERISTICHE_ACCESSO"].AMMESSI_CAR_SPECIALI_PWD.value != document.forms["AD4_CARATTERISTICHE_ACCESSO"].AMMESSI_CAR_SPECIALI_PWD_OLD.value
+		||  document.forms["AD4_CARATTERISTICHE_ACCESSO"].NUMERI_OBB_PWD.value != document.forms["AD4_CARATTERISTICHE_ACCESSO"].NUMERI_OBB_PWD_OLD.value
+		||  document.forms["AD4_CARATTERISTICHE_ACCESSO"].GG_PRIMA_RIUTILIZZO_PWD.value != document.forms["AD4_CARATTERISTICHE_ACCESSO"].GG_PRIMA_RIUTILIZZO_PWD_OLD.value) {
+		var msg;
+		msg = "Tutti gli utenti:\n" + 
+			 "- interessati dalla modifica e\n" + 
+			 "- la cui password non è coerente con le nuove caratteristiche e\n" + 
+			 "- con possibilità di rinnovo password \n" + 
+	 		 "al primo accesso verranno ";
+		if (	document.forms["AD4_CARATTERISTICHE_ACCESSO"].TENTATIVI_PASSWORD.value > 0) {
+			msg += "obbligati a ";
+		}
+		else {
+			msg += "avvisati della necessità di ";
+		}
+		msg += "modificare la password.";
+	   	alert(msg);
+	}
+
+	result = true;
+//End Custom Code
+
+//Close page_AD4_CARATTERISTICHE_ACCESSO_Button_Update_OnClick @40-BC33A33A
+    return result;
+}
+//End Close page_AD4_CARATTERISTICHE_ACCESSO_Button_Update_OnClick
+
+//page_AD4_CARATTERISTICHE_ACCESSO_Button_Delete_OnClick @41-5D45EC9F
+function page_AD4_CARATTERISTICHE_ACCESSO_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_CARATTERISTICHE_ACCESSO_Button_Delete_OnClick
+
+//Confirmation Message @134-E7C1889D
+    return confirm('Eliminazione Caratteristica di Accesso '+document.forms["AD4_CARATTERISTICHE_ACCESSO"].CAAC_DESC_Hidden.value +'. Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_CARATTERISTICHE_ACCESSO_Button_Delete_OnClick @41-BC33A33A
+    return result;
+}
+//End Close page_AD4_CARATTERISTICHE_ACCESSO_Button_Delete_OnClick
+
+//page_OnLoad @1-D0F4E1D3
+function page_OnLoad()
+{
+    var result;
+//End page_OnLoad
+
+//Custom Code @235-2A29BDB7
+// -------------------------
+// Write your own code here.
+// -------------------------
+hide();
+//End Custom Code
+
+//Close page_OnLoad @1-BC33A33A
+    return result;
+}
+//End Close page_OnLoad
+
+//page_AD4_CARATTERISTICHE_ACCESSO_Button_Cancel_OnClick @43-55DE351D
+function page_AD4_CARATTERISTICHE_ACCESSO_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_CARATTERISTICHE_ACCESSO_Button_Cancel_OnClick
+
+//bind_events @1-622A6B81
+function bind_events() {
+    if (document.forms["AD4_CARATTERISTICHE_ACCESSO"]) check_and_bind('document.forms["AD4_CARATTERISTICHE_ACCESSO"].Button_Delete','onclick',page_AD4_CARATTERISTICHE_ACCESSO_Button_Delete_OnClick);
+    if (document.forms["AD4_CARATTERISTICHE_ACCESSO"]) check_and_bind('document.forms["AD4_CARATTERISTICHE_ACCESSO"].Button_Update','onclick',page_AD4_CARATTERISTICHE_ACCESSO_Button_Update_OnClick);
+    if (document.forms["AD4_CARATTERISTICHE_ACCESSO"]) check_and_bind('document.forms["AD4_CARATTERISTICHE_ACCESSO"].Button_Cancel','onclick',page_AD4_CARATTERISTICHE_ACCESSO_Button_Cancel_OnClick);
+    page_OnLoad();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table height="100%" cellspacing="2" cellpadding="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td width="100%" colspan="2">{Header}</td> 
+    </tr>
+ 
+    <tr>
+      <td valign="top">{Left}</td> 
+      <td valign="top" align="center" width="100%" height="100%">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td valign="top" align="left" width="100%">{Guida}</td> 
+            </tr>
+ 
+            <tr>
+              <td valign="top" align="left" width="100%">
+                <!-- BEGIN Record AD4_CARATTERISTICHE_ACCESSO -->
+                <form name="{HTMLFormName}" action="{Action}" method="post">
+                  <font class="AFCFormHeaderFont">Caratteristiche
+                  di&nbsp;Accesso {CAAC_DESC}</font> 
+                  <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                    <!-- BEGIN Error -->
+                    <tbody>
+                      <tr>
+                        <td class="AFCErrorDataTD" colspan="3">{Error}</td> 
+                      </tr>
+ <!-- END Error -->
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" align="center" colspan="3">Effettive</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Accesso</td> 
+                        <td class="AFCDataTD" valign="top" colspan="2">{DESC_ACCESSO}<input type="hidden" value="{OLD_CAAC_ID}" name="{OLD_CAAC_ID_Name}"><input type="hidden" value="{CAAC_ID}" name="{CAAC_ID_Name}"><input type="hidden" value="{OLD_MODULO}" name="{OLD_MODULO_Name}"><input type="hidden" value="{MODULO}" name="{MODULO_Name}"><input type="hidden" value="{INSERT_UPDATE}" name="{INSERT_UPDATE_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>&nbsp;</td> 
+                        <td class="AFCDataTD" nowrap align="left" colspan="2">{JOB_ATTIVO}</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Password</td> 
+                        <td class="AFCDataTD" valign="top" nowrap colspan="2">{DESC_PASSWORD}<input type="hidden" value="{OLD_PROGETTO}" name="{OLD_PROGETTO_Name}"><input type="hidden" value="{PROGETTO}" name="{PROGETTO_Name}"><input type="hidden" value="{OLD_UTENTE}" name="{OLD_UTENTE_Name}"><input type="hidden" value="{UTENTE}" name="{UTENTE_Name}"><input type="hidden" value="{TIPO_ACCESSO}" name="{TIPO_ACCESSO_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Autenticazione</td> 
+                        <td class="AFCDataTD" valign="top" nowrap colspan="2">{DESC_AUTENTICAZIONE}<input type="hidden" value="{OLD_ISTANZA}" name="{OLD_ISTANZA_Name}"><input type="hidden" value="{ISTANZA}" name="{ISTANZA_Name}"><input type="hidden" value="{CAAC_DESC_Hidden}" name="{CAAC_DESC_Hidden_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" align="center" colspan="3">Definizione</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">&nbsp;</td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left"><input title="Senza  Eccezioni" type="checkbox" value="NO" name="{ACCESSO_SE_Name}" {ACCESSO_SE}>{ACCESSO_SE_DESC}</td> 
+                        <td class="AFCDataTD" nowrap align="left">&nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">Accesso</td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left">
+                          <select class="AFCSelect" name="{ACCESSO_Name}">
+                            <option value="" selected>-&nbsp;-</option>
+ {ACCESSO_Options} 
+                          </select>
+ </td> 
+                        <td class="AFCDataTD" valign="bottom" nowrap align="left">&nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top">&nbsp;</td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left">Traccia
+                          per&nbsp; 
+                          <select class="AFCSelect" name="{TRACCIA_Name}">
+                            <option value="" selected>- -</option>
+ {TRACCIA_Options} 
+                          </select>
+ conservata per giorni&nbsp;<input class="AFCInput" style="TEXT-ALIGN: right" maxlength="3" size="2" value="{GIORNI_TRACCIA}" name="{GIORNI_TRACCIA_Name}"><input type="hidden" value="{NUM_FILE_ARCHIVIATI}" name="{NUM_FILE_ARCHIVIATI_Name}"><input type="hidden" value="{DIM_FILE_ARCHIVIATI}" name="{DIM_FILE_ARCHIVIATI_Name}"><input type="hidden" value="{SPOSTA_FILE_ARCH}" name="{SPOSTA_FILE_ARCH_Name}"></td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left"><input class="{CKB_ARCH_CLASS}" type="checkbox" value="NO" name="{ARCHIVIAZIONE_TRACCIA_Name}" {ARCHIVIAZIONE_TRACCIA}>{LABEL_ARCH}<input class="{INPUT_ARCH_CLASS}" maxlength="100" value="{DISLOCAZIONE_TRACCIA}" name="{DISLOCAZIONE_TRACCIA_Name}"><input type="hidden" value="{INPUT_ARCH_CLASS}" name="{INPUT_ARCH_CLASS_Name}"><input type="hidden" value="{CKB_ARCH_CLASS}" name="{CKB_ARCH_CLASS_Name}"><input type="hidden" value="{DISLOCAZIONE_TRACCIA_OLD}" name="{DISLOCAZIONE_TRACCIA_OLD_Name}">&nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>&nbsp;</td> 
+                        <td class="AFCDataTD" nowrap align="left">Blocca
+                          applicativo C/S inattivo dopo minuti&nbsp;<input class="AFCInput" style="TEXT-ALIGN: right" maxlength="2" size="2" value="{SLEEP}" name="{SLEEP_Name}"></td> 
+                        <td class="AFCDataTD" nowrap align="left">&nbsp;</td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>Password</td> 
+                        <td class="AFCDataTD" nowrap align="left">Validità
+                          giorni <input class="AFCInput" style="TEXT-ALIGN: right" maxlength="3" size="3" value="{VALIDITA_PASSWORD}" name="{VALIDITA_PASSWORD_Name}"></td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left">Tentativi
+                          di accesso <input class="AFCInput" style="TEXT-ALIGN: right" maxlength="2" size="2" value="{TENTATIVI_PASSWORD}" name="{TENTATIVI_PASSWORD_Name}"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>&nbsp;</td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left"><input type="checkbox" value="NO" name="{MOD_PWD_PRIMO_ACCESSO_Name}" {MOD_PWD_PRIMO_ACCESSO}>&nbsp;Modifica
+                          primo uso</td> 
+                        <td class="AFCDataTD" valign="top" align="left">Lunghezza
+                          minima <input style="TEXT-ALIGN: right" class="AFCInput" name="{MIN_LUNGHEZZA_PWD_Name}" maxlength="2" value="{MIN_LUNGHEZZA_PWD}" size="2"><input name="{MIN_LUNGHEZZA_PWD_OLD_Name}" value="{MIN_LUNGHEZZA_PWD_OLD}" type="hidden"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>&nbsp;</td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left"><input name="{AMMESSI_CAR_SPECIALI_PWD_Name}" value="SI" type="checkbox" {AMMESSI_CAR_SPECIALI_PWD}>&nbsp;Ammessi
+                          caratteri speciali<input name="{AMMESSI_CAR_SPECIALI_PWD_OLD_Name}" value="{AMMESSI_CAR_SPECIALI_PWD_OLD}" type="hidden"></td> 
+                        <td class="AFCDataTD" valign="top" align="left"><input name="{NUMERI_OBB_PWD_Name}" value="NO" type="checkbox" {NUMERI_OBB_PWD}>&nbsp;Presenza
+                          numeri obbligatoria<input name="{NUMERI_OBB_PWD_OLD_Name}" value="{NUMERI_OBB_PWD_OLD}" type="hidden"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>&nbsp;</td> 
+                        <td class="AFCDataTD" nowrap align="left">Giorni minimi
+                          per riutilizzo password <input style="TEXT-ALIGN: right" class="AFCInput" name="{GG_PRIMA_RIUTILIZZO_PWD_Name}" maxlength="3" value="{GG_PRIMA_RIUTILIZZO_PWD}" size="3"><input name="{GG_PRIMA_RIUTILIZZO_PWD_OLD_Name}" value="{GG_PRIMA_RIUTILIZZO_PWD_OLD}" type="hidden"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFieldCaptionTD" valign="top" nowrap>Autenticazione</td> 
+                        <td class="AFCDataTD" valign="top" nowrap align="left"><input name="{LDAP_Name}" value="NO" type="checkbox" {LDAP}>&nbsp;Integrazione
+                          con LDAP</td> 
+                        <td class="AFCDataTD" align="left"><input name="{SINGLE_SIGN_ON_Name}" value="{SINGLE_SIGN_ON}" type="hidden"></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCFooterTD" nowrap>
+                          <!-- BEGIN Button DettagliShow --><input id="buttonDettagliShow" class="hidden" onclick="show();" name="{Button_Name}" value="Dettagli >>" type="button"><!-- END Button DettagliShow -->
+                          <!-- BEGIN Button DettagliHide --><input id="buttonDettagliHide" class="hidden" onclick="hide();" name="{Button_Name}" value="Dettagli <<" type="button"><!-- END Button DettagliHide -->&nbsp;</td> 
+                        <td class="AFCFooterTD" colspan="2" nowrap align="right">
+                          <!-- BEGIN Button Button_Update --><input class="AFCButton" name="{Button_Name}" value="Registra" type="submit"><!-- END Button Button_Update -->
+                          <!-- BEGIN Button Button_Delete --><input class="AFCButton" name="{Button_Name}" value="Elimina" type="submit"><!-- END Button Button_Delete -->
+                          <!-- BEGIN Button Button_Cancel --><input class="AFCButton" name="{Button_Name}" value="Annulla" type="submit"><!-- END Button Button_Cancel --></td> 
+                      </tr>
+ 
+                      <tr>
+                        <td class="AFCDataTD" colspan="3">
+                          <table id="tableDettagli" class="hidden" width="100%">
+                            <tbody>
+                              <tr>
+                                <td>{DESC_DETTAGLI_LABEL}<input name="{DESC_DETTAGLI_Name}" value="{DESC_DETTAGLI}" type="hidden"></td> 
+                              </tr>
+ 
+                            </tbody>
+ 
+                          </table>
+ </td> 
+                      </tr>
+ 
+                    </tbody>
+ 
+                  </table>
+ 
+                </form>
+ <!-- END Record AD4_CARATTERISTICHE_ACCESSO -->
+                <!-- BEGIN Grid invalidPwdLog -->
+                <table cellspacing="0" cellpadding="3" width="100%">
+                  <!--TRIEDITCOMMENT-2,2,2TRIEDITCOMMENTEND-3222222222222222222TRIEDITPRECOMMENT- BEGIN Row -->
+                  <tbody>
+                    <tr>
+                      <td style="BORDER-BOTTOM: #dee3ef 1px solid; BORDER-LEFT: #dee3ef 1px solid; BORDER-TOP: #dee3ef 1px solid; BORDER-RIGHT: #dee3ef 1px solid" class="AFCErrorDataTD">{INVALID_PWD_LOG} </td> 
+                    </tr>
+ 
+                    <!--TRIEDITCOMMENT-2,2,2TRIEDITCOMMENTEND-322222222222222222222TRIEDITPRECOMMENT- END Row -->
+                    <!--TRIEDITCOMMENT-2,2,2TRIEDITCOMMENTEND-322222222222222222222TRIEDITPRECOMMENT- BEGIN NoRecords -->
+                    <!--TRIEDITCOMMENT-2,2,2TRIEDITCOMMENTEND-TRIEDITPRECOMMENT- END NoRecords -->
+                  </tbody>
+ 
+                </table>
+ <!-- END Grid invalidPwdLog --></td> 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td height="100" valign="bottom" width="100%" colspan="2">&nbsp;{Footer}{JS_REFRESH_SLAVES}</td> 
+    </tr>
+ 
+  </tbody>
+</table>
+</body>
+</html>

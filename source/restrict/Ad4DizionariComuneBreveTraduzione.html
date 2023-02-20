@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<title>Traduzione Archivio Comuni</title>
+<head>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_ComuneImposta_Button_Delete_OnClick @16-079632C4
+function page_ComuneImposta_Button_Delete_OnClick()
+{
+    var result;
+//End page_ComuneImposta_Button_Delete_OnClick
+
+//Confirmation Message @17-7723982F
+    return confirm('Eliminazione traduzione denominazione breve comune. Procedere ?');
+//End Confirmation Message
+
+//Close page_ComuneImposta_Button_Delete_OnClick @16-BC33A33A
+    return result;
+}
+//End Close page_ComuneImposta_Button_Delete_OnClick
+
+//page_ComuneImposta_Button_Cancel_OnClick @19-EBE6B8C9
+function page_ComuneImposta_Button_Cancel_OnClick()
+{
+    var result;
+//End page_ComuneImposta_Button_Cancel_OnClick
+
+//Custom Javascript @45-EEF6A4D6
+    self.close();
+//End Custom Javascript
+
+//Close page_ComuneImposta_Button_Cancel_OnClick @19-AEF500E0
+    disableValidation = true;
+    return result;
+}
+//End Close page_ComuneImposta_Button_Cancel_OnClick
+
+//page_ComuneImposta_Button_Update_OnClick @14-80DDEAE6
+function page_ComuneImposta_Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End page_ComuneImposta_Button_Update_OnClick
+
+//bind_events @1-AFBA866C
+function bind_events() {
+    if (document.forms["ComuneImposta"]) check_and_bind('document.forms["ComuneImposta"].Button_Cancel','onclick',page_ComuneImposta_Button_Cancel_OnClick);
+    if (document.forms["ComuneImposta"]) check_and_bind('document.forms["ComuneImposta"].Button_Delete','onclick',page_ComuneImposta_Button_Delete_OnClick);
+    if (document.forms["ComuneImposta"]) check_and_bind('document.forms["ComuneImposta"].Button_Update','onclick',page_ComuneImposta_Button_Update_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+// -------------------------------------------------  
+// Aggiunta per attivare JavaScript su pagina inclusa  
+window.onload = Ad4DizionariComuneImposta_bind_events;
+// ------------------------------------------------- 
+//End CCS script
+</script>
+<script language="JavaScript" type="text/javascript" src="../DatePicker.js"></script>
+<script language="JavaScript" type="text/javascript" src="../Lov.js"></script>
+</head>
+<body>
+<!-- BEGIN Record ComuneImposta -->
+<div align="center">
+  <form method="post" name="{HTMLFormName}" action="{Action}">
+    <font class="AFCFormHeaderFont">Imposta&nbsp;Traduzione</font> 
+    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Comune</td> 
+          <td class="AFCDataTD"><input value="{COMUNE_LABEL}" type="hidden" name="{COMUNE_LABEL_Name}">{DENOMINAZIONE}<input value="{PROVINCIA_LABEL}" type="hidden" name="{PROVINCIA_LABEL_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Denominazione &nbsp;</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{DENOMINAZIONE_ALT}" maxlength="40" size="50" name="{DENOMINAZIONE_ALT_Name}">&nbsp;</td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFooterTD" colspan="2" nowrap align="right">
+            <!-- BEGIN Button Button_Insert --><input class="AFCButton" value="Inserisci" type="submit" name="{Button_Name}"><!-- END Button Button_Insert -->
+            <!-- BEGIN Button Button_Update --><input class="AFCButton" value="Aggiorna" type="submit" name="{Button_Name}"><!-- END Button Button_Update -->
+            <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+            <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+ 
+  </form>
+</div>
+<!-- END Record ComuneImposta -->
+</body>
+</html>

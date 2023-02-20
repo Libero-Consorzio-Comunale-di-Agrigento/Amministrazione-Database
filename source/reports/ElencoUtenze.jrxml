@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ElencoUtenze" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="26"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.keep.first.band.1" value="pageHeader"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.band.2" value="pageFooter"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.band.3" value="lastPageFooter"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.origin.band.4" value="title"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.cell.background" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.graphics" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type=true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows=true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns=true"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.page.margins=true"/>
+	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet=true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.column.width.ratio" value="1.10f"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+	<parameter name="TIPO_UTENTE" class="java.lang.String"/>
+	<parameter name="MODULO" class="java.lang.String"/>
+	<parameter name="ISTANZA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select UTENTE.GET_NOMINATIVO(UTENTE)||' ('||utente||')' nominativo, UTENTE.GET_INFO_IDENTIFICAZIONE(UTENTE) identificazione,SOGGETTO.GET_DENOMINAZIONE(UTENTE.GET_SOGGETTO(UTENTE)) soggetto, ISTANZA||' - '|| ISTANZA.GET_DESCRIZIONE(ISTANZA) descrizione_istanza , MODULO||' - '||moduli_tpk.get_descrizione(modulo) descrizione_modulo,RUOLO||' - '||ruoli_tpk.get_descrizione(ruolo) descrizione_ruolo,
+decode( nvl($P{TIPO_UTENTE},'%'),'%','Tutte','S','Amministrazione','N','Applicative','Tutte') des_p_tipo_utente,
+moduli_tpk.get_descrizione($P{MODULO}) des_p_modulo, istanza.get_descrizione($P{ISTANZA}) des_p_istanza
+from diritti_accesso
+where (nvl(utente.get_amministratore(utente),'N') = nvl($P{TIPO_UTENTE},'%') or nvl($P{TIPO_UTENTE},'%') = '%')
+AND UTENTE.GET_TIPO_UTENTE(UTENTE) = 'U'
+and istanza like nvl($P{ISTANZA},'%')
+and modulo like nvl($P{MODULO},'%')
+union
+select UTENTE.GET_NOMINATIVO(UTENTE)||' ('||utente||')'  nominativo, UTENTE.GET_INFO_IDENTIFICAZIONE(UTENTE) identificazione,SOGGETTO.GET_DENOMINAZIONE(UTENTE.GET_SOGGETTO(UTENTE)) soggetto, ISTANZA||' - '|| ISTANZA.GET_DESCRIZIONE(ISTANZA) descrizione_istanza,  MODULO||' - '||moduli_tpk.get_descrizione(modulo) descrizione_modulo,RUOLO||' - '||ruoli_tpk.get_descrizione(ruolo) descrizione_ruolo,
+decode( nvl($P{TIPO_UTENTE},'%'),'%','Tutte','S','Amministrazione','N','Applicative','Tutte') des_p_tipo_utente,
+moduli_tpk.get_descrizione($P{MODULO}) des_p_modulo, istanza.get_descrizione($P{ISTANZA}) des_p_istanza
+from diritti_accesso
+where ( nvl(utente.get_amministratore(utente),'N') = nvl($P{TIPO_UTENTE},'%') or nvl($P{TIPO_UTENTE},'%') = '%')
+AND UTENTE.GET_TIPO_UTENTE(UTENTE) = 'U'
+and istanza like nvl($P{ISTANZA},'%')
+and modulo like nvl($P{MODULO},'%')
+ORDER BY 2]]>
+	</queryString>
+	<field name="NOMINATIVO" class="java.lang.String"/>
+	<field name="IDENTIFICAZIONE" class="java.lang.String"/>
+	<field name="SOGGETTO" class="java.lang.String"/>
+	<field name="DESCRIZIONE_ISTANZA" class="java.lang.String"/>
+	<field name="DESCRIZIONE_MODULO" class="java.lang.String"/>
+	<field name="DESCRIZIONE_RUOLO" class="java.lang.String"/>
+	<field name="DES_P_TIPO_UTENTE" class="java.lang.String"/>
+	<field name="DES_P_MODULO" class="java.lang.String"/>
+	<field name="DES_P_ISTANZA" class="java.lang.String"/>
+	<title>
+		<band height="89" splitType="Stretch">
+			<rectangle>
+				<reportElement x="244" y="24" width="371" height="62"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="842" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ELENCO UTENZE DEL SISTEMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="31" width="74" height="15"/>
+				<textElement/>
+				<text><![CDATA[Tipo Utente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="61" width="74" height="15"/>
+				<textElement/>
+				<text><![CDATA[Istanza:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="46" width="74" height="15"/>
+				<textElement/>
+				<text><![CDATA[Modulo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="329" y="31" width="273" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DES_P_TIPO_UTENTE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="329" y="46" width="273" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DES_P_MODULO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="144" y="26" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Parametri di stampa]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="329" y="61" width="273" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DES_P_ISTANZA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="146" height="15"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="119" height="15"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Identificazione]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="0" width="127" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Soggetto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="0" width="159" height="15"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Istanza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="551" y="0" width="146" height="15"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="697" y="0" width="145" height="15"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ruolo]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="146" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMINATIVO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="146" y="0" width="119" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IDENTIFICAZIONE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="265" y="0" width="127" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SOGGETTO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="392" y="0" width="159" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIZIONE_ISTANZA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="551" y="0" width="146" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIZIONE_MODULO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="697" y="0" width="145" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIZIONE_RUOLO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="658" y="6" width="39" height="13"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="697" y="6" width="42" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="753" y="6" width="46" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="739" y="6" width="14" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[di]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

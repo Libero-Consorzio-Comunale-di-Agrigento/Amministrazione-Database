@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<ftstdata>
+<topic name="Amministratore DataBase" url="Amministratore_DataBase.htm" />
+<topic name="Archivio Progetti" url="AD4ProgettiRicerca.htm" />
+<topic name="Progetto" url="AD4Progetto.htm" />
+<topic name="Istanze" url="AD4IstaElenco.htm" />
+<topic name="Istanza" url="AD4Istanza.htm" />
+<topic name="Moduli" url="AD4ModuElenco.htm" />
+<topic name="Modulo" url="AD4Modulo.htm" />
+<topic name="Servizi" url="AD4ServElenco.htm" />
+<topic name="Servizio" url="AD4Servizio.htm" />
+<topic name="Caratteristiche Accesso" url="AD4CaratteristicheAccesso.htm" />
+<topic name="Enti" url="AD4EntiRicerca.htm" />
+<topic name="Ente" url="AD4Ente.htm" />
+<topic name="Istanze di Ente" url="Istanze_di_Ente.htm" />
+<topic name="Situazione Ambiente" url="AD4Ambiente.htm" />
+<topic name="Ruoli" url="AD4RuoliRicerca.htm" />
+<topic name="Abilitazione Gruppi di Utenti" url="AD4Gruppo.htm" />
+<topic name="Selezione Utenti da inserire in un Gruppo" url="AD4GruppoMod.htm" />
+<topic name="Accesso del Gruppo" url="AD4DiacElencoGruppo.htm" />
+<topic name="Caratteristiche Accesso del Gruppo" url="Caratteristiche_Accesso_Gruppo.htm" />
+<topic name="Utenti" url="AD4UtentiRicerca.htm" />
+<topic name="Utente" url="AD4Utente.htm" />
+<topic name="Elenco degli accessi" url="AD4DiacElenco.htm" />
+<topic name="Richieste di abilitazione" url="AD4RiabElenco.htm" />
+<topic name="Richiesta di abilitazione" url="AD4Richiesta.htm" />
+<topic name="Diritti di Accesso" url="AD4UtenDiacElenco.htm" />
+<topic name="Diritto di Accesso" url="AD4DirittoAccesso.htm" />
+<topic name="Notifiche automatiche nella gestione delle Richieste di Abilitazione" url="Notifiche_automatiche.htm" />
+<topic name="Registro" url="AD4RegistroTree.htm" />
+<topic name="Registro Accessi" url="AD4AccessiTree.htm" />
+<topic name="Ricerca Accessi" url="AD4AccessiRicerca.htm" />
+<topic name="Eventi" url="AD4EventiRicerca.htm" />
+<topic name="Evento" url="AD4Evento.htm" />
+<topic name="Parametri Configurazione LDAP" url="AD4LdapConfig.htm" />
+<topic name="Struttura albero Ldap" url="Struttura_albero_Ldap.htm" />
+<topic name="Collegamento Gruppi LDAP - AD4" url="AD4LdapGruppi.htm" />
+<topic name="Elaborazioni Differite" url="AD4UsjoElenco.htm" />
+<topic name="Elaborazione Differita" url="AD4UserJob.htm" />
+<topic name="Informazioni generali dell'applicativo" url="InfoApplicativo.htm" />
+<topic name="Soggetto" url="AD4Soggetto.htm" />
+<topic name="Modifica Parametro della Richiesta di Abilitazione" url="AD4ModParametri.htm" />
+<topic name="Parametri della Richiesta di Abilitazione" url="AD4RichiestaParametri.htm" />
+<topic name="Appartenenza Gruppi" url="AD4GrupElenco.htm" />
+<topic name="Dizionario Gruppi" url="AD4GruppiRicerca.htm" />
+<topic name="Struttura Gruppi" url="AD4GruppiTree.htm" />
+<topic name="Ruolo" url="AD4Ruolo.htm" />
+<topic name="Modifica attributi di Notifica della Richiesta" url="AD4RichiestaNotifica.htm" />
+<topic name="Anagrafe Soggetti" url="AD4SoggRicerca.htm" />
+<topic name="Modifica Registro" url="AD4Stringa.htm" />
+
+</ftstdata>  

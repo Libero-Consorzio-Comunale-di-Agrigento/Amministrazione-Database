@@ -1,0 +1,92 @@
+
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+  <script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+  <script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_ZonaAslComuneImposta_Button_Delete_OnClick @16-85136D32
+function page_ZonaAslComuneImposta_Button_Delete_OnClick()
+{
+    var result;
+//End page_ZonaAslComuneImposta_Button_Delete_OnClick
+
+//Confirmation Message @17-161BC56F
+    return confirm('Eliminazione Comune Asl. Procedere ?');
+//End Confirmation Message
+
+//Close page_ZonaAslComuneImposta_Button_Delete_OnClick @16-BC33A33A
+    return result;
+}
+//End Close page_ZonaAslComuneImposta_Button_Delete_OnClick
+
+//page_ZonaAslComuneImposta_Button_Cancel_OnClick @19-B715D8FC
+function page_ZonaAslComuneImposta_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_ZonaAslComuneImposta_Button_Cancel_OnClick
+
+//bind_events @1-E58BAAE8
+function Ad4DizionariZonaAslComuneImposta_bind_events() {
+    if (document.forms["ZonaAslComuneImposta"]) check_and_bind('document.forms["ZonaAslComuneImposta"].Button_Delete','onclick',page_ZonaAslComuneImposta_Button_Delete_OnClick);
+    if (document.forms["ZonaAslComuneImposta"]) check_and_bind('document.forms["ZonaAslComuneImposta"].Button_Cancel','onclick',page_ZonaAslComuneImposta_Button_Cancel_OnClick);
+}
+//End bind_events
+// -------------------------------------------------  
+// Aggiunta per attivare JavaScript su pagina inclusa  
+window.onload = Ad4DizionariZonaAslComuneImposta_bind_events;
+// ------------------------------------------------- 
+//End CCS script
+</script>
+<!-- BEGIN Grid AttributoHeader -->
+<table cellspacing="0" cellpadding="3" width="100%">
+  <!-- BEGIN Row -->
+  <tbody>
+    <tr>
+      <td align="center"></td> 
+      <td width="1%" align="center"><a class="AFCDataLink" href="{Indietro}"><img border="0" src="../images/back.gif" width="18" height="18"></a></td> 
+    </tr>
+ <!-- END Row -->
+    <!-- BEGIN NoRecords --><!-- END NoRecords -->
+  </tbody>
+</table>
+<!-- END Grid AttributoHeader -->
+<!-- BEGIN Record ZonaAslComuneImposta -->
+<div align="center">
+  <form method="post" name="{HTMLFormName}" action="{Action}">
+    <font class="AFCFormHeaderFont">Imposta&nbsp;Comune Zona ASL</font> 
+    <table class="AFCFormTABLE" cellspacing="0" cellpadding="3">
+      <!-- BEGIN Error -->
+      <tbody>
+        <tr>
+          <td class="AFCErrorDataTD" colspan="2">{Error}</td> 
+        </tr>
+ <!-- END Error -->
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Asl&nbsp;*</td> 
+          <td class="AFCDataTD">{TITOLO}&nbsp;<input style="WIDTH: 61px; HEIGHT: 22px" value="{ID_ZONA_ASL}" size="7" type="hidden" name="{ID_ZONA_ASL_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFieldCaptionTD" valign="top">Comune *&nbsp;</td> 
+          <td class="AFCDataTD"><input style="TEXT-TRANSFORM: uppercase" class="AFCInput" value="{COMUNE_DESC}" readonly maxlength="40" size="50" name="{COMUNE_DESC_Name}">&nbsp;{COMUNE_LOV}<input style="WIDTH: 61px; HEIGHT: 22px" value="{PROVINCIA}" size="7" type="hidden" name="{PROVINCIA_Name}"><input style="WIDTH: 61px; HEIGHT: 22px" value="{COMUNE}" size="7" type="hidden" name="{COMUNE_Name}"></td> 
+        </tr>
+ 
+        <tr>
+          <td class="AFCFooterTD" colspan="2" nowrap align="right">
+            <!-- BEGIN Button Button_Insert --><input class="AFCButton" value="Inserisci" type="submit" name="{Button_Name}"><!-- END Button Button_Insert -->
+            <!-- BEGIN Button Button_Delete --><input class="AFCButton" value="Elimina" type="submit" name="{Button_Name}"><!-- END Button Button_Delete -->
+            <!-- BEGIN Button Button_Cancel --><input class="AFCButton" value="Annulla" type="submit" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+ 
+  </form>
+</div>
+<!-- END Record ZonaAslComuneImposta -->

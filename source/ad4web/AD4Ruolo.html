@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>Ruolo</title>
+<link rel="stylesheet" type="text/css" href="../Themes/AFC/Style.css">
+<script language="JavaScript">
+//Begin CCS script
+//Include JSFunctions @1-FB634A57
+  </script>
+<script language="JavaScript" type="text/javascript" src="../functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+  
+//End Include JSFunctions
+
+//page_AD4_RUOLI_PROGETTO_OnChange @61-63ADE5AD
+function page_AD4_RUOLI_PROGETTO_OnChange()
+{
+    var result;
+//End page_AD4_RUOLI_PROGETTO_OnChange
+
+//Custom Code @76-2A29BDB7
+	document.forms["AD4_RUOLI"].ISLISTBOX.value = "Y"
+	document.forms["AD4_RUOLI"].MODULO.value = ""
+//End Custom Code
+
+//Submit Form @63-C12F83F5
+    document.forms["AD4_RUOLI"].submit();
+//End Submit Form
+
+//Close page_AD4_RUOLI_PROGETTO_OnChange @61-BC33A33A
+    return result;
+}
+//End Close page_AD4_RUOLI_PROGETTO_OnChange
+
+//page_AD4_RUOLI_MODULO_OnChange @33-A4944215
+function page_AD4_RUOLI_MODULO_OnChange()
+{
+    var result;
+//End page_AD4_RUOLI_MODULO_OnChange
+
+//Custom Code @77-2A29BDB7
+	document.forms["AD4_RUOLI"].ISLISTBOX.value = "Y"
+//End Custom Code
+
+//Submit Form @74-C12F83F5
+    document.forms["AD4_RUOLI"].submit();
+//End Submit Form
+
+//Close page_AD4_RUOLI_MODULO_OnChange @33-BC33A33A
+    return result;
+}
+//End Close page_AD4_RUOLI_MODULO_OnChange
+
+//page_AD4_RUOLI_Button_Delete_OnClick @26-183792E1
+function page_AD4_RUOLI_Button_Delete_OnClick()
+{
+    var result;
+//End page_AD4_RUOLI_Button_Delete_OnClick
+
+//Confirmation Message @66-5F5CA352
+    return confirm('Eliminazione Ruolo '+document.forms["AD4_RUOLI"].DESCRIZIONE.value +' ('+document.forms["AD4_RUOLI"].RUOLO.value +'). Continuare?');
+//End Confirmation Message
+
+//Close page_AD4_RUOLI_Button_Delete_OnClick @26-BC33A33A
+    return result;
+}
+//End Close page_AD4_RUOLI_Button_Delete_OnClick
+
+//page_AD4_RUOLI_Button_Cancel_OnClick @28-5B56092A
+function page_AD4_RUOLI_Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_AD4_RUOLI_Button_Cancel_OnClick
+
+//bind_events @1-70F558C7
+function bind_events() {
+    if (document.forms["AD4_RUOLI"]) check_and_bind('document.forms["AD4_RUOLI"].Button_Delete','onclick',page_AD4_RUOLI_Button_Delete_OnClick);
+    if (document.forms["AD4_RUOLI"]) check_and_bind('document.forms["AD4_RUOLI"].MODULO','onchange',page_AD4_RUOLI_MODULO_OnChange);
+    if (document.forms["AD4_RUOLI"]) check_and_bind('document.forms["AD4_RUOLI"].PROGETTO','onchange',page_AD4_RUOLI_PROGETTO_OnChange);
+    if (document.forms["AD4_RUOLI"]) check_and_bind('document.forms["AD4_RUOLI"].Button_Cancel','onclick',page_AD4_RUOLI_Button_Cancel_OnClick);
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body class="AFCPageBODY">
+<table cellspacing="2" cellpadding="0" width="100%" border="0" height="100%">
+  <tr>
+    <td width="100%" colspan="2">{Header}</td> 
+  </tr>
+ 
+  <tr>
+    <td valign="top">{Left}</td> 
+    <td valign="top" align="center" width="100%" height="100%">
+      <table width="100%">
+        <tr>
+          <td width="100%" valign="top" align="left">{Guida}</td> 
+        </tr>
+ 
+        <tr>
+          <td width="100%" valign="top" align="left">
+            <!-- BEGIN Record AD4_RUOLI -->
+            <form name="{HTMLFormName}" action="{Action}" method="post">
+              <font class="AFCFormHeaderFont"></font> 
+              <table class="AFCFormTABLE" cellspacing="0" cellpadding="3" width="100%">
+                <!-- BEGIN Error -->
+                <tr>
+                  <td colspan="4" class="AFCErrorDataTD">{Error}</td> 
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Ruolo *</td> 
+                  <td class="AFCDataTD" width="100%" colspan="3">{RUOLO}<input type="hidden" value="{RUOLO_ORIG}" name="{RUOLO_ORIG_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top" nowrap>Descrizione
+                    *</td> 
+                  <td class="AFCDataTD" colspan="3"><input class="AFCInput" maxlength="40" size="40" value="{DESCRIZIONE}" name="{DESCRIZIONE_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Progetto&nbsp;</td> 
+                  <td class="AFCDataTD" colspan="3">
+                    <select class="AFCSelect" name="{PROGETTO_Name}">
+                      {PROGETTO_Options} 
+                    </select>
+ <input type="hidden" value="{ISLISTBOX}" name="{ISLISTBOX_Name}"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Modulo&nbsp;</td> 
+                  <td class="AFCDataTD" colspan="3">
+                    <select name="{MODULO_Name}" class="AFCSelect">
+                      <option value="" selected>-&nbsp;-</option>
+ {MODULO_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top">Profilo</td> 
+                  <td class="AFCDataTD" colspan="3"><input class="AFCInput" value="{PROFILO}" name="{PROFILO_Name}" maxlength="2" size="2"></td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFieldCaptionTD" valign="top"></td> 
+                  <td class="AFCDataTD"><input class="" type="checkbox" value="1" name="{STATO_Name}" {STATO}>In&nbsp;uso</td> 
+                  <td class="AFCDataTD"><input class="" type="checkbox" value="1" name="{GRUPPO_LAVORO_Name}" {GRUPPO_LAVORO}>Gruppo&nbsp;di
+                    Lavoro</td> 
+                  <td class="AFCDataTD"><input class="" type="checkbox" value="1" name="{GRUPPO_SO_Name}" {GRUPPO_SO}>Gruppo
+                    di&nbsp;S.O.</td> 
+                </tr>
+ 
+                <tr>
+                  <td class="AFCFooterTD" nowrap align="right" colspan="4">
+                    <!-- BEGIN Button Refresh --><input class="AFCButton" type="submit" value="Refresh" name="{Button_Name}" style="DISPLAY: none"><!-- END Button Refresh -->
+                    <!-- BEGIN Button Button_Update --><input class="AFCButton" type="submit" value="Registra" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input class="AFCButton" type="submit" value="Elimina" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input class="AFCButton" type="submit" value="Annulla" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp; </td> 
+                </tr>
+ 
+              </table>
+ 
+            </form>
+ <!-- END Record AD4_RUOLI --></td> 
+        </tr>
+ 
+      </table>
+ </td> 
+  </tr>
+ 
+  <tr>
+    <td width="100%" height="100%" valign="bottom" colspan="2">&nbsp;{Footer}</td> 
+  </tr>
+</table>
+</body>
+</html>
