@@ -14,7 +14,7 @@ Il repository è suddiviso nelle seguente cartelle:
 ## Prerequisiti e dipendenze
 
 ### Prerequisiti
-- Java JDK versione 4 o superiore ???
+- Java JDK versione 5 o superiore
 - Database Oracle versione 10 o superiore
 
 ### Dipendenze
