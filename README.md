@@ -16,6 +16,7 @@ Il repository è suddiviso nelle seguente cartelle:
 ### Prerequisiti
 - Java JDK versione 5 o superiore
 - Database Oracle versione 10 o superiore
+- Apache Tomcat 7.0 dalla minor 47 alla 109
 
 ### Dipendenze
 - Apache ANT versione 1.5 o superiore per la compilazione dei sorgenti
