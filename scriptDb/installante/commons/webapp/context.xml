@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Environment name="modulo@istanza" override="false" type="java.lang.String" value="AD4WEB@${progetto.istanza.codice}"/>
+
+    <Realm className="it.finmatica.login.tomcat.DSRealm" dataSourceName="${global.db.target.jndi-name}" debug="0" validate="false"/>
+
+    <ResourceLink global="${global.db.target.jndi-name}" name="${global.db.target.jndi-name}" type="javax.sql.DataSource"/>
+</Context>

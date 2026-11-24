@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <property name="targetUsername"/>
+    <changeSet id="202003191518-${targetUsername}" author="mturra" runOnChange="true">
+        <preConditions>
+            <changeLogPropertyDefined property="targetUsername"/>
+        </preConditions>
+        <comment>Creazione sinimi di AD4</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            create or replace synonym AD4_ENTI                       for ${targetUsername}.ENTI                   ;
+            create or replace synonym AD4_LINGUE                     for ${targetUsername}.LINGUE                 ;
+            create or replace synonym AD4_GRUPPI_LINGUISTICI         for ${targetUsername}.GRUPPI_LINGUISTICI     ;
+            create or replace synonym AD4_ISTANZE                    for ${targetUsername}.ISTANZE                ;
+            create or replace synonym AD4_MODULI                     for ${targetUsername}.MODULI                 ;
+            create or replace synonym AD4_PERSONALIZZAZIONI          for ${targetUsername}.PERSONALIZZAZIONI      ;
+            create or replace synonym AD4_PROGETTI                   for ${targetUsername}.PROGETTI               ;
+            create or replace synonym AD4_DIRITTI_ACCESSO            for ${targetUsername}.DIRITTI_ACCESSO        ;
+            create or replace synonym AD4_CARATTERISTICHE_ACCESSO    for ${targetUsername}.CARATTERISTICHE_ACCESSO;
+            create or replace synonym AD4_RUOLI                      for ${targetUsername}.RUOLI                  ;
+            create or replace synonym AD4_UTENTI                     for ${targetUsername}.UTENTI                 ;
+            create or replace synonym AD4_DISABILITAZIONI            for ${targetUsername}.DISABILITAZIONI        ;
+            create or replace synonym AD4_RICHIESTE_ABILITAZIONE     for ${targetUsername}.RICHIESTE_ABILITAZIONE ;
+            create or replace synonym AD4_PARAMETRI_RICHIESTA        for ${targetUsername}.PARAMETRI_RICHIESTA    ;
+            create or replace synonym AD4_SERVIZI                    for ${targetUsername}.SERVIZI                ;
+            create or replace synonym AD4_UTENTI_GRUPPO              for ${targetUsername}.UTENTI_GRUPPO          ;
+            create or replace synonym AD4_UTENTI_SOGGETTI            for ${targetUsername}.UTENTI_SOGGETTI        ;
+            create or replace synonym AD4_ACCESSI                    for ${targetUsername}.ACCESSI                ;
+            create or replace synonym AD4_GRUPPI_LAVORO              for ${targetUsername}.GRUPPI_LAVORO          ;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

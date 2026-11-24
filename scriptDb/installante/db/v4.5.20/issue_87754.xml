@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="crea_SSO_KEY_issue_87754" author="mmonari">
+        <sql dbms="oracle" endDelimiter="\">
+            BEGIN
+            DBMS_DDL.CREATE_WRAPPED(
+            'CREATE OR REPLACE FUNCTION SSO_KEY (P_NOMINATIVO IN VARCHAR2) RETURN VARCHAR2 IS
+            D_NOMINATIVO_LENGTH   NUMBER;
+            timeStamp varchar2(14);
+            nominativo utenti.nominativo%type;
+            localToken varchar2(4000);
+            cryptKey  varchar2(4000);
+            key raw (2000) ;
+            is_utenza_tecnica number(1) := 0;
+            BEGIN
+            begin
+            select decode(classe_utente,''WE'',1,''WI'',1,0)
+            into is_utenza_tecnica
+            from utenti
+            where nominativo = upper(p_nominativo);
+            exception when others then
+            null;
+            end;
+            if is_utenza_tecnica = 1 then
+            /* nominativo = getNominativoPadded(nominativo);  */
+            SELECT DATA_LENGTH
+            INTO D_NOMINATIVO_LENGTH
+            FROM USER_TAB_COLUMNS
+            WHERE TABLE_NAME = ''UTENTI''
+            AND COLUMN_NAME = ''NOMINATIVO''
+            ;
+            nominativo := rpad(upper(p_nominativo),D_NOMINATIVO_LENGTH,'' '');
+            /* getSysDate=select to_char(sysdate, ''YYYYMMDDHH24miss'') from dual
+            PreparedStatement ps1 = con.prepareStatement(QueryManager.getQuery("getSysDate")
+            ResultSet rs1 = ps1.executeQuery();
+            rs1.next();
+            String timeStamp = rs1.getString(1);
+            */
+            select to_char(sysdate, ''YYYYMMDDHH24miss'')
+            into timeStamp
+            from dual
+            ;
+            /*
+            cryptKey=select utl_encode.uuencode(ad4_crypt.crypt(?, ?),?) from dual
+            PreparedStatement ps2 = con.prepareStatement(QueryManager.getQuery("cryptKey"));
+            ps2.setString(1, localToken);
+            ps2.setBytes(2, key);
+            ps2.setInt(3, getEncodeType());
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
+            return rs2.getString(1);
+            */
+            /* String localToken = nominativo + timeStamp; */
+            localToken :=  nominativo || timeStamp;
+            /*
+            cryptKey=select utl_encode.uuencode(ad4_crypt.crypt(?, ?),?) from dual
+            PreparedStatement ps2 = con.prepareStatement(QueryManager.getQuery("cryptKey"));
+
+            ps2.setString(1, localToken);
+            ps2.setBytes(2, key);
+            ps2.setInt(3, getEncodeType());
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
+            return rs2.getString(1);
+            */
+            key := UTL_ENCODE.BASE64_DECODE(UTL_RAW.CAST_TO_RAW(''/UXa/4ZHuFE7eRGY0oJorGlXFoGHpUZsYVQGDxz0tTw=''));
+            select utl_encode.uuencode(ad4_crypt.crypt(localToken, key),1)   --encodeType fisso
+            into cryptkey
+            from dual
+            ;
+            end if;
+            RETURN cryptkey;
+            END;
+            '
+            );
+            END;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+<changeSet id="202002071054-create-table-province_storico" author="snegroni" runAlways="true">
+    <preConditions onFail="CONTINUE">
+        <sqlCheck expectedResult="0">select count(1) from user_tables where table_name = 'PROVINCE_STORICO'</sqlCheck>
+    </preConditions>
+    <sql endDelimiter=";">
+        CREATE TABLE PROVINCE_STORICO
+        (
+        PROVINCIA             NUMBER(3)               NOT NULL,
+        DENOMINAZIONE         VARCHAR2(40),
+        DENOMINAZIONE_AL1     VARCHAR2(40),
+        DENOMINAZIONE_AL2     VARCHAR2(40),
+        REGIONE               NUMBER(3),
+        SIGLA                 VARCHAR2(2)        NOT NULL,
+        DATA_ISTITUZIONE      DATE,
+        DATA_INIZIO_VALIDITA  DATE,
+        DATA_FINE_VALIDITA    DATE,
+        FLAG_ISTAT            VARCHAR2(1),
+        UTENTE_AGGIORNAMENTO  VARCHAR2(8),
+        DATA_AGGIORNAMENTO    DATE
+        )
+        LOGGING
+        NOCACHE;
+
+        COMMENT ON TABLE PROVINCE_STORICO IS 'PRST - Storico delle province italiane';
+
+        COMMENT ON COLUMN PROVINCE_STORICO.PROVINCIA IS 'Codice della provincia';
+
+        COMMENT ON COLUMN PROVINCE_STORICO.DENOMINAZIONE IS 'Dominazione della provincia';
+
+        COMMENT ON COLUMN PROVINCE_STORICO.DENOMINAZIONE_AL1 IS 'Dominazione della provincia';
+
+        COMMENT ON COLUMN PROVINCE_STORICO.DENOMINAZIONE_AL2 IS 'Dominazione della provincia';
+
+        COMMENT ON COLUMN PROVINCE_STORICO.REGIONE IS 'Codice regione';
+
+        COMMENT ON COLUMN PROVINCE_STORICO.SIGLA IS 'Sigla automobilistica';
+
+
+        CREATE UNIQUE INDEX PRST_PK ON PROVINCE_STORICO
+        (PROVINCIA, DATA_INIZIO_VALIDITA)
+        LOGGING;
+
+        ALTER TABLE PROVINCE_STORICO ADD (
+        CONSTRAINT PRST_PK
+        PRIMARY KEY
+        (PROVINCIA, DATA_INIZIO_VALIDITA)
+        USING INDEX PRST_PK
+        ENABLE VALIDATE);
+    </sql>
+</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+--liquibase formatted sql
+
+--changeset mturra:2019004011029_1
+
+--preconditions onFail:MARK_RAN
+--precondition-sql-check expectedResult:0 select count(1) from user_tab_columns s where s.TABLE_NAME='UTENTI' and column_name = 'AMMINISTRATORE'
+
+ALTER TABLE UTENTI
+ ADD(AMMINISTRATORE  VARCHAR2(1) DEFAULT 'N');
+
+ALTER TABLE UTENTI
+ ADD(INFO_IDENTIFICAZIONE  VARCHAR2(2000));
+
+
+ALTER TABLE UTENTI
+ ADD CONSTRAINT UTEN_AMMI_INID_CC
+  CHECK ((AMMINISTRATORE='N' OR AMMINISTRATORE is null) OR( AMMINISTRATORE='S' AND INFO_IDENTIFICAZIONE IS NOT NULL));
+
+
+ALTER TABLE UTENTI
+ ADD CONSTRAINT UTEN_AMM_CK
+  CHECK (amministratore in ('S','N'));

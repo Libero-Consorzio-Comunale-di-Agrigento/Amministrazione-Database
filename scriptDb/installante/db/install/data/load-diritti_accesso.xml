@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <property name="istanza" value="AD4"/>
+    <changeSet author="mturra (generated)" id="1554305364588-36">
+        <preConditions onFail="HALT" onFailMessage="Property istanza non specificata">
+            <changeLogPropertyDefined property="istanza"/>
+        </preConditions>
+            <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/diritti_accesso.csv"
+                  quotchar="&quot;" separator="," tableName="DIRITTI_ACCESSO">
+            <column header="UTENTE" name="UTENTE" type="STRING"/>
+            <column header="MODULO" name="MODULO" type="STRING"/>
+            <column header="ISTANZA" type="STRING" defaultValue="${istanza}"/>
+            <column header="RUOLO" name="RUOLO" type="STRING"/>
+            <column header="SEQUENZA" name="SEQUENZA" type="NUMERIC"/>
+            <column header="ULTIMO_ACCESSO" name="ULTIMO_ACCESSO"/>
+            <column header="NUMERO_ACCESSI" name="NUMERO_ACCESSI"/>
+            <column header="GRUPPO" name="GRUPPO"/>
+            <column header="NOTE" name="NOTE"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

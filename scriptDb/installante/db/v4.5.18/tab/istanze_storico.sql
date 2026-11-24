@@ -1,0 +1,61 @@
+--liquibase formatted sql
+
+--changeset snegroni:202003061043
+
+--preconditions onFail:MARK_RAN onError:HALT
+--precondition-sql-check expectedResult:0 select count(1) from user_tables s where s.TABLE_NAME='ISTANZE_STORICO'
+
+CREATE TABLE ISTANZE_STORICO
+(
+  ID_EVENTO             NUMBER               NOT NULL,
+  ISTANZA                       VARCHAR2(10) NOT NULL,
+  PROGETTO                      VARCHAR2(8) NOT NULL,
+  ENTE                          VARCHAR2(4) NOT NULL,
+  DESCRIZIONE                   VARCHAR2(40) NOT NULL,
+  USER_ORACLE                   VARCHAR2(50) NOT NULL,
+  PASSWORD_ORACLE               VARCHAR2(50) NOT NULL,
+  DISLOCAZIONE                  VARCHAR2(80) NOT NULL,
+  DISLOCAZIONE_TEMPORANEA       VARCHAR2(80),
+  INSTALLAZIONE                 VARCHAR2(2000),
+  VERSIONE                      VARCHAR2(30),
+  DISLOCAZIONE_DIMENSIONAMENTI  VARCHAR2(20),
+  NOTE                          VARCHAR2(2000),
+  LINGUA                        VARCHAR2(1)  NOT NULL,
+  LINK_ORACLE                   VARCHAR2(2000),
+  DATABASE_LINK                 VARCHAR2(2000),
+  SERVIZIO                      VARCHAR2(100),
+  DATABASE_DRIVER               VARCHAR2(2000),
+  ISTANZA_AMMINISTRATORE        VARCHAR2(10),
+  DATA                  DATE                    NOT NULL,
+  OPERAZIONE            VARCHAR2(2),
+  BI_RIFERIMENTO        NUMBER,
+  UTENTE_AGGIORNAMENTO  VARCHAR2(8),
+  USER_ORACLE_MODIFICA  VARCHAR2(30),
+  INFO                  VARCHAR2(2000),
+  PROGRAMMA             VARCHAR2(50)
+);
+
+COMMENT ON TABLE ISTANZE_STORICO IS 'ISST - ISTANZE STORICO';
+
+COMMENT ON COLUMN ISTANZE_STORICO.OPERAZIONE IS 'I=Insert, D=Delete, BI=Before Image, AI=After Image';
+
+COMMENT ON COLUMN ISTANZE_STORICO.BI_RIFERIMENTO IS 'id_evento di Before Image di riferimento';
+
+
+CREATE INDEX ISST_IK ON ISTANZE_STORICO
+(ISTANZA, DATA, OPERAZIONE)
+LOGGING;
+
+CREATE UNIQUE INDEX ISST_PK ON ISTANZE_STORICO
+(ID_EVENTO)
+LOGGING;
+
+ALTER TABLE ISTANZE_STORICO ADD (
+  CONSTRAINT ISST_OPERAZIONE_CK
+  CHECK (operazione in ('I','D','BI','AI'))
+  ENABLE VALIDATE,
+  CONSTRAINT ISST_PK
+  PRIMARY KEY
+  (ID_EVENTO)
+  USING INDEX ISST_PK
+  ENABLE VALIDATE);

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="snegroni (generated)" id="201905021548-23" runOnChange="true">
+        <loadUpdateData encoding="UTF-8" file="v4.5.16/data/csv/registro.csv" quotchar="&quot;"
+                  separator="," tableName="REGISTRO" primaryKey="CHIAVE,STRINGA">
+            <column header="CHIAVE" name="CHIAVE" type="STRING"/>
+            <column header="STRINGA" name="STRINGA" type="STRING"/>
+            <column header="COMMENTO" name="COMMENTO" type="STRING"/>
+            <!--column header="VALORE" name="VALORE" type="STRING"/-->
+        </loadUpdateData>
+    </changeSet>
+
+
+</databaseChangeLog>

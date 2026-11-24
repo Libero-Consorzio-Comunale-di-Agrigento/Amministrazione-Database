@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+    <include file="load-progetti.xml" relativeToChangelogFile="true"/>
+    -->
+    <include file="load-registro.xml" relativeToChangelogFile="true"/>
+    <include file="load-lingue.xml" relativeToChangelogFile="true"/>
+    <include file="ad4_progetti.xml" relativeToChangelogFile="true"/>
+    <include file="ad4_moduli.xml" relativeToChangelogFile="true"/>
+    <include file="ins-enti.xml" relativeToChangelogFile="true"/>
+    <include file="load-ruoli.xml" relativeToChangelogFile="true"/>
+    <!--include file="load-utenti.xml" relativeToChangelogFile="true"/-->
+    <!--include file="load-gruppi_linguistici.xml" relativeToChangelogFile="true"/ INSERITO DAL TRIGGER SU LINGUE-->
+    <!--include file="load-progetti.xml" relativeToChangelogFile="true"/-->
+    <!--include file="load-moduli.xml" relativeToChangelogFile="true"/-->
+    <include file="ins-gruppi.xml" relativeToChangelogFile="true"/>
+    <include file="ins-utenti.xml" relativeToChangelogFile="true"/>
+    <include file="load-utenti_gruppo.xml" relativeToChangelogFile="true"/>
+    <include file="ad4_istanze.xml" relativeToChangelogFile="true"/>
+    <include file="ins-diritti_accesso.xml" relativeToChangelogFile="true"/>
+    <include file="load-caratteristiche_accesso.xml" relativeToChangelogFile="true"/>
+    <include file="load-credenziali.xml" relativeToChangelogFile="true"/>
+    <include file="load-diritti_accesso.xml" relativeToChangelogFile="true"/>
+    <include file="load-dual_pb.xml" relativeToChangelogFile="true"/>
+
+    <include file="load-key_constraint.xml" relativeToChangelogFile="true"/>
+    <include file="load-key_constraint_column.xml" relativeToChangelogFile="true"/>
+    <include file="load-key_constraint_error.xml" relativeToChangelogFile="true"/>
+    <include file="load-key_constraint_type.xml" relativeToChangelogFile="true"/>
+    <include file="load-key_error.xml" relativeToChangelogFile="true"/>
+
+    <include file="load-paesi_territori_ag_entrate.xml" relativeToChangelogFile="true"/>
+    <include file="load-registro_extract.xml" relativeToChangelogFile="true"/>
+
+    <include file="load-tipi_credenziale.xml" relativeToChangelogFile="true"/>
+
+    <include file="load-amv_aree.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_argomenti.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_categorie.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_rilevanze.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_sezioni.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_tipologie.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_documenti.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_documenti_revisioni.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_voci.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_guide.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_diritti.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_abilitazioni.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="201905061721" author="snegroni">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">SELECT count(*) FROM progetti WHERE progetto = 'SI4'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento nei progetti di nuove chiavi</comment>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            Insert into PROGETTI
+            (PROGETTO, DESCRIZIONE)
+            Values
+            ('SI4', 'Sistema Informativo V4')
+        </sql>
+    </changeSet>
+</databaseChangeLog>

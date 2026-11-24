@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="si4Username"/>
+    <changeSet id="202003191514-${si4Username}" author="mturra" runOnChange="true">
+        <comment>AD4 da i grant a SI4</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            grant select on ENTI to ${si4Username};
+            grant select on LINGUE to ${si4Username};
+            grant select on GRUPPI_LINGUISTICI to ${si4Username};
+            grant select on ISTANZE to ${si4Username};
+            grant select on MODULI to ${si4Username};
+            grant select on PERSONALIZZAZIONI to ${si4Username};
+            grant select on PROGETTI to ${si4Username};
+            grant select on DIRITTI_ACCESSO to ${si4Username};
+            grant select on CARATTERISTICHE_ACCESSO to ${si4Username};
+            grant select on RUOLI to ${si4Username};
+            grant select on UTENTI to ${si4Username};
+            grant select on DISABILITAZIONI to ${si4Username};
+            grant select on RICHIESTE_ABILITAZIONE to ${si4Username};
+            grant select on PARAMETRI_RICHIESTA to ${si4Username};
+            grant select on SERVIZI to ${si4Username};
+            grant select on UTENTI_GRUPPO to ${si4Username};
+            grant select on UTENTI_SOGGETTI to ${si4Username};
+            grant select on ACCESSI to ${si4Username};
+            grant select on GRUPPI_LAVORO to ${si4Username};
+        </sql>
+    </changeSet>
+</databaseChangeLog>

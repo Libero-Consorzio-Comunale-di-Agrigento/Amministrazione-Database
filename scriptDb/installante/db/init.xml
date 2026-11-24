@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <!-- Il database esiste e ha una versione < 4.5.15 (si capisce dalla presenza del initVersion) -->
+    <preConditions onFail="HALT" onFailMessage="Db preesistente ad una versione non 4.5.15 o valore istanza non fornito: istanza='${istanza}'">
+        <or>
+            <!-- esiste tabella istanze, versione > 4.5.15 e property istanza -->
+            <and>
+            <sqlCheck expectedResult="0">
+                select count(1)
+                from user_objects
+                where object_type in ('TABLE')
+                and object_name = 'ISTANZE';
+            </sqlCheck>
+            <changeLogPropertyDefined property="istanza"/>
+            </and>
+            <and>
+                <!-- esiste tabella istanze, versione > 4.5.15 e property istanza -->
+              <and>
+          <changeLogPropertyDefined property="istanza"/>
+          <sqlCheck expectedResult="1">
+                      select count(1)
+                      from user_objects
+                      where object_type in ('TABLE')
+                      and object_name = 'ISTANZE';
+           </sqlCheck>
+              </and>
+                  <!-- il db NON è non alla versione 4.5.15 -->
+         <sqlCheck expectedResult="1">
+                    SELECT is_versione_maggiore (substr(versione,2), 'V4.5.15')
+                    FROM istanze
+                    WHERE istanza = '${istanza}';
+          </sqlCheck>
+            </and>
+        </or>
+    </preConditions>
+    <changeSet author="mturra" id="20190805-failForWrongRevision" runAlways="true">
+        <preConditions onFailMessage="Db vuoto" onFail="CONTINUE">
+                <!-- il db è "vuoto" -->
+                <sqlCheck expectedResult="0">
+                    select count(1)
+                    from user_objects
+                    where object_type in ('TABLE')
+                    and object_name = 'ISTANZE';
+                </sqlCheck>
+        </preConditions>
+        <comment>Il database esiste e ha una versione &lt; 4.5.15
+        </comment>
+    </changeSet>
+    <!-- Questo passo init serve per inserire i changelog dei file sui DB già installati prima dell'introduzione di liquibase -->
+    <!-- Lo script viene eseguito solo se trovo la tabella INSTANZE (che indica la presenza) -->
+    <include file="install/ins-databasechangelog.xml"/>
+</databaseChangeLog>

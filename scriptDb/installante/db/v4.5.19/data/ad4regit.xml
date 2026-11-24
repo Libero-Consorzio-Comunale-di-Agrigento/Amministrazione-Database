@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="20220608-53529-1" author="fmarzulli">
+        <preConditions onFail="MARK_RAN" onError="HALT">
+            <sqlCheck expectedResult="0">select count(1) from amv_voci where voce='AD4REGIT'</sqlCheck>
+        </preConditions>
+        <sql dbms="oracle" endDelimiter=";">
+            insert into AMV_VOCI (VOCE, PROGETTO, ACRONIMO, ACRONIMO_AL1, ACRONIMO_AL2,
+                                  TITOLO, TITOLO_AL1, TITOLO_AL2, TIPO_VOCE, TIPO, MODULO,
+                                  STRINGA, PROFILO, VOCE_GUIDA, PROPRIETA, NOTE)
+            values ('AD4REGIT', 'AD4', '', '', '',
+                    'Registro', '', '', 'F', 'C', '',
+                    'ad4web/AD4RegistroTree.do?USRORCL=AD4&amp;&amp;MENU=Y', NULL, '', '', '');
+        </sql>
+    </changeSet>
+
+    <changeSet id="20220608-53529-2" author="fmarzulli">
+        <preConditions onFail="MARK_RAN" onError="HALT">
+            <sqlCheck expectedResult="0">select count(1) from amv_abilitazioni where ruolo='*' and
+                voce_menu='AD4REGIT'
+            </sqlCheck>
+        </preConditions>
+        <sql dbms="oracle" endDelimiter=";">
+            insert into AMV_ABILITAZIONI (ABILITAZIONE, RUOLO, MODULO, VOCE_MENU, PADRE, SEQUENZA, DISPOSITIVO)
+            values (90003030, '*', 'AD4WEB', 'AD4REGIT', 90003000, 30, '');
+        </sql>
+    </changeSet>
+
+    <changeSet id="20220608-53529-3" author="fmarzulli">
+        <preConditions onFail="MARK_RAN" onError="HALT">
+            <sqlCheck expectedResult="0">select count(1) from amv_abilitazioni where ruolo='AMM' and
+                voce_menu='AD4REGIT'
+            </sqlCheck>
+        </preConditions>
+        <comment>Inserimento del progetto AD4ASL</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            insert into AMV_ABILITAZIONI (ABILITAZIONE, RUOLO, MODULO, VOCE_MENU, PADRE, SEQUENZA, DISPOSITIVO)
+            values (90003030, 'AMM', 'AD4WEB', 'AD4REGIT', 90003000, 30, '');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

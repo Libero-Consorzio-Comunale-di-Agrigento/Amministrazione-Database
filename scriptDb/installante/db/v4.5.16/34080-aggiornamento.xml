@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <include file="tab/moduli_storico.sql" relativeToChangelogFile="true"/>
+    <include file="tab/registro_storico.sql" relativeToChangelogFile="true"/>
+    <include file="tab/utenti_soggetto_storico.sql" relativeToChangelogFile="true"/>
+    <include file="tab/utenti_gruppo_storico.sql" relativeToChangelogFile="true"/>
+    <!--nota: questo serve per correggere un bug che fa fallire la alter_moduli -->
+    <include file="latest/pkb/gv_$session_pkg.sql"/>
+    <include file="tab/alter_moduli.sql" relativeToChangelogFile="true"/>
+    <include file="tab/alter_utenti.sql" relativeToChangelogFile="true"/>
+    <include file="tab/alter_caratteristiche_accesso.sql" relativeToChangelogFile="true"/>
+    <include file="tab/alter_informative_privacy.sql" relativeToChangelogFile="true"/>
+    <include file="tab/alter_utenti_storico.sql" relativeToChangelogFile="true"/>
+    <include file="tab/assistente_virtuale.sql" relativeToChangelogFile="true"/>
+    <include file="tab/utenti_dati_foglio_excel.sql" relativeToChangelogFile="true"/>
+    <include file="tab/tables_comments.sql" relativeToChangelogFile="true"/>
+    <include file="seq/caas_sq.sql" relativeToChangelogFile="true"/>
+    <include file="seq/modu_even_sq.sql" relativeToChangelogFile="true"/>
+    <include file="seq/rest_sq.sql" relativeToChangelogFile="true"/>
+    <include file="seq/utgs_sq.sql" relativeToChangelogFile="true"/>
+    <include file="seq/utps_sq.sql" relativeToChangelogFile="true"/>
+    <include file="seq/utes_sq.sql" relativeToChangelogFile="true"/>
+    <include file="seq/utss_sq.sql" relativeToChangelogFile="true"/>
+    <include file="tab/caratteristiche_acc_storico.sql" relativeToChangelogFile="true"/>
+    <include file="tab/password_storico.sql" relativeToChangelogFile="true"/>
+    <include file="idx/caac_ik.sql" relativeToChangelogFile="true"/>
+    <include file="idx/even_diac_ik.sql" relativeToChangelogFile="true"/>
+    <include file="idx/even_diac_umid_ik.sql" relativeToChangelogFile="true"/>
+    <include file="idx/grla_ik.sql" relativeToChangelogFile="true"/>
+    <include file="idx/lisi_pk.sql" relativeToChangelogFile="true"/>
+    <include file="idx/riab_pk.sql" relativeToChangelogFile="true"/>
+    <include file="idx/ticr_pk.sql" relativeToChangelogFile="true"/>
+    <include file="tab/V20200207/master.xml" relativeToChangelogFile="true"/>
+    <!--include file="data/master.xml" relativeToChangelogFile="true"/-->
+</databaseChangeLog>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="ins-utente_AS4" author="snegroni" runOnChange="true" runAlways="true">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">select count(1) from UTENTI where UTENTE = 'AS4' or NOMINATIVO = 'AS4'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento utente AS4</comment>
+        <sql dbms="oracle"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            Insert into utenti
+            (UTENTE, NOMINATIVO)
+            Values
+            ('AS4', 'AS4');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

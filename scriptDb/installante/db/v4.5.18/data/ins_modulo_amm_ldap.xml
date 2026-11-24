@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="ins_ruolo_ute" author="snegroni" runOnChange="true" context="ad4">
+        <preConditions onFail="CONTINUE" onFailMessage="Esiste modulo MAMMLDAP quindi salto l'inserimento">
+            <sqlCheck expectedResult="0">select count(1) from AD4_MODULI where MODULO='MAMMLDAP'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento del ruolo UTE</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            INSERT INTO MODULI (MODULO,
+            DESCRIZIONE,
+            DESCRIZIONE_AL1,
+            DESCRIZIONE_AL2,
+            PROGETTO,
+            NOTE,
+            AMMINISTRATORE)
+            VALUES ('MAMMLDAP',
+            'Modulo Amministratore per accesso LDAP',
+            NULL,
+            NULL,
+            'PROGLDAP',
+            NULL,
+            'S');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

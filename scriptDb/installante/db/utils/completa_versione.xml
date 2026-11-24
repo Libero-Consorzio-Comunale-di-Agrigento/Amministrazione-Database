@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+                   <changeSet id="20190404_1230" author="mturra" runOnChange="true" runAlways="true">
+                       <preConditions onFail="HALT" onFailMessage="Parametro versione o istanza non valorizzati">
+                           <changeLogPropertyDefined property="versione"/>
+                           <changeLogPropertyDefined property="istanza"/>
+                       </preConditions>
+                       <sql> update AD4_ISTANZE set VERSIONE = 'V' ||substr('${versione}',1, decode(instr('${versione}','-') -1 ,-1,length('${versione}'),instr('${versione}','-') -1))
+                           where ISTANZA = '${istanza}'</sql>
+                   </changeSet>
+</databaseChangeLog>
+
+

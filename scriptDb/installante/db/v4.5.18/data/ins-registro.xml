@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="202003051320" author="snegroni" runOnChange="true">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">SELECT count(*) FROM registro WHERE chiave = 'PRODUCTS/AUTHENTICATION' and stringa = 'CryptAlgorithm' </sqlCheck>
+        </preConditions>
+        <comment>NON LANCIARE x ora Inserimento nel registro del metodo per criptare</comment>
+        <sql dbms="oracle"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            INSERT INTO REGISTRO (CHIAVE, STRINGA, COMMENTO, VALORE)
+            VALUES (
+            'PRODUCTS/AUTHENTICATION',
+            'CryptAlgorithm',
+            'Algoritmo x criptare (Valori possibili: STANDARD=metodo usato fino ad ora, LATEST=metodo in base alla versione Oracle, metodo specifico - default STANDARD)',
+            'STANDARD');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

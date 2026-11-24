@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <!-- preConditions onFail="HALT" onFailMessage="Parametro versione ${versione}, istanza ${istanza}, targetUsername ${targetUsername} o targetPassword ${targetPassword} non valorizzati">
+        <changeLogPropertyDefined property="versione"/>
+        <changeLogPropertyDefined property="istanza"/>
+        <changeLogPropertyDefined property="targetUsername"/>
+        <changeLogPropertyDefined property="targetPassword"/>
+    </preConditions-->
+
+    <!-- cariccamento package iniziali -->
+    <include file="latest/pks/dbc.sql"/>
+    <include file="latest/pkb/dbc.sql"/>
+    <include file="latest/pks/afc.sql"/>
+    <include file="latest/pkb/afc.sql"/>
+    <include file="latest/fun/is_versione_maggiore.sql"/>
+    <include file="latest/prc/verifica_versione_maggiore.sql"/>
+
+</databaseChangeLog>

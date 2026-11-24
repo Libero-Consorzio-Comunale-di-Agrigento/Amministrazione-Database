@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="istanza"/>
+    <changeSet id="201905021318" author="snegroni" runOnChange="true">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">select count(1) from ISTANZE where ISTANZA='G_U_AMM'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento nel registro di nuove chiavi</comment>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            INSERT INTO ISTANZE (ISTANZA,
+            PROGETTO,
+            ENTE,
+            DESCRIZIONE,
+            USER_ORACLE,
+            PASSWORD_ORACLE,
+            DISLOCAZIONE,
+            LINGUA)
+            SELECT 'G_U_APP',
+            'SI4',
+            ENTE,
+            'Gruppo Utenti Applicativi',
+            user_oracle,
+            PASSWORD_ORACLE,
+            DISLOCAZIONE,
+            LINGUA
+            FROM istanze
+            WHERE istanza = '${istanza}'
+        </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">INSERT INTO ISTANZE (ISTANZA,
+            PROGETTO,
+            ENTE,
+            DESCRIZIONE,
+            USER_ORACLE,
+            PASSWORD_ORACLE,
+            DISLOCAZIONE,
+            LINGUA)
+            SELECT 'G_U_AMM',
+            'SI4',
+            ENTE,
+            'Gruppo Utenti Amministratori',
+            user_oracle,
+            PASSWORD_ORACLE,
+            DISLOCAZIONE,
+            LINGUA
+            FROM istanze
+            WHERE istanza = '${istanza}'
+        </sql>
+    </changeSet>
+</databaseChangeLog>

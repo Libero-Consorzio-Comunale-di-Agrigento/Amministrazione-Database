@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="issue_87610_add_classe_utente_column" author="mmonari">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists schemaName="AD4" tableName="UTENTI" columnName="CLASSE_UTENTE"/>
+            </not>
+        </preConditions>
+        <comment>Aggiunta colonna CLASSE_UTENTE e relativo vincolo di valori ammessi</comment>
+        <addColumn schemaName="AD4" tableName="UTENTI">
+            <column name="CLASSE_UTENTE" type="VARCHAR2(2)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <sql>comment on column UTENTI.classe_utente is 'classificazione dell''utente: ''NO'' utente nominative; ''TE'', utenze tecniche: ''WE'', webservice esterno; ''WI'', webservice interno';</sql>
+        <sql>alter table UTENTI add constraint UTEN_CLASSE_UTENTE check (CLASSE_UTENTE in ('NO','TE','WE','WI') or CLASSE_UTENTE is null);</sql>
+        <sql dbms="oracle"
+             endDelimiter="/">
+            declare
+            v_comp_all boolean := false;
+            begin
+            sys.utl_recomp.recomp_serial;
+            end;
+            /
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

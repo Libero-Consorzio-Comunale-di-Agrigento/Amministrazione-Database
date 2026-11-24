@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <preConditions onFail="HALT" onFailMessage="Parametro istanza non valorizzato">
+        <changeLogPropertyDefined property="istanza"/>
+    </preConditions>
+    <changeSet id="20190724_1005" author="snegroni">
+        <preConditions onFailMessage="Db preesistente" onFail="CONTINUE">
+            <sqlCheck expectedResult="1">
+                select count(1)
+                from user_objects
+                where object_type in ('TABLE')
+                and object_name = 'ISTANZE';
+            </sqlCheck>
+            <sqlCheck expectedResult="0">
+                SELECT COUNT (1)
+                FROM DATABASECHANGELOG
+                WHERE     ID = '201901301231_48'
+                AND AUTHOR = 'mturra'
+                AND FILENAME = 'install/tab/istanze.sql';
+            </sqlCheck>
+        </preConditions>
+        <comment>Inserimento step previsti in versione 4.5.15 per gli schemi già esistenti alla versione 4.5.15</comment>
+        <sql dbms="oracle"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_11', 'mturra', 'install/tab/ad4_ldap_attributi.sql', sysdate, 1,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_12', 'mturra', 'install/tab/ad4_ldap_struttura.sql', sysdate, 2,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_13', 'mturra', 'install/tab/allegati.sql', sysdate, 3,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_14', 'mturra', 'install/tab/allineamento_so4_ldap.sql', sysdate, 4,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_66', 'mturra', 'install/tab/progetti.sql', sysdate, 5,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_29', 'mturra', 'install/tab/amv_voci.sql', sysdate, 6,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_61', 'mturra', 'install/tab/moduli.sql', sysdate, 7,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_73', 'mturra', 'install/tab/ruoli.sql', sysdate, 8,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_15', 'mturra', 'install/tab/amv_abilitazioni.sql', sysdate, 9,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_16', 'mturra', 'install/tab/amv_aree.sql', sysdate, 10,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_17', 'mturra', 'install/tab/amv_argomenti.sql', sysdate, 11,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_18', 'mturra', 'install/tab/amv_blob.sql', sysdate, 12,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_19', 'mturra', 'install/tab/amv_categorie.sql', sysdate, 13,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_20', 'mturra', 'install/tab/amv_classificazioni.sql', sysdate, 14,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_28', 'mturra', 'install/tab/amv_tipologie.sql', sysdate, 15,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_89', 'mturra', 'install/tab/utenti.sql', sysdate, 16,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_21', 'mturra', 'install/tab/amv_diritti.sql', sysdate, 17,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_26', 'mturra', 'install/tab/amv_rilevanze.sql', sysdate, 18,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_27', 'mturra', 'install/tab/amv_sezioni.sql', sysdate, 19,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_22', 'mturra', 'install/tab/amv_documenti.sql', sysdate, 20,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_24', 'mturra', 'install/tab/amv_documenti_revisioni.sql', sysdate, 21,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_23', 'mturra', 'install/tab/amv_documenti_blob.sql', sysdate, 22,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_25', 'mturra', 'install/tab/amv_guide.sql', sysdate, 23,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_30', 'mturra', 'install/tab/anag_unita.sql', sysdate, 24,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_31', 'mturra', 'install/tab/banche.sql', sysdate, 25,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_39', 'mturra', 'install/tab/diritti_accesso.sql', sysdate, 26,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_32', 'mturra', 'install/tab/caratteristiche_accesso.sql', sysdate, 27,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_33', 'mturra', 'install/tab/comuni.sql', sysdate, 28,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_34', 'mturra', 'install/tab/consolati.sql', sysdate, 29,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_36', 'mturra', 'install/tab/credenziali.sql', sysdate, 30,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_60', 'mturra', 'install/tab/livelli_sicurezza.sql', sysdate, 31,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_88', 'mturra', 'install/tab/tipi_credenziale.sql', sysdate, 32,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_37', 'mturra', 'install/tab/credenziali_livello.sql', sysdate, 33,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_38', 'mturra', 'install/tab/credenziali_utente.sql', sysdate, 34,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_40', 'mturra', 'install/tab/diritti_accesso_storico.sql', sysdate, 35,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_41', 'mturra', 'install/tab/disabilitazioni.sql', sysdate, 36,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_42', 'mturra', 'install/tab/dual_pb.sql', sysdate, 37,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_43', 'mturra', 'install/tab/enti.sql', sysdate, 38,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_44', 'mturra', 'install/tab/eventi.sql', sysdate, 39,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_45', 'mturra', 'install/tab/external_functions.sql', sysdate, 40,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_59', 'mturra', 'install/tab/lingue.sql', sysdate, 41,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_46', 'mturra', 'install/tab/gruppi_linguistici.sql', sysdate, 42,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_47', 'mturra', 'install/tab/informative_privacy.sql', sysdate, 43,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_48', 'mturra', 'install/tab/istanze.sql', sysdate, 44,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_49', 'mturra', 'install/tab/key_constraint.sql', sysdate, 45,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_50', 'mturra', 'install/tab/key_constraint_column.sql', sysdate, 46,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_51', 'mturra', 'install/tab/key_constraint_error.sql', sysdate, 47,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_52', 'mturra', 'install/tab/key_constraint_type.sql', sysdate, 48,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_53', 'mturra', 'install/tab/key_dictionary.sql', sysdate, 49,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_54', 'mturra', 'install/tab/key_error.sql', sysdate, 50,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_55', 'mturra', 'install/tab/key_error_log.sql', sysdate, 51,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_56', 'mturra', 'install/tab/key_word.sql', sysdate, 52,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_57', 'mturra', 'install/tab/ldap_attributi.sql', sysdate, 53,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_58', 'mturra', 'install/tab/ldap_struttura.sql', sysdate, 54,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_62', 'mturra', 'install/tab/omonimie_gestite.sql', sysdate, 55,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_63', 'mturra', 'install/tab/paesi_territori_ag_entrate.sql', sysdate, 56,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_72', 'mturra', 'install/tab/richieste_abilitazione.sql', sysdate, 57,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_64', 'mturra', 'install/tab/parametri_richiesta.sql', sysdate, 58,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_65', 'mturra', 'install/tab/personalizzazioni.sql', sysdate, 59,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_67', 'mturra', 'install/tab/province.sql', sysdate, 60,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_68', 'mturra', 'install/tab/raggruppamenti_stati.sql', sysdate, 61,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_69', 'mturra', 'install/tab/regioni.sql', sysdate, 62,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_70', 'mturra', 'install/tab/registro.sql', sysdate, 63,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_71', 'mturra', 'install/tab/registro_extract.sql', sysdate, 64,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_74', 'mturra', 'install/tab/servizi.sql', sysdate, 65,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_75', 'mturra', 'install/tab/si4_user_source.sql', sysdate, 66,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_76', 'mturra', 'install/tab/slaves.sql', sysdate, 67,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_78', 'mturra', 'install/tab/soggetti.sql', sysdate, 68,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_79', 'mturra', 'install/tab/so_temp.sql', sysdate, 69,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_77', 'mturra', 'install/tab/so4_so_temp.sql', sysdate, 70,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_81', 'mturra', 'install/tab/spazio_id_file_system.sql', sysdate, 71,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_80', 'mturra', 'install/tab/spazio_file_system.sql', sysdate, 72,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_82', 'mturra', 'install/tab/spazio_log.sql', sysdate, 73,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_83', 'mturra', 'install/tab/spazio_sistema_operativo.sql', sysdate, 74,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_84', 'mturra', 'install/tab/spazio_tablespace.sql', sysdate, 75,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_85', 'mturra', 'install/tab/sportelli.sql', sysdate, 76,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_86', 'mturra', 'install/tab/stati_territori.sql', sysdate, 77,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_87', 'mturra', 'install/tab/struttura_utenti_temp.sql', sysdate, 78,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_90', 'mturra', 'install/tab/utenti_gruppo.sql', sysdate, 79,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_91', 'mturra', 'install/tab/utenti_privacy.sql', sysdate, 80,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_92', 'mturra', 'install/tab/utenti_profilo.sql', sysdate, 81,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_93', 'mturra', 'install/tab/utenti_soggetti.sql', sysdate, 82,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_1', 'mturra', 'install/seq/alle_sq.sql', sysdate, 83,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_2', 'mturra', 'install/seq/alsl_sq.sql', sysdate, 84,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_3', 'mturra', 'install/seq/amv_abil_seq.sql', sysdate, 85,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_4', 'mturra', 'install/seq/amv_blob_seq.sql', sysdate, 86,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_5', 'mturra', 'install/seq/dias_sq.sql', sysdate, 87,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_6', 'mturra', 'install/seq/even_sq.sql', sysdate, 88,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_7', 'mturra', 'install/seq/exfu_sq.sql', sysdate, 89,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_8', 'mturra', 'install/seq/keel_sq.sql', sysdate, 90,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_9', 'mturra', 'install/seq/splo_sq.sql', sysdate, 91,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('201901301231_10', 'mturra', 'install/seq/spta_sq.sql', sysdate, 92,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-61', 'mturra (generated)', 'install/data/load-registro.xml', sysdate, 486,
+            'EXECUTED', null, 'loadData tableName=REGISTRO', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-63', 'mturra (generated)', 'install/data/load-lingue.xml', sysdate, 487,
+            'EXECUTED', null, 'loadData tableName=LINGUE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, LIQUIBASE,
+            DEPLOYMENT_ID)
+            Values
+            ('201903121216', 'mturra', 'install/data/ad4_progetti.xml', sysdate, 488,
+            'EXECUTED', null, 'sql', 'Inserimento del progetto AD4', '3.6.3',
+            '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, LIQUIBASE,
+            DEPLOYMENT_ID)
+            Values
+            ('201903121340', 'mturra', 'install/data/ad4_moduli.xml', sysdate, 489,
+            'EXECUTED', null, 'sql; sql; sql', 'Inserimento del modulo AD4', '3.6.3',
+            '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, LIQUIBASE,
+            DEPLOYMENT_ID)
+            Values
+            ('201903121554', 'mturra', 'install/data/ins-enti.xml', sysdate, 490,
+            'EXECUTED', null, 'sql', 'Inserimento del modulo AD4', '3.6.3',
+            '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-14', 'mturra (generated)', 'install/data/load-ruoli.xml', sysdate, 491,
+            'EXECUTED', null, 'loadData tableName=RUOLI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-73', 'mturra (generated)', 'install/data/load-istanze.xml', sysdate, 492,
+            'EXECUTED', null, 'loadData tableName=ISTANZE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, LIQUIBASE,
+            DEPLOYMENT_ID)
+            Values
+            ('20190604_1505', 'snegroni', 'install/data/ins-utenti.xml', sysdate, 493,
+            'EXECUTED', null, 'sql; sql; sql; sql; sql; sql', 'Inserimento degli utenti devo farlo con VALUES altrimenti errore mutating', '3.6.3',
+            '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-1', 'mturra (generated)', 'install/data/load-utenti_gruppo.xml', sysdate, 494,
+            'EXECUTED', null, 'loadData tableName=UTENTI_GRUPPO', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, LIQUIBASE,
+            DEPLOYMENT_ID)
+            Values
+            ('201903121358', 'mturra', 'install/data/ins-diritti_accesso.xml', sysdate, 495,
+            'EXECUTED', null, 'sql', 'Inserimento del progetto AD4', '3.6.3',
+            '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-2', 'mturra (generated)', 'install/data/load-caratteristiche_accesso.xml', sysdate, 496,
+            'EXECUTED', null, 'loadData tableName=CARATTERISTICHE_ACCESSO', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-23', 'mturra (generated)', 'install/data/load-credenziali.xml', sysdate, 497,
+            'EXECUTED', null, 'loadData tableName=CREDENZIALI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-22', 'mturra (generated)', 'install/data/load-dual_pb.xml', sysdate, 498,
+            'EXECUTED', null, 'loadData tableName=DUAL_PB', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-78', 'mturra (generated)', 'install/data/load-key_constraint.xml', sysdate, 499,
+            'EXECUTED', null, 'loadData tableName=KEY_CONSTRAINT', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-79', 'mturra (generated)', 'install/data/load-key_constraint_column.xml', sysdate, 500,
+            'EXECUTED', null, 'loadData tableName=KEY_CONSTRAINT_COLUMN', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-67', 'mturra (generated)', 'install/data/load-key_constraint_error.xml', sysdate, 501,
+            'EXECUTED', null, 'loadData tableName=KEY_CONSTRAINT_ERROR', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-40', 'mturra (generated)', 'install/data/load-key_constraint_type.xml', sysdate, 502,
+            'EXECUTED', null, 'loadData tableName=KEY_CONSTRAINT_TYPE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-69', 'mturra (generated)', 'install/data/load-key_error.xml', sysdate, 503,
+            'EXECUTED', null, 'loadData tableName=KEY_ERROR', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-80', 'mturra (generated)', 'install/data/load-paesi_territori_ag_entrate.xml', sysdate, 504,
+            'EXECUTED', null, 'loadData tableName=PAESI_TERRITORI_AG_ENTRATE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-81', 'mturra (generated)', 'install/data/load-registro_extract.xml', sysdate, 505,
+            'EXECUTED', null, 'loadData tableName=REGISTRO_EXTRACT', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-82', 'mturra (generated)', 'install/data/load-tipi_credenziale.xml', sysdate, 506,
+            'EXECUTED', null, 'loadData tableName=TIPI_CREDENZIALE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-34', 'mturra (generated)', 'install/data/load-amv_aree.xml', sysdate, 507,
+            'EXECUTED', null, 'loadData tableName=AMV_AREE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-28', 'mturra (generated)', 'install/data/load-amv_argomenti.xml', sysdate, 508,
+            'EXECUTED', null, 'loadData tableName=AMV_ARGOMENTI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-10', 'mturra (generated)', 'install/data/load-amv_categorie.xml', sysdate, 509,
+            'EXECUTED', null, 'loadData tableName=AMV_CATEGORIE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-52', 'mturra (generated)', 'install/data/load-amv_rilevanze.xml', sysdate, 510,
+            'EXECUTED', null, 'loadData tableName=AMV_RILEVANZE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-17', 'mturra (generated)', 'install/data/load-amv_sezioni.xml', sysdate, 511,
+            'EXECUTED', null, 'loadData tableName=AMV_SEZIONI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-30', 'mturra (generated)', 'install/data/load-amv_tipologie.xml', sysdate, 512,
+            'EXECUTED', null, 'loadData tableName=AMV_TIPOLOGIE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-65', 'mturra (generated)', 'install/data/load-amv_documenti.xml', sysdate, 513,
+            'EXECUTED', null, 'loadData tableName=AMV_DOCUMENTI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-74', 'mturra (generated)', 'install/data/load-amv_documenti_revisioni.xml', sysdate, 514,
+            'EXECUTED', null, 'loadData tableName=AMV_DOCUMENTI_REVISIONI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-33', 'mturra (generated)', 'install/data/load-amv_voci.xml', sysdate, 515,
+            'EXECUTED', null, 'loadData tableName=AMV_VOCI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-75', 'mturra (generated)', 'install/data/load-amv_guide.xml', sysdate, 516,
+            'EXECUTED', null, 'loadData tableName=AMV_GUIDE', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-64', 'mturra (generated)', 'install/data/load-amv_diritti.xml', sysdate, 517,
+            'EXECUTED', null, 'loadData tableName=AMV_DIRITTI', '3.6.3', '1556381764');
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-19', 'mturra (generated)', 'install/data/load-amv_abilitazioni.xml', sysdate, 518,
+            'EXECUTED', null, 'sql; loadData tableName=AMV_ABILITAZIONI; sql', '3.6.3', '1556381764');
+
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('20190612_1620', 'snegroni', 'install/tab/utenti_storico.sql', sysdate, 519,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+
+            Insert into DATABASECHANGELOG
+            (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED,
+            EXECTYPE, MD5SUM, DESCRIPTION, LIQUIBASE, DEPLOYMENT_ID)
+            Values
+            ('1554305364588-36', 'mturra (generated)', 'install/data/load-diritti_accesso.xml', sysdate, 520,
+            'EXECUTED', null, 'sql', '3.6.3', '1556381764');
+        </sql>
+    </changeSet>
+    <changeSet id="202009250851" author="mturra">
+        <comment>
+            Modifica checksum per variazione dati nei csv per bug liquibase &lt; 1.6 su campi null.
+            Mettendo il checksum a null quando gira liquibase considera il changeset già persente e non lo esegue
+            e viene ricalcolato il MD5SUM.
+        </comment>
+        <sql>
+            update DATABASECHANGELOG set MD5SUM=NULL where ID='20190507_1041' and FILENAME='v4.5.16/data/load-amv_voci.xml';
+            update DATABASECHANGELOG set MD5SUM=NULL where ID='1554305364588-33' and FILENAME='install/data/load-amv_voci.xml';
+            update DATABASECHANGELOG set MD5SUM=NULL where ID='1554305364588-19' and FILENAME='install/data/load-amv_abilitazioni.xml';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

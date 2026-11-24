@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <include file="load-registro.xml" relativeToChangelogFile="true"/>
+    <include file="ins-moduli.xml" relativeToChangelogFile="true"/>
+    <include file="ins-progetti.xml" relativeToChangelogFile="true"/>
+    <include file="ins-istanze.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_voci.xml" relativeToChangelogFile="true"/>
+    <include file="load-amv_abilitazioni.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

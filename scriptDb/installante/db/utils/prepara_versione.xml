@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="istanza"/>
+    <changeSet id="20190404_1227" author="mturra" runOnChange="true" runAlways="true">
+        <preConditions onFailMessage="Non ho trovato il synonym AD4_ISTANZE" onFail="CONTINUE">
+            <sqlCheck expectedResult="1">SELECT count( distinct 1) FROM all_synonyms WHERE synonym_name = 'AD4_ISTANZE' and owner in ('PUBLIC',user)</sqlCheck>
+        </preConditions>
+        <sql>update AD4_ISTANZE set VERSIONE = '@' || substr(VERSIONE,2) where ISTANZA = '${istanza}' and substr(VERSIONE,1,1) !='@'</sql>
+    </changeSet>
+    <changeSet id="20190404_1227-bi" author="mturra" runOnChange="true" runAlways="true">
+        <preConditions onFailMessage="Non ho trovato il synonym AD4_ISTANZE o tabella ISTANZE" onFail="CONTINUE">
+            <sqlCheck expectedResult="1">SELECT count(1) FROM all_synonyms WHERE synonym_name = 'AD4_ISTANZE' and owner in ('PUBLIC',user)</sqlCheck>
+            <sqlCheck expectedResult="1">SELECT COUNT(*) FROM user_tables WHERE table_name = 'ISTANZE'</sqlCheck>
+        </preConditions>
+        <sql>update ISTANZE set VERSIONE = '@' || substr(VERSIONE,2) where ISTANZA = '${istanza}' and not(substr(VERSIONE,1,1) ='@')</sql>
+    </changeSet>
+</databaseChangeLog>
+
+

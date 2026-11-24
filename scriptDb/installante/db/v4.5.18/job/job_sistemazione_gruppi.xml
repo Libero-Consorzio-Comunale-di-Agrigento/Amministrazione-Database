@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="job_sistemazione_gruppi_sempre" author="snegroni" runOnChange="true" >
+        <comment>Creazione job per sistemazione gruppi da fare subito e schedulare ogni giorno x sistemare</comment>
+            <sql dbms="oracle"
+                 endDelimiter="\"
+                 splitStatements="true"
+                 stripComments="true">
+                    declare
+                    v_jobs number;
+                    begin
+                    select count(*)
+                    into v_jobs
+                    from user_jobs
+                    where upper(what) like ('%UTENTE.SISTEMA_POSIZIONE_GRUPPI(''%'')%');
+                    if v_jobs = 0 then
+                    DECLARE
+                    X NUMBER;
+                    BEGIN
+                    SYS.DBMS_JOB.SUBMIT
+                    ( job       => X
+                    ,what      => 'begin UTENTE.SISTEMA_POSIZIONE_GRUPPI(''%''); end;'
+                    ,next_date => sysdate
+                    ,interval  => 'trunc(sysdate +1) + 2/24'
+                    ,no_parse  => FALSE
+                    );
+                    COMMIT;
+                    END;
+                    end if;
+                    end;
+                    /
+            </sql>
+    </changeSet>
+</databaseChangeLog>

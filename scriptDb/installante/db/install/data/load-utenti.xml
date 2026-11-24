@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-12">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/utenti.csv" quotchar="&quot;"
+                  separator="," tableName="UTENTI">
+            <column header="UTENTE" name="UTENTE" type="STRING"/>
+            <!-- TODO: ID_UTENTE verificare se mettere un progressivo -->
+            <column header="ID_UTENTE" name="ID_UTENTE" type="NUMERIC"/>
+            <column header="NOMINATIVO" name="NOMINATIVO" type="STRING"/>
+            <column header="PASSWORD" name="PASSWORD"/>
+            <column header="DATA_PASSWORD" name="DATA_PASSWORD"/>
+            <column header="RINNOVO_PASSWORD" name="RINNOVO_PASSWORD"/>
+            <column header="PWD_DA_MODIFICARE" name="PWD_DA_MODIFICARE" type="STRING"/>
+            <column header="ULTIMO_TENTATIVO" name="ULTIMO_TENTATIVO"/>
+            <column header="NUMERO_TENTATIVI" name="NUMERO_TENTATIVI"/>
+            <column header="TIPO_UTENTE" name="TIPO_UTENTE" type="STRING"/>
+            <column header="STATO" name="STATO" type="STRING"/>
+            <column header="LINGUA" name="LINGUA" type="STRING"/>
+            <column header="GRUPPO_LAVORO" name="GRUPPO_LAVORO" type="STRING"/>
+            <column header="IMPORTANZA" name="IMPORTANZA"/>
+            <column header="NOTE" name="NOTE"/>
+           <!-- <column name="DATA_INSERIMENTO" type="DATE" defaultValueComputed="${now}"/>-->
+            <column header="UTENTE_AGGIORNAMENTO" name="UTENTE_AGGIORNAMENTO" type="STRING"/>
+<!--            <column header="DATA_AGGIORNAMENTO" name="DATA_AGGIORNAMENTO" type="DATE"/>-->
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

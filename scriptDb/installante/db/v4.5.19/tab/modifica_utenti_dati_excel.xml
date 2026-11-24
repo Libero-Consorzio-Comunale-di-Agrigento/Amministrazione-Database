@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="20220616-50334-1" author="fmarzulli">
+        <preConditions onFail="MARK_RAN" onError="MARK_RAN" onErrorMessage="La tabella non esiste">
+            <not>
+                <sqlCheck expectedResult="0">count(1) from UTENTI_DATI_FOGLIO_EXCEL</sqlCheck>
+            </not>
+        </preConditions>
+        <comment>Creo un backup della vecchia tabella</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            create table UTENTI_DATI_FOGLIO_EXCEL_OLD as (select *from UTENTI_DATI_FOGLIO_EXCEL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20220616-50334-2" author="fmarzulli">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">select count(1) from user_tables where table_name='UTENTI_DATI_FOGLIO_EXCEL'
+            </sqlCheck>
+        </preConditions>
+        <comment>Elimino la vecchia tabella</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            drop table UTENTI_DATI_FOGLIO_EXCEL;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20220616-50334-3" author="fmarzulli">
+        <comment>Creo la nuova tabella</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            create table UTENTI_DATI_FOGLIO_EXCEL
+            (
+                utente                        VARCHAR2(8)  not null,
+                nominativo                    VARCHAR2(40) not null,
+                is_utenza_tecnica_ads         VARCHAR2(2),
+                soggetto_numero               NUMBER,
+                soggetto_nome                 VARCHAR2(240),
+                soggetto_codice_fiscale       VARCHAR2(16),
+                is_in_struttura_organizzativa VARCHAR2(2),
+                is_utenza_ldap                varchar2(2),
+                ultimo_tentativo              DATE,
+                diritti                       VARCHAR2(4000),
+                nuove_info                    VARCHAR2(1),
+                disabilitare                  VARCHAR2(2),
+                nuovo_nominativo_utente       VARCHAR2(30),
+                nuovo_ni_abbinare             varchar2(40),
+                nuovo_cognome                 VARCHAR2(30),
+                nuovo_nome                    VARCHAR2(30),
+                nuovo_codice_fiscale          VARCHAR2(16),
+                utenza_ldap                   VARCHAR2(2)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>

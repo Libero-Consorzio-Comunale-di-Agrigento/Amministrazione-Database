@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="crea_registro_gg_eventi_storico_issue_83142" author="mmonari">
+        <sql dbms="oracle" endDelimiter="\">
+            declare
+            d_exists number;
+            begin
+            select 1 into d_exists from REGISTRO
+            where CHIAVE = 'PRODUCTS/AUTHENTICATION' and STRINGA = 'LogAccessRetentionStorico';
+
+            update REGISTRO set VALORE = '730'
+            where CHIAVE = 'PRODUCTS/AUTHENTICATION' and STRINGA = 'LogAccessRetentionStorico';
+            exception
+            when no_data_found then
+            insert into REGISTRO (CHIAVE, STRINGA, COMMENTO, VALORE)
+            values ('PRODUCTS/AUTHENTICATION',
+            'LogAccessRetentionStorico',
+            'Numero di giorni massimo di conservazione delle informazioni di log sulla tabella storica.',
+            '730');
+            end;
+        </sql>
+    </changeSet>
+    <changeSet id="issue_83142_nuovi_campi_EVENTI" author="mmonari" runOnChange="false">
+        <!-- Script SQL per aggiungere i nuovi campi per il monitoraggio -->
+        <sql splitStatements="false" stripComments="false">
+            declare
+            v_column_exists number;
+            v_sql           varchar2(4000);
+            begin
+            -- Aggiungi TIPO_ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI'
+            and column_name = 'TIPO_ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI ADD (TIPO_ENTITA VARCHAR2(20))';
+            end if;
+
+            -- Aggiungi ID_ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI'
+            and column_name = 'ID_ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI ADD (ID_ENTITA VARCHAR2(50))';
+            end if;
+
+            -- Aggiungi URL_ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI'
+            and column_name = 'URL_ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI ADD (URL_ENTITA VARCHAR2(2000))';
+            end if;
+
+            -- Aggiungi ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI'
+            and column_name = 'ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI ADD (ENTITA CLOB)';
+            end if;
+
+            -- Aggiungi INDIRIZZO_IP
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI'
+            and column_name = 'INDIRIZZO_IP';
+
+            if v_column_exists = 0 then
+            EXECUTE IMMEDIATE 'ALTER TABLE EVENTI ADD (INDIRIZZO_IP VARCHAR2(50))';
+            end if;
+
+            exception
+            when others then
+            raise;
+            end;
+        </sql>
+    </changeSet>
+    <changeSet id="issue_83142_nuovi_campi_EVENTI_STORICO" author="mmonari" runOnChange="false">
+        <!-- Script SQL per aggiungere i nuovi campi per il monitoraggio -->
+        <sql splitStatements="false" stripComments="false">
+            declare
+            v_column_exists number;
+            v_sql           varchar2(4000);
+            begin
+            -- Aggiungi TIPO_ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI_STORICO'
+            and column_name = 'TIPO_ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI_STORICO ADD (TIPO_ENTITA VARCHAR2(20))';
+            end if;
+
+            -- Aggiungi ID_ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI_STORICO'
+            and column_name = 'ID_ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI_STORICO ADD (ID_ENTITA VARCHAR2(50))';
+            end if;
+
+            -- Aggiungi URL_ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI_STORICO'
+            and column_name = 'URL_ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI_STORICO ADD (URL_ENTITA VARCHAR2(2000))';
+            end if;
+
+            -- Aggiungi ENTITA
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI_STORICO'
+            and column_name = 'ENTITA';
+
+            if v_column_exists = 0 then
+            execute immediate 'ALTER TABLE EVENTI_STORICO ADD (ENTITA CLOB)';
+            end if;
+
+            -- Aggiungi INDIRIZZO_IP
+            select count(*)
+            into v_column_exists
+            from user_tab_columns
+            where table_name = 'EVENTI_STORICO'
+            and column_name = 'INDIRIZZO_IP';
+
+            if v_column_exists = 0 then
+            EXECUTE IMMEDIATE 'ALTER TABLE EVENTI_STORICO ADD (INDIRIZZO_IP VARCHAR2(50))';
+            end if;
+
+            exception
+            when others then
+            raise;
+            end;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <include file="tab/alter_eventi.sql" relativeToChangelogFile="true"/>
+    <include file="tab/caac_min_lunghezza_pwd.xml" relativeToChangelogFile="true"/>
+    <include file="tab/index_even_sess_ik.sql" relativeToChangelogFile="true"/>
+    <include file="tab/istanze_storico.sql" relativeToChangelogFile="true"/>
+    <include file="seq/isst_sq.sql" relativeToChangelogFile="true"/>
+    <include file="tab/oggetti_standard.sql" relativeToChangelogFile="true"/>
+    <include file="tab/utenti_salt.sql" relativeToChangelogFile="true"/>
+    <!-- questi per ultimi altrimenti errore -->
+    <include file="tab/alter_campi_password.sql" relativeToChangelogFile="true"/>
+    <include file="tab/alter_istanze.sql" relativeToChangelogFile="true"/>
+    <include file="tab/rifare_tab_utenti_dati_foglio_excel.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

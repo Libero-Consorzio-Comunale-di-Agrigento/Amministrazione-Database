@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="202003091323" author="snegroni" runOnChange="true">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">SELECT count(*) FROM diritti_accesso WHERE utente= '_GR_APP_' and modulo = 'SI4_UTE' and istanza = 'G_U_APP'</sqlCheck>
+        </preConditions>
+        <sql dbms="oracle"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            Insert into DIRITTI_ACCESSO
+            (UTENTE, MODULO, ISTANZA, RUOLO)
+            Values
+            ('_GR_APP_', 'SI4_UTE', 'G_U_APP', 'OPE');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

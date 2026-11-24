@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-67">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/key_constraint_error.csv"
+                  quotchar="&quot;" separator="," tableName="KEY_CONSTRAINT_ERROR">
+            <column header="NOME" name="NOME" type="STRING"/>
+            <column header="TIPO_ERRORE" name="TIPO_ERRORE" type="STRING"/>
+            <column header="ERRORE" name="ERRORE" type="STRING"/>
+            <column header="PRECISAZIONE" name="PRECISAZIONE"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

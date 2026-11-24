@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+<changeSet id="202002071057" author="snegroni" runAlways="true">
+    <preConditions onFail="CONTINUE">
+        <sqlCheck expectedResult="0">select count(1) from user_tables where table_name = 'STATI_TERRITORI_STORICO'</sqlCheck>
+    </preConditions>
+    <sql endDelimiter=";">
+        CREATE TABLE STATI_TERRITORI_STORICO
+        (
+        STATO_TERRITORIO       NUMBER(3)              NOT NULL,
+        DENOMINAZIONE          VARCHAR2(40),
+        DENOMINAZIONE_AL1      VARCHAR2(40),
+        DENOMINAZIONE_AL2      VARCHAR2(40),
+        SIGLA                  VARCHAR2(5),
+        CODICE_CATASTO         VARCHAR2(4),
+        DESC_CITTADINANZA      VARCHAR2(40),
+        DESC_CITTADINANZA_AL1  VARCHAR2(40),
+        DESC_CITTADINANZA_AL2  VARCHAR2(40),
+        RAGGRUPPAMENTO         NUMBER(2),
+        STATO_APPARTENENZA     NUMBER(3),
+        SIGLA_ISO3166_ALPHA2   VARCHAR2(2),
+        DATA_ISTITUZIONE       DATE,
+        DATA_INIZIO_VALIDITA   DATE,
+        DATA_FINE_VALIDITA     DATE,
+        FLAG_ISTAT             VARCHAR2(1),
+        UTENTE_AGGIORNAMENTO   VARCHAR2(8),
+        DATA_AGGIORNAMENTO     DATE
+        )
+        LOGGING
+        NOCACHE;
+
+        COMMENT ON TABLE STATI_TERRITORI_STORICO IS 'STTS - Storico degli Stati Territori';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.STATO_TERRITORIO IS 'Codice dello stato/territorio estero';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.DENOMINAZIONE IS 'Denominazione STATO O TERRITORIO ';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.DENOMINAZIONE_AL1 IS 'Denominazione dello stato/territorio estero';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.DENOMINAZIONE_AL2 IS 'Denominazione dello stato/territorio estero';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.SIGLA IS 'Sigla automobilistica';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.DESC_CITTADINANZA IS 'Denominazione della cittadinanza ';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.DESC_CITTADINANZA_AL1 IS 'Descrizione della cittadinanza';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.DESC_CITTADINANZA_AL2 IS 'Descrizione della cittadinanza';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.RAGGRUPPAMENTO IS 'Codice del raggruppamento';
+
+        COMMENT ON COLUMN STATI_TERRITORI_STORICO.STATO_APPARTENENZA IS 'Codice dello stato/territorio estero';
+
+
+        CREATE UNIQUE INDEX STTS_PK ON STATI_TERRITORI_STORICO
+        (STATO_TERRITORIO, DATA_INIZIO_VALIDITA)
+        LOGGING;
+
+        CREATE INDEX STTS_RAST_FK ON STATI_TERRITORI_STORICO
+        (RAGGRUPPAMENTO)
+        LOGGING;
+
+        ALTER TABLE STATI_TERRITORI_STORICO ADD (
+        CONSTRAINT STTS_PK
+        PRIMARY KEY
+        (STATO_TERRITORIO, DATA_INIZIO_VALIDITA)
+        USING INDEX STTS_PK
+        ENABLE VALIDATE);
+    </sql>
+</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="issue_78238_create_registro_stringa_ik" author="mmonari" runOnChange="false">
+        <!-- Script SQL per verificare ulteriormente eventuali indici equivalenti -->
+        <sql splitStatements="false" stripComments="false">
+            declare
+            -- Variabile per contare indici esistenti sulla colonna STRINGA della tabella REGISTRO
+            v_count_indici number;
+            -- Variabile per verificare esistenza di oggetti con lo stesso nome
+            v_count_oggetti number;
+            -- Variabile per il nome dell'indice da creare
+            v_nome_indice varchar2(30) := 'REGISTRO_STRINGA_IK';
+            v_exists number;
+            begin
+            select count(*)
+            into v_exists
+            from user_indexes
+            where index_name = 'REGISTRO_STRINGA_IK';
+
+            if v_exists > 0 then
+            execute immediate 'DROP INDEX REGISTRO_STRINGA_IK';
+            dbms_output.put_line('Indice REGISTRO_STRINGA_IK eliminato');
+            end if;
+
+            -- Verifica se esistono già indici sulla colonna STRINGA della tabella REGISTRO
+            -- che coprano esattamente la stessa colonna (indici equivalenti)
+            select count(*)
+            into v_count_indici
+            from user_indexes ui
+            where ui.table_name = 'REGISTRO'
+            and exists (select 1
+            from user_ind_columns uic
+            where uic.index_name = ui.index_name
+            and uic.table_name = 'REGISTRO'
+            and uic.column_name = 'STRINGA'
+            and uic.column_position = 1)
+            and not exists (select 1
+            from user_ind_columns uic2
+            where uic2.index_name = ui.index_name
+            and uic2.column_position > 1)
+            -- Esclude la chiave primaria che già copre CHIAVE e STRINGA
+            and ui.index_name != 'REGISTRO_PK';
+
+            -- Verifica se esiste già un oggetto con il nome REGISTRO_STRINGA_IK
+            select count(*)
+            into v_count_oggetti
+            from user_objects
+            where object_name = v_nome_indice;
+
+            -- Se non esistono indici equivalenti e non esiste l'oggetto, crea l'indice
+            if v_count_indici = 0 and v_count_oggetti = 0 then
+            execute immediate 'CREATE INDEX ' || v_nome_indice || ' ON REGISTRO (STRINGA)';
+            dbms_output.put_line('Indice ' || v_nome_indice || ' creato con successo');
+            elsif v_count_indici > 0 then
+            -- Se esiste già un indice equivalente, non fare nulla
+            dbms_output.put_line('Esiste già un indice equivalente sulla colonna STRINGA. Creazione indice saltata.');
+            elsif v_count_oggetti > 0 then
+            -- Se esiste già un oggetto con lo stesso nome, non fare nulla
+            dbms_output.put_line('Esiste già un oggetto con nome ' || v_nome_indice ||
+            '. Creazione indice saltata.');
+            end if;
+
+            exception
+            when others then
+            -- Gestione errori generici
+            dbms_output.put_line('Errore durante la creazione dell''indice: ' || sqlerrm);
+            raise;
+            end;
+        </sql>
+
+
+
+    </changeSet>
+
+</databaseChangeLog>

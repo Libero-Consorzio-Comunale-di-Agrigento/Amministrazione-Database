@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="crea_registro_cardcode_issue_86091" author="mmonari">
+        <sql dbms="oracle" endDelimiter="\">
+            declare
+            d_exists number;
+            begin
+            select 1 into d_exists from REGISTRO
+            where CHIAVE = 'PRODUCTS/*/AREA_CLIENTI/CARDCODE' and STRINGA = 'CardCode';
+
+            update REGISTRO set VALORE = '${sap_cardcode}'
+            where CHIAVE = 'PRODUCTS/*/AREA_CLIENTI/CARDCODE' and STRINGA = 'CardCode';
+            exception
+            when no_data_found then
+            insert into REGISTRO (CHIAVE, STRINGA, COMMENTO, VALORE)
+            values ('PRODUCTS/*/AREA_CLIENTI/CARDCODE',
+            'CardCode',
+            'cardcode dell''ente che utilizza l''installazione di AD4. Valore stabilito in fase di distribuzione. Modificare cum grano salis',
+            '${sap_cardcode}');
+            end;
+        </sql>
+    </changeSet>
+    <changeSet id="crea_registro_url_issue_86091" author="mmonari">
+        <sql dbms="oracle" endDelimiter="\">
+            declare
+            d_exists number;
+            begin
+            select 1 into d_exists from REGISTRO
+            where CHIAVE = 'PRODUCTS/*/AREA_CLIENTI/URL_ROOT' and STRINGA = 'UrlAreaClienti';
+
+            update REGISTRO set VALORE = 'https://areaclienti.finmatica.it'
+            where CHIAVE = 'PRODUCTS/*/AREA_CLIENTI/URL_ROOT' and STRINGA = 'UrlAreaClienti';
+            exception
+            when no_data_found then
+            insert into REGISTRO (CHIAVE, STRINGA, COMMENTO, VALORE)
+            values ('PRODUCTS/*/AREA_CLIENTI/URL_ROOT',
+            'UrlAreaClienti',
+            'URL dell''area clienti. Valore stabilito in fase di distribuzione. Modificare cum grano salis',
+            'https://areaclienti.finmatica.it');
+            end;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

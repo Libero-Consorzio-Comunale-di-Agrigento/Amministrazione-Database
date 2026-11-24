@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <!-- preConditions onFail="HALT" onFailMessage="Parametro versione ${versione}, istanza ${istanza}, targetUsername ${targetUsername} o targetPassword ${targetPassword} non valorizzati">
+        <changeLogPropertyDefined property="versione"/>
+        <changeLogPropertyDefined property="istanza"/>
+        <changeLogPropertyDefined property="targetUsername"/>
+        <changeLogPropertyDefined property="targetPassword"/>
+    </preConditions-->
+    <!-- mette in @ la versione di ISTANZE -->
+    <include file="utils/prepara_versione.xml"/>
+
+    <!-- cariccamento package iniziali -->
+    <include file="latest/pks/dbc.sql"/>
+    <include file="latest/pkb/dbc.sql"/>
+    <include file="latest/pks/afc.sql"/>
+    <include file="latest/pkb/afc.sql"/>
+    <include file="latest/fun/is_versione_maggiore.sql"/>
+    <include file="latest/prc/verifica_versione_maggiore.sql"/>
+
+    <!-- Creazione tabelle e sequence -->
+    <include file="install.xml"/>
+    <include file="v4.5.16/master.xml"/>
+    <include file="v4.5.18/master.xml"/>
+
+    <!-- creazione oggetti indepotenti -->
+    <include file="latest/master.xml"/>
+    <include file="utils/createPrivateSynonyms.xml"/>
+
+    <!-- Load Data -->
+    <include file="install/data/master.xml"/>
+    <include file="v4.5.16/data/master.xml"/>
+    <include file="v4.5.16/creaRuoloAd4amm.xml"/>
+    <include file="v4.5.17.1/data/master.xml"/>
+    <include file="v4.5.17.4/master.xml"/>
+    <include file="v4.5.18/data/master.xml"/>
+    <include file="v4.5.18.13/master.xml"/>
+    <include file="v4.5.19/master.xml"/>
+    <include file="v4.5.20/master.xml"/>
+    <include file="latest/data/oggetti_standard.xml"/>
+
+    <include file="si4/ad4-grant-to-si4.xml"/>
+    <include file="utils/compileInvalidObjects.xml"/>
+    <include file="utils/compileInvalids.xml"/>
+    <include file="utils/checkInvalidObjects.xml"/>
+    <!--Commentato perchè eseguito dall'installante
+     <include file="utils/completa_versione.xml"/>
+    -->
+</databaseChangeLog>

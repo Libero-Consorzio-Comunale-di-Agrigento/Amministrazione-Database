@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="69703-SettaPWD" author="mmonari">
+        <preConditions onFail="MARK_RAN" onError="HALT">
+            <sqlCheck expectedResult="0">select count(1) from registro where stringa = 'SettaPWDDefault';
+            </sqlCheck>
+        </preConditions>
+        <comment>Inserimento del registro che pilota l'impostazione della pwd di default per utenti legati a soggetti</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            insert into registro (CHIAVE, STRINGA, COMMENTO, VALORE)
+            values ('PRODUCTS/AD4/UTENTE', 'SettaPWDDefault', 'Indica se in fase di associazione tra soggetto ed utente, in caso di utente con password nulla, la stessa debba essere impostata con alcuni dati anagrafici del soggetto associato. Valori possibili. cf:codice fiscale; cn:concatenazione di cognome,nome (depurati di caratteri speciali) e data di nascita nel formato ddmmaaaa; no:nessuna valorizzazione - default: no)', 'no');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

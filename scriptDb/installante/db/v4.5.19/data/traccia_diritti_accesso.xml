@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="20220623-57734" author="fmarzulli">
+        <sql dbms="oracle" endDelimiter="\">
+            declare
+                d_exists number;
+            begin
+                select 1 into d_exists from REGISTRO
+                where CHIAVE = 'PRODUCTS/AD4' and STRINGA = 'TracciaDirittiAccesso';
+
+                update REGISTRO set VALORE = 'SI'
+                where CHIAVE = 'PRODUCTS/AD4' and STRINGA = 'TracciaDirittiAccesso';
+            exception
+                when no_data_found then
+                    insert into REGISTRO (CHIAVE, STRINGA, COMMENTO, VALORE)
+                    values ('PRODUCTS/AD4',
+                            'TracciaDirittiAccesso',
+                            'Indica se tenere traccia delle modifiche nelle assegnazioni dei diritti di accesso. (Valori possibili: SI/NO - default: NO)',
+                            'SI');
+            end;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

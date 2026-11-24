@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="snegroni (generated)" id="20190507_1041">
+        <preConditions onFailMessage="Voce preesistente AD4STUTE" onFail="CONTINUE">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM AMV_VOCI WHERE voce = 'AD4STUTE';
+            </sqlCheck>
+        </preConditions>
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="v4.5.16/data/csv/amv_voci.csv" quotchar="&quot;"
+                  separator="," tableName="AMV_VOCI">
+            <column header="VOCE" name="VOCE" type="STRING"/>
+            <column header="PROGETTO" name="PROGETTO" type="STRING"/>
+            <column header="ACRONIMO" name="ACRONIMO" type="STRING"/>
+            <column header="ACRONIMO_AL1" name="ACRONIMO_AL1" type="STRING"/>
+            <column header="ACRONIMO_AL2" name="ACRONIMO_AL2" type="STRING"/>
+            <column header="TITOLO" name="TITOLO" type="STRING"/>
+            <column header="TITOLO_AL1" name="TITOLO_AL1" type="STRING"/>
+            <column header="TITOLO_AL2" name="TITOLO_AL2" type="STRING"/>
+            <column header="TIPO_VOCE" name="TIPO_VOCE" type="STRING"/>
+            <column header="TIPO" name="TIPO" type="STRING"/>
+            <column header="MODULO" name="MODULO" type="STRING"/>
+            <column header="STRINGA" name="STRINGA" type="STRING"/>
+            <column header="PROFILO" name="PROFILO" type="NUMERIC"/>
+            <column header="VOCE_GUIDA" name="VOCE_GUIDA" type="STRING"/>
+            <column header="PROPRIETA" name="PROPRIETA" type="STRING"/>
+            <column header="NOTE" name="NOTE" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

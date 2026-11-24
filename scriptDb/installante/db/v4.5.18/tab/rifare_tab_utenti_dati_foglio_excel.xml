@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="sistemazione_utenti_dati_foglio_excel" author="snegroni">
+            <preConditions onFail="CONTINUE">
+                    <sqlCheck expectedResult="0">select count(1) from user_tab_columns where table_name = 'UTENTI_DATI_FOGLIO_EXCEL' and column_name = 'IS_UTENZA_LDAP'</sqlCheck>
+            </preConditions>
+            <comment>Rinomina tabella utenti_dati_foglio_excel e crea la nuova</comment>
+            <sql dbms="oracle"
+                 endDelimiter=";"
+                 splitStatements="true"
+                 stripComments="true">
+                rename UTENTI_DATI_FOGLIO_EXCEL to UTENTI_DATI_FOGLIO_EXC_OLD_TAB;
+                create table UTENTI_DATI_FOGLIO_EXCEL
+                (
+                utente                        VARCHAR2(8) not null,
+                nominativo                    VARCHAR2(40) not null,
+                is_utenza_tecnica_ads         VARCHAR2(2),
+                soggetto_numero               NUMBER,
+                soggetto_nome                 VARCHAR2(240),
+                soggetto_codice_fiscale       VARCHAR2(16),
+                is_in_struttura_organizzativa VARCHAR2(2),
+                is_utenza_ldap                varchar2(2),
+                ultimo_tentativo              DATE,
+                diritti                       VARCHAR2(4000),
+                nuove_info                    VARCHAR2(1),
+                disabilitare                  VARCHAR2(2),
+                nuovo_nominativo_utente       VARCHAR2(30),
+                nuovo_ni_abbinare             varchar2(40),
+                nuovo_cognome                 VARCHAR2(30),
+                nuovo_nome                    VARCHAR2(30),
+                nuovo_codice_fiscale          VARCHAR2(16),
+                utenza_ldap                   VARCHAR2(40)
+                )
+                ;
+            </sql>
+    </changeSet>
+</databaseChangeLog>

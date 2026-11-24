@@ -1,0 +1,5 @@
+"VOCE","PROGETTO","ACRONIMO","ACRONIMO_AL1","ACRONIMO_AL2","TITOLO","TITOLO_AL1","TITOLO_AL2","TIPO_VOCE","TIPO","MODULO","STRINGA","PROFILO","VOCE_GUIDA","PROPRIETA","NOTE"
+"AD4STUTE","AD4","","","","Storico Variazioni Utenti","","","F","C","","ad4web/AD4StampaVariazioniUtenti.do","NULL","","",""
+"AD4STAM","AD4","","","","Stampe","","","N","M","","","NULL","","",""
+"AD4STDIA","AD4","","","","Storico Variazioni Diritti Accesso","","","F","C","","ad4web/AD4StampaVariazioniDiac.do","NULL","","",""
+"AD4STUT","AD4","","","","Utenti del Sistema","","","F","C","","ad4web/AD4StampaUtenti.do","NULL","","",""

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="istanza"/>
+    <changeSet id="202002251513" author="snegroni" runOnChange="true">
+        <comment>Inserimento nel registro di nuove chiavi</comment>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+            Insert into REGISTRO
+            (CHIAVE, STRINGA, VALORE)
+            select 'PRODUCTS/AD4/ASSISTENTE_VIRTUALE', 'UtenzaAssistenteVirtuale', ''
+            from dual
+            where not exists (select 1 from registro where chiave = 'PRODUCTS/AD4/ASSISTENTE_VIRTUALE' and stringa = 'UtenzaAssistenteVirtuale')
+        </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">Insert into REGISTRO
+            (CHIAVE, STRINGA, VALORE)
+            select 'PRODUCTS/AD4/ASSISTENTE_VIRTUALE', 'PwdUtenzaAssistenteVirtuale', ''
+            from dual
+            where not exists (select 1 from registro where chiave = 'PRODUCTS/AD4/ASSISTENTE_VIRTUALE' and stringa = 'PwdUtenzaAssistenteVirtuale')
+        </sql>
+        <sql dbms="oracle"
+             endDelimiter="\"
+             splitStatements="true"
+             stripComments="true">
+             Insert into REGISTRO
+            (CHIAVE, STRINGA, VALORE)
+            select 'PRODUCTS/AD4/ASSISTENTE_VIRTUALE', 'UrlAssistenteVirtuale', 'https://assistente-virtuale.e-pal.it'
+            from dual
+            where not exists (select 1 from registro where chiave = 'PRODUCTS/AD4/ASSISTENTE_VIRTUALE' and stringa = 'UrlAssistenteVirtuale')
+        </sql>
+    </changeSet>
+</databaseChangeLog>

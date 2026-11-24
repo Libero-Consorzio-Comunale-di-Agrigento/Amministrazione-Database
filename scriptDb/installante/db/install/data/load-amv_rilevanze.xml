@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <changeSet author="mturra (generated)" id="1554305364588-52">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="install/data/csv/amv_rilevanze.csv" quotchar="&quot;"
+                  separator="," tableName="AMV_RILEVANZE">
+            <column header="ID_RILEVANZA" name="ID_RILEVANZA" type="NUMERIC"/>
+            <column header="NOME" name="NOME" type="STRING"/>
+            <column header="IMPORTANZA" name="IMPORTANZA" type="STRING"/>
+            <column header="SEQUENZA" name="SEQUENZA" type="NUMERIC"/>
+            <column header="ZONA" name="ZONA"/>
+            <column header="ZONA_FORMATO" name="ZONA_FORMATO" type="STRING"/>
+            <column header="ZONA_VISIBILITA" name="ZONA_VISIBILITA" type="STRING"/>
+            <column header="MAX_VIS" name="MAX_VIS"/>
+            <column header="IMMAGINE" name="IMMAGINE"/>
+            <column header="ICONA" name="ICONA"/>
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>

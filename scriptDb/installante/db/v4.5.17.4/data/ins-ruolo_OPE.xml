@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="ins-ruolo_OPE" author="snegroni" runOnChange="true" runAlways="true">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="0">select count(1)  from RUOLI where RUOLO = 'OPE'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento ruolo OPE</comment>
+        <sql dbms="oracle"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            Insert into RUOLI
+            (RUOLO, DESCRIZIONE, STATO, GRUPPO_LAVORO, GRUPPO_SO,
+            INCARICO, RESPONSABILITA)
+            Values
+            ('OPE', 'Operatore', 'U', 'N', 'N',
+            'N', 'N');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

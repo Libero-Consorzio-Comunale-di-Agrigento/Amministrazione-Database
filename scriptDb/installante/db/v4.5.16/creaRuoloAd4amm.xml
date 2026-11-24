@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="201905021350" author="snegroni" runOnChange="true">
+            <preConditions onFail="CONTINUE">
+                    <sqlCheck expectedResult="0">select count(1) from AD4_RUOLI where RUOLO='AD4AMM'</sqlCheck>
+            </preConditions>
+        <comment>Inserimento istanza per Amministratore Database</comment>
+            <sql dbms="oracle"
+                 endDelimiter="\"
+                 splitStatements="true"
+                 stripComments="true">
+                    DECLARE
+                    v_utente_ruolo   utenti.utente%TYPE;
+                    v_istanza        istanze.istanza%TYPE := '${istanza}';
+                    BEGIN
+                    INSERT INTO RUOLI (RUOLO,
+                    DESCRIZIONE,
+                    PROGETTO,
+                    MODULO,
+                    STATO,
+                    GRUPPO_LAVORO,
+                    GRUPPO_SO,
+                    INCARICO,
+                    RESPONSABILITA)
+                    select 'AD4AMM',
+                    'Amministratore AD4 - Amm. Database',
+                    'AD4',
+                    '',
+                    'U',
+                    'S',
+                    'S',
+                    'N',
+                    'N'
+                    from dual
+                    where not exists (select 1 from ruoli where ruolo = 'AD4AMM');
+                    SELECT utente
+                    INTO v_utente_ruolo
+                    FROM utenti
+                    WHERE     nominativo = 'Amministratore AD4 - Amm. Database'
+                    AND tipo_utente = 'O'
+                    AND gruppo_lavoro = 'AD4AMM';
+                    INSERT INTO DIRITTI_ACCESSO d (UTENTE,
+                    MODULO,
+                    ISTANZA,
+                    RUOLO)
+                    select v_utente_ruolo,
+                    'AD4',
+                    v_istanza,
+                    'AMM'
+                    from dual
+                    where not exists (select 1
+                    from diritti_accesso
+                    where utente = v_utente_ruolo
+                    and modulo = 'AD4'
+                    and istanza = v_istanza
+                    );
+                    INSERT INTO DIRITTI_ACCESSO d (UTENTE,
+                    MODULO,
+                    ISTANZA,
+                    RUOLO)
+                    select v_utente_ruolo,
+                    'AD4WEB',
+                    v_istanza,
+                    'AMM'
+                    from dual
+                    where not exists (select 1
+                    from diritti_accesso
+                    where utente = v_utente_ruolo
+                    and modulo = 'AD4'
+                    and istanza = v_istanza
+                    );
+                    END;
+                    /
+            </sql>
+        <rollback>
+            <delete tableName="ISTANZE">
+                <where>ISTANZA=${istanza}</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

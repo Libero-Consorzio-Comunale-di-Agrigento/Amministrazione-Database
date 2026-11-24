@@ -1,0 +1,47 @@
+--liquibase formatted sql
+
+--changeset snegroni:201905061610
+
+
+--preconditions onFail:MARK_RAN onError:HALT
+--precondition-sql-check expectedResult:0 select count(1) from user_tables where table_name='UTENTI_GRUPPO_STORICO';
+
+CREATE TABLE UTENTI_GRUPPO_STORICO
+(
+  ID_EVENTO       NUMBER                        NOT NULL,
+  UTENTE          VARCHAR2(8)                   NOT NULL,
+  GRUPPO          VARCHAR2(8)                   NOT NULL,
+  DATA            DATE                          NOT NULL,
+  OPERAZIONE      VARCHAR2(2),
+  BI_RIFERIMENTO  NUMBER,
+  UTENTE_AGG      VARCHAR2(8),
+  USER_ORACLE     VARCHAR2(30),
+  INFO            VARCHAR2(2000),
+  PROGRAMMA       VARCHAR2(50)
+);
+
+CREATE INDEX UTGS_GRUPPO_IK ON UTENTI_GRUPPO_STORICO
+(GRUPPO)
+LOGGING;
+
+CREATE UNIQUE INDEX UTGS_PK ON UTENTI_GRUPPO_STORICO
+(ID_EVENTO)
+LOGGING;
+
+CREATE INDEX UTGS_UTENTE_IK ON UTENTI_GRUPPO_STORICO
+(UTENTE)
+LOGGING;
+
+ALTER TABLE UTENTI_GRUPPO_STORICO ADD (
+  CONSTRAINT UTGS_OPERAZIONE_CK
+  CHECK (operazione in ('I','D','BI','AI'))
+  ENABLE VALIDATE,
+  CONSTRAINT UTGS_PK
+  PRIMARY KEY
+  (ID_EVENTO)
+  USING INDEX UTGS_PK
+  ENABLE VALIDATE);
+
+
+
+--rollback drop table UTENTI_GRUPPO_STORICO;

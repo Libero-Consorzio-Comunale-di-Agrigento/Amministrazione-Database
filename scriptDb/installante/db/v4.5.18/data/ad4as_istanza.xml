@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <property name="targetUsername"/>
+    <property name="targetPassword"/>
+
+    <property name="ente"/>
+
+    <changeSet id="istanza-AD4AS" author="snegroni" runOnChange="true" context="ad4">
+        <preConditions onFail="CONTINUE" onFailMessage="Esiste l'istanza AD4ASL quindi salto l'inserimento">
+            <sqlCheck expectedResult="0">select count(1) from AD4_ISTANZE where ISTANZA='AD4ASL'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento dell'istanza AD4AS</comment>
+        <sql dbms="oracle" endDelimiter="/">
+            declare
+            d_psw varchar2(30) := '${targetPassword}';
+            begin
+                -- TODO: prima di chiamare crypt deve essere caricato il package, conviene inserire la pwd cryptata al termine.
+                ad4_crypt.crypt_password(d_psw, 'STANDARD');
+
+
+                Insert into AD4_ISTANZE
+                (ISTANZA, PROGETTO, ENTE, DESCRIZIONE, USER_ORACLE,
+                PASSWORD_ORACLE, DISLOCAZIONE, DISLOCAZIONE_TEMPORANEA, INSTALLAZIONE,
+                LINGUA)
+                Values
+                ('AD4ASL', 'AD4ASL', '${ente}', 'Aggiornamento ASL', '${targetUsername}',
+                d_psw, '\temp', '\temp', '',
+                'I');
+            end;
+            /
+        </sql>
+    </changeSet>
+</databaseChangeLog>

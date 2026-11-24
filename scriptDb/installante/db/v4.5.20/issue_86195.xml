@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="crea_registro_url_issue_86195" author="mmonari">
+        <sql dbms="oracle" endDelimiter="\">
+            declare
+            d_exists number;
+            begin
+            select 1
+            into d_exists
+            from registro
+            where chiave = 'PRODUCTS/UPLOAD'
+            and stringa = 'WhiteListFileExtension';
+
+            update registro
+            set valore = '.PDF.DOC.DOCX.ODT.RTF.TXT.XLS.XLSX.ODS.CSV.PPT.PPTX.ODP.JPG.JPEG.PNG'
+            where chiave = 'PRODUCTS/UPLOAD'
+            and stringa = 'WhiteListFileExtension';
+            exception
+            when no_data_found then
+            insert into registro
+            (chiave
+            ,stringa
+            ,commento
+            ,valore)
+            values
+            ('PRODUCTS/UPLOAD'
+            ,'WhiteListFileExtension'
+            ,'White-list delle estensioni ammesse in fase di upload'
+            ,'.PDF.DOC.DOCX.ODT.RTF.TXT.XLS.XLSX.ODS.CSV.PPT.PPTX.ODP.JPG.JPEG.PNG');
+            end;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

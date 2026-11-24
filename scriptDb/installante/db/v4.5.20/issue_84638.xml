@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <preConditions>
+        <changeLogPropertyDefined property="targetUsername"/>
+    </preConditions>
+    <changeSet id="issue_84638_alter_eventi" author="mmonari" runAlways="true" runOnChange="true">
+        <sql>alter table eventi modify testo varchar2(4000);</sql>
+        <sql>alter table eventi modify annotazioni varchar2(4000);</sql>
+        <sql>alter table eventi_storico modify testo varchar2(4000);</sql>
+        <sql>alter table eventi_storico modify annotazioni varchar2(4000);</sql>
+    </changeSet>
+</databaseChangeLog>

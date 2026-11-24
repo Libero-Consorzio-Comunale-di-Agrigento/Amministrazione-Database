@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <preConditions>
+        <changeLogPropertyDefined property="targetUsername"/>
+    </preConditions>
+    <changeSet id="issue_83822_alter_registro" author="mmonari" runAlways="true" runOnChange="true">
+        <sql>alter table registro modify valore varchar2(4000);</sql>
+    </changeSet>
+    <changeSet id="issue_83822_alter_registro_storico" author="mmonari" runAlways="true" runOnChange="true">
+        <sql>alter table registro_storico modify valore varchar2(4000);</sql>
+    </changeSet>
+</databaseChangeLog>

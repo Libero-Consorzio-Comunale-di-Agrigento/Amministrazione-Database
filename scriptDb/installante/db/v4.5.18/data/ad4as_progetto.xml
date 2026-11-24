@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+   <changeSet id="progetto-AD4AS" author="snegroni" runOnChange="true" context="ad4">
+        <preConditions onFail="CONTINUE" onFailMessage="Esiste il progetto AD4ASL quindi salto l'inserimento">
+            <sqlCheck expectedResult="0">select count(1) from AD4_PROGETTI where PROGETTO='AD4ASL'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento del progetto AD4ASL</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            Insert into PROGETTI
+            (PROGETTO, DESCRIZIONE, PRIORITA, NOTE, DESCRIZIONE_AL1,
+            DESCRIZIONE_AL2)
+            Values
+            ('AD4ASL', 'Aggiornamento ASL', NULL, NULL, NULL,
+            NULL);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

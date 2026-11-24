@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <!--<includeAll path="types" relativeToChangelogFile="true"/>-->
+    <includeAll path="syn" relativeToChangelogFile="true"/>
+    <includeAll path="fun" relativeToChangelogFile="true"/>
+    <includeAll path="prc" relativeToChangelogFile="true"/>
+    <includeAll path="pks" relativeToChangelogFile="true"/>
+    <includeAll path="pkb" relativeToChangelogFile="true"/>
+    <includeAll path="vw" relativeToChangelogFile="true"/>
+    <includeAll path="trg" relativeToChangelogFile="true"/>
+    <includeAll path="job" relativeToChangelogFile="true"/>
+    <include file="data/oggetti_standard.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

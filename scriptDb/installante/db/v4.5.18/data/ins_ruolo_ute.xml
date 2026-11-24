@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="ins_ruolo_ute" author="snegroni" runOnChange="true" context="ad4">
+        <preConditions onFail="CONTINUE" onFailMessage="Esiste ruolo UTE quindi salto l'inserimento">
+            <sqlCheck expectedResult="0">select count(1) from AD4_RUOLI where RUOLO='UTE'</sqlCheck>
+        </preConditions>
+        <comment>Inserimento del ruolo UTE</comment>
+        <sql dbms="oracle" endDelimiter=";">
+            Insert into RUOLI
+            (RUOLO, DESCRIZIONE, PROGETTO, MODULO, PROFILO,
+            DESCRIZIONE_AL1, DESCRIZIONE_AL2, STATO, GRUPPO_LAVORO, GRUPPO_SO,
+            INCARICO, RESPONSABILITA)
+            Values
+            ('UTE', 'Accesso al Portale', NULL, NULL, NULL,
+            NULL, NULL, 'U', 'N', 'N',
+            'N', 'N');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

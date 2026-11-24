@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <include file="sql/issue_62045.sql" relativeToChangelogFile="true"/>
+    <include file="sql/issue_59933.sql" relativeToChangelogFile="true"/>
+    <include file="sql/issue_67774.sql" relativeToChangelogFile="true"/>
+    <include file="sql/issue_69900_eventi_storico.sql" relativeToChangelogFile="true"/>
+    <include file="sql/issue_72035.sql" relativeToChangelogFile="true"/>
+    <include file="sql/issue_7198_adsamministratore.sql" relativeToChangelogFile="true"/>
+    <include file="sql/issue_7198_adsoperatore.sql" relativeToChangelogFile="true"/>
+    <include file="tab/master.xml" relativeToChangelogFile="true"/>
+    <include file="data/master.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
